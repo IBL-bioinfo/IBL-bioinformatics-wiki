@@ -1,4 +1,4 @@
-# SSH access basics
+# SSH access using command line
 
 *By C.Du [@snail123815](https://github.com/snail123815), Edder Bustos Diaz [@EdderDaniel](https://github.com/EdderDaniel)*
 
@@ -8,49 +8,23 @@ depth: 3
 ---
 ```
 
-## What is SSH
+To use our Linux servers, you'll need access to a <u>c</u>ommand <u>l</u>ine <u>i</u>nterface (CLI). Just to make a connection, you can use both CLI and **g**raphical <u>u</u>ser <u>i</u>nterface (GUI).
 
-SSH, or Secure Shell, is a way to securely connect to another computer over the internet. It keeps your information safe by encrypting everything you send and receive, so no one else can read it. With SSH, you can log into another computer, run commands, transfer files, and manage services securely.
+This tutorial will provide you detailed guidance in setting up your first SSH connection. Since this tutorial is targeting both Windows/MacOS/Linux operating systems, I will briefly touch upon the topic of differences between Windows and "Unix like" MacOS/Linux systems.
 
-Think of SSH as a secure tunnel between your computer and another computer. It uses special ***SSH keys*** to make sure that only you can access the other computer, and no one can listen in on your connection.
-
-SSH connection is the only recommended way to connect to our servers.
-
-### SSH keys
-
-Although only keys are mentioned everywhere, you can think of every key as having a corresponding "lock". For SSH connections, you need a **key pair**, which consists of a **private key** and a **public key**. You can consider the public key as a "lock" that is stored on the remote server.
-
-When you request a connection to the remote server, you present the server with the **signature** of your private key (not the key itself). The server then checks if this signature matches the public key you stored earlier. If they match, the server grants you access. Otherwise, you will be rejected and need to try another method to connect, such as providing a username and password. Once connected, all communication will be encrypted using the private and public keys.
-
-You usually generate key pairs yourself using an "SSH key generator". Examples of such generators are `ssh-keygen` and "MobaKeyGen".
-
-![ssh key pair illustration](../_static/images/ssh_keygen_drawing.svg)
-
-### SSH gateway
-
-This concept is a bit complex, but in order to be able to connect to our servers from anywhere and at the same time keep our Research Network safe and stable, we need to understand the basics. Our University has set up a **Gateway** server, whose sole purpose is to act as a gatekeeper for SSH connections. All SSH connections must go through this server. If the gateway server is attacked, the servers inside the Research Network will remain safe.
-
-To go through the gateway server, we first need to connect to the gateway using SSH.
-
-We will need to provide a private key to the gateway, and if that is accepted, we will be able to provide a private key to our IBL servers. The two keys provided can be the same, but since the gateway server can be accessed through the *dangerous* internet, it is recommended to use different key pairs.
-
-![IBL server infrastructure](../_static/images/ssh_jump_drawing.svg)
+In any case, you need to first:
 
 ## Determine your network location
 
+The IBL servers are setup inside Leiden University's [Research Network](./Intro.md#what-is-research-network), which means **intranet**. To protect intranet from **internet**, all connections need to pass through gateway servers hosted by Leiden University. Of course, if you are inside our Leiden University intranet, you can make direct connections to IBL servers.
+
 [Determine your network location](./Intro.md#determine-your-network-location)
 
-If you are working on your own computer, you will **never** be inside Research Network, so you will need to jump through SSH gateway even when you are physically in the university. An university managed laptop will still be outside of Research Network once you leave the university area.
+If you are working on your own computer, even if it is an university managed laptop, no matter you can connected to the Research Network or not, it is always good to [setup connection using ssh through SSH gateway](#setup-connection-using-ssh-through-ssh-gateway)
 
-- Outside of Research Network = make SSH connection through SSH gateway.
-- Only from an university managed **desktop**, you can use a direct SSH connection.
+Otherwise, from an university managed **desktop**, you can [connect with a direct SSH connection](#make-direct-ssh-connection).
 
-## Command line connection or Graphical user interface
-
-To use our Linux servers, you'll need access to a <u>c</u>ommand <u>l</u>ine <u>i</u>nterface (CLI). Just to make a connection, you can use both CLI and **g**raphical <u>u</u>ser <u>i</u>nterface (GUI).
-
-The setup will be very different on different systems. I will briefly touch upon the topic of differences between Windows and "Unix like" MacOS/Linux systems in this tutorial.
-
+For GUI setup, [follow this tutorial](./ssh%20access%20mobaxterm.md).
 
 ## Start a command line interface
 
