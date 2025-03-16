@@ -12,9 +12,19 @@ caption: IBL Servers
 maxdepth: 2
 ---
 IBL_servers/Intro.md
-IBL_servers/ssh access.md
+IBL_servers/Server configurations.md
 IBL_servers/Execute programs.md
 IBL_servers/Program setup.md
+```
+
+```{toctree}
+---
+caption: SSH access
+maxdepth: 2
+---
+ssh access/ssh access.md
+ssh access/ssh access command line.md
+ssh access/ssh access mobaxterm.md
 ```
 
 ```{toctree}

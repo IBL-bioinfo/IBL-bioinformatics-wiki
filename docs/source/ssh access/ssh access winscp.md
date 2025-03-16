@@ -45,7 +45,7 @@ From an university managed desktop, you can [connect with a direct SSH connectio
 
 ## If you need a gateway server
 
-Check [this section](./ssh%20access.md#setup-connection-using-ssh-through-ssh-gateway) to determine. Continue if you need gateway server, otherwise, go down further to [make direct SSH connection](#make-direct-ssh-connection).
+Check [Determine your network location](../IBL_servers/Intro.md#determine-your-network-location) to determine. Continue if you need gateway server, otherwise, go down further to [make direct SSH connection](#make-direct-ssh-connection).
 
 ## SSH connection through GUI
 

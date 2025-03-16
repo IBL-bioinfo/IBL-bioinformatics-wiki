@@ -28,7 +28,9 @@ You usually generate key pairs yourself using an "SSH key generator". Examples o
 
 ### SSH gateway
 
-This concept is a bit complex, but in order to be able to connect to our servers from anywhere and at the same time keep our Research Network safe and stable, we need to understand the basics. Our University has set up a **Gateway** server, whose sole purpose is to act as a gatekeeper for SSH connections. All SSH connections must go through this server. If the gateway server is attacked, the servers inside the Research Network will remain safe.
+This concept is a bit complex, but we only need to understand the basics, keep calm and continue.
+
+In order to be able to connect to our servers from anywhere and at the same time keep our Research Network safe and stable our University has set up a **Gateway** server. The sole purpose of the Gateway server is to act as a gatekeeper for SSH connections. All SSH connections must go through this server. If the gateway server is attacked, the servers inside the Research Network will remain safe.
 
 To go through the gateway server, we first need to connect to the gateway using SSH.
 
@@ -38,20 +40,20 @@ We will need to provide a private key to the gateway, and if that is accepted, w
 
 ## Determine your network location
 
-[Determine your network location](./Intro.md#determine-your-network-location)
+[Determine your network location](../IBL_servers/Intro.md#determine-your-network-location)
 
 If you are working on your own computer, you will **never** be inside the Research Network, so you will need to jump through the SSH gateway even when you are physically in the university. A university-managed laptop will still be outside of the Research Network once you leave the university area.
 
 - Outside of the Research Network = make SSH connection through the SSH gateway.
 - Only from a university-managed **desktop**, you can use a direct SSH connection.
 
-## Command line connection or Graphical user interface
+## CLI or GUI?
 
 To use our Linux servers, you'll need access to a <u>c</u>ommand <u>l</u>ine <u>i</u>nterface (CLI). Just to make a connection, you can use both CLI and **g**raphical <u>u</u>ser <u>i</u>nterface (GUI).
 
 For those who would like to go for a more seamless workflow, or if you are a MacOS user, please follow the [command line SSH connection tutorial](./ssh%20access%20command%20line.md).
 
-For others who would like to have more graphical inspiration, and are working with the Windows operating system, please follow the [MobaXterm SSH connection tutorial](./ssh%20access%20mobaxterm.md).
+For others who would like to have more graphical inspiration, and are working with the Windows operating system, please follow the [MobaXterm SSH connection tutorial](./ssh%20access%20mobaxterm.md). Using [WinSCP](./ssh%20access%20winscp.md) is also fine but the tutorial is not up to date and you may encounter some issues.
 
 The setup will be very different on different systems. I will briefly touch upon the topic of differences between Windows and "Unix-like" MacOS/Linux systems in this tutorial.
 
