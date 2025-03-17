@@ -1,4 +1,4 @@
-# MobaXterm
+# MobaXterm setup
 
 MobaXterm
 

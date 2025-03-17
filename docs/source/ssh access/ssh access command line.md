@@ -1,4 +1,4 @@
-# SSH access - CLI
+# Command line setup
 
 *By C.Du [@snail123815](https://github.com/snail123815), Edder Bustos Diaz [@EdderDaniel](https://github.com/EdderDaniel)*
 
