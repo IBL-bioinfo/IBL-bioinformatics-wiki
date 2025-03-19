@@ -302,13 +302,13 @@ Before you run any programs, you have to understand that we use "environments" t
 (make-direct-SSH-connection)=
 ## Make direct SSH connection (University Desktop with PowerShell)
 
-If you have a desktop computer that is connected to a Ethernet socket on the wall, you don't need to jump from the University's SSH-gateway. It is recommanded to setup using the [GUI tutorial](./ssh%20access%20mobaxterm.md#make-direct-connection). If you insist, please go on reading.
+If you have a university desktop computer that is located inside an university building, you are naturally inside the Research Network. It is recommended to setup using [MobaXterm](./ssh%20access%20mobaxterm.md#). If you insist, please go on reading.
 
-**PowerShell** comes by default with Windows. The default version comes with the software called "openSSH", providing command line program `ssh`. However, I recommend you to use the latest version of PowerShell, [install it from "Microsoft Store"](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#installing-from-the-microsoft-store). If that is unsuccessful, check other methods from the link. Try the default "Windows PowerShell" directly from your start menu if you cannot get the latest version of PowerShell from Microsoft Store.
+**PowerShell** comes by default with Windows. The default version comes with the software called "openSSH", providing command line program `ssh`.
 
-We do not recommend computer novices to choose this method, as it may cause unforeseen problems and the commands to set up may be slightly different. Prepare to spend a bit more time on it.
+We do not recommend setting up connection using PowerShell. Although you do not need to download any 3<sup>rd</sup> party application, it may cause unforeseen problems and you may need to spend more time on it. With that said, if you know what you understand provided commands, it is pretty simple.
 
-You can omit key generation steps for `sshgwLeidenuniv`. Only create `iblservers`, `iblservers.pub` key pair and copy `iblservers.pub` directly to our server. The `config` file in `C:\Users\[UserName]\.ssh\` directory can also be simplified.
+You only need to create `iblservers`, `iblservers.pub` key pair as indicated in and copy `iblservers.pub` directly to our server. The `config` file in `C:\Users\[UserName]\.ssh\` directory can also be simplified.
 
 ```{code-block} PowerShell
 ---
@@ -325,7 +325,6 @@ Host blis
     User USERNAME
     HostName 999.999.999.999
     # Use BLIS IP address in the above line
-    ProxyCommand ssh -A sshgw.leidenuniv.nl -p 22 -q -W %h:%p
     IdentityFile $HOME/.ssh/iblservers
     ServerAliveInterval 60
     ServerAliveCountMax 10
@@ -338,7 +337,7 @@ type $env:USERPROFILE\.ssh\iblservers.pub | ssh USERNAME@999.999.999.999 "mkdir 
 ssh blis
 ```
 
-If you also want to directly connect to another server, open the `C:\Users\[UserName]\.ssh\config` file in a text editor and add repeated content of the last section (start with the line "Host ...") and change the information of the other server. Make sure after you save the file, it does not have any file extension, `config.txt` will not work. Check Google for how to show all file extensions in Explorer. `C:\Users\UserName\.ssh\` directory is sometimes hidden. To find it, configure your file explorer to show hidden files.
+If you also want to directly connect to another server, open the `C:\Users\[UserName]\.ssh\config` file in a text editor and add repeated content of the last section (start with the line "Host ...") and change the information of the other server. Make sure after you save the file, it does not have any file extension, `config.txt` **will not work**. Ask a search engine how to show all file extensions in File Explorer. `C:\Users\[UserName]\.ssh\` directory is sometimes hidden. To find it, configure your file explorer to show hidden files or directly enter the directory path in the address bar of File Explorer.
 
 ## No Guarantee
 
