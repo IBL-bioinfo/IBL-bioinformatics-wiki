@@ -15,7 +15,8 @@ depth: 3
 - For MacOS (Apple operating system) users, open the "Terminal" application by typing "Terminal" in *spotlight*.
 - For Linux users, open the "Terminal" application (sometimes it is directly called "shell").
 - For Windows users, there are several options to be in a pure CLI environment:
-  - [**Git for windows**](https://gitforwindows.org) is recommended on University computers. It provides "GitBash" program that comes with a <u>shell</u> environment similar to Linux systems, and the settings will also be the same as Linux. The "GitBash" program can be executed without installation.
+  - [MobaXterm](./ssh%20access%20mobaxterm.md) is recommended on University computers. Please follow the link to download the program and then proceed to [start MobaXterm](./ssh%20access%20mobaxterm.md#start-mobaxterm), then come back to this page to follow the tutorial.
+  - [**Git for windows**](https://gitforwindows.org) provides "GitBash" program that comes with a <u>shell</u> environment similar to Linux systems, and the settings will also be the same as Linux. The "GitBash" program can be executed without installation.
   - [**Windows Terminal**](https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&gl=US) app. On University computers, you need to login to your personal Microsoft account to install it from Microsoft Store. It is a focused terminal emulator, able to host shells including:
     - Window PowerShell
     - Windows Subsystem for Linux (WSL) shells - Requires WSL installation
