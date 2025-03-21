@@ -14,7 +14,7 @@ SSH, or Secure Shell, is a way to securely connect to another computer over the 
 
 Think of SSH as a secure tunnel between your computer and another computer. It uses special ***SSH keys*** to ensure that only you can access the other computer, and no one can listen in on your connection.
 
-SSH connection is the only recommended way to connect to our servers.
+SSH connection is the only recommended way to connect to our servers. There are two ways of making a SSH connection, one is through password, that the server asks for password every time you login. Most of us will need to jump through the University gateway server, using password means you need to enter your ULCN password to connect to the gateway, then enter your IBL server password to access IBL servers. Thus, we recommend using the second way of making SSH connection, which include generating SSH keys and then use these keys to access the servers. Please store your private keys safely.
 
 ### SSH keys
 

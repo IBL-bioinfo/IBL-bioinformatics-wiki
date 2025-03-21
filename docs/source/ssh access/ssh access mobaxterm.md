@@ -42,6 +42,14 @@ For CLI lovers, you can now generate a default "Shell" session:
 Go to the main window of MobaXterm, click the "Star" icon on the left, right click on "User sessions", select "New session", select "Shell" from the top row of icons, click OK. Then follow [CLI SSH setup tutorial](./ssh%20access%20command%20line.md)
 ```
 
+```{admonition} For password lovers
+:class: info
+
+If you want to stick to password login, please **ignore** settings about "SSH key" while following this tutorial, go to [create the target session](#create-the-target-session) directly.
+
+```
+
+
 ## Generate SSH key pairs
 
 Start MobaXterm, look to the left, find the “Swiss Army Knife” icon (Tools) on the left, click on it, scroll to the bottom, find a tool called "MobaKeyGen (SSH key generator)", click on it to open.
