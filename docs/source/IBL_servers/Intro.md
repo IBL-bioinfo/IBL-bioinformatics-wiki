@@ -94,7 +94,42 @@ We will provide you information needed for accessing our servers.
 
 Currently we are using Slack group "IBL-Bioinformatic" for discussion and most importantly, send notifications about all servers. You will get invitation link with your username and password.
 
+## How to connect
+
+SSH connection is the only recommended way to connect to our servers. To do that, please read through the following sections, then proceed to the tutorial [SSH access](../ssh%20access/ssh%20access.md).
+
+## What is "Research Network"
+
+Our university's network is called **Research Network**, which is a "private" network that is isolated from the world wide web (Internet). This isolation is for security reasons.
+
+The IBL servers are setup inside Leiden University's **Research Network**, which means intranet. To protect intranet from internet, gateway servers are hosted by Leiden University. Connecting IBL servers from internet can be done only through connecting to the gateway first and then from gateway to IBL servers. Of course, if you are inside our Leiden University intranet, you can make direct connections to IBL servers.
+
+Without being on the Research Network, your computer cannot connect our servers using the given IP addresses.
+
+### Determine your network location
+
+If you are outside of Research Network, you cannot communicate with our servers through the IP addresses in the email.
+
+INSIDE:
+
+Only university managed PCs or laptops are allowed to be inside Research Network.
+
+- University managed PC that is connected through an ethernet port
+- University managed laptops that:
+  - Connected to the “NUWD-Laptop” WiFi access point
+  - Connected to an ethernet port
+
+OUTSIDE:
+
+- Using your own device:
+  - Even if it is connected to an ethernet port (usually as BYOD connections)
+  - Connected to WiFi access point "eduroam"
+- At home, even if you are using University managed laptop
+- Note that "eduVPN" does not help you to connect IBL servers. Probably because our servers are not registered.
+
 ## Leiden University gateways
+
+The concept of "gateway server" is explained [here](../ssh%20access/ssh%20access.md#ssh-gateway). Basically, the gateway servers are setup for security reasons. From Internet, one has to pass through the gateway servers to make SSH connections to any computer or server inside Research Network.
 
 Leiden University has two different gateway servers which uses different account systems.
 
@@ -102,7 +137,7 @@ Leiden University has two different gateway servers which uses different account
 
 You need your ULCN account.
 
-Please fill in the form "Request access SSH-gateway" on [this page](https://www.staff.universiteitleiden.nl/ict/help-and-support/application-forms/application-forms/service-units/ict-shared-service-centre) and wait for approval. Then you can set it up follow [this tutorial (login needed)](https://helpdesk.universiteitleiden.nl/tas/public/ssp/content/detail/knowledgeitem?unid=4b176453-ad3f-418f-9c15-40a11471de5f).
+Please fill in the form "Request access SSH-gateway" on [this page](https://www.staff.universiteitleiden.nl/ict/help-and-support/application-forms/application-forms/service-units/ict-shared-service-centre) and wait for approval. Then you can set it up follow [Manual Setting up SSH gateway PDF tutorial (login needed)](https://helpdesk.universiteitleiden.nl/tas/public/ssp/content/detail/knowledgeitem?unid=4b176453-ad3f-418f-9c15-40a11471de5f).
 
 ### ALICE gateway
 
@@ -110,82 +145,4 @@ Leiden University super computer cluster has its own gateway server, can be used
 
 ```{note}
 The access to Research Network is not officially supported and you need to use it with your own risk!
-```
-
-## What is "Research Network"
-
-The IBL servers are setup inside Leiden University's [Research Network](./Intro.md#what-is-research-network), which means intranet. To protect intranet from internet, gateway servers are hosted by Leiden University. Connecting IBL servers from internet can be done only through connecting to the gateway first and then from gateway to IBL servers. Of course, if you are inside our Leiden University intranet, you can make direct connections to IBL servers.
-
-Without being on the Research Network, your computer cannot connect our servers using the given IP addresses.
-
-### Determine your network location
-
-If you are unable to connect to the servers using the provided IP addresses in the email, it is likely because you are **not** connected to Research Network. How to determine?
-
-INSIDE:
-
-- You have wired ethernet connection directly through a socket in Leiden University buildings. Note: using your own device does not guarantee a Research Network connection.
-- You are wireless connected through WiFi to the “NUWD-Laptop” network
-
-OUTSIDE:
-
-- At home
-- In Leiden University building but:
-  - Connected to WiFi access point "eduroam"
-  - Connected to WiFi access point "Leiden University"
-- All locations that require "eduVPN". Note that "eduVPN" does not help you to connect IBL servers because this specific case is not setup in "eduVPN" setup.
-
-## Data and backup
-
-As a small server cluster intended for testing and teaching, we **do not** plan to backup any data you upload to the servers. Please remove your data when it is not needed.
-
-## Home directory quota explained
-
-Except BILBO, you will have limited storage space in your `/home/user` directory. This is meant for supporting as much users as possible. The `/home` directory is located in SSD and should be fast, it is intended to store scripts that you made, programs that you compile that do not fit for sharing, or some temporary files generated by your program.
-
-Find how much you have used using the following commands:
-
-```sh
-[username@blis ~]$ quota -s
-Disk quotas for user username (uid 168888888):
-     Filesystem   space   quota   limit   grace   files   quota   limit   grace
-/dev/mapper/rl-home
-                   785M  20480M  25600M           14081       0       0
-
-[username@blis ~]$ du -d 0 -h ~/
-785M    /home/username/
-
-```
-
-Please do not try to overload the quotation even if you find out that you are not listed in the quotation system. It may be a mistake that might be fixed at anytime.
-
-You can overrun the system to "limit", but cannot exceed it. The file system will block you from writting any new stuff in. If this happened during your job which writes to `~` directory, the job will fail. You need to run all data IO heavy jobs from the shared storage. For that, please check carefully the program you want to use for its temporary and output data location.
-
-Contact server adminstrators in our SLACK group if you really need larger `~` directory.
-
-## Jump within servers
-
-You can jump using `ssh [servername (lowercases)]` to any of the above listed servers.
-
-### Check os version
-
-```sh
-$ cat /etc/os-release
-NAME="Rocky Linux"
-VERSION="9.3 (Blue Onyx)"
-ID="rocky"
-ID_LIKE="rhel centos fedora"
-VERSION_ID="9.3"
-PLATFORM_ID="platform:el9"
-PRETTY_NAME="Rocky Linux 9.3 (Blue Onyx)"
-ANSI_COLOR="0;32"
-LOGO="fedora-logo-icon"
-CPE_NAME="cpe:/o:rocky:rocky:9::baseos"
-HOME_URL="https://rockylinux.org/"
-BUG_REPORT_URL="https://bugs.rockylinux.org/"
-SUPPORT_END="2032-05-31"
-ROCKY_SUPPORT_PRODUCT="Rocky-Linux-9"
-ROCKY_SUPPORT_PRODUCT_VERSION="9.3"
-REDHAT_SUPPORT_PRODUCT="Rocky Linux"
-REDHAT_SUPPORT_PRODUCT_VERSION="9.3"
 ```

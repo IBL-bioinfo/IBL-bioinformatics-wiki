@@ -1,4 +1,4 @@
-# SSH access tutorial
+# Command line setup
 
 *By C.Du [@snail123815](https://github.com/snail123815), Edder Bustos Diaz [@EdderDaniel](https://github.com/EdderDaniel)*
 
@@ -8,35 +8,23 @@ depth: 3
 ---
 ```
 
-To use our Linux servers, you'll need access to a <u>c</u>ommand <u>l</u>ine <u>i</u>nterface (CLI). Just to make a connection, you can use both CLI and **g**raphical <u>u</u>ser <u>i</u>nterface (GUI).
+## Start a CLI
 
-This tutorial will provide you detailed guidance in setting up your first SSH connection. Since this tutorial is targeting both Windows/MacOS/Linux operating systems, I will briefly touch upon the topic of differences between Windows and "Unix like" MacOS/Linux systems.
+<u>C</u>ommand <u>l</u>ine <u>i</u>nterface (CLI) is text based interface for interacting with an operating system. It may seems less straight forward than the graphical interface, but it is much more efficient once you know what you wanted. The program that implements CLI is called a **shell**. A **terminal** (emulator) is an app that helps you communicate with a shell. Here's how to start a shell program on different operating systems:
 
-In any case, you need to first:
-
-## Determine your network location
-
-The IBL servers are setup inside Leiden University's [Research Network](./Intro.md#what-is-research-network), which means **intranet**. To protect intranet from **internet**, all connections need to pass through gateway servers hosted by Leiden University. Of course, if you are inside our Leiden University intranet, you can make direct connections to IBL servers.
-
-[Determine your network location](./Intro.md#determine-your-network-location)
-
-If you are working on your own computer, even if it is an university managed laptop, no matter you can connected to the Research Network or not, it is always good to [setup connection using ssh through SSH gateway](#setup-connection-using-ssh-through-ssh-gateway)
-
-Otherwise, from an university managed **desktop**, you can [connect with a direct SSH connection](#make-direct-ssh-connection).
-
-For GUI setup, [follow this tutorial](./ssh%20access%20winscp.md).
-
-## Start a command line interface
-
-<u>C</u>ommand <u>l</u>ine <u>i</u>nterface (CLI) is hosted by a program called **shell**. Here's how to started a shell program on different operating systems:
-
-- For MacOS (Apple operating system) users, open the "Terminal" application by typing "Terminal" in spotlight.
+- For MacOS (Apple operating system) users, open the "Terminal" application by typing "Terminal" in *spotlight*.
 - For Linux users, open the "Terminal" application (sometimes it is directly called "shell").
-- For Windows users, there are several options:
-  - (Recommended) [WinSCP](https://winscp.net/eng/downloads.php) + [PuTTY](https://apps.microsoft.com/store/detail/putty/XPFNZKSKLBP7RJ). These programs are open source and free for personal use. You can download and run them without installation. It is friendly to university/company computers where you cannot install program by yourself. This solution can setup connection in GUI environment, you can skip the rest of this tutorial and go to [GUI tutorial](ssh%20access%20winscp.md).
-  - (Recommended) [Git for windows](https://gitforwindows.org) provide "GitBash" program that comes with a <u>shell</u> environment similar to Linux systems, and the settings will also be the same as Linux. The "GitBash" program can be executed without installation.
-  - WSL (Windows Subsystem for Linux) with the any Linux distribution. You can find more detailed instructions on how to install and start it [here](https://learn.microsoft.com/en-us/windows/wsl/install). Once you have WSL setup correctly, you will have access to a pure <u>shell</u> environment, simply set the connection up as you are using Linux.
-  - **PowerShell** comes by default with Windows. The default version comes with the software called "openSSH", providing command line program `ssh`. However, I recommend you to use the latest version of PowerShell, [install it from "Microsoft Store"](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#installing-from-the-microsoft-store). If that is unsuccessful, check other methods from the link. We do not recommend computer novices to choose this method, as it may cause unforeseen problems and the commands to set up may be slightly different. Prepare to spend a bit more time on it.
+- For Windows users, there are several options to be in a pure CLI environment:
+  - [MobaXterm](./ssh%20access%20mobaxterm.md) is recommended on University computers. Please follow the link to download the program and then proceed to [start MobaXterm](./ssh%20access%20mobaxterm.md#start-mobaxterm), then come back to this page to follow the tutorial.
+  - [**Git for windows**](https://gitforwindows.org) provides "GitBash" program that comes with a <u>shell</u> environment similar to Linux systems, and the settings will also be the same as Linux. The "GitBash" program can be executed without installation.
+  - [**Windows Terminal**](https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&gl=US) app. On University computers, you need to login to your personal Microsoft account to install it from Microsoft Store. It is a focused terminal emulator, able to host shells including:
+    - Window PowerShell
+    - Windows Subsystem for Linux (WSL) shells - Requires WSL installation
+  - **Windows PowerShell**, default app in windows, comes with its own terminal emulator. Now Microsoft has shift its focus on the new version 7 of PowerShell, old versions are less supported. Remember when you run PowerShell, you are running its default terminal emulator, it can also host WSL using `wsl` command.
+
+Windows Subsystem for Linux (WSL) with the any Linux distribution. <u>WSL **cannot** be installed on University computers.</u> You can find more detailed instructions on how to install and start it [here](https://learn.microsoft.com/en-us/windows/wsl/install). Once you have WSL setup correctly, you will have access to a pure <u>shell</u> environment, simply set the connection up as you are using Linux. Please note that even when you are in PowerShell, you can still use `wsl` command to start a WSL shell. Then you will be in a Linux environment. Remember in WSL, all the local drives are mounted in `/mnt/`
+
+**PowerShell** comes by default with Windows. Version 5 of PowerShell is provided with default windows installation. You can install an additional latest version of PowerShell [from "Microsoft Store"](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#installing-from-the-microsoft-store). No matter which version of PowerShell you use, the **OpenSSH** program that provides `ssh` command is the same version 9.5. Since Linux and Windows have slightly different understanding of `$HOME` folder, setting up SSH connection in PowerShell is a bit different. Prepare to spend a bit more time on it, and prepare to do some trouble shooting.
 
 ```{admonition} Do not copy directly
 :class: warning
@@ -49,17 +37,16 @@ Some commands are quite long, please use the scroll bar underneath the command l
 In CLI, you cannnot use your mouse. To edit the command easily, you can use a simple text editor, for example Notepad (windows), Nano (Linux), and TextEdit (MacOS), copy and edit your command there.
 ```
 
-## Setup connection using ssh through SSH gateway
+## SSH through SSH gateway
 
-As explained before, all connections except those made on university desktops need to pass through a gateway server to protect our intranet. We recommend you use [Leiden University general purpose gateway](./Intro.md#leiden-university-general-purpose-gateway). Using ALICE gateway is **not** recommended. If you use, you need to use ALICE gateway URL and your ALICE account for the gateway. !!Use ALICE gateway at your own risk!!
+As explained before, all connections except those made on university desktops need to pass through a gateway server to protect our intranet. We recommend you use [Leiden University general purpose gateway](../IBL_servers/Intro.md#leiden-university-general-purpose-gateway). Using ALICE gateway is **not** recommended. If you use, you need to use ALICE gateway URL and your ALICE account for the gateway. !!Use ALICE gateway at your own risk!!
 
 URL of general purpose gateway is `sshgw.leidenuniv.nl`. Once you are able to log in to the gateway following [this tutorial (login needed)](https://helpdesk.universiteitleiden.nl/tas/public/ssp/content/detail/knowledgeitem?unid=4b176453-ad3f-418f-9c15-40a11471de5f), you can proceed with the following setups. It's perfectly safe to access the servers through the gateway, even if you're already within Research Network.
 
 GOAL: Once you've completed this setup, you can access our servers (e.g., BLIS) from your computer with a single command: `ssh blis`, `ssh frodo`, or `ssh bilbo`.
 
-Depends on the operating system you use, you might choose command line interface (CLI, follow the instruction on this page) or [graphical user interface (GUI)](./ssh%20access%20winscp.md#ssh-connection-through-gui).
-
-## SSH connection through CLI
+(ssh-cli-setup)=
+## Setup
 
 CLI on all system shares the same commands except in PowerShell on Windows systems. The major difference is how to represent a file or directory (folder) path.
 
@@ -231,7 +218,7 @@ You can try it by following the instructions, but now you should be able to conn
 
 After above steps, you still cannot access the gateway and our servers with the ssh keys, ie, you still need to use your password every time you connect. To make our efforts yield valuable results, ou need to add the correct configuration to your `~/.ssh/config` file on your local machine. This is the configuration file for `ssh` program to know which key to use when connecting to a specific server.
 
-You must have noticed that in previous steps, we have generated two key pairs for "gateway" and "IBL servers" (BLIS, FRODO, BILBO). This is because we have the following infrastructure setup as indicated in the section [Set up connection using ssh through SSH gateway](#setup-connection-using-ssh-through-ssh-gateway).
+You must noticed that in previous steps, we generated two key pairs for "gateway" and "IBL servers" (BLIS, FRODO, BILBO). This is explained in [SSH gateway](./ssh%20access.md#ssh-gateway)
 
 ![IBL server infrastructure](../_static/images/ssh_jump_drawing.svg)
 
@@ -308,7 +295,7 @@ This command will use the configuration you added to your `.ssh/config` file for
 Once inside BLIS, you can directly connect to another servers using `ssh` command plus lower case server name.
 
 (ALICE uses the same setup, please refer to [How to login to ALICE or SHARK - HPC wiki](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37748771/How+to+login+to+ALICE+or+SHARK).)
-
+make-direct-ssh-connection-using-winscp-university-desktop-with-powershell
 :::{note}
 Before you run any programs, you have to understand that we use "environments" to manage softwares on all systems. On BLIS, we use `micromamba`, a `conda` replacement, for environment management, [check it out](../IBL_servers/Execute%20programs.md).
 :::
@@ -316,13 +303,13 @@ Before you run any programs, you have to understand that we use "environments" t
 (make-direct-SSH-connection)=
 ## Make direct SSH connection (University Desktop with PowerShell)
 
-If you have a desktop computer that is connected to a Ethernet socket on the wall, you don't need to jump from the University's SSH-gateway. It is recommanded to setup using the [GUI tutorial](./ssh%20access%20winscp.md#make-direct-ssh-connection-using-winscp-university-desktop-with-powershell). If you insist, please go on reading.
+If you have a university desktop computer that is located inside an university building, you are naturally inside the Research Network. It is recommended to setup using [MobaXterm](./ssh%20access%20mobaxterm.md#). If you insist, please go on reading.
 
-**PowerShell** comes by default with Windows. The default version comes with the software called "openSSH", providing command line program `ssh`. However, I recommend you to use the latest version of PowerShell, [install it from "Microsoft Store"](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#installing-from-the-microsoft-store). If that is unsuccessful, check other methods from the link. Try the default "Windows PowerShell" directly from your start menu if you cannot get the latest version of PowerShell from Microsoft Store.
+**PowerShell** comes by default with Windows. The default version comes with the software called "openSSH", providing command line program `ssh`.
 
-We do not recommend computer novices to choose this method, as it may cause unforeseen problems and the commands to set up may be slightly different. Prepare to spend a bit more time on it.
+We do not recommend setting up connection using PowerShell. Although you do not need to download any 3<sup>rd</sup> party application, it may cause unforeseen problems and you may need to spend more time on it. With that said, if you know what you understand provided commands, it is pretty simple.
 
-You can omit key generation steps for `sshgwLeidenuniv`. Only create `iblservers`, `iblservers.pub` key pair and copy `iblservers.pub` directly to our server. The `config` file in `C:\Users\[UserName]\.ssh\` directory can also be simplified.
+You only need to create `iblservers`, `iblservers.pub` key pair as indicated in and copy `iblservers.pub` directly to our server. The `config` file in `C:\Users\[UserName]\.ssh\` directory can also be simplified.
 
 ```{code-block} PowerShell
 ---
@@ -339,7 +326,6 @@ Host blis
     User USERNAME
     HostName 999.999.999.999
     # Use BLIS IP address in the above line
-    ProxyCommand ssh -A sshgw.leidenuniv.nl -p 22 -q -W %h:%p
     IdentityFile $HOME/.ssh/iblservers
     ServerAliveInterval 60
     ServerAliveCountMax 10
@@ -352,7 +338,7 @@ type $env:USERPROFILE\.ssh\iblservers.pub | ssh USERNAME@999.999.999.999 "mkdir 
 ssh blis
 ```
 
-If you also want to directly connect to another server, open the `C:\Users\[UserName]\.ssh\config` file in a text editor and add repeated content of the last section (start with the line "Host ...") and change the information of the other server. Make sure after you save the file, it does not have any file extension, `config.txt` will not work. Check Google for how to show all file extensions in Explorer. `C:\Users\UserName\.ssh\` directory is sometimes hidden. To find it, configure your file explorer to show hidden files.
+If you also want to directly connect to another server, open the `C:\Users\[UserName]\.ssh\config` file in a text editor and add repeated content of the last section (start with the line "Host ...") and change the information of the other server. Make sure after you save the file, it does not have any file extension, `config.txt` **will not work**. Ask a search engine how to show all file extensions in File Explorer. `C:\Users\[UserName]\.ssh\` directory is sometimes hidden. To find it, configure your file explorer to show hidden files or directly enter the directory path in the address bar of File Explorer.
 
 ## No Guarantee
 
