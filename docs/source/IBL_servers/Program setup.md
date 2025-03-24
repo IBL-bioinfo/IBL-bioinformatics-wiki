@@ -31,7 +31,7 @@ Create an environment to host the software or a pipe line you want to run. Then 
 caption: This block includes prompt, select command to copy
 ---
 # 0. Make sure you have your shell initiated with micromamba (skip if done before)
-[user@blis ~]$ micromamba shell init -s bash -p ~/micromamba-base
+[user@blis ~]$ micromamba shell init -s bash -r ~/micromamba-base
 [user@blis ~]$ source ~/.bashrc
 [user@blis ~]$ micromamba activate
 (base) [user@blis ~]$
