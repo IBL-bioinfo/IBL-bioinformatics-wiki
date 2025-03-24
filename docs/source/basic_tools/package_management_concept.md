@@ -1,4 +1,4 @@
-# Install software, manage environments
+# Software Environment
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
@@ -8,7 +8,9 @@ depth: 3
 ---
 ```
 
-## Why install in environments
+Installing software on a Linux system is straightforward and often involves commands like `apt install`, `pkg install`, or `yum install`. However, these commands require administrative privileges, which are not always available. Additionally, some programs may conflict with each other due to differing dependency version requirements. Resolving such conflicts system-wide is often impractical or even impossible, making alternative solutions necessary.
+
+## Create an environment for compatible programs
 
 Although it seems not reasonable for many beginners, but NO software can run by themselves. First and foremost, they require a good system to support their execution. The system will interpret the commands from the software and translate them to machine specific languages. For example the same command `1+1` will use different circuits on ARM and x86 CPUs. Usually these interpreters (which are also programs) have different versions and provide different access ports. What makes it more complex is that most programs also rely on specific versions of other programs to run. All of the other programs that one program depends on are called "dependencies".
 
@@ -27,7 +29,7 @@ To install a software using one of the tools, you first need to create an enviro
 
 Now your program is ready, but it will only work in this specific environment that you created. You can, of course, install as many programs you like in a single environment. But when the package management tool cannot resolve dependencies because of some cross dependency locks, it is good time to start a new environment.
 
-## Multi-user system
+## Multi-user Linux server
 
 Systems like [ALICE](../alice/alice_ibl.md) and our [IBL servers](../IBL_servers/Intro.md) are multi-user Linux systems. One challenge of managing multi-user systems is to provide all the softwares that everybody needs. It is very common that users need softwares that requires different versions of same software in the system. It becomes impossible to solve the issue without an environment manager. ALICE uses both [Environment Modules](https://modules.readthedocs.io/en/latest/index.html) and Conda environment manager; while for IBL servers, we use the later.
 
@@ -35,7 +37,7 @@ Systems like [ALICE](../alice/alice_ibl.md) and our [IBL servers](../IBL_servers
 
 Here I will only mention basic commands to manage Conda environments, for how to use Environment Modules on ALICE or other HPC systems, please check [this guide](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37749316/Using+available+software+-+Environment+Modules).
 
-[This tutorial](./micromamba.md) will guide you to install or run `micromamba` on IBL Server BLIS and your computer. For conda (miniconda for minimal install of conda) and mamba install, please refer to [this link](https://docs.conda.io/en/latest/miniconda.html#) or [this link](https://mamba.readthedocs.io/en/latest/installation.html). Note, unless instructed (like [here](./micromamba.md)), please do not install any of this in a multi-user system.
+[This tutorial](./micromamba.md) will guide you to install or run `micromamba` on IBL Server BLIS and your computer. For conda (miniconda for minimal install of conda) and mamba install, please refer to [this link](https://docs.conda.io/en/latest/miniconda.html#) or [this link](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html). Note, unless instructed (like [here](./micromamba.md)), please do not install any of this in a multi-user system.
 
 ## Basic commands
 
