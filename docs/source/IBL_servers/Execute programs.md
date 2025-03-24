@@ -24,7 +24,7 @@ Note, you only need to do this **once** on **one** server.
 Here is how (assuming you are using default shell `bash`):
 
 ```sh
-micromamba shell init -s bash -p ~/micromamba-base
+micromamba shell init -s bash -r ~/micromamba-base
 ```
 
 Above command will create a "base" environment at your home directory. Then a script will be put into your `~/.bashrc` file. Now you need to run the script by:

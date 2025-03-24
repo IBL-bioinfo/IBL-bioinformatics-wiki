@@ -37,7 +37,7 @@ alice/alice_ibl.md
 
 ```{toctree}
 ---
-caption: Basic bioinformatics tools
+caption: Tools
 maxdepth: 2
 ---
 basic_tools/package_management_concept.md
