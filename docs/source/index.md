@@ -14,7 +14,7 @@ maxdepth: 2
 IBL_servers/Intro.md
 IBL_servers/Server configurations.md
 IBL_servers/Execute programs.md
-IBL_servers/Program setup.md
+IBL_servers/Install programs.md
 ```
 
 ```{toctree}

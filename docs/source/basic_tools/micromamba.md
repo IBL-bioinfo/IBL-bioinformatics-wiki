@@ -16,7 +16,7 @@ The program is available, but please follow [execute programs tutorial](../IBL_s
 
 ## Why choose micromamba instead of conda on BLIS?
 
-[Instructions on how micromamba works](../IBL_servers/Program%20setup.md) on BLIS.
+[Instructions on how micromamba works](../IBL_servers/Install%20programs.md) on BLIS.
 
 `micromamba` is a standalone reimplementation of conda package manager in C++. It provides same command line interface as conda. In addition to conda:
 

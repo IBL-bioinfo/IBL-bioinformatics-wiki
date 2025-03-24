@@ -14,7 +14,7 @@ Not all servers have [ECC memory](https://serverfault.com/questions/5887/what-is
 
 ### BLIS
 
-This is our main server, it has a shared local storage and use [conda environments (managed by `micromamba`)](Program%20setup.md) to manage softwares. Home directory has a quota of 20 GB for each user, no quota on shared local storage.
+This is our main server, it has a shared local storage and use [conda environments (managed by `micromamba`)](./Install%20programs.md) to manage softwares. Home directory has a quota of 20 GB for each user, no quota on shared local storage.
 
 - Intel(R) Core(TM) i9-10980XE
   - @ 3.00GHz
@@ -80,7 +80,7 @@ It is easy to find information and basic training online. If you do not know whi
 
 ## Get access
 
-You can access all three servers directly within Leiden University [Research Network](#what-is-research-network). From outside of Research Network, you need to jump through one of Leiden University ssh gateways. Please prepare your access to gateway before you make actual connections.
+[Research Network](#what-is-research-network)
 
 To ask for access to all servers, please send email to me (c.du\[at\]biology.leidenuniv.nl). Please let me know the following info:
 
@@ -98,7 +98,7 @@ Currently we are using Slack group "IBL-Bioinformatic" for discussion and most i
 
 SSH connection is the only recommended way to connect to our servers. To do that, please read through the following sections, then proceed to the tutorial [SSH access](../ssh%20access/ssh%20access.md).
 
-## What is "Research Network"
+## What is Research Network
 
 Our university's network is called **Research Network**, which is a "private" network that is isolated from the world wide web (Internet). This isolation is for security reasons.
 

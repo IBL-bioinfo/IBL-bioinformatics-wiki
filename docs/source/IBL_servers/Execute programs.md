@@ -13,7 +13,7 @@ $ groups
 sgr condablis
 ```
 
-To manage software used by different users on BLIS, we use virtual environments located at `/vol/local/conda_envs`. You can check if the environment for the software you want to use already exists at this location. If not, you may need to create one and install the software yourself. For detailed instructions on how to create virtual environments and install software, please finish [program setup](./Program%20setup.md) guide.
+To manage software used by different users on BLIS, we use virtual environments located at `/vol/local/conda_envs`. You can check if the environment for the software you want to use already exists at this location. If not, you may need to create one and install the software yourself. For detailed instructions on how to create virtual environments and install software, please finish [program setup](./Install%20programs.md) guide.
 
 ## Prepare micromamba
 
@@ -57,7 +57,7 @@ If you see something else, please try to restart your shell and repeat the above
 
 ## Plan and notify others before execute long program
 
-Once you have done [program setup](./Program%20setup.md), it is time to plan a real job. Please follow these steps:
+Once you have done [program installation](./Install%20programs.md), it is time to plan a real job. Please follow these steps:
 
 1. Check the "jobs-on-servers" channel in our Slack group for pinned messages.
 2. Log in to the system and use htop or top to check for heavily running processes. Notify the channel if you see any anomalies.

@@ -10,7 +10,7 @@ depth: 3
 
 Installing software on a Linux system is straightforward and often involves commands like `apt install`, `pkg install`, or `yum install`. However, these commands require administrative privileges, which are not always available. Additionally, some programs may conflict with each other due to differing dependency version requirements. Resolving such conflicts system-wide is often impractical or even impossible, making alternative solutions necessary.
 
-## Create an environment for compatible programs
+## Create an environment for a set of programs
 
 Although it seems not reasonable for many beginners, but NO software can run by themselves. First and foremost, they require a good system to support their execution. The system will interpret the commands from the software and translate them to machine specific languages. For example the same command `1+1` will use different circuits on ARM and x86 CPUs. Usually these interpreters (which are also programs) have different versions and provide different access ports. What makes it more complex is that most programs also rely on specific versions of other programs to run. All of the other programs that one program depends on are called "dependencies".
 
@@ -18,11 +18,11 @@ With the increasing complexity of programs, it may develop into a status that on
 
 Well, this is very annoying. But it is a very essential price we have to pay. Windows or MacOS have less of this issue because you have paid for the system provider to solve these issues for you. But on Linux, we rely on the community contributors, which are mostly volunteers. Thus, we are, by ourselves, responsible for managing all the dependencies to run a software. This is where `conda`, `mamba` and `micromamba` comes in handy.
 
-[Conda](https://docs.conda.io/en/latest) is a software (sometimes also referred as package), dependency and environment management tool. [Mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) is a program helps conda to do the management faster, it requires conda to run. Well [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) is a tiny and ***standalone*** version of mamba. If you would like to understand how it works, it is best to understand some important [concepts](https://mamba.readthedocs.io/en/latest/user_guide/concepts.html) first, and then do some study. But if you want to get to work fast, here is some basics you need to know.
+[Conda](https://docs.conda.io/en/latest) is a software (sometimes also referred as "package"), dependency and environment management tool. [Mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) is a program helps conda to do the management faster, it requires conda to run. Well [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) is a tiny and ***standalone*** version of mamba. If you want to start, here is some basics. For more details, go to [mamba user guide](https://mamba.readthedocs.io/en/latest/user_guide/concepts.html).
 
 To install a software using one of the tools, you first need to create an environment for your software. During installation, the following things will be executed automatically.
 
-1. Query online databases (we call these database "[channels](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html#conda-channels)") for your software
+1. Query online software channels (you can see these channels as [pool of software](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html#conda-channels)").
 2. Get a list of all dependencies and check if the specific versions which match your current system architecture exists.
 3. Download all programs and install them in the correct location **within the environment**.
 4. If the programs installed need specific commands to be run after installation (eg. download a database), execute those commands.
