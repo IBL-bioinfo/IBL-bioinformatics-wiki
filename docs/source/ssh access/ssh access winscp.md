@@ -4,6 +4,8 @@ orphan: true
 
 # WinSCP and PuTTY SSH access tutorial
 
+*By C.Du [@snail123815](https://github.com/snail123815)*
+
 ```{contents}
 ---
 depth: 3
@@ -41,11 +43,11 @@ If you downloaded "putty.zip", unzip it to a location you know, make sure you ca
 
 Check [this section](./ssh%20access.md#determine-your-network-location)
 
-From an university managed desktop, you can [connect with a direct SSH connection](#make-direct-ssh-connection).
+From an university managed desktop, you can [connect with a direct SSH connection](#make-direct-ssh-connection-using-winscp-university-desktop-with-powershell).
 
 ## If you need a gateway server
 
-Check [Determine your network location](../IBL_servers/Intro.md#determine-your-network-location) to determine. Continue if you need gateway server, otherwise, go down further to [make direct SSH connection](#make-direct-ssh-connection).
+Check [Determine your network location](../IBL_servers/Intro.md#determine-your-network-location) to determine. You need to apply for Gateway access, check [Leiden University general purpose gateway](../IBL_servers/Intro.md#leiden-university-general-purpose-gateway)
 
 ## SSH connection through GUI
 
@@ -105,6 +107,10 @@ Now you can close the "PuTTY Key Generator" window and will go back to the Login
 Now the keys are only on your local computer, both gateway server and our IBL server does not know you have the keys and will not open the door for you.
 
 #### Push key to gateway server
+
+```{admonition} Alternative
+This method depends on some components on server side, and may not work for new user on our University gateway server. If it fails, check [Configure gateway public key](./ssh%20access%20mobaxterm.md#configure-gateway-public-key)
+```
 
 Select the gateway name you just saved from the left side, then click "Edit" in the right side, then click "Advanced..." button.
 

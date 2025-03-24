@@ -2,6 +2,12 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
+```{contents}
+---
+depth: 3
+---
+```
+
 MobaXterm is a third-party terminal application for Windows. The program has a user friendly way of setting up SSH connections. Additionally, MobaXterm is bundled with **X11 server**, which allows you to run GUI applications on the remoter server and show the interface locally. With *X11 server*, you can run python or R plotting scripts and show the plots locally.
 
 (In contrast, with a simple SSH connection, you can only save the plot to image files and then transfer them back to your local computer to view the result. Of course you can install standalone X11 server on your computer and make SSH connection work with it, it is not as handy.)
@@ -49,7 +55,6 @@ If you want to stick to password login, please **ignore** settings about "SSH ke
 
 ```
 
-
 ## Generate SSH key pairs
 
 Start MobaXterm, look to the left, find the “Swiss Army Knife” icon (Tools) on the left, click on it, scroll to the bottom, find a tool called "MobaKeyGen (SSH key generator)", click on it to open.
@@ -96,7 +101,7 @@ Go to the main window of MobaXterm, click the "Star" icon on the left, right cli
 
 A "Session settings" window will popup. Follow the numbers in the following screenshot to do the configuration. For Nr.6, setup the SSH key path to the "sshkey_to_ibl_servers.ppk" file saved in the previous step.
 
-*For University managed desktop, you do not need to click on "Network settings", just click OK, then "Cancel" the immediate connection. Please read through the following content anyway and start following the tutorial at this step: [Configure IBL server public key](#configure-ibl-server-public-key)*
+*For University managed desktop, you do not need to click on "Network settings", just click OK, then "Cancel" the immediate connection. Please read through the following content anyway and start following the tutorial at this step: [Configure IBL server public key](#configure-gateway-public-key)*
 
 For others, continue to click on the "Network settings".
 
@@ -148,7 +153,7 @@ Now you should be successfully enter the gateway
 
 ### Configure gateway public key
 
-Now create a directory called `.ssh` by entering `mkdir .ssh` command, then enter the directory using `cd .ssh` command (cd for **c**hange **d**irectory). Remember to add a space ` ` between *program* and *arguments*. For example, `mkdir` is the program, and `.ssh` is its argument. Hit enter on your keyboard to execute each command.
+Now create a directory called `.ssh` by entering `mkdir .ssh` command, then enter the directory using `cd .ssh` command (cd for **c**hange **d**irectory). Remember to add a **space** between *program* and *arguments*. For example, `mkdir` is the program, and `.ssh` is its argument. Hit enter on your keyboard to execute each command.
 
 ![successful session](../_static/images/mobaxterm_success_session_ulgateway_instructions.png)
 
@@ -158,23 +163,26 @@ Now enter `echo "`, do not hit enter yet. Go to your notepad, copy the second li
 
 Paste it into the command line.
 
-```{admonition} Paste in MobaXterm
+````{admonition} Paste in MobaXterm
 :class: note
 
 If it is the first time you try to paste something into the command line, please right click in the command line window. A pop up will show.
 
-![mobaxterm paste](../_static/images/mobaxterm_paste.png)
+<img src=../_static/images/mobaxterm_paste.png width=50%>
+
 
 Choose at your will. Please remember what you chose, it will become difficult if you forgot how to paste text into the command line. If you have the following window after click OK, it means you copied multiple lines:
 
 ![mobaxterm paste multiline](../_static/images/mobaxterm_paste_multi_line.png)
 
 A multi-line text will contain a hidden "carriage return" character (CR), which will act like you hit enter in the middle and execute the command that has already been entered. For our current operation, it does not matter because we have a quotation mark `"` before paste, the CR character will be pasted as is. It does not matter if you remove the CR or not. But for other commands, you might need to think about it, especially when the CR is at the end of your paste, you might execute the command accidentally. I would recommend you keep this warning message showing up in the future.
-```
+````
 
 After pasting the public key, continue the command by entering `" >> authorized_keys`. Note the spaces in the command. Then hit enter to execute.  Now you should see a file called `authorized_keys` in `.ssh` folder. Show it use `ls` command. Then you can check the content of the file using `cat` command:
 
 ![mobaxterm authorized keys](../_static/images/mobaxterm_authorized_keys_1.png)
+
+(For those doing WinSCP setup, [continue to add public key to IBL servers](./ssh%20access%20winscp.md#push-key-to-ibl-server). But you now know how to add a public key to the server manually, you can try to add the public key for IBL servers on the servers manually as well.)
 
 ### Configure IBL server public key
 
