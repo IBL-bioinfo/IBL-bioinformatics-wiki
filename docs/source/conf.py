@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'IBL-Bioinformatics wiki'
-copyright = '2024, IBL'
+copyright = '2025, IBL'
 author = 'IBL-Bioinformatics atelier'
 
 # -- General configuration ---------------------------------------------------
@@ -55,7 +55,7 @@ html_favicon = '_static/images/ibl.png'
 
 # -- MyST settings -----------------------------------------------------------
 # https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html
-myst_heading_anchors = 3
+myst_heading_anchors = 4
 myst_enable_extensions = [
     "amsmath",
     "colon_fence",
