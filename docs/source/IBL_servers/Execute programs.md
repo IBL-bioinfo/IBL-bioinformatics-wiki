@@ -159,7 +159,7 @@ Tmux is a similar program, allows you to run a shell in the background, it shoul
 
 [A beginner's guide to tmux](https://www.redhat.com/en/blog/introduction-tmux-linux)
 
-## Run a command in an environment without activating
+## Run a command in an environment without activation
 
 Sometimes you may need to run a program in a script, which may require multiple different software environments. You can activate them in a script, but when this is not possible, for example running the command in a sub-shell, then you need to know how to run a program in one command without activating the environment in your script (when it does not work).
 
