@@ -1,4 +1,4 @@
-# Program setup
+# Install programs
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
@@ -6,11 +6,19 @@ This tutorial provides guidance of creating environments and install programs in
 
 ## What is an environment
 
-An environment created by conda, micromamba, or pyvenv is essentially just a folder/directory on the disk. This directory contains configuration files and dependency programs. It has a special structure to allow environment manager programs (conda/micromamba/pyvenv) to read. Do not change any content in an environment directory manually, except you understand how environment manager works and know what you are doing.
+An environment created by conda, micromamba, or pyvenv is essentially just a folder/directory on the disk. This directory contains configuration files and dependency programs. It has a special structure to allow environment manager programs (conda/micromamba/pyvenv) to read. [Read this](../basic_tools/package_management_concept.md#create-an-environment-for-a-set-of-programs) for more detail.
+
+Do not change any content in an environment directory manually, except you understand how environment manager works.
 
 ## Install a program
 
-Please make sure you have [micromamba ready to use](./Execute%20programs.md#prepare-micromamba). Before setting up virtual environments, it is highly recommended to setup a `~/.mambarc` file with the following content. It is explained in the later [section](#setting-up-config-file).
+New users on BLIS should have micromamba ready to use directly. You should see your prompt as:
+
+```sh
+(base) [user@blis ~]$ 
+```
+
+The `(base)` in front means you have the **base** environment activated, which located in `~/.micromamba`. Note this is BLIS only. If this is not seen, please make sure you have [micromamba ready to use](./Execute%20programs.md#prepare-micromamba). Before setting up virtual environments, it is highly recommended to setup a `~/.mambarc` file with the following content (new users on BLIS should have it already, check by yourself). It is explained in the later [section](#setting-up-config-file).
 
 ```YAML
 envs_dirs:
@@ -26,14 +34,15 @@ auto_activate_base: true
 
 Create an environment to host the software or a pipe line you want to run. Then you have all control over the environment you created.
 
+````{caution}
+Do not use `-n` or `--name` to create an environment, it will be created in your home directory by default, which has a quota on disk space. Putting the environment on the shared drive as shown below does not reduce your home directory quota.
+````
+
 ```{code-block} shell
 ---
 caption: This block includes prompt, select command to copy
 ---
-# 0. Make sure you have your shell initiated with micromamba (skip if done before)
-[user@blis ~]$ micromamba shell init -s bash -p ~/micromamba-base
-[user@blis ~]$ source ~/.bashrc
-[user@blis ~]$ micromamba activate
+# 0. Make sure you have your shell initiated with micromamba
 (base) [user@blis ~]$
 
 # 1. Create environment called multi-omics and activate it
@@ -44,7 +53,9 @@ caption: This block includes prompt, select command to copy
 (/vol/local/conda_envs/multi-omics) [user@blis ~]$ micromamba install -c conda-forge python
 ```
 
-:::{tip}
+I guess you have noticed that we have setup the channels in `~/.mambarc`, so most of the time you can omit the `-c conda-forge` part for explicitly specifying the channel where the software comes. In the example above, python will be installed from `conda-forge`.
+
+````{tip}
 I usually create a "soft link" to `/vol/local/conda_envs/` in home directory for easier access to all the environments. For example,
 
 ```sh
@@ -60,7 +71,7 @@ ln -s /vol/local/conda_envs/ ~/micromamba-base/envs
 ```
 
 This needs to be done when the target directory does not exist (before creating any "named" environment). The advantage of this method is that you can create environment in the shared environment directory using `-n` and may be more compatible with most program tutorial (the old ones usually assume you have sudo rights and unlimited HOME directory, which is not the case in any of the server systems.) Use this method with caution!
-:::
+````
 
 ### Do not follow tutorial with yml/yaml file
 

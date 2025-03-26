@@ -14,7 +14,7 @@ maxdepth: 2
 IBL_servers/Intro.md
 IBL_servers/Server configurations.md
 IBL_servers/Execute programs.md
-IBL_servers/Program setup.md
+IBL_servers/Install programs.md
 ```
 
 ```{toctree}
@@ -37,7 +37,7 @@ alice/alice_ibl.md
 
 ```{toctree}
 ---
-caption: Basic bioinformatics tools
+caption: Tools
 maxdepth: 2
 ---
 basic_tools/package_management_concept.md

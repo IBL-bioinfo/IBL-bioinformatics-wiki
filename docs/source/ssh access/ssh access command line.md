@@ -64,10 +64,10 @@ Note:
 
 There are four steps:
 
-1. [Creeate ssh key pair](#create-ssh-key-pair)
-2. [Let server recognise your key](#let-server-recognise-your-key)
-3. [Configure local machine to use a correct key](#configure-local-machine-to-use-a-correct-key)
-4. [Connect](#connect)
+1. [Creeate ssh key pair](#1-create-ssh-key-pair)
+2. [Let server recognise your key](#2-let-server-recognise-your-key)
+3. [Configure local machine to use a correct key](#3-configure-local-machine-to-use-a-correct-key)
+4. [Connect](#4-connect)
 
 (create-ssh-key-pair)=
 ### 1. Create ssh key pair

@@ -16,7 +16,7 @@ The program is available, but please follow [execute programs tutorial](../IBL_s
 
 ## Why choose micromamba instead of conda on BLIS?
 
-[Instructions on how micromamba works](../IBL_servers/Program%20setup.md) on BLIS.
+[Instructions on how micromamba works](../IBL_servers/Install%20programs.md) on BLIS.
 
 `micromamba` is a standalone reimplementation of conda package manager in C++. It provides same command line interface as conda. In addition to conda:
 
@@ -83,7 +83,7 @@ Output should be:
 4. Now micromamba.exe is in your PATH, you can initiate your shell with the following command:
 
    ```shell
-   micromamba.exe shell init -s bash -p $env:HOME/micromamba-base
+   micromamba.exe shell init -s bash -r $env:HOME/micromamba-base
    ```
 
    Note you need to answer "y" for long path name support if you have administrator rights. Else "n" to skip it. Now **restart** your shell, do the following:
@@ -133,7 +133,7 @@ Now inside extracted directory, find `Library\bin\micromamba.exe` file, move it 
 $Env:MAMBA_ROOT_PREFIX=$HOME+"\micromamba-base"
 
 # Initialize the shell
-.\micromamba.exe shell init -s powershell -p $Env:MAMBA_ROOT_PREFIX
+.\micromamba.exe shell init -s powershell -r $Env:MAMBA_ROOT_PREFIX
 ```
 
 After **restarting** your PowerShell, you can start using it:
