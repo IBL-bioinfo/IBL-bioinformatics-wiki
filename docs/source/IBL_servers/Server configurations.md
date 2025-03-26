@@ -77,7 +77,7 @@ For program environment management and setup, we use **Micromamba** instead of C
 1. **Faster Dependency Resolution**: `micromamba` resolves dependencies significantly faster, reducing resolution times from 10 minutes to as little as 1 minute.
 2. **Simpler Maintenance**: `micromamba` is a single executable with minimal dependencies, whereas Conda requires multiple libraries and often root privileges for installation and upgrades.
 3. **Command Compatibility**: The commands for `micromamba`, such as `install` and `--channels`, are the same as those in Conda. Additionally, environments created with `micromamba` are largely compatible with Conda, allowing you to follow most online tutorials, such as those involving the `activate.d` directory.
-4. **Shared Server Optimization**: On shared servers, you often need to tweak `conda create` and `conda install` commands to set up environments in shared storage. It makes not much more effort in changing `conda` to `micromamba`.
+4. **Shared Server Optimization**: On shared servers, you often need to tweak `conda create` and `conda install` commands to set up environments in shared storage. It takes same effort to use `micromamba`.
 
 ### How to use Micromamba on IBL servers
 
