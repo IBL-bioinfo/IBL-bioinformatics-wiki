@@ -9,7 +9,7 @@ As a small server cluster intended for testing and teaching, we **do not** plan 
 
 ```` {admonition} Remove your data after use
 :class: warning
-We kindly request all users to be mindful of the limited storage available. To ensure fair usage and accommodate everyone's needs, please remove your data once it is no longer required. Your cooperation is greatly appreciated. **Research Drive** is one option of backing up your data. For that `rclone` tool is avilable, notify adminstrator if not.
+We kindly request all users to be mindful of the limited storage available. To ensure fair usage and accommodate everyone's needs, please remove your data once it is no longer required. Your cooperation is greatly appreciated. **Research Drive** is one option of backing up your data. For that `rclone` tool is avilable, notify adminstrator if not. In Research Drive webpage, you click top right on your name, then "settings", go to the left, click "Security", scroll to the bottom, create a new "App password". The weblink is shown below in the bottom, you need to **remove** the last two parts `/remote.php/webdav/` when asked. Now you have all necessary information. Detailed instructions will follow soon.
 ````
 
 Most of the IBL servers have a small but fast SSD for `/home` directory storage, plus one or more slower but much larger HDD for storage of data. The HDDs are mounted on directory `/vol/local`, if there is extra disks, we mount them on `/vol/local1`, `/vol/local2` etc. You can use command `df -h` to check:
