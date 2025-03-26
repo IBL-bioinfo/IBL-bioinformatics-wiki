@@ -158,3 +158,26 @@ Tmux is a similar program, allows you to run a shell in the background, it shoul
 3. `tmux a -t <session_name>` will "re-attach" the session.
 
 [A beginner's guide to tmux](https://www.redhat.com/en/blog/introduction-tmux-linux)
+
+## Run a command in an environment without activating
+
+Sometimes you may need to run a program in a script, which may require multiple different software environments. You can activate them in a script, but when this is not possible, for example running the command in a sub-shell, then you need to know how to run a program in one command without activating the environment in your script (when it does not work).
+
+There are two ways, given as examples:
+
+1. Recommended:
+
+     ```sh
+     cmd="eval \"\$(micromamba shell hook --shell=posix)\" && micromamba activate /vol/local/conda_envs/bakta && echo \$BAKTA_DB"
+     echo $cmd
+     eval $cmd
+     ```
+
+2. Not recommended:
+     It does not respect activation hooks (`activate.d`)
+
+     ```sh
+     cmd="micromamba run -p ~/genvs/bakta echo \$BAKTA_DB"
+     echo $cmd
+     eval $cmd
+     ```
