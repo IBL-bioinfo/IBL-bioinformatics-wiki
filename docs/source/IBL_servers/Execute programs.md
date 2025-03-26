@@ -139,10 +139,22 @@ rsync -aP path/to/dir blis:/vol/data/username/
 `-a` means archiving the directory, it will copy everything associated with the file, including its creation time, permissions etc. It implies `-rlptgoD`.  
 `-P` to show progress.
 
-## How to run long jobs using `screen`
+## How to run long jobs
 
-If you need to run a long job that exceeds the duration of your SSH connection, you can use `screen`. This program creates a new Bash shell that runs within the `screen` program, allowing you to run commands even if your SSH connection is interrupted. To use `screen`, simply execute the command, and a new shell will open. From here, you can execute commands as usual. To detach from the shell and leave the program running, press **Ctrl + a**, release the buttones, then press **d**. You can check the status of the program using `htop` or `top`. Once detached, you can safely exit the SSH connection. To come back to your running job, check its output, etc., you can execute `screen -r` to attach to the shell that have your running program.
+### Using `screen`
+
+If you need to run a long job that exceeds the duration of your SSH connection, you can use `screen`. This program creates a new Bash shell that runs within the `screen` program, allowing you to run commands even if your SSH connection is interrupted. To use `screen`, simply execute the command, and a new shell will open. From here, you can execute commands as usual. To detach from the shell and leave the program running, press **Ctrl + a**, release the buttons, then press **d**. You can check the status of the program using `htop` or `top`. Once detached, you can safely exit the SSH connection. To come back to your running job, check its output, etc., you can execute `screen -r` to attach to the shell that have your running program.
 
 When multiple `screen` is needed and you find it hard to track which is doing which job, you can use `screen -S [session name]` command to give each screen a name. Then use `screen -r [session name]` to resume to that session.
 
 `screen` might also works on ALICE, but please do not use `screen` for super long jobs on ALICE. Long jobs should only run in a slurm queue.
+
+### Using `tmux`
+
+Tmux is a similar program, allows you to run a shell in the background, it should be available on all servers, let administrators know if not.
+
+1. `tmux new -s <session_name>` will create a session with the name you specify
+2. `Ctrl + b` is the magic key stroke in tmux, `Ctrl + b` and then press `d` will "detach" from the terminal and put it in the background.
+3. `tmux a -t <session_name>` will "re-attach" the session.
+
+[A beginner's guide to tmux](https://www.redhat.com/en/blog/introduction-tmux-linux)
