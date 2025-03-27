@@ -2,18 +2,16 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
-We manage our softwares using [conda](https://docs.conda.io/en/latest/) virtual environments, which have become a standard tool in the field and many other tools are compatible with its standard. To avoid confusion, we will use the term "environment" to refer specifically to conda-compatible virtual environments. By using environments, we can easily manage software dependencies and avoid conflicts between different software versions.
+We manage our software using conda-compatible **environments**, which have become a standard in small scale server configurations. By using environments, we can easily manage software dependencies and avoid conflicts between different software versions. [More info](../basic_tools/package_management_concept.md#software-environment).
 
-On BLIS, we use a tool called **[micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)**, a lightweight and efficient alternative to conda, to manage these environments. A shared directory dedicated to storing, sharing, and modifying environments is created on BLIS. By default, all users on BLIS should be in a premission group called "condablis". This group grant users access to our shared environments.
+On BLIS, we use a tool called **[micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)**, a lightweight and efficient alternative to conda, to manage these environments. A shared directory `/vol/local/conda_envs` dedicated to storing, sharing, and modifying environments is created on BLIS. By default, all users on BLIS should be in a group called `condablis`. This group grant users access to our shared environments.
 
-Please make sure you are in "condablis" group by running `groups` command. You should see "condablis" in the output of this command. If not, please contact server admin.
+To make sure you are in "condablis" group, you can use `groups` command. You should see "condablis" in the output of this command. If not, please contact server admin.
 
 ```sh
-$ groups
+(base) [user@blis ~]$ groups
 sgr condablis
 ```
-
-To manage software used by different users on BLIS, we use virtual environments located at `/vol/local/conda_envs`. You can check if the environment for the software you want to use already exists at this location. If not, you may need to create one and install the software yourself. For detailed instructions on how to create virtual environments and install software, please finish [program setup](./Install%20programs.md) guide.
 
 ## Prepare micromamba
 
@@ -54,6 +52,65 @@ Output should be:
 ```
 
 If you see something else, please try to restart your shell and repeat the above steps. Contact for help if still no success.
+
+## Execute a program already installed
+
+In the base system, there is almost none bioinformatics related program installed. You cannot directly run programs like `phylophlan` when not in a corresponding environment. To use `phylophlan` you have to activate the environment that have this program installed:
+
+```sh
+(base) [user@blis ~]$ micromamba activate /vol/local/conda_envs/phylophlan
+(/vol/local/conda_envs/phylophlan) [user@blis ~]$ phylophlan -v
+PhyloPhlAn version 3.0.67 (24 August 2022)
+```
+
+You may notice the prefix of the environment `/vol/local/conda_envs`. We store all working environments here. You can check if the environment for the software you want to use already exists at this location. 
+
+You can check if the software you want already exists in the shared location `/vol/local/conda_envs`.
+
+Check if there is an environment called "phylophlan" to make a phylogenetic tree.
+
+```sh
+(base) [user@blis ~]$ ls -l /vol/local/conda_envs/ | grep phylophlan
+find: ‘/vol/local/conda_envs/ams_2022/ams2022.105’: Permission denied
+drwxr-sr-x.  16 another_user    condablis  4096 Aug  4  2023 phylophlan
+```
+
+Yes! Found one! You can use it after activating the environment by (please ignore the "Permission denied" lines):
+
+```sh
+(base) [user@blis ~]$ micromamba activate /vol/local/conda_envs/phylophlan
+(/vol/local/conda_envs/phylophlan) [user@blis ~]$ phylophlan -v
+PhyloPhlAn version 3.0.67 (24 August 2022)
+```
+
+Check if there is an executable (program / script) called "macs2" or "macs3" for ChIPSeq data analysis, here I use case-insensitive search, which uses `-iname` instead of `-name`.
+
+```sh
+(base) [user@blis ~]$ find /vol/local/conda_envs -type f -iname macs* -executable
+/vol/local/conda_envs/macs3/bin/macs3
+```
+
+Then you know you will have "macs3" program after activating the environment `/vol/local/conda_envs/macs3`.
+
+You may find your target program located in many different environments
+
+```sh
+(base) [user@blis ~]$ find /vol/local/conda_envs/ -type f -name diamond -executable
+/vol/local/conda_envs/bakta/bin/diamond
+/vol/local/conda_envs/antismash8_cda1015/bin/diamond
+/vol/local/conda_envs/cblaster/bin/diamond
+/vol/local/conda_envs/phylophlan/bin/diamond
+/vol/local/conda_envs/quasan/bin/diamond
+/vol/local/conda_envs/decrippter/bin/diamond
+```
+
+Try activate a few and see if it fits your need.
+
+If the target environment or program or specific version of a program is not found, you may need to create an environment at this location and install the software yourself. For detailed instructions, please check [program setup](./Install%20programs.md).
+
+## Do not analyse large dataset in your home directory
+
+One IBL server maybe powerful, but not when used by many colleagues. Applying quota system on home directory `~` is then necessary for the sustainable use of IBL servers. It comes with a trade-off, which you cannot use your `~` freely. This is a general rule in using Linux servers, you will find the quota system on almost all shared servers, including [ALICE](https://pubappslu.atlassian.net/wiki/x/wIA8Ag).
 
 ## Plan and notify others before execute long program
 
