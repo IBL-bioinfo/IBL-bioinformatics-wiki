@@ -9,7 +9,7 @@ On BLIS, we use a tool called **[micromamba](https://mamba.readthedocs.io/en/lat
 To make sure you are in "condablis" group, you can use `groups` command. You should see "condablis" in the output of this command. If not, please contact server admin.
 
 ```sh
-(base) [user@blis ~]$ groups
+[user@blis ~]$ groups
 sgr condablis
 ```
 
@@ -22,13 +22,13 @@ Note, you only need to do this **once** on **one** server.
 Here is how (assuming you are using default shell `bash`):
 
 ```sh
-micromamba shell init -s bash -r ~/micromamba-base
+[user@blis ~]$ micromamba shell init -s bash -r ~/micromamba-base
 ```
 
 Above command will create a "base" environment at your home directory. Then a script will be put into your `~/.bashrc` file. Now you need to run the script by:
 
 ```sh
-source ~/.bashrc
+[user@blis ~]$ source ~/.bashrc
 ```
 
 Next time when you start your `bash` shell (at login), the script will be automatically executed.
@@ -36,7 +36,7 @@ Next time when you start your `bash` shell (at login), the script will be automa
 Now you should be able to run this command:
 
 ```sh
-micromamba info
+[user@blis ~]$ micromamba info
 ```
 
 Output should be:
@@ -53,21 +53,18 @@ Output should be:
 
 If you see something else, please try to restart your shell and repeat the above steps. Contact for help if still no success.
 
-## Execute a program already installed
+## Execute an already installed program
 
-In the base system, there is almost none bioinformatics related program installed. You cannot directly run programs like `phylophlan` when not in a corresponding environment. To use `phylophlan` you have to activate the environment that have this program installed:
+In the base system, there is almost none bioinformatics related program. You cannot directly run programs like `phylophlan` when not in a corresponding environment. Activate the environment first:
 
 ```sh
 (base) [user@blis ~]$ micromamba activate /vol/local/conda_envs/phylophlan
+# Note your prompt changes indicating you changed environment
 (/vol/local/conda_envs/phylophlan) [user@blis ~]$ phylophlan -v
 PhyloPhlAn version 3.0.67 (24 August 2022)
 ```
 
-You may notice the prefix of the environment `/vol/local/conda_envs`. We store all working environments here. You can check if the environment for the software you want to use already exists at this location. 
-
-You can check if the software you want already exists in the shared location `/vol/local/conda_envs`.
-
-Check if there is an environment called "phylophlan" to make a phylogenetic tree.
+You may notice the prefix of the environment `/vol/local/conda_envs`. We store all working environments here. You can check if the environment for target software already exists or not. 
 
 ```sh
 (base) [user@blis ~]$ ls -l /vol/local/conda_envs/ | grep phylophlan
@@ -75,24 +72,7 @@ find: ‘/vol/local/conda_envs/ams_2022/ams2022.105’: Permission denied
 drwxr-sr-x.  16 another_user    condablis  4096 Aug  4  2023 phylophlan
 ```
 
-Yes! Found one! You can use it after activating the environment by (please ignore the "Permission denied" lines):
-
-```sh
-(base) [user@blis ~]$ micromamba activate /vol/local/conda_envs/phylophlan
-(/vol/local/conda_envs/phylophlan) [user@blis ~]$ phylophlan -v
-PhyloPhlAn version 3.0.67 (24 August 2022)
-```
-
-Check if there is an executable (program / script) called "macs2" or "macs3" for ChIPSeq data analysis, here I use case-insensitive search, which uses `-iname` instead of `-name`.
-
-```sh
-(base) [user@blis ~]$ find /vol/local/conda_envs -type f -iname macs* -executable
-/vol/local/conda_envs/macs3/bin/macs3
-```
-
-Then you know you will have "macs3" program after activating the environment `/vol/local/conda_envs/macs3`.
-
-You may find your target program located in many different environments
+Many programs are dependencies of others. You may not need to create a dedicated environment for them. Using `diamond` as an example:
 
 ```sh
 (base) [user@blis ~]$ find /vol/local/conda_envs/ -type f -name diamond -executable
@@ -104,13 +84,68 @@ You may find your target program located in many different environments
 /vol/local/conda_envs/decrippter/bin/diamond
 ```
 
-Try activate a few and see if it fits your need.
+Try activate a few (`/vol/local/conda_envs/bakta`, `/vol/local/conda_envs/cblaster` for example) and see if it fits your need.
 
-If the target environment or program or specific version of a program is not found, you may need to create an environment at this location and install the software yourself. For detailed instructions, please check [program setup](./Install%20programs.md).
+Case-insensitive search, which uses `-iname` instead of `-name`; wild-card matching:
+
+```sh
+(base) [user@blis ~]$ find /vol/local/conda_envs -type f -iname macs* -executable
+/vol/local/conda_envs/macs3/bin/macs3
+```
+
+If the target environment or program or specific version of a program is not found, you may need to create an environment and install the software yourself. For detailed instructions, please check [program setup](./Install%20programs.md).
 
 ## Do not analyse large dataset in your home directory
 
-One IBL server maybe powerful, but not when used by many colleagues. Applying quota system on home directory `~` is then necessary for the sustainable use of IBL servers. It comes with a trade-off, which you cannot use your `~` freely. This is a general rule in using Linux servers, you will find the quota system on almost all shared servers, including [ALICE](https://pubappslu.atlassian.net/wiki/x/wIA8Ag).
+One IBL server maybe powerful, but not when used by many colleagues, especially on data storage. Applying quota system on home directory `~/` is then necessary for the sustainable use. It means that you cannot use your `~/` freely. As a general rule in using Linux servers, you will find the quota system on almost all shared servers, including [ALICE](https://pubappslu.atlassian.net/wiki/x/wIA8Ag).
+
+To check how much quota has left for you:
+
+```sh
+# Note you can only see the information when you are in ~ or any of its subdirectories.
+[user@blis ~]$ quota -s
+Disk quotas for user username (uid 148600000):
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+/dev/mapper/rl-home
+                 16073M  20480M  25600M            154k       0       0
+# Meaning you have used 16GB of the 20GB.
+# You can store up to 25GB but after exceeding 20GB,
+# you will be given a grace time of few days, then
+# your home directory will be locked until you remove excess data
+```
+
+### Run analysis in shared drive
+
+tldr: **Create a directory with your user name** in `/vol/local/`, then store your data and analysis in it.
+
+Almost all bioinformatics analysis requires operating many Gigabytes of data. Since home directory `~/` is not a good place, we have a general storage space on each server, which is usually mounted on directory `/vol/local`, if there is extra disks, we mount them on `/vol/local1`, `/vol/local2` etc. You can use command `df -h` to check:
+
+```sh
+[user@blis ~]$ df -h /vol/*
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda        7.3T  622G  6.7T   9% /vol/local
+/dev/nvme1n1    954G  442G  512G  47% /vol/local1
+```
+
+Note the `/dev/nvme1n1` is an `nvme` device, meaning it is an SSD. For IO rich commands, SSD might save your time. Not like ALICE, we do not have a common network location for storage which you can access from any server. It is quite complex and expensive to maintain, so we will not implement it in the near future.
+
+````{admonition} Data not in your username directory will be removed
+:class: warning
+
+Please always store your data and analysis in `/vol/local/<YOUR-USERNAME>`. Data stored elsewhere may be removed by administrators without prior notice.
+````
+
+````{admonition} Program fail when HOME is full
+:class: warning
+
+When a program fails, always check the quota for your home directory. Some programs may attempt to write temporary files to your home directory, even if your analysis is being conducted elsewhere. If your home directory is full, this can cause errors that are not always clearly reported. To resolve this:
+
+1. Check your quota using the `quota -s` command.
+2. Clean up your home directory by removing unnecessary files.
+3. Retry running the program.
+
+If the issue persists, contact the administrator to temporarily increase your quota.
+````
 
 ## Plan and notify others before execute long program
 
@@ -133,29 +168,11 @@ Once you have done [program installation](./Install%20programs.md), it is time t
 
 ## File transfer
 
-If you're planning to work with your own dataset on the servers, you'll need to transfer it first. To do this, you need to have already set up an SSH connection BLIS (`blis`).
+To transfer your files from or to the server, you need to have already set up an SSH connection BLIS (`blis`). For MobaXterm or WinSCP+PuTTY users, you can drag and drop in the app's file explorer. For MobaXterm, it is on the left.
 
-For WinSCP+PuTTY users, just use the GUI to transfer.
+SCP and `rsync` are recommanded.
 
-Please bare in mind that there is a quota system for your home directory `/home/USERNAME`. It should mainly be used to store settings, code, own apps. Not for data.
-
-To check how much quota has left for you:
-
-```sh
-quota -s
-Disk quotas for user duc (uid 148600000):
-     Filesystem   space   quota   limit   grace   files   quota   limit   grace
-/dev/mapper/rl-home
-                 16073M  20480M  25600M            154k       0       0
-# Meaning you have used 16GB of the 20GB.
-# You can store up to 25GB but after exceeding 20GB,
-# you will be given a grace time of few days, then
-# your home directory will be locked until you remove excess data
-```
-
-Two programs you can use to transfer data: `scp` and `rsync`
-
-### scp
+### SCP
 
 SCP for <u>s</u>ecure <u>c</u>o<u>p</u>y, or ssh cp, or safe cp...
 
