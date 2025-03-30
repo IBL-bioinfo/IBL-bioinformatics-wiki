@@ -51,13 +51,13 @@ TEMP/CACHE dir for pkgs:
 
 Want others to change your environment? Do
 
-`chmod g+w -R [ENVDIR] # Not tested`
+`chmod g+w -R [ENVDIR]`
 
-Generate a yaml file when you think your environment is working.
+Generate a `*.yaml` file when you think your environment is working.
  
 Example `.condarc` file
 
-```
+```YAML
 channels:
   - bioconda
   - conda-forge

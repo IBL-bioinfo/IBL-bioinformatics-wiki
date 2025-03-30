@@ -15,6 +15,14 @@ sgr condablis
 
 ## Prepare micromamba
 
+For new users, if you see `(base)` in front of your prompt after login:
+
+```sh
+(base) [user@blils ~]$
+```
+
+It means you have micromamba setup ready for use, please skip and go to [next section](#execute-an-already-installed-program). Otherwise, please continue.
+
 The program `micromamba` is already installed on the server, but you need to do some configuration before you can activate and create environments.
 
 Note, you only need to do this **once** on **one** server.
@@ -53,9 +61,25 @@ Output should be:
 
 If you see something else, please try to restart your shell and repeat the above steps. Contact for help if still no success.
 
+New users should have `~/.mambarc` file with the following content:
+
+```YAML
+envs_dirs:
+  - /vol/local/conda_envs
+pkgs_dirs:
+  - /vol/local/.conda_cache/[USERNAME]
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+auto_activate_base: true
+```
+
+It is explained in [ALICE - conda config section](./Install%20programs.md#setting-up-config-file).
+
 ## Execute an already installed program
 
-In the base system, there is almost none bioinformatics related program. You cannot directly run programs like `phylophlan` when not in a corresponding environment. Activate the environment first:
+In the base system, there is no bioinformatics related program. You cannot directly run programs like `phylophlan` when not in a corresponding environment. Activate the environment first:
 
 ```sh
 (base) [user@blis ~]$ micromamba activate /vol/local/conda_envs/phylophlan
@@ -67,9 +91,10 @@ PhyloPhlAn version 3.0.67 (24 August 2022)
 You may notice the prefix of the environment `/vol/local/conda_envs`. We store all working environments here. You can check if the environment for target software already exists or not. 
 
 ```sh
-(base) [user@blis ~]$ ls -l /vol/local/conda_envs/ | grep phylophlan
-find: ‘/vol/local/conda_envs/ams_2022/ams2022.105’: Permission denied
-drwxr-sr-x.  16 another_user    condablis  4096 Aug  4  2023 phylophlan
+# `ls` - add forward slash in the end to list items in target directory, 
+# `|` - pipe output to the following `grep` which filter the input by `phylophlan`
+(base) [user@blis ~]$ ls /vol/local/conda_envs/ | grep phylophlan
+phylophlan
 ```
 
 Many programs are dependencies of others. You may not need to create a dedicated environment for them. Using `diamond` as an example:
@@ -93,7 +118,7 @@ Case-insensitive search, which uses `-iname` instead of `-name`; wild-card match
 /vol/local/conda_envs/macs3/bin/macs3
 ```
 
-If the target environment or program or specific version of a program is not found, you may need to create an environment and install the software yourself. For detailed instructions, please check [program setup](./Install%20programs.md).
+If the target environment or program or specific version of a program is not found, you may need to create an environment and install the software yourself. For detailed instructions, please check [program setup](./Install%20programs.md). You can install some frequently used small programs in your `base` environment. If it is activated by default, you can use them directly.
 
 ## Do not analyse large dataset in your home directory
 
