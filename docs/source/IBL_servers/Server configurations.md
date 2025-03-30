@@ -1,5 +1,11 @@
 # Server configurations
 
+```{contents}
+---
+depth: 3
+---
+```
+
 ## General storage
 
 ```` {admonition} No backup
