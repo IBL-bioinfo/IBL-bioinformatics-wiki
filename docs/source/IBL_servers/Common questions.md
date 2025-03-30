@@ -12,7 +12,7 @@ Currently, our SLACK group (you get invitation from intake email) is recommended
 
 We have a home on GitHub called [IBL-bioinfo](https://github.com/IBL-bioinfo). Any suggestions related to this documentation can also be reported over there, go to [issues](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki/issues) page of [this repository](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki).
 
-Please note that there is *no dedicated** administrators for the IBL bioinformatics atelier, leave a message in above locations is much better than physically wandering around in the building to find us.
+Please note that there is **no dedicated** administrators for the IBL bioinformatics atelier, leave a message in above locations is much better than physically wandering around in the building to find us.
 
 ## Home directory quota
 

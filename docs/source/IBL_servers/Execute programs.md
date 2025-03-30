@@ -24,7 +24,7 @@ sgr condablis
 For new users, if you see `(base)` in front of your prompt after login:
 
 ```sh
-(base) [user@blils ~]$
+(base) [user@blis ~]$
 ```
 
 It means you have micromamba setup ready for use, please skip and go to [next section](#execute-an-already-installed-program). Otherwise, please continue.
@@ -204,7 +204,7 @@ Once you have done [program installation](./Install%20programs.md), it is time t
 
 To transfer your files from or to the server, you need to have already set up an SSH connection BLIS (`blis`). For MobaXterm or WinSCP+PuTTY users, you can drag and drop in the app's file explorer. For MobaXterm, it is on the left.
 
-SCP and `rsync` are recommanded.
+SCP and `rsync` are recommended.
 
 ### SCP
 
