@@ -67,6 +67,7 @@ Output should be:
 
 If you see something else, please try to restart your shell and repeat the above steps. Contact for help if still no success.
 
+{#mambarc-setup}
 New users should have `~/.mambarc` file with the following content:
 
 ```YAML
@@ -165,6 +166,8 @@ Note the `/dev/nvme1n1` is an `nvme` device, meaning it is an SSD. For IO rich c
 
 Please always store your data and analysis in `/vol/local/<YOUR-USERNAME>`. Data stored elsewhere may be removed by administrators without prior notice.
 ````
+
+{#program-fail-home-full}
 
 ````{admonition} Program fail when HOME is full
 :class: warning

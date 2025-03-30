@@ -15,6 +15,7 @@ IBL_servers/Intro.md
 IBL_servers/Server configurations.md
 IBL_servers/Execute programs.md
 IBL_servers/Install programs.md
+IBL_servers/Common questions.md
 ```
 
 ```{toctree}

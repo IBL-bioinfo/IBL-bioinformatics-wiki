@@ -37,7 +37,7 @@ Systems like [ALICE](../alice/alice_ibl.md) and our [IBL servers](../IBL_servers
 
 Here I will only mention basic commands to manage Conda environments, for how to use Environment Modules on ALICE or other HPC systems, please check [this guide](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37749316/Using+available+software+-+Environment+Modules).
 
-[This tutorial](./micromamba.md) will guide you to install or run `micromamba` on IBL Server BLIS and your computer. For conda (miniconda for minimal install of conda) and mamba install, please refer to [this link](https://docs.conda.io/en/latest/miniconda.html#) or [this link](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html). Note, unless instructed (like [here](./micromamba.md)), please do not install any of this in a multi-user system.
+New users on BLIS should have micromamba ready to use, for other servers or on your own computer, check [this tutorial](./micromamba.md). For conda (miniconda for minimal install of conda) and mamba install, please refer to [this link](https://docs.conda.io/en/latest/miniconda.html#) or [this link](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html). Note, unless instructed (like [here](./micromamba.md)), please do not install any of this in a multi-user system.
 
 ## Basic commands
 
