@@ -18,3 +18,9 @@ div.sphinxsidebar li.toctree-l1 {
 h1.logo {
     font-size: 1.4rem;
 }
+
+div.footer {
+    width: min(70rem, 95%);
+    padding-right: 1rem;
+    text-align: right;
+}

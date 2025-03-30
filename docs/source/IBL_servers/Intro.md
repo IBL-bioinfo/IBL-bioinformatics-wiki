@@ -4,6 +4,12 @@
 
 IBL now have 3 workstation level PCs setup to server bioinformatics requirements within IBL. Every one is welcome to use and share their expertise within our community!
 
+```{contents}
+---
+depth: 3
+---
+```
+
 ## Servers and specs
 
 Except FRODO, all of servers are powered by [Rocky linux 8](https://rockylinux.org/about), a production-ready downstream version of Red Hat Enterprise Linux. FRODO is now [Rocky linux 9](https://rockylinux.org/news/rocky-linux-9-3-ga-release/). In the future, all servers will be upgraded to Rocky linux 9 to keep up with [ALICE](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519378/About+ALICE). Ethernet connection of all servers have a speed of 1000 Gb/s. There is no sub-network for the servers.

@@ -2,20 +2,32 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
-We manage our softwares using [conda](https://docs.conda.io/en/latest/) virtual environments, which have become a standard tool in the field and many other tools are compatible with its standard. To avoid confusion, we will use the term "environment" to refer specifically to conda-compatible virtual environments. By using environments, we can easily manage software dependencies and avoid conflicts between different software versions.
+We manage our software using conda-compatible **environments**, which have become a standard in small scale server configurations. By using environments, we can easily manage software dependencies and avoid conflicts between different software versions. [More info](../basic_tools/package_management_concept.md#software-environment).
 
-On BLIS, we use a tool called **[micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)**, a lightweight and efficient alternative to conda, to manage these environments. A shared directory dedicated to storing, sharing, and modifying environments is created on BLIS. By default, all users on BLIS should be in a premission group called "condablis". This group grant users access to our shared environments.
+```{contents}
+---
+depth: 3
+---
+```
 
-Please make sure you are in "condablis" group by running `groups` command. You should see "condablis" in the output of this command. If not, please contact server admin.
+On BLIS, we use a tool called **[micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)**, a lightweight and efficient alternative to conda, to manage these environments. A shared directory `/vol/local/conda_envs` dedicated to storing, sharing, and modifying environments is created on BLIS. By default, all users on BLIS should be in a group called `condablis`. This group grant users access to our shared environments.
+
+To make sure you are in "condablis" group, you can use `groups` command. You should see "condablis" in the output of this command. If not, please contact server admin.
 
 ```sh
-$ groups
+[user@blis ~]$ groups
 sgr condablis
 ```
 
-To manage software used by different users on BLIS, we use virtual environments located at `/vol/local/conda_envs`. You can check if the environment for the software you want to use already exists at this location. If not, you may need to create one and install the software yourself. For detailed instructions on how to create virtual environments and install software, please finish [program setup](./Install%20programs.md) guide.
-
 ## Prepare micromamba
+
+For new users, if you see `(base)` in front of your prompt after login:
+
+```sh
+(base) [user@blis ~]$
+```
+
+It means you have micromamba setup ready for use, please skip and go to [next section](#execute-an-already-installed-program). Otherwise, please continue.
 
 The program `micromamba` is already installed on the server, but you need to do some configuration before you can activate and create environments.
 
@@ -24,13 +36,13 @@ Note, you only need to do this **once** on **one** server.
 Here is how (assuming you are using default shell `bash`):
 
 ```sh
-micromamba shell init -s bash -r ~/micromamba-base
+[user@blis ~]$ micromamba shell init -s bash -r ~/micromamba-base
 ```
 
 Above command will create a "base" environment at your home directory. Then a script will be put into your `~/.bashrc` file. Now you need to run the script by:
 
 ```sh
-source ~/.bashrc
+[user@blis ~]$ source ~/.bashrc
 ```
 
 Next time when you start your `bash` shell (at login), the script will be automatically executed.
@@ -38,7 +50,7 @@ Next time when you start your `bash` shell (at login), the script will be automa
 Now you should be able to run this command:
 
 ```sh
-micromamba info
+[user@blis ~]$ micromamba info
 ```
 
 Output should be:
@@ -54,6 +66,120 @@ Output should be:
 ```
 
 If you see something else, please try to restart your shell and repeat the above steps. Contact for help if still no success.
+
+{#mambarc-setup}
+New users should have `~/.mambarc` file with the following content:
+
+```YAML
+envs_dirs:
+  - /vol/local/conda_envs
+pkgs_dirs:
+  - /vol/local/.conda_cache/[USERNAME]
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+auto_activate_base: true
+```
+
+It is explained in [ALICE - conda config section](./Install%20programs.md#setting-up-config-file).
+
+## Execute an already installed program
+
+In the base system, there is no bioinformatics related program. You cannot directly run programs like `phylophlan` when not in a corresponding environment. Activate the environment first:
+
+```sh
+(base) [user@blis ~]$ micromamba activate /vol/local/conda_envs/phylophlan
+# Note your prompt changes indicating you changed environment
+(/vol/local/conda_envs/phylophlan) [user@blis ~]$ phylophlan -v
+PhyloPhlAn version 3.0.67 (24 August 2022)
+```
+
+You may notice the prefix of the environment `/vol/local/conda_envs`. We store all working environments here. You can check if the environment for target software already exists or not. 
+
+```sh
+# `ls` - add forward slash in the end to list items in target directory, 
+# `|` - pipe output to the following `grep` which filter the input by `phylophlan`
+(base) [user@blis ~]$ ls /vol/local/conda_envs/ | grep phylophlan
+phylophlan
+```
+
+Many programs are dependencies of others. You may not need to create a dedicated environment for them. Using `diamond` as an example:
+
+```sh
+(base) [user@blis ~]$ find /vol/local/conda_envs/ -type f -name diamond -executable
+/vol/local/conda_envs/bakta/bin/diamond
+/vol/local/conda_envs/antismash8_cda1015/bin/diamond
+/vol/local/conda_envs/cblaster/bin/diamond
+/vol/local/conda_envs/phylophlan/bin/diamond
+/vol/local/conda_envs/quasan/bin/diamond
+/vol/local/conda_envs/decrippter/bin/diamond
+```
+
+Try activate a few (`/vol/local/conda_envs/bakta`, `/vol/local/conda_envs/cblaster` for example) and see if it fits your need.
+
+Case-insensitive search, which uses `-iname` instead of `-name`; wild-card matching:
+
+```sh
+(base) [user@blis ~]$ find /vol/local/conda_envs -type f -iname macs* -executable
+/vol/local/conda_envs/macs3/bin/macs3
+```
+
+If the target environment or program or specific version of a program is not found, you may need to create an environment and install the software yourself. For detailed instructions, please check [program setup](./Install%20programs.md). You can install some frequently used small programs in your `base` environment. If it is activated by default, you can use them directly.
+
+## Do not analyse large dataset in your home directory
+
+One IBL server maybe powerful, but not when used by many colleagues, especially on data storage. Applying quota system on home directory `~/` is then necessary for the sustainable use. It means that you cannot use your `~/` freely. As a general rule in using Linux servers, you will find the quota system on almost all shared servers, including [ALICE](https://pubappslu.atlassian.net/wiki/x/wIA8Ag).
+
+To check how much quota has left for you:
+
+```sh
+# Note you can only see the information when you are in ~ or any of its subdirectories.
+[user@blis ~]$ quota -s
+Disk quotas for user username (uid 148600000):
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+/dev/mapper/rl-home
+                 16073M  20480M  25600M            154k       0       0
+# Meaning you have used 16GB of the 20GB.
+# You can store up to 25GB but after exceeding 20GB,
+# you will be given a grace time of few days, then
+# your home directory will be locked until you remove excess data
+```
+
+### Run analysis in shared drive
+
+tldr: **Create a directory with your user name** in `/vol/local/`, then store your data and analysis in it.
+
+Almost all bioinformatics analysis requires operating many Gigabytes of data. Since home directory `~/` is not a good place, we have a general storage space on each server, which is usually mounted on directory `/vol/local`, if there is extra disks, we mount them on `/vol/local1`, `/vol/local2` etc. You can use command `df -h` to check:
+
+```sh
+[user@blis ~]$ df -h /vol/*
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda        7.3T  622G  6.7T   9% /vol/local
+/dev/nvme1n1    954G  442G  512G  47% /vol/local1
+```
+
+Note the `/dev/nvme1n1` is an `nvme` device, meaning it is an SSD. For IO rich commands, SSD might save your time. Not like ALICE, we do not have a common network location for storage which you can access from any server. It is quite complex and expensive to maintain, so we will not implement it in the near future.
+
+````{admonition} Data not in your username directory will be removed
+:class: warning
+
+Please always store your data and analysis in `/vol/local/<YOUR-USERNAME>`. Data stored elsewhere may be removed by administrators without prior notice.
+````
+
+{#program-fail-home-full}
+
+````{admonition} Program fail when HOME is full
+:class: warning
+
+When a program fails, always check the quota for your home directory. Some programs may attempt to write temporary files to your home directory, even if your analysis is being conducted elsewhere. If your home directory is full, this can cause errors that are not always clearly reported. To resolve this:
+
+1. Check your quota using the `quota -s` command.
+2. Clean up your home directory by removing unnecessary files.
+3. Retry running the program.
+
+If the issue persists, contact the administrator to temporarily increase your quota.
+````
 
 ## Plan and notify others before execute long program
 
@@ -76,29 +202,11 @@ Once you have done [program installation](./Install%20programs.md), it is time t
 
 ## File transfer
 
-If you're planning to work with your own dataset on the servers, you'll need to transfer it first. To do this, you need to have already set up an SSH connection BLIS (`blis`).
+To transfer your files from or to the server, you need to have already set up an SSH connection BLIS (`blis`). For MobaXterm or WinSCP+PuTTY users, you can drag and drop in the app's file explorer. For MobaXterm, it is on the left.
 
-For WinSCP+PuTTY users, just use the GUI to transfer.
+SCP and `rsync` are recommended.
 
-Please bare in mind that there is a quota system for your home directory `/home/USERNAME`. It should mainly be used to store settings, code, own apps. Not for data.
-
-To check how much quota has left for you:
-
-```sh
-quota -s
-Disk quotas for user duc (uid 148600000):
-     Filesystem   space   quota   limit   grace   files   quota   limit   grace
-/dev/mapper/rl-home
-                 16073M  20480M  25600M            154k       0       0
-# Meaning you have used 16GB of the 20GB.
-# You can store up to 25GB but after exceeding 20GB,
-# you will be given a grace time of few days, then
-# your home directory will be locked until you remove excess data
-```
-
-Two programs you can use to transfer data: `scp` and `rsync`
-
-### scp
+### SCP
 
 SCP for <u>s</u>ecure <u>c</u>o<u>p</u>y, or ssh cp, or safe cp...
 

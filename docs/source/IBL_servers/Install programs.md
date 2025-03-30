@@ -4,6 +4,12 @@
 
 This tutorial provides guidance of creating environments and install programs in the created environments using `micromamba`. To install programs that are not available in any conda repositories, please ask administrators for help.
 
+```{contents}
+---
+depth: 3
+---
+```
+
 ## What is an environment
 
 An environment created by conda, micromamba, or pyvenv is essentially just a folder/directory on the disk. This directory contains configuration files and dependency programs. It has a special structure to allow environment manager programs (conda/micromamba/pyvenv) to read. [Read this](../basic_tools/package_management_concept.md#create-an-environment-for-a-set-of-programs) for more detail.
