@@ -47,7 +47,7 @@ Your `HOME` dir is limited to a quota of 15 GB, as a result, we created a shared
 
 TEMP/CACHE dir for pkgs:
 
-`/data1/projects/pi-vriesendorpb/.condaTemp`
+`/data1/projects/pi-vriesendorpb/.condaTemp/<username>`
 
 Want others to change your environment? Do
 
@@ -67,7 +67,7 @@ show_channel_urls: true
 envs_dirs:
   - /data1/projects/pi-vriesendorpb/condaEnvs
 pkgs_dirs:
-  - /data1/projects/pi-vriesendorpb/.condaTemp
+  - /data1/projects/pi-vriesendorpb/.condaTemp/<username>
 ```
  
 Be cautious if your environment involves R and R packages. Do some extra tests.
