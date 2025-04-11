@@ -16,9 +16,9 @@ depth: 3
 
 ## Why you need it
 
-If you are using your own computer, just install RStudio by yourself and use that. This page is only about how and why you run it on our server.
+If you are using your own computer, just install RStudio by yourself and use that. This page is only about how to run it on our server.
 
-If you have a large project that requires any of the following:
+You should consider do it on our servers if you have a project that requires any of the following:
 
 1. Many CPU cores
 2. Large amount of memory (below the maximal of the server of course)
@@ -26,15 +26,13 @@ If you have a large project that requires any of the following:
 4. Read or write large amount of data
 5. RStudio is the only way to run the analysis
 
-Then you should consider do it on our servers.
-
 ## Server configuration for RStudio
 
-RStudio-server is not directly installed on our servers, it will be run in a container using *apptainer* instead.
+RStudio-server is not installed directly on our servers; instead, it runs within an Apptainer container.
 
-This is because installing RStudio-server is complex and should be done on a dedicated server. Running an RStudio-server instance means that it should provide service to multiple users, it will conflict with our account management settings. Or it requires independent account setup.
+Installing RStudio-server natively is complex and typically requires a dedicated server to support multiple users. Running an instance on our servers could conflict with our account management settings or necessitate separate account configurations.
 
-Our method starts a server for each user instance, exposing it to a random port. Users are protected not only by the unknown port, also by a random password that is generated per session. If the random port happens to be identical with another user, restart the server will generate another port for you.
+Our approach launches a dedicated server instance for each user, exposing it on a random port and securing each session with a unique, randomly generated password. If a port conflict occurs, simply restarting the server will assign a new port.
 
 ### RStudio Execution
 
