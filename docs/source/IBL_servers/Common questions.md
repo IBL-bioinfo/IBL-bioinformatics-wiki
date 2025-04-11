@@ -8,11 +8,15 @@ depth: 3
 
 ## Discussion group
 
-Currently, our SLACK group (you get invitation from intake email) is recommended place to report issues and discuss usage. You have to report your long jobs there to let other users prepared. Please note it is a **public** place and **do not discuss sensitive data!**
+If you have suggestions or inquiries, our Slack workspace is the best place to reach out. You will receive an invitation once your username and password are send to you.
 
-We have a home on GitHub called [IBL-bioinfo](https://github.com/IBL-bioinfo). Any suggestions related to this documentation can also be reported over there, go to [issues](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki/issues) page of [this repository](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki).
+For long-running analyses, please notify the **#jobs-on-servers** channel so other users can prepare accordingly.
 
-Please note that there is **no dedicated** administrators for the IBL bioinformatics atelier, leave a message in above locations is much better than physically wandering around in the building to find us.
+Keep in mind that the Slack workspace is public, so refrain from sharing any sensitive data.
+
+On GitHub, we have established an organization called **[IBL-bioinfo](https://github.com/IBL-bioinfo)**. If you have any suggestions regarding this documentation, please create a new issue on the [issues](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki/issues) page of [this repository](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki).
+
+Remember, there are no dedicated administrators for the IBL bioinformatics atelier, so leaving a message in the mentioned places is more effective than trying to find someone in person.
 
 ## Home directory quota
 
@@ -28,12 +32,12 @@ We use [micromamba instead of conda](./Server%20configurations.md#micromamba-ins
 
 ## Shared storage
 
-Our servers do not have a unified storage. Each server has its own storage space. Usually, system and home directory share a same SSD and data should be stored on the servers HDD. Note that the extra storage for data is mounted on `/vol/local/` or `/vol/local1/` etc. [Explained here](./Execute%20programs.md#run-analysis-in-shared-drive)
+Our servers do not share a unified storage system. Each server provides its own dedicated storage. Typically, system and home directories reside on the same SSD, while data is stored on the server’s HDD or extra SSD, which are available on mounts such as `/vol/local/` or `/vol/local1/`. [Learn more](./Execute%20programs.md#run-analysis-in-shared-drive)
 
 [Server configurations](./Intro.md#ibl-linux-servers)
 
 ## Shared environments
 
-On servers with Micromamba setup, shared environments should be stored [in `/vol/local/conda_envs`](#shared-environments-location). It is in a shared location so every user should be able to use, but not modify. To modify, the user that last modified the environment should [set the permission correctly](./Server%20configurations.md#modify-an-environment-by-different-user)
+On servers with Micromamba setup, shared environments should be stored [in `/vol/local/conda_envs`](#shared-environments-location). It is in a shared location so every user can use it but cannot modify it. To modify, the user that last modified the environment should [set the permission correctly](./Server%20configurations.md#modify-an-environment-by-different-user)
 
 We recommend to [use `~/.mambarc` file](./Install%20programs.md#setting-up-config-file) ([`~/.condarc` on ALICE](../alice/alice_ibl.md#group-shared-conda-environments)) to configure the behaviour of `micromamba` (`conda` on ALICE). Most important setting is `pkgs_dirs:`, it controls where to store the cache file when downloading packages, which could easily eat up all your home directory quota if not set. The specific location `/vol/local/.conda_cache/[USERNAME]` ensures easy cleaning up.
