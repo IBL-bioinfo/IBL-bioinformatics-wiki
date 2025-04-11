@@ -167,10 +167,9 @@ Note the `/dev/nvme1n1` is an `nvme` device, meaning it is an SSD. For IO rich c
 Please always store your data and analysis in `/vol/local/<YOUR-USERNAME>`. Data stored elsewhere may be removed by administrators without prior notice.
 ````
 
-{#program-fail-home-full}
-
-````{admonition} Program fail when HOME is full
+:::{admonition} Program fail when HOME is full
 :class: warning
+:name: program-fail-home-full
 
 When a program fails, always check the quota for your home directory. Some programs may attempt to write temporary files to your home directory, even if your analysis is being conducted elsewhere. If your home directory is full, this can cause errors that are not always clearly reported. To resolve this:
 
@@ -179,7 +178,7 @@ When a program fails, always check the quota for your home directory. Some progr
 3. Retry running the program.
 
 If the issue persists, contact the administrator to temporarily increase your quota.
-````
+:::
 
 ## Plan and notify others before execute long program
 

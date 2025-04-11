@@ -20,7 +20,7 @@ Every user have a disk space quota of 20 GB for their home directory. [Home dire
 
 [Do not analyse large dataset in your home directory](./Execute%20programs.md#do-not-analyse-large-dataset-in-your-home-directory)
 
-[Program fail when HOME is full](./Execute%20programs.md#program-fail-home-full)
+[Program fail when HOME is full](#program-fail-home-full)
 
 ## Micromamba or Conda
 
@@ -34,6 +34,6 @@ Our servers do not have a unified storage. Each server has its own storage space
 
 ## Shared environments
 
-On servers with Micromamba setup, shared environments should be stored [in `/vol/local/conda_envs`](./Server%20configurations.md#shared-environments-location). It is in a shared location so every user should be able to use, but not modify. To modify, the user that last modified the environment should [set the permission correctly](./Server%20configurations.md#modify-an-environment-by-different-user)
+On servers with Micromamba setup, shared environments should be stored [in `/vol/local/conda_envs`](#shared-environments-location). It is in a shared location so every user should be able to use, but not modify. To modify, the user that last modified the environment should [set the permission correctly](./Server%20configurations.md#modify-an-environment-by-different-user)
 
 We recommend to [use `~/.mambarc` file](./Install%20programs.md#setting-up-config-file) ([`~/.condarc` on ALICE](../alice/alice_ibl.md#group-shared-conda-environments)) to configure the behaviour of `micromamba` (`conda` on ALICE). Most important setting is `pkgs_dirs:`, it controls where to store the cache file when downloading packages, which could easily eat up all your home directory quota if not set. The specific location `/vol/local/.conda_cache/[USERNAME]` ensures easy cleaning up.

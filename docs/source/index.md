@@ -44,6 +44,7 @@ maxdepth: 2
 basic_tools/package_management_concept.md
 basic_tools/micromamba.md
 basic_tools/blast.md
+basic_tools/rstudio-web.md
 ```
 
 ```{toctree}
