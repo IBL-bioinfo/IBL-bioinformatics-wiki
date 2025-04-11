@@ -37,7 +37,7 @@ When you get your account, you will be assigned to the research group you belong
 
 1. **`/home/user`** is your own private space. But keep in mind that administrators can have access to it.
 2. **`/vol/local`** directory will have `rwxr-xr-x` or `755` and files will have `rw-r--r--` or `644`.
-{#shared-environments-location}
+(shared-environments-location)=
 3. **`/vol/local/conda_envs`** is where all software environments should be created and maintained. It has permission `rwxrwsr-x`, or `2775`.  
     The `2` in front means that all files and directories will have `condablis` as group ownership, accessible (read permission) to everybody.
 
