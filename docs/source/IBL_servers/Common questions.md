@@ -8,11 +8,15 @@ depth: 3
 
 ## Discussion group
 
-Currently, our SLACK group (you get invitation from intake email) is recommended place to report issues and discuss usage. You have to report your long jobs there to let other users prepared. Please note it is a **public** place and **do not discuss sensitive data!**
+If you have suggestions or inquiries, our Slack workspace is the best place to reach out. You will receive an invitation once your username and password are send to you.
 
-We have a home on GitHub called [IBL-bioinfo](https://github.com/IBL-bioinfo). Any suggestions related to this documentation can also be reported over there, go to [issues](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki/issues) page of [this repository](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki).
+For long-running analyses, please notify the **#jobs-on-servers** channel so other users can prepare accordingly.
 
-Please note that there is **no dedicated** administrators for the IBL bioinformatics atelier, leave a message in above locations is much better than physically wandering around in the building to find us.
+Keep in mind that the Slack workspace is public, so refrain from sharing any sensitive data.
+
+On GitHub, we have established an organization called **[IBL-bioinfo](https://github.com/IBL-bioinfo)**. If you have any suggestions regarding this documentation, please create a new issue on the [issues](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki/issues) page of [this repository](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki).
+
+Remember, there are no dedicated administrators for the IBL bioinformatics atelier, so leaving a message in the mentioned places is more effective than trying to find someone in person.
 
 ## Home directory quota
 
