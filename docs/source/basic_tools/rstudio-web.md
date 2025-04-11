@@ -2,7 +2,7 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
-About running RStudio-server on BLIS and access an RStudio in your browser.
+Instructions for running RStudio Server on BLIS and accessing it via your browser.
 
 :::{admonition} TLDR
 Activate the environment `/vol/local/conda_envs/rstudio-web` and run `rstudio-web`, connect to it according to the instructions shown on the screen.
