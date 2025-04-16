@@ -27,8 +27,8 @@ If your computer is University PC, you should be in Research Network, you can do
 1. Fill in [request software](https://www.staff.universiteitleiden.nl/ict/help-and-support/application-forms/application-forms/science/institute-of-biology-leiden-ibl?cf=science&cd=institute-of-biology-leiden-ibl) form in your ISSC helpdesk, you can use any SAP number, it will not cost any. Wait for the confirmation from ISSC, install Geneious prime on your computer.
     - Please fill the "comments" section: "I am a user from IBL, and we have Geneious floating license server setup. Thus, I only need to install the latest version, and IBL will take care of the activation. Thank you very much!"
 2. Send an email to us with your information, ask for **IP address of BLIS** and **port number of the license server**.
-3. Once Geneious prime is installed, you can run it, select "Activate a Licence", or go to "help" -> "Activate Licence".
-4. Select "License Server", put the **IP address of BLIS** as server, then change port to the **port number** you get from us.
+3. Once Geneious prime is installed, you can run it, select "Activate a License", or go to "help" -> "Activate License".
+4. Select "License Server", put the **IP address of BLIS** as server, then change the port to the **port number** you get from us.
 5. Click "Activate", you should see "License Obtained" notification. This activation information will be stored for next time unless it is not accessible anymore.
 
 ## Activate through SSH port forwarding
