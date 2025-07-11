@@ -12,48 +12,41 @@ depth: 3
 
 ## Servers and specs
 
-Except FRODO, all of servers are powered by [Rocky linux 8](https://rockylinux.org/about), a production-ready downstream version of Red Hat Enterprise Linux. FRODO is now [Rocky linux 9](https://rockylinux.org/news/rocky-linux-9-3-ga-release/). In the future, all servers will be upgraded to Rocky linux 9 to keep up with [ALICE](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519378/About+ALICE). Ethernet connection of all servers have a speed of 1000 Gb/s. There is no sub-network for the servers.
+Most servers runs on [Rocky linux 9](https://rockylinux.org/news/rocky-linux-9-3-ga-release/), a production-ready downstream version of Red Hat Enterprise Linux. In the future, all servers will be upgraded to Rocky linux 9 to keep up with [ALICE](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519378/About+ALICE). Ethernet connection of all servers have a speed of 1000 Gb/s. There is no sub-network for the servers.
+
+All servers has at least one local storage mounted on `/vol/local/`, for both data and programs. All home directories are located on a dedicated SSD partition, and has a quota of 20 GB for each user. Additional storage are mounted on `/vol/local1/` and `/vol/local2/` etc.
 
 :::{NOTE}
-Not all servers have [ECC memory](https://serverfault.com/questions/5887/what-is-ecc-ram-and-why-is-it-better), if you plan to run long analysis (>10 hours) on no-ECC-memory servers, be prepared for some random error even if your program is perfect.
+**NOT** all servers have [ECC memory](https://serverfault.com/questions/5887/what-is-ecc-ram-and-why-is-it-better), if you plan to run long analysis (>10 hours) on no-ECC-memory servers, be prepared for some random error even if your program is perfect.
 :::
 
 ### BLIS
 
-This is our main server, it has a shared local storage and use [conda environments (managed by `micromamba`)](./Install%20programs.md) to manage softwares. Home directory has a quota of 20 GB for each user, no quota on shared local storage.
+[Rocky linux 8](https://rockylinux.org/about), it has a shared local storage and use [conda environments (managed by `micromamba`)](./Install%20programs.md) to manage softwares. Home directory has a quota of 20 GB for each user, no quota on shared local storage.
+
+Conda environments (created by `micromamba`), located and should be created in `/vol/local/conda_envs/`; conda cache should be stored in `/vol/local/.conda_cache/[USER]`.
 
 - Intel(R) Core(TM) i9-10980XE
   - @ 3.00GHz
-  - 36 cores
+  - 18 cores (36 threads)
 - 256 GB memory (ECC)
 - NVIDIA Quadro RTX 4000
   - 8 GB memory
-- `/home` 1.8 TB SSD; Quota for each user: 20 GB
-- `/vol/local` 7 TB HDD
-
-### FRODO
-
-The only Rocky linux 9 server. Shared local storage and `micromamba` enviroment are in line with BLIS. Home directory on SSD and has a quota of 20 GB for each user.
-
-- AMD Ryzen Threadripper PRO 5975WX
-  - @ 3.6GHz
-  - 32 cores
-- 64 GB memory (ECC)
-- NVIDIA Quadro RTX A4500
-  - 20 GB memory
-- `/home` 1.8 TB SSD; Quota for each user: 20 GB
-- `/vol/local` 10 TB HDD
+- `/home/` 2 TB SSD; Quota for each user: 20 GB
+- `/vol/local/` 7 TB HDD
 
 ### BILBO
 
-Managed by [Paco lab](https://www.universiteitleiden.nl/en/staffmembers/paco-barona-gomez). No quota, no `micromamba` setup.
-
 - AMD Ryzen Threadripper PRO 5955WX
   - @ 4.0GHz
-  - 16 cores
-- 32 GB memory (ECC)
+  - 16 cores (32 threads)
+- 256 GB memory (ECC)
 - NVIDIA T1000
   - 8 GB memory
+- `/home/` 1 TB SSD; Quota for each user: 20 GB
+- `/vol/local/` 12 TB HDD
+- `/vol/local1/` 4 TB SSD
+- `/vol/local2/` 4 TB HDD
 
 ### DINGLAB01
 
@@ -61,10 +54,10 @@ Home directory quota, shared local storage, and `micromamba` are setup the same 
 
 - Intel(R) Core(TM) i9-10900 CPU
   - @ 2.80GHz
-  - 10 cores (20 with Hyper-Threading, on)
+  - 10 cores (20 threads)
 - 32 GB memory (no ECC)
-- `/home` 390 GB SSD; Quota for each user: 20 GB
-- `/vol/local` 1 TB HDD
+- `/home/` 400 GB SSD; Quota for each user: 20 GB
+- `/vol/local/` 1 TB HDD
 
 ### VBLIS
 
@@ -72,11 +65,24 @@ Home directory quota, shared local storage, and `micromamba` are setup the same 
 
 - Intel(R) Core(TM) i9-10900 CPU
   - @ 2.80GHz
-  - 10 cores (20 with Hyper-Threading, on)
+  - 10 cores (20 threads)
 - 32 GB memory (no ECC)
-- `/home` 390 GB SSD; Quota for each user: 20 GB
+- `/home` 400 GB SSD; Quota for each user: 20 GB
 - `/vol/local` 7 TB HDD
 - `/vol/local1` 1 TB SSD
+
+### FRODO for private use
+
+This machine is, in principle, dedicated to Paco group Managed by [Paco lab](https://www.universiteitleiden.nl/en/staffmembers/paco-barona-gomez), you do not have access by default. Ask admin for more info if necessary.
+
+- AMD Ryzen Threadripper PRO 5975WX
+  - @ 3.6GHz
+  - 32 cores
+- 64 GB memory (ECC)
+- NVIDIA Quadro RTX A4500
+  - 20 GB memory
+- `/home` 1.8 TB SSD; Quota for each user: 100 GB
+- `/vol/local` 10 TB HDD
 
 ## Basic knowledge of using linux shell
 
