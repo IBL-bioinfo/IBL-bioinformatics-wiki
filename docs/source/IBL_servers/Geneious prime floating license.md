@@ -14,15 +14,30 @@ The Geneious prime floating license is hosted on BLIS, you need to be able to co
 
 There are two ways to communicate to the port on BLIS:
 
-1. You are in [Research Network](./Intro.md#what-is-research-network). IBL server account not needed, follow [Direct activation section](#direct-activation)
-2. Not in Research Network:
+1. You are in [Research Network](./Intro.md#what-is-research-network). IBL server account not needed, follow [Direct activation section](#direct-activation-currently-not-working-by-100)
+2. Not in Research Network (or if direct activation does not work):
     1. Ask for [IBL server account](./Intro.md#get-access), request the IP address of BLIS for Geneious prime.
     2. Ask for [SSH gateway access](./Intro.md#leiden-university-gateways), request connection to the IP address above.
     3. Follow [port forwarding section](#activate-through-ssh-port-forwarding)
 
-## Direct activation
+## Direct activation (currently not working by 100%)
 
-If your computer is University PC, you should be in Research Network, you can do direct activation to get a Geneious prime floating license. Here is how.
+If your computer is University PC, you should be in Research Network. **There is a chance** that you can do direct activation to get a Geneious prime floating license.
+
+You can test the connection to the license serber by running this in PowerShell:
+
+```powershell
+PS C:\Users\User> test-NetConnection [IP address] -Port 29002
+
+ComputerName     : [IP address]
+RemoteAddress    : [IP address]
+RemotePort       : 29002
+InterfaceAlias   : Ethernet
+SourceAddress    : [Your local IP address]
+TcpTestSucceeded : True
+```
+
+If output is exactly as above, here is how to activate Geneious.
 
 1. Fill in [request software](https://www.staff.universiteitleiden.nl/ict/help-and-support/application-forms/application-forms/science/institute-of-biology-leiden-ibl?cf=science&cd=institute-of-biology-leiden-ibl) form in your ISSC helpdesk, you can use any SAP number, it will not cost any. Wait for the confirmation from ISSC, install Geneious prime on your computer.
     - Please fill the "comments" section: "I am a user from IBL, and we have Geneious floating license server setup. Thus, I only need to install the latest version, and IBL will take care of the activation. Thank you very much!"
@@ -32,6 +47,11 @@ If your computer is University PC, you should be in Research Network, you can do
 5. Click "Activate", you should see "License Obtained" notification. This activation information will be stored for next time unless it is not accessible anymore.
 
 ## Activate through SSH port forwarding
+
+If direct activation does not work, please use this method. Before start:
+
+1. Ask for [IBL server account](./Intro.md#get-access), request the IP address of BLIS (serving floating licences).
+2. Ask for [SSH gateway access](./Intro.md#leiden-university-gateways), request connection to the IP address above.
 
 Please make sure you can SSH connect to BLIS through the university SSH gateway server. Note that you need your **ULCN account** and password for the gateway and **IBL servers account** and password for BLIS.
 
