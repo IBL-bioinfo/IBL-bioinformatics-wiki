@@ -15,6 +15,8 @@ IBL_servers/Intro.md
 IBL_servers/Server configurations.md
 IBL_servers/Execute programs.md
 IBL_servers/Install programs.md
+IBL_servers/Common questions.md
+IBL_servers/Geneious prime floating license.md
 ```
 
 ```{toctree}
@@ -43,6 +45,7 @@ maxdepth: 2
 basic_tools/package_management_concept.md
 basic_tools/micromamba.md
 basic_tools/blast.md
+basic_tools/rstudio-web.md
 ```
 
 ```{toctree}

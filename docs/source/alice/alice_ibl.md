@@ -47,17 +47,17 @@ Your `HOME` dir is limited to a quota of 15 GB, as a result, we created a shared
 
 TEMP/CACHE dir for pkgs:
 
-`/data1/projects/pi-vriesendorpb/.condaTemp`
+`/data1/projects/pi-vriesendorpb/.condaTemp/<username>`
 
 Want others to change your environment? Do
 
-`chmod g+w -R [ENVDIR] # Not tested`
+`chmod g+w -R [ENVDIR]`
 
-Generate a yaml file when you think your environment is working.
+Generate a `*.yaml` file when you think your environment is working.
  
 Example `.condarc` file
 
-```
+```YAML
 channels:
   - bioconda
   - conda-forge
@@ -67,7 +67,7 @@ show_channel_urls: true
 envs_dirs:
   - /data1/projects/pi-vriesendorpb/condaEnvs
 pkgs_dirs:
-  - /data1/projects/pi-vriesendorpb/.condaTemp
+  - /data1/projects/pi-vriesendorpb/.condaTemp/<username>
 ```
  
 Be cautious if your environment involves R and R packages. Do some extra tests.

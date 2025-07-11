@@ -38,10 +38,10 @@ html_sidebars = {
     '**': [
         'about.html',
         # 'globaltoc.html',
+        "searchbox.html",
         "navigation.html",
         "relations.html",
         # "sourcelink.html",
-        "searchbox.html",
     ]
 }
 html_theme_options = {
@@ -50,7 +50,11 @@ html_theme_options = {
     'github_repo': "IBL-bioinformatics-wiki",
     'github_count': False,
     'fixed_sidebar': True,
+    'sidebar_collapse': True,
+    'sidebar_width': '18rem', # has to be fixed
+    'page_width': 'min(70rem, 95%)',
 }
+# https://alabaster.readthedocs.io/en/latest/customization.html
 html_favicon = '_static/images/ibl.png'
 
 # -- MyST settings -----------------------------------------------------------
