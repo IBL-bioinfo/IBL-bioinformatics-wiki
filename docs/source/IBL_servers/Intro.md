@@ -106,6 +106,24 @@ We will provide you information needed for accessing our servers.
 
 Currently we are using Slack group "IBL-Bioinformatic" for discussion and most importantly, send notifications about all servers. You will get invitation link with your username and password.
 
+## Usage guidelines
+
+Remember: feel free to test and explore — the servers are built to be robust. If you somehow break something, that’s our problem, not yours!
+
+However, please keep in mind that this is a shared resource. To ensure fair use, follow these guidelines:
+
+1. Register using your real name
+2. Communicate via the designated discussion group
+3. Monitor your use of key resources:
+   - CPU cores
+   - Memory
+   - Network bandwidth and connections
+   - Storage space
+4. Inform others when a significant number of resources are needed
+5. Report any issues promptly
+
+During your work, you may encounter limits due to restricted administrative rights — this is part of the training, and we are here to help. You will learn how to install and manage software as a non-administrator. This ensures the servers remain stable and available to all users.
+
 ## How to connect
 
 SSH connection is the only recommended way to connect to our servers. To do that, please read through the following sections, then proceed to the tutorial [SSH access](../ssh%20access/ssh%20access.md).
