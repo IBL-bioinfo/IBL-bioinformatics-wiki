@@ -86,4 +86,5 @@ Previously involved:
 - *Edder Bustos Diaz [@EdderDaniel](https://github.com/EdderDaniel)*
 
 Contributors:
+- *Caspar Schmeits [@Capspar](https://github.com/Capspar)*
 - You!
