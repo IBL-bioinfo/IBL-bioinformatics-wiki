@@ -1,8 +1,8 @@
-# IBL bioinformatics Wikipedia
+# IBL Bioinformatics Wiki
 
-Welcome to the wikipedia page for all researchers doing or willing to do some bioinformatics.
+Welcome to the Wiki page for all researchers doing or willing to do some bioinformatics.
 
-This Wikipedia site prioritizes collaboration. We welcome your assistance in identifying typos, misinformation, faults, and any other issues. Your contributions and suggestions are highly valued; please share them by creating new "Issues" on our [GitHub page](https://github.com/snail123815/IBL-bioinformatics-wiki/issues). Thank you for your valuable input.
+This Wiki site prioritizes collaboration. We welcome your assistance in identifying typos, misinformation, faults, and any other issues. Your contributions and suggestions are highly valued; please share them by creating new "Issues" on our [GitHub page](https://github.com/snail123815/IBL-bioinformatics-wiki/issues). Thank you for your valuable input.
 
 If you wish to contribute further, such as by writing a new section, kindly initiate the process by creating an issue beforehand. This ensures smooth coordination and alignment with the project's objectives.
 
