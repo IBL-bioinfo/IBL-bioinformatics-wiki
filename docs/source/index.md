@@ -38,6 +38,16 @@ alice/alice_ibl.md
 
 ```{toctree}
 ---
+caption: RDM IBL Howtos
+maxdepth: 2
+---
+rdm_howtos/Intro.md
+rdm_howtos/ResearchDrive.md
+rdm_howtos/ELN.md
+```
+
+```{toctree}
+---
 caption: Tools
 maxdepth: 2
 ---
