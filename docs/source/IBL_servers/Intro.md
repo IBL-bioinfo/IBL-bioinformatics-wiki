@@ -167,13 +167,13 @@ Leiden University has two different gateway servers which uses different account
 
 ### Leiden University general purpose gateway
 
-You need your ULCN account.
+You need your ULCN account. You do not need to specifically apply for it.
 
-Please fill in the form "Request access SSH-gateway" on [this page](https://www.staff.universiteitleiden.nl/ict/help-and-support/application-forms/application-forms/service-units/ict-shared-service-centre) and wait for approval. Then you can set it up follow [Manual Setting up SSH gateway PDF tutorial (login needed)](https://helpdesk.universiteitleiden.nl/tas/public/ssp/content/detail/knowledgeitem?unid=4b176453-ad3f-418f-9c15-40a11471de5f).
+You can set it up follow [Manual Setting up SSH gateway PDF tutorial (login needed)](https://helpdesk.universiteitleiden.nl/tas/public/ssp/content/detail/knowledgeitem?unid=4b176453-ad3f-418f-9c15-40a11471de5f).
 
 ### ALICE gateway
 
-Leiden University super computer cluster has its own gateway server, can be used also to connect Research Network. Please refer to [this page](../alice/alice_ibl.md#how-to-get-an-account) for more details. In principle, you still needs to be working or studying in Leiden University or have projects collaborating with us.
+Leiden University super computer cluster has its own gateway server, can be used also to connect Research Network. Please refer to [this page](../alice/alice_ibl.md#how-to-get-an-account) for more details.
 
 ```{note}
 The access to Research Network is not officially supported and you need to use it with your own risk!
