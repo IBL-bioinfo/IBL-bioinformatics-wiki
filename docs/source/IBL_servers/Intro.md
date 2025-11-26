@@ -22,20 +22,22 @@ All servers has at least one local storage mounted on `/vol/local/`, for both da
 
 ### BLIS
 
-[Rocky linux 8](https://rockylinux.org/about), it has a shared local storage and use [conda environments (managed by `micromamba`)](./Install%20programs.md) to manage softwares. Home directory has a quota of 20 GB for each user, no quota on shared local storage.
+Has a shared local storage and use [conda environments (managed by `micromamba`)](./Install%20programs.md) to manage softwares. Home directory has a quota of 50 GB for each user, no quota on shared local storage.
 
 Conda environments (created by `micromamba`), located and should be created in `/vol/local/conda_envs/`; conda cache should be stored in `/vol/local/.conda_cache/[USER]`.
 
 - Intel(R) Core(TM) i9-10980XE
   - @ 3.00GHz
   - 18 cores (36 threads)
-- 256 GB memory (ECC)
+- 256 GB memory (no ECC)
 - NVIDIA Quadro RTX 4000
   - 8 GB memory
-- `/home/` 2 TB SSD; Quota for each user: 20 GB
+- `/home/` 2 TB SSD; Quota for each user: 50 GB
 - `/vol/local/` 7 TB HDD
 
 ### BILBO
+
+Home directory quota, shared local storage, and `micromamba` are setup the same as [BLIS](#blis). Note, if you run your program using an environment on one server and want to use another one, you need to setup the environment again.
 
 - AMD Ryzen Threadripper PRO 5955WX
   - @ 4.0GHz
@@ -43,14 +45,14 @@ Conda environments (created by `micromamba`), located and should be created in `
 - 256 GB memory (ECC)
 - NVIDIA T1000
   - 8 GB memory
-- `/home/` 1 TB SSD; Quota for each user: 20 GB
+- `/home/` 1 TB SSD; Quota for each user: 50 GB
 - `/vol/local/` 12 TB HDD
 - `/vol/local1/` 4 TB SSD
 - `/vol/local2/` 4 TB HDD
 
 ### DINGLAB01
 
-Home directory quota, shared local storage, and `micromamba` are setup the same as [BLIS](#blis). Note, if you run your program using an environment on BLIS and want to use DINGLAB01, you need to setup the environment again. The architecture of the two machines are not completely the same.
+Home directory quota, shared local storage, and `micromamba` are setup the same as [BLIS](#blis).
 
 - Intel(R) Core(TM) i9-10900 CPU
   - @ 2.80GHz
@@ -61,7 +63,7 @@ Home directory quota, shared local storage, and `micromamba` are setup the same 
 
 ### VBLIS
 
-Home directory quota, shared local storage, and `micromamba` are setup the same as [BLIS](#blis). Note, if you run your program using an environment on BLIS and want to use VBLIS, you need to setup the environment again. The architecture of the two machines are not completely the same.
+Home directory quota, shared local storage, and `micromamba` are setup the same as [BLIS](#blis).
 
 - Intel(R) Core(TM) i9-10900 CPU
   - @ 2.80GHz
