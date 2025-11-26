@@ -12,9 +12,9 @@ depth: 3
 
 ## Servers and specs
 
-Most servers runs on [Rocky linux 9](https://rockylinux.org/news/rocky-linux-9-3-ga-release/), a production-ready downstream version of Red Hat Enterprise Linux. In the future, all servers will be upgraded to Rocky linux 9 to keep up with [ALICE](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519378/About+ALICE). Ethernet connection of all servers have a speed of 1000 Gb/s. There is no sub-network for the servers.
+Most servers runs on [Rocky linux 9](https://rockylinux.org/news/rocky-linux-9-3-ga-release/), a production-ready downstream version of Red Hat Enterprise Linux.
 
-All servers has at least one local storage mounted on `/vol/local/`, for both data and programs. All home directories are located on a dedicated SSD partition, and has a quota of 20 GB for each user. Additional storage are mounted on `/vol/local1/` and `/vol/local2/` etc.
+Most servers has local storage mounted on `/vol/local/`, for both data and programs. All home directories are located on a dedicated SSD partition, and has a quota for each user. Additional storage are mounted on `/vol/local1/` and `/vol/local2/` etc.
 
 :::{NOTE}
 **NOT** all servers have [ECC memory](https://serverfault.com/questions/5887/what-is-ecc-ram-and-why-is-it-better), if you plan to run long analysis (>10 hours) on no-ECC-memory servers, be prepared for some random error even if your program is perfect.
