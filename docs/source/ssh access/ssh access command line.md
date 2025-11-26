@@ -162,8 +162,17 @@ ssh-keygen -t ed25519 -C "From my PC" -f ~/.ssh/sshgwLeidenuniv
 
 However, you also need to inform the servers that these keys belong to you and that you should be allowed to use them when logging in. To be sure that is you that is adding these keys, you are going to use your username and password to login. This process is different for PowerShell on Windows compared to MacOS / Linux / GitBash / Cygwin. Please refer to the correct section for your setup.
 
+:::{warning}
+Gateway servers are strict. To avoid being blocked:
+
+1. Use your ULCN username and ULCN password.
+2. Password input is invisible (no asterisks). Check Caps Lock and type carefully.
+3. Multiple failed logins will block your account or IP for ~30 minutes; repeated failures may require ISSC to unblock you.
+4. Changes (like adding keys) can take a few minutes to propagate. Be patient before retrying key-based login.
+:::
+
 :::{note}
-This process involves entering passwords, so it's important to be extremely careful with the passwords you use.
+Be extremely careful with the passwords you use.
 
 - For the <u>gateway</u> connection, enter your **ULCN password** when the prompt says 
 

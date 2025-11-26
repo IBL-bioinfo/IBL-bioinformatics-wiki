@@ -36,6 +36,15 @@ To go through the gateway server, we first need to connect to the gateway using 
 
 We will need to provide a private key to the gateway, and if that is accepted, we will be able to provide a private key to our IBL servers. The two keys provided can be the same, but since the gateway server can be accessed through the *dangerous* internet, it is recommended to use different key pairs.
 
+:::{warning}
+Gateway servers are strict. To avoid being blocked:
+
+1. Use your ULCN username and ULCN password when connecting to gateway.
+2. Password input is invisible (no asterisks). Check Caps Lock and type carefully.
+3. Multiple failed logins will block your account or IP for ~30 minutes; repeated failures may require ISSC to unblock you.
+4. Changes (like adding keys) can take a few minutes to propagate. Be patient before retrying key-based login.
+:::
+
 ![IBL server infrastructure](../_static/images/ssh_jump_drawing.svg)
 
 ## Determine your network location
