@@ -182,8 +182,6 @@ After pasting the public key, continue the command by entering `" >> authorized_
 
 ![mobaxterm authorized keys](../_static/images/mobaxterm_authorized_keys_1.png)
 
-(For those doing WinSCP setup, [continue to add public key to IBL servers](./ssh%20access%20winscp.md#push-key-to-ibl-server). But you now know how to add a public key to the server manually, you can try to add the public key for IBL servers on the servers manually as well.)
-
 ### Configure IBL server public key
 
 Next, let us put the other public key on the IBL server. Since all IBL servers share the same credential, you can use the same key pair to access all of them. I suggest you do configuration on one server, then copy the `.ssh/authorized_keys` file to the same location on all other servers using `scp` command.

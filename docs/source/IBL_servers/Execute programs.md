@@ -201,7 +201,7 @@ Once you have done [program installation](./Install%20programs.md), it is time t
 
 ## File transfer
 
-To transfer your files from or to the server, you need to have already set up an SSH connection BLIS (`blis`). For MobaXterm or WinSCP+PuTTY users, you can drag and drop in the app's file explorer. For MobaXterm, it is on the left.
+To transfer your files from or to the server, you need to have already set up an SSH connection BLIS (`blis`). For MobaXterm users, you can drag and drop in the app's file explorer. For MobaXterm, it is on the left.
 
 SCP and `rsync` are recommended.
 
@@ -230,7 +230,7 @@ scp -r path/to/dir blis:/vol/data/username
 
 ### rsync
 
-`rsync` is a more reliable tool for copying large datasets. It can continue the transfer from where it left off in case of interruption. (PowerShell does not have this program, use `scp` or WinSCP instead.)
+`rsync` is a more reliable tool for copying large datasets. It can continue the transfer from where it left off in case of interruption. (PowerShell does not have this program, use `scp` instead.)
 
 The syntax for `rsync` is almost the same as `scp`:
 

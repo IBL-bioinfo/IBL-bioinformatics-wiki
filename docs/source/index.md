@@ -16,7 +16,6 @@ IBL_servers/Server configurations.md
 IBL_servers/Execute programs.md
 IBL_servers/Install programs.md
 IBL_servers/Common questions.md
-IBL_servers/Geneious prime floating license.md
 ```
 
 ```{toctree}
