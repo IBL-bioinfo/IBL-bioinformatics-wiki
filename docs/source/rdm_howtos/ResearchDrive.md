@@ -12,7 +12,6 @@ depth: 3
 
 ## Terminology
 
-
 - Nextcloud <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: A service on which Research Drive is based. It is used to manage your Research Drive files and includes a web interface and a local application.
 - Cloud/Local storage: Cloud is files on a server you reach over the internet; local is files stored on your local computer.
 - Virtual files: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
@@ -20,6 +19,10 @@ depth: 3
 - Cold storage: Cheaper, slower storage for files you rarely use but want to keep.
 - ELN: Electronic lab notebook, or electronic lab journal
 - RSpace: also Research Space, <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>, a web application of our actual implementation of ELN.
+
+```{note}
+Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost after the retention period (30 days). For critical data, especially raw data, consider sharing folders with "read only" permissions to prevent accidental deletion.
+```
 
 ## Workflow Getting Research Drive
 
@@ -59,14 +62,21 @@ After researchdrive and ELN have been activated
 - Users can now access data within the subfolder of the project.
 - Never add any data to the root folder since this will not be synced
 - Install NextCloud application from the company portal
-- Click login
-- Enter https://universiteitleiden.data.surf.nl
-- Login into to your browser screen
-- Grant access when asked
-- Close the browser
-- Choose a folder to store the data
-- Use virtual files needs to be checked
-- Press connect, all should be syncing now
+- Open NextCloud once installed, click login
+  ![login](../_static/images/nextcloud_login_login.png)
+- Enter https://universiteitleiden.data.surf.nl, click Next
+  ![Enter URL](../_static/images/nextcloud_login_URL.png)
+- Login with your ULCN account in the popup browser page
+- Grant access when asked, then close the browser page
+  ![Login and grant access](../_static/images/nextcloud_login_grantaccess.png)
+- Choose a folder to store the data, it has to be new or empty folder
+  ![Choose sync location](../_static/images/nextcloud_login_chooselocation.png)
+- Press connect, all should be syncing now, you can see ![icon](../_static/images/nextcloud_icon.png) in your system tray, which located on the bottom right (Windows) or top right (MacOS), expand the system tray if needed.
+- Check your settings:
+  - Right click on the next cloud icon ![icon](../_static/images/nextcloud_icon.png) in system tray, left click on "Settings"
+    ![NextCloud Settings](../_static/images/nextcloud_systemtray.png)
+  - Use virtual files needs to be **enabled**
+    ![Virtual files enabled](../_static/images/nextcloud_login_checkvertualfileenabled.png)
 - You can access the data via the file browser
 
 #### ELN
