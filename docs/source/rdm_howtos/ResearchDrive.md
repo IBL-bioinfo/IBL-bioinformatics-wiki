@@ -78,11 +78,3 @@ After researchdrive and ELN have been activated
   - Use virtual files needs to be **enabled**
     ![Virtual files enabled](../_static/images/nextcloud_login_checkvertualfileenabled.png)
 - You can access the data via the file browser
-
-#### ELN
-
-- Go to [Universeit Leiden RSpace](https://leiden.researchspace.com) and login with your ULCN account
-- Go to my RSpace and activate autosharing
-- Please create your notebooks in the shared folder
-- For ELN tutorials look here https://video.leidenuniv.nl/channel/FWN-RSpace%2BELN%2BInventory%2BTraining%2BVideos/283092772
-
