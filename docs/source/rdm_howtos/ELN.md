@@ -25,4 +25,4 @@ Practical tips:
 - Go to my RSpace and activate autosharing, like this all items you create will be shared with the whole group
 - If you only want to share a single notebook please create that notebook in the shared folder
 - If you want to share a single notebook with only a selection of users please select that notebook, and click the share icon. Select the user or group and save the changes
-- For ELN tutorials look here https://video.leidenuniv.nl/channel/FWN-RSpace%2BELN%2BInventory%2BTraining%2BVideos/283092772
+- For ELN tutorials look here [FWN-RSpace ELN Inventory Training Videos](https://video.leidenuniv.nl/channel/FWN-RSpace%2BELN%2BInventory%2BTraining%2BVideos/283092772)
