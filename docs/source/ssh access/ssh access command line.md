@@ -10,29 +10,52 @@ depth: 3
 
 ## Start a CLI
 
-<u>C</u>ommand <u>l</u>ine <u>i</u>nterface (CLI) is text based interface for interacting with an operating system. It may seems less straight forward than the graphical interface, but it is much more efficient once you know what you wanted. The program that implements CLI is called a **shell**. A **terminal** (emulator) is an app that helps you communicate with a shell. Here's how to start a shell program on different operating systems:
+### Terminology
 
-- For MacOS (Apple operating system) users, open the "Terminal" application by typing "Terminal" in *spotlight*.
-- For Linux users, open the "Terminal" application (sometimes it is directly called "shell").
+- **CLI**, short for <u>c</u>ommand <u>l</u>ine <u>i</u>nterface, is text based interface for interacting with an operating system. It is more efficient than graphical interface when you know what to do.
+- **Shell** is the program that implements CLI. bash, zsh, powershell (ps) are shells.
+- **Terminal** (emulator) is an application that helps you communicate with a **shell**. Windows Terminal, Terminal, 
+- **OS**, short for operating system. There are 3 main classes you can encounter: MacOS (Apple operating system), Windows, Linux
+
+### Start from different OS
+
+Here's how to start a shell program on different operating systems:
+
+- For MacOS users, open the "Terminal" application by typing "Terminal" in *spotlight*. Default shell is zsh.
+- For Linux users, open the "Terminal" application (sometimes it is directly called "shell"). Default shell is bash.
 - For Windows users, there are several options to be in a pure CLI environment:
   - [MobaXterm](./ssh%20access%20mobaxterm.md) is recommended on University computers. Please follow the link to download the program and then proceed to [start MobaXterm](./ssh%20access%20mobaxterm.md#start-mobaxterm), then come back to this page to follow the tutorial.
   - [**Git for windows**](https://gitforwindows.org) provides "GitBash" program that comes with a <u>shell</u> environment similar to Linux systems, and the settings will also be the same as Linux. The "GitBash" program can be executed without installation.
-  - [**Windows Terminal**](https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&gl=US) app. On University computers, you need to login to your personal Microsoft account to install it from Microsoft Store. It is a focused terminal emulator, able to host shells including:
-    - Window PowerShell
-    - Windows Subsystem for Linux (WSL) shells - Requires WSL installation
-  - **Windows PowerShell**, default app in windows, comes with its own terminal emulator. Now Microsoft has shift its focus on the new version 7 of PowerShell, old versions are less supported. Remember when you run PowerShell, you are running its default terminal emulator, it can also host WSL using `wsl` command.
+  - [**Windows Terminal**](https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&gl=US) app. Can be installed on University computers (you might need to login to your personal Microsoft account). It is a focused terminal emulator, able to host Windows PowerShell which includes SSH program.
+    - **Windows PowerShell**, default app in windows, version 5 comes with its own terminal emulator. Highly recommand you to install an additional latest version of PowerShell [from "Microsoft Store"](https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.5#install-from-the-microsoft-store). Remember when you run PowerShell, you are running its default terminal emulator, it can also host WSL using `wsl` command to be a **pure Linux environment**. No matter which version of PowerShell you use, the **OpenSSH** program that provides `ssh` command. Since Linux and Windows have slightly different understanding of `$HOME` folder, setting up SSH connection in PowerShell is a bit different. Prepare to spend a bit more time on it.
+    - Windows Subsystem for Linux (WSL) shells - Only on personal PC, requires WSL installation. These shells are best supported in **Windows Terminal**. You can find more detailed instructions on how to install and start it [here](https://learn.microsoft.com/en-us/windows/wsl/install). Once you have WSL setup correctly, you will have access to a **pure Linux <u>shell</u> environment**.
 
-Windows Subsystem for Linux (WSL) with the any Linux distribution. <u>WSL **cannot** be installed on University computers.</u> You can find more detailed instructions on how to install and start it [here](https://learn.microsoft.com/en-us/windows/wsl/install). Once you have WSL setup correctly, you will have access to a pure <u>shell</u> environment, simply set the connection up as you are using Linux. Please note that even when you are in PowerShell, you can still use `wsl` command to start a WSL shell. Then you will be in a Linux environment. Remember in WSL, all the local drives are mounted in `/mnt/`
+### How to copy/paste in terminals
 
-**PowerShell** comes by default with Windows. Version 5 of PowerShell is provided with default windows installation. You can install an additional latest version of PowerShell [from "Microsoft Store"](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#installing-from-the-microsoft-store). No matter which version of PowerShell you use, the **OpenSSH** program that provides `ssh` command is the same version 9.5. Since Linux and Windows have slightly different understanding of `$HOME` folder, setting up SSH connection in PowerShell is a bit different. Prepare to spend a bit more time on it, and prepare to do some trouble shooting.
+Copy/paste in terminals differs from regular apps. Common `Ctrl+C` and `Ctrl+V` may not work; `Ctrl+C` often sends an interrupt to the running program instead of copying.
+
+- **Linux (GNOME Terminal, Konsole, xterm):** Use `Ctrl+Shift+C` to copy and `Ctrl+Shift+V` to paste. On many Linux desktops, you can also paste with the middle mouse button. `Shift+Insert` often pastes too.
+- **macOS (Terminal, iTerm2):** Use `Cmd+C` to copy and `Cmd+V` to paste. Right‑click shows a menu for Copy/Paste.
+- **Windows Terminal / PowerShell:** Recent versions support `Ctrl+C` (copy selection) and `Ctrl+V` (paste). If a command is executing, `Ctrl+C` interrupts it. Right‑click usually opens a context menu with Copy/Paste; in some setups, right‑click directly do copy (if some text is selected) or paste (no selection).
+- **Git Bash / MobaXterm:** Git Bash typically uses `Ctrl+Insert` (copy) and `Shift+Insert` (paste) or `Ctrl+Shift+C/V`. MobaXterm supports right‑click paste and a context menu for copy/paste.
+
+Tips:
+- Select text first; many terminals only copy selected text.
+- Prefer keyboard shortcuts over `Ctrl+C` while a command is running to avoid interrupting it.
+- Be careful with trailing spaces/newlines when pasting long commands.
+- If shortcuts fail, try right‑click → Copy/Paste or check terminal settings.
+
+When you copy and paste commands, it ensures accuracy, especially for long commands. Typing manually helps you learn syntax. Always read the command before pressing ENTER.
 
 ```{admonition} Do not copy directly
 :class: warning
 **DOUBLE CHECK COMMANDS BEFORE EXECUTING THEM**
 
-Please note that in this tutorial, we do not know the IP address you are connecting to, your `USERNAME`, or your `ULCN`. Please carefully check the commands you copy and adjust them accordingly. Becareful about **cases** and **spaces**. Especially, do not miss a **space**! They have special meanings for comands and are very important!
+Please note this tutorial do not know the IP address you are connecting to, your `USERNAME`, nor your `ULCN`. Please carefully check the commands you copy and adjust them accordingly.r
 
-Some commands are quite long, please use the scroll bar underneath the command line to see it complete.
+Be careful about **cases** and **spaces**. Especially, do not miss a **space**! They have special meanings for comands and are very important!
+
+Some commands are quite long, please use the scroll bar underneath.
 
 In CLI, you cannnot use your mouse. To edit the command easily, you can use a simple text editor, for example Notepad (windows), Nano (Linux), and TextEdit (MacOS), copy and edit your command there.
 ```
@@ -139,8 +162,17 @@ ssh-keygen -t ed25519 -C "From my PC" -f ~/.ssh/sshgwLeidenuniv
 
 However, you also need to inform the servers that these keys belong to you and that you should be allowed to use them when logging in. To be sure that is you that is adding these keys, you are going to use your username and password to login. This process is different for PowerShell on Windows compared to MacOS / Linux / GitBash / Cygwin. Please refer to the correct section for your setup.
 
+:::{warning}
+Gateway servers are strict. To avoid being blocked:
+
+1. Use your ULCN username and ULCN password.
+2. Password input is invisible (no asterisks). Check Caps Lock and type carefully.
+3. Multiple failed logins will block your account or IP for ~30 minutes; repeated failures may require ISSC to unblock you.
+4. Changes (like adding keys) can take a few minutes to propagate. Be patient before retrying key-based login.
+:::
+
 :::{note}
-This process involves entering passwords, so it's important to be extremely careful with the passwords you use.
+Be extremely careful with the passwords you use.
 
 - For the <u>gateway</u> connection, enter your **ULCN password** when the prompt says 
 
@@ -295,7 +327,7 @@ This command will use the configuration you added to your `.ssh/config` file for
 Once inside BLIS, you can directly connect to another servers using `ssh` command plus lower case server name.
 
 (ALICE uses the same setup, please refer to [How to login to ALICE or SHARK - HPC wiki](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37748771/How+to+login+to+ALICE+or+SHARK).)
-make-direct-ssh-connection-using-winscp-university-desktop-with-powershell
+
 :::{note}
 Before you run any programs, you have to understand that we use "environments" to manage softwares on all systems. On BLIS, we use `micromamba`, a `conda` replacement, for environment management, [check it out](../IBL_servers/Execute%20programs.md).
 :::

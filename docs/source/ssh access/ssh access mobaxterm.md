@@ -115,7 +115,16 @@ Setup as the following screenshot. Select "Use SSH key" and setup the path to th
 
 ![gateway setting 2](../_static/images/mobaxterm_session_gateway_2.png)
 
-Now click OK -> OK go back to the main window. MobaXterm will start connecting immediately and start asking you for passwords. Please "Cancel" it. The session setup is done but the servers do not know our keys yet. You can, however, test your connections by continue using passwords to login. First your ULCN account password, then your IBL server password (probably you need to change it immediately, follow instructions on screen).
+Now click OK -> OK go back to the main window. MobaXterm will start connecting immediately and start asking you for passwords. **Please "Cancel" it**. The session setup is done but the servers do not know our keys yet. You can, however, test your connections by continue using passwords to login. First your ULCN account password, then your IBL server password (probably you need to change it immediately, follow instructions on screen).
+
+:::{warning}
+Gateway servers are strict. To avoid being blocked:
+
+1. Use your ULCN username and ULCN password when connecting to gateway.
+2. Password input is invisible (no asterisks). Check Caps Lock and type carefully.
+3. Multiple failed logins will block your account or IP for ~30 minutes; repeated failures may require ISSC to unblock you.
+4. Changes (like adding keys) can take a few minutes to propagate. Be patient before retrying key-based login.
+:::
 
 ### Create gateway session
 
@@ -181,8 +190,6 @@ A multi-line text will contain a hidden "carriage return" character (CR), which 
 After pasting the public key, continue the command by entering `" >> authorized_keys`. Note the spaces in the command. Then hit enter to execute.  Now you should see a file called `authorized_keys` in `.ssh` folder. Show it use `ls` command. Then you can check the content of the file using `cat` command:
 
 ![mobaxterm authorized keys](../_static/images/mobaxterm_authorized_keys_1.png)
-
-(For those doing WinSCP setup, [continue to add public key to IBL servers](./ssh%20access%20winscp.md#push-key-to-ibl-server). But you now know how to add a public key to the server manually, you can try to add the public key for IBL servers on the servers manually as well.)
 
 ### Configure IBL server public key
 

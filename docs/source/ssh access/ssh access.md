@@ -36,6 +36,15 @@ To go through the gateway server, we first need to connect to the gateway using 
 
 We will need to provide a private key to the gateway, and if that is accepted, we will be able to provide a private key to our IBL servers. The two keys provided can be the same, but since the gateway server can be accessed through the *dangerous* internet, it is recommended to use different key pairs.
 
+:::{warning}
+Gateway servers are strict. To avoid being blocked:
+
+1. Use your ULCN username and ULCN password when connecting to gateway.
+2. Password input is invisible (no asterisks). Check Caps Lock and type carefully.
+3. Multiple failed logins will block your account or IP for ~30 minutes; repeated failures may require ISSC to unblock you.
+4. Changes (like adding keys) can take a few minutes to propagate. Be patient before retrying key-based login.
+:::
+
 ![IBL server infrastructure](../_static/images/ssh_jump_drawing.svg)
 
 ## Determine your network location
@@ -53,7 +62,7 @@ To use our Linux servers, you'll need access to a <u>c</u>ommand <u>l</u>ine <u>
 
 For those who would like to go for a more seamless workflow, or if you are a MacOS user, please follow the [command line SSH connection tutorial](./ssh%20access%20command%20line.md).
 
-For others who would like to have more graphical inspiration, and are working with the Windows operating system, please follow the [MobaXterm SSH connection tutorial](./ssh%20access%20mobaxterm.md). Using [WinSCP](./ssh%20access%20winscp.md) is also fine but the tutorial is not up to date and you may encounter some issues.
+For others who would like to have more graphical inspiration, and are working with the Windows operating system, please follow the [MobaXterm SSH connection tutorial](./ssh%20access%20mobaxterm.md).
 
 The setup will be very different on different systems. I will briefly touch upon the topic of differences between Windows and "Unix-like" MacOS/Linux systems in this tutorial.
 
