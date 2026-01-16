@@ -96,7 +96,7 @@ It is easy to find information and basic training online. If you do not know whi
 
 [Research Network](#what-is-research-network)
 
-To ask for access to all servers, please send email to me (c.du\[at\]biology.leidenuniv.nl). Please let me know the following info:
+To ask for access to all servers, please fill in this form https://forms.office.com/e/aTH5VSJdEL. Please let me know the following info:
 
 - The user name you want to use for login. Only lower case letters and numbers allowed, start with letters. It is OK that you use the same user name as your ULCN account.
 - Your first name
