@@ -1,5 +1,5 @@
 # HPC ALICE BLASTP usage patterns
-
+*By Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
 This guide shows common BLASTP use cases using built-in BLAST options.  
 
 ---

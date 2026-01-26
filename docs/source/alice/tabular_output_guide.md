@@ -1,4 +1,5 @@
 # BLAST Tabular Output Guide
+*By Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
 
 ---
 ## 1. What is BLAST tabular output
