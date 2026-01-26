@@ -1,5 +1,9 @@
 # AlphaFold3 on ALICE
 
+Running AlphaFold on HPC ALICE requires preparation and some assistance if you are new to HPCs. We cannot directly run the prediction like you would on your own computer. On ALICE we use SLURM as a queuing system to organise faculty-wide usage. This guide prepares your job for submission using a script.
+
+For more on structural bioinformatics tools visit our other pages or contact us directly.
+
 ---
 ## 1. input
 ---
@@ -19,7 +23,7 @@ The full options of the script are a bit intimidating, but to begin you only nee
 The project folder will automatically write to /data1/$USER. If you want this changed to a custom location, please use the option --output-root /path/that/you/prefer
 
 ---
-## 2. Submittig you slurm job
+## 2. Submitting your AlphaFold job to the queue system SLURM
 ---
 
 If you used the --make--sbatch option, your project directory should now contain a submit_all.sh. This is meant for submitting your AlphaFold job to SLURM
@@ -29,7 +33,7 @@ cd /path/to/your/project/directory
 bash submit_all.sh
 ```
 
-If you wish to manually submit the sbatch or inspect it, the job_proteinname.sbatch should be under the project directory, inside the folder named by your fasta entry header.  
+Your job may run instantly, but it could also take hours before it gets accepted. The more you run, the lower your priority in the queue.
 
 ---
 ## 3. Understanding output
