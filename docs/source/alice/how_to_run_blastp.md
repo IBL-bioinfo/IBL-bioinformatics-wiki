@@ -3,7 +3,6 @@
 This guide shows common BLASTP use cases using built-in BLAST options.  
 
 ---
-
 ## Preparation before running BLAST
 
 Activate the BLAST module
@@ -22,7 +21,6 @@ echo 'module load BLAST+/2.16.0-gompi-2024a' >> ~/.bashrc
 source ~/.bashrc
 ```
 ---
-
 ## 1. Single protein vs entire nr database
 
 Use this when you want to identify a protein or find homologs broadly.
@@ -37,7 +35,6 @@ Use this when you want to identify a protein or find homologs broadly.
       -outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
 
 ---
-
 ## 2. Single protein vs a specific taxonomic group
 
 Restrict results to a clade, order, genus, or species using NCBI taxids.  
@@ -54,7 +51,6 @@ NOTE: Taxonomy filtering limits biological scope, not database size.
       -outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
 
 ---
-
 ## 3. Searching only a specific region of the protein
 
 Use this when only part of the protein is biologically relevant.  
@@ -71,7 +67,6 @@ Residue numbering is 1-based and inclusive.
       -outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
 
 ---
-
 ## 4. Searching for divergent or remote homologs
 
 Use this when close homologs are absent.  
@@ -90,7 +85,6 @@ This increases sensitivity at the cost of speed and specificity.
       -outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
 
 ---
-
 ## 5. Region-specific search for divergent homologs
 
 Combines region restriction with relaxed similarity thresholds.
@@ -109,7 +103,6 @@ Combines region restriction with relaxed similarity thresholds.
       -outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
 
 ---
-
 ## 6. Performance and scaling guidelines
 
 - Single protein: 1 job, 4–8 threads, <=15 minutes walltime
@@ -118,7 +111,6 @@ Combines region restriction with relaxed similarity thresholds.
 - Avoid running BLAST on login nodes
 
 ---
-
 ## Summary of key options
 
 Broad annotation        default blastp vs nr  

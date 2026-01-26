@@ -3,7 +3,7 @@
 
 ---
 ## 1. What is BLAST tabular output
----
+
 
 BLAST supports **tabular output** via the `-outfmt` option.
 
@@ -19,7 +19,7 @@ Tabular output is designed for:
 
 ---
 ## 2. The classic 12-column BLAST table
----
+
 
 These are the historical default columns returned by `-outfmt 6`
 when no custom field list is provided.
@@ -43,14 +43,14 @@ This set is **not exhaustive** and is rarely optimal on its own.
 
 ---
 ## 3. Custom tabular output (recommended)
----
+
 You can explicitly choose which columns BLAST writes:
 
     -outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
 
 ---
 ## 4. Core blastp-specific fields
----
+
 
 ### Identifiers and annotation
 
@@ -81,7 +81,7 @@ You can explicitly choose which columns BLAST writes:
 
 ---
 ## 5. Coverage and length fields (important)
----
+
 
 Coverage fields are essential for filtering weak or spurious hits.
 
@@ -96,7 +96,7 @@ Example:
 
 ---
 ## 6. Taxonomy-aware fields (nr database)
----
+
 
 These fields are especially useful when searching the NCBI nr database.
 
@@ -111,7 +111,7 @@ Example:
 
 ---
 ## 7. Sequence-including fields (can infalte output)
----
+
 
 These fields massively increase output size.
 
@@ -122,7 +122,7 @@ Only use when manual alignment inspection is required.
 
 ---
 ## 8. Fields mainly for nucleotide-based BLAST
----
+
 
 Relevant for blastn, tblastn, blastx, tblastx:
 
@@ -134,7 +134,7 @@ Irrelevant for blastp.
 
 ---
 ## 9. Recommended column sets
----
+
 
 ### General blastp annotation
 
@@ -154,7 +154,7 @@ Irrelevant for blastp.
 
 ---
 ## 10. Other BLAST programs (summary)
----
+
 
 | Program  | Query type | Subject type | Notes |
 |---------|------------|--------------|-------|
@@ -169,7 +169,7 @@ or translated searches.
 
 ---
 ## 11. How to list all available fields locally
----
+
 
 Run:
 
@@ -180,7 +180,7 @@ The exact field list may vary slightly between BLAST+ versions.
 
 ---
 ## 12. Final advice
----
+
 
 - Always specify your `-outfmt` fields explicitly
 - Always include at least one coverage metric
