@@ -1,4 +1,5 @@
 # AlphaFold3 on ALICE
+*By Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
 
 Running AlphaFold on HPC ALICE requires preparation and some assistance if you are new to HPCs. We cannot directly run the prediction like you would on your own computer. On ALICE we use SLURM as a queuing system to organise faculty-wide usage. This guide prepares your job for submission using a script.
 
@@ -13,6 +14,11 @@ AF3 accepts input in JSON format. For proteins, we have a script that converts f
 Requirements for the script are
 - Python3.10+
 - Bio (python package, can be installed in conda using: conda install Bio -c bioconda)
+
+```
+###Download the script
+git clone https://github.com/B-Bajramovic/alphafold3-for-IBL.git
+```
 
 ```
 python AF3_job_prepare.py --prey /path/to/directory/with/fasta/files --project name_of_project --make-sbatch --job-dirs
