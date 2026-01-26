@@ -440,3 +440,6 @@ blastp -db GCF_008931305.1_ASM893130v1_protein.faa \
 - `-evalue 1e-12` Set expectation value threshold to < 1 &times; 10<sup>-12</sup>
 - `-word_size 7` Set initial exact match to be a lenth of 7 (default 11) (for finding CRISPR off-targets)
 - `-num_threads 4` Use 4 threads for parallel computing
+
+```md
+[For more output options look at the tabular output guide](basic_tools/tabular_output_guide.md)
