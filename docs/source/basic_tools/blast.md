@@ -441,5 +441,10 @@ blastp -db GCF_008931305.1_ASM893130v1_protein.faa \
 - `-word_size 7` Set initial exact match to be a lenth of 7 (default 11) (for finding CRISPR off-targets)
 - `-num_threads 4` Use 4 threads for parallel computing
 
-```md
-[For more output options look at the tabular output guide](basic_tools/tabular_output_guide.md)
+
+For more output tips visit:
+```{toctree}
+---
+maxdepth: 1
+---
+tabular_output_guide
