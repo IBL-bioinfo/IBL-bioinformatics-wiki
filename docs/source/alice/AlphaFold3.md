@@ -1,4 +1,4 @@
-# AlphaFold3 on ALICE
+# AlphaFold3
 *By Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
 
 Running AlphaFold on HPC ALICE requires preparation and some assistance if you are new to HPCs. We cannot directly run the prediction like you would on your own computer. On ALICE we use SLURM as a queuing system to organise faculty-wide usage. This guide prepares your job for submission using a script.
