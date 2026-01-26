@@ -34,6 +34,8 @@ caption: ALICE
 maxdepth: 2
 ---
 alice/alice_ibl.md
+alice/how_to_run_blastp.md
+alice/AlphaFold3
 ```
 
 ```{toctree}
@@ -55,6 +57,7 @@ basic_tools/package_management_concept.md
 basic_tools/micromamba.md
 basic_tools/blast.md
 basic_tools/rstudio-web.md
+basic_tools/tabular_output_guide.md
 ```
 
 ```{toctree}
