@@ -76,3 +76,25 @@ After researchdrive have been activated, follow these steps:
   - Use virtual files needs to be **enabled**
     ![Virtual files enabled](../_static/images/nextcloud_login_checkvertualfileenabled.png)
 - You can access the data via the file browser
+
+### Transfer large files from network drive
+
+Virtual files are the files that has a cloud logo ![cloud icon](../_static/images/nextcloud_cloud-icon.svg){height="0.8em"}. They are actullay links pointing to your actual file in your cloud. So, they do not consume your local storage space. Enabling virtual files allows you to sync a cloud storage much larger than your local storage.
+
+However, transfering large files located on a network drive (`J:` for example) to cloud needs some tricks.
+
+#### Reasoning
+
+Uploading files usually takes 3 steps:
+
+1. Local file copied / moved to the synced folder
+2. NextCloud upload these files to ResearchDrive (or other cloud storage)
+3. If these files are not used, or local storage is full, NextCloud removes these local files, replace them with "virtual files".
+
+For your large files located on your network drive, you will find it difficult to finish the very first step, as you do not have enough local storage to host it.
+
+#### Methods
+
+1. [Add an additional sync folder, **remove the sync after uploaded**](./ResearchDrive_uploadFromNetworkDrive.md)
+2. [RcloneView](https://rcloneview.com/) software (not for university computers)
+3. [Rclone GUI](https://teams.microsoft.com/l/message/19:07fafe79-7c42-46cb-bb3c-d5d081fa35b5_e6291351-2a74-4097-80eb-bb874dcf95fd@unq.gbl.spaces/1770991879470?context=%7B%22contextType%22%3A%22chat%22%7D)
