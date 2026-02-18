@@ -34,7 +34,9 @@ Instruction made for research group in IBL
 
 ### Homework for PIs
 
-Fill out DMP for:
+For all your current projects, check the DMP and change the corresponding part to fit the new situation. Make sure the price is covered by the project. For each project folder that you need, please assign a cost centre. IBL will fund the first 0.5 TB of PI umbrella project folder. ISSC is not centrally funding the first TB with a valid DMP, so no need to attach that, just mention the cost centre while filling in the form from ISSC helpdesk.
+
+Optionally, fill out DMP for:
 1. All projects that generate research data
 2. For collaborative project, you can use the collective DMP
 3. An umbrela DMP for your group, consider all small topics that may not fit any project yet.
@@ -51,7 +53,7 @@ Contact ibl.rdm@biology.leidenuniv.nl to get them approved.
 
 ### Setting Up and Invitation
 
-After researchdrive have been activated, follow these steps:
+After researchdrive has been activated, follow these steps:
 
 - PI logs into [Research Drive](https://universiteitleiden.data.surf.nl)
 - Go to dashboard (top left icon row, most right icon of this row)
