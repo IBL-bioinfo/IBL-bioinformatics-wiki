@@ -85,6 +85,12 @@ After researchdrive have been activated, follow these steps:
 
 Transferring large files located on a network drive (for example, `J:`) to the cloud may require some extra steps.
 
+Choose **one** of the following:
+
+1. Recommended: [**Add** an additional sync folder, then **remove** the sync after uploading](./ResearchDrive_uploadFromNetworkDrive.md)
+2. [RcloneView](https://rcloneview.com/) software (not for university computers)
+3. [Rclone GUI](https://rclone.org/gui/)
+
 #### Reasoning
 
 Uploading files usually involves three steps:
