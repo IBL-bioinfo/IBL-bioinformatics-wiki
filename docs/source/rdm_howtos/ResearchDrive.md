@@ -47,7 +47,7 @@ Contact ibl.rdm@biology.leidenuniv.nl to get them approved.
 
 ### Setting Up and Invitation
 
-After researchdrive have been activated, follow these steps:
+After researchdrive has been activated, follow these steps:
 
 - PI logs into [Research Drive](https://universiteitleiden.data.surf.nl)
 - Go to dashboard (top left icon row, most right icon of this row)
