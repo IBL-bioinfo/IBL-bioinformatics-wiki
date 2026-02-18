@@ -12,16 +12,16 @@ depth: 3
 
 ## Terminology
 
-- Nextcloud <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: A service on which Research Drive is based. It is used to manage your Research Drive files and includes a web interface and a local application.
-- Cloud/Local storage: Cloud is files on a server you reach over the internet; local is files stored on your local computer.
-- Virtual files: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
-- Hot storage: Fast, always-ready storage used for files you need right now.
-- Cold storage: Cheaper, slower storage for files you rarely use but want to keep.
-- ELN: Electronic lab notebook, or electronic lab journal
-- RSpace: also Research Space, <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>, a web application of our actual implementation of ELN.
+- **Nextcloud** <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: A service on which Research Drive is based. It is used to manage your Research Drive files and includes a web interface and a local application.
+- **Cloud/Local storage**: Cloud is files on a server you reach over the internet; local is files stored on your local computer.
+- **Virtual files**: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
+- **Hot storage**: Fast, always-ready storage used for files you need right now.
+- **Cold storage**: Cheaper, slower storage for files you rarely use but want to keep.
+- **ELN**: Electronic lab notebook, or electronic lab journal
+- **RSpace**: also Research Space, <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>, a web application of our actual implementation of ELN.
 
 ```{note}
-Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost after the retention period (30 days). For critical data, especially raw data, consider sharing folders with "read only" permissions to prevent accidental deletion.
+Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost after the retention period (60 days). For critical data, especially raw data, consider sharing folders with "read only" permissions to prevent accidental deletion.
 ```
 
 ## Research Drive intended structure
