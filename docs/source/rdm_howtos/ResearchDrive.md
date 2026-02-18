@@ -51,6 +51,10 @@ Contact ibl.rdm@biology.leidenuniv.nl to have them approved.
 - Supervisors (PI/PhD/PostDoc) request an ELN account per (master/bachelor) student
 - Users request Nextcloud software installation
 
+::: {admonition} First-time log in
+Prepare to experience multiple login and a missing project folder when you log in for the first time. This is because some things are only set up when you start using Research Drive. Project folder should appear few minutes later.
+:::
+
 ### Setting Up and Invitation
 
 After Research Drive has been activated, follow these steps:
