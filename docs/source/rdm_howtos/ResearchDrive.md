@@ -83,22 +83,22 @@ After researchdrive have been activated, follow these steps:
 
 ### Transfer large files from network drive
 
-Virtual files are the files that has a cloud logo ![cloud icon](../_static/images/nextcloud_cloud-icon.svg){height="0.8em"}. They are actullay links pointing to your actual file in your cloud. So, they do not consume your local storage space. Enabling virtual files allows you to sync a cloud storage much larger than your local storage.
+Virtual files are files that have a cloud logo ![cloud icon](../_static/images/nextcloud_cloud-icon.svg){height="0.8em"}. They are actually links to the real file in the cloud, so they do not consume local storage space. Enabling virtual files allows you to sync cloud storage that is much larger than your local storage.
 
-However, transfering large files located on a network drive (`J:` for example) to cloud needs some tricks.
+However, transferring large files located on a network drive (for example, `J:`) to the cloud may require some extra steps.
 
 #### Reasoning
 
-Uploading files usually takes 3 steps:
+Uploading files usually involves three steps:
 
-1. Local file copied / moved to the synced folder
-2. NextCloud upload these files to ResearchDrive (or other cloud storage)
-3. If these files are not used, or local storage is full, NextCloud removes these local files, replace them with "virtual files".
+1. Copy/move local files into the synced folder.
+2. Nextcloud uploads these files to ResearchDrive (or other cloud storage).
+3. If the files are not used, or if local storage is full, Nextcloud removes the local copies and replaces them with “virtual files”.
 
-For your large files located on your network drive, you will find it difficult to finish the very first step, as you do not have enough local storage to host it.
+If you have large files located on your network drive, the first step can be difficult because you may not have enough local storage to hold them temporarily.
 
 #### Methods
 
-1. [Add an additional sync folder, **remove the sync after uploaded**](./ResearchDrive_uploadFromNetworkDrive.md)
+1. **Recommended:** [Add an additional sync folder, **then remove the sync after uploading**](./ResearchDrive_uploadFromNetworkDrive.md)
 2. [RcloneView](https://rcloneview.com/) software (not for university computers)
-3. [Rclone GUI](https://teams.microsoft.com/l/message/19:07fafe79-7c42-46cb-bb3c-d5d081fa35b5_e6291351-2a74-4097-80eb-bb874dcf95fd@unq.gbl.spaces/1770991879470?context=%7B%22contextType%22%3A%22chat%22%7D)
+3. [Rclone GUI](https://rclone.org/gui/)
