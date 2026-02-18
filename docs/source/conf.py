@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "IBL-Bioinformatics wiki"
-copyright = "2025, IBL"
+copyright = "2026, IBL"
 author = "IBL-Bioinformatics atelier"
 
 # -- General configuration ---------------------------------------------------
