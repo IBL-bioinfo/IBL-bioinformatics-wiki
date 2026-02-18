@@ -79,9 +79,7 @@ After researchdrive have been activated, follow these steps:
 
 ### Transfer large files from network drive
 
-Virtual files are files that have a cloud logo ![cloud icon](../_static/images/nextcloud_cloud-icon.svg){height="0.8em"}. They are actually links to the real file in the cloud, so they do not consume local storage space. Enabling virtual files allows you to sync cloud storage that is much larger than your local storage.
-
-However, transferring large files located on a network drive (for example, `J:`) to the cloud may require some extra steps.
+Transferring large files located on a network drive (for example, `J:`) to the cloud may require some extra steps.
 
 #### Reasoning
 
