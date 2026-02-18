@@ -51,8 +51,12 @@ Contact ibl.rdm@biology.leidenuniv.nl to have them approved.
 - Supervisors (PI/PhD/PostDoc) request an ELN account per (master/bachelor) student
 - Users request Nextcloud software installation
 
-::: {admonition} First-time log in
-Prepare to experience multiple login and a missing project folder when you log in for the first time. This is because some things are only set up when you start using Research Drive. Project folder should appear few minutes later.
+::: {admonition} First-time login
+Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
+:::
+
+::: {admonition} No permission to create a project folder
+On your "Dashboard" → "Project folders" page, you may see the message "You do not have sufficient permissions to create ...". This is normal: project folders can only be created by ISSC upon request.
 :::
 
 ### Setting Up and Invitation
