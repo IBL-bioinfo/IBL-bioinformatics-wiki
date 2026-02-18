@@ -100,9 +100,3 @@ Uploading files usually involves three steps:
 3. If the files are not used, or if local storage is full, Nextcloud removes the local copies and replaces them with “virtual files”.
 
 If you have large files located on your network drive, the first step can be difficult because you may not have enough local storage to hold them temporarily.
-
-#### Methods
-
-1. **Recommended:** [Add an additional sync folder, **then remove the sync after uploading**](./ResearchDrive_uploadFromNetworkDrive.md)
-2. [RcloneView](https://rcloneview.com/) software (not for university computers)
-3. [Rclone GUI](https://rclone.org/gui/)
