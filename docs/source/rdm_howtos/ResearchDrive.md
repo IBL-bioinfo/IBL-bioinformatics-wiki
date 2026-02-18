@@ -47,9 +47,7 @@ Contact ibl.rdm@biology.leidenuniv.nl to get them approved.
 
 ### Setting Up and Invitation
 
-After researchdrive and ELN have been activated
-
-#### Research Drive
+After researchdrive have been activated, follow these steps:
 
 - PI logs into [Research Drive](https://universiteitleiden.data.surf.nl)
 - Go to dashboard (top left icon row, most right icon of this row)
@@ -78,3 +76,23 @@ After researchdrive and ELN have been activated
   - Use virtual files needs to be **enabled**
     ![Virtual files enabled](../_static/images/nextcloud_login_checkvertualfileenabled.png)
 - You can access the data via the file browser
+
+### Transfer large files from network drive
+
+Transferring large files located on a network drive (for example, `J:`) to the cloud may require some extra steps.
+
+Choose **one** of the following:
+
+1. Recommended: [**Add** an additional sync folder, then **remove** the sync after uploading](./ResearchDrive_uploadFromNetworkDrive.md)
+2. [RcloneView](https://rcloneview.com/) software (not for university computers)
+3. [Rclone GUI](https://rclone.org/gui/)
+
+#### Reasoning
+
+Uploading files usually involves three steps:
+
+1. Copy/move local files into the synced folder.
+2. Nextcloud uploads these files to ResearchDrive (or other cloud storage).
+3. If the files are not used, or if local storage is full, Nextcloud removes the local copies and replaces them with “virtual files”.
+
+If you have large files located on your network drive, the first step can be difficult because you may not have enough local storage to hold them temporarily.
