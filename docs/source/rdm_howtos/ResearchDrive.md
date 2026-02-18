@@ -30,56 +30,56 @@ Storing files on Research Drive is **not a backup method**. Deleted files will b
 
 ## Workflow Getting Research Drive
 
-Instruction made for research group in IBL
+Instructions for research groups in IBL
 
 ### Homework for PIs
 
-For all your current projects, check the DMP and change the corresponding part to fit the new situation. Make sure the price is covered by the project. For each project folder that you need, please assign a cost centre. IBL will fund the first 0.5 TB of PI umbrella project folder. ISSC is not centrally funding the first TB with a valid DMP, so no need to attach that, just mention the cost centre while filling in the form from ISSC helpdesk.
+For all your current projects, check the DMP and update the corresponding part to fit the new situation. Make sure the costs are covered by the project. For each project folder that you need, please assign a cost centre. IBL will fund the first 0.5 TB of the PI umbrella project folder. ISSC is not centrally funding the first TB with a valid DMP, so there is no need to attach that; just mention the cost centre when filling in the form from the ISSC helpdesk.
 
-Optionally, fill out DMP for:
+Optionally, fill out a DMP for:
 1. All projects that generate research data
-2. For collaborative project, you can use the collective DMP
-3. An umbrela DMP for your group, consider all small topics that may not fit any project yet.
+2. Collaborative projects (you can use a collective DMP)
+3. An umbrella DMP for your group (covering smaller topics that may not fit any project yet)
 
-Contact ibl.rdm@biology.leidenuniv.nl to get them approved.
+Contact ibl.rdm@biology.leidenuniv.nl to have them approved.
 
 ### Preparation and Application
 
 - Request Research Drive per project/DMP
 - Request ELN group account if it does not exist
-- All employees request ELN account (PI/PhD/PostDoc/Labmanager)
-- Supervisors (PI/PhD/PostDoc) request ELN account per (master/bachelor) student
+- All employees request an ELN account (PI/PhD/PostDoc/Labmanager)
+- Supervisors (PI/PhD/PostDoc) request an ELN account per (master/bachelor) student
 - Users request Nextcloud software installation
 
 ### Setting Up and Invitation
 
-After researchdrive has been activated, follow these steps:
+After Research Drive has been activated, follow these steps:
 
-- PI logs into [Research Drive](https://universiteitleiden.data.surf.nl)
-- Go to dashboard (top left icon row, most right icon of this row)
-- User accounts and invite all users, both staff and students.  
+- PI logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
+- Go to the dashboard (top-left icon row, rightmost icon)
+- Go to User accounts and invite all users, both staff and students
 - Invite users using their official email address, for example the @biology mail for employees
 - Go to the files and go into your project folder by clicking it
 - Create a folder for each student/employee in this project
-- Once the account is activated click the shared button next to the student/employee folder 
-- Use the internal shares to add the correct users, set it to allow editing
+- Once the account is activated, click the "Shared" button next to the student/employee folder
+- Use internal shares to add the correct users, and set permissions to allow editing
 - Users can now access data within the subfolder of the project.
-- Never add any data to the root folder since this will not be synced
-- Install NextCloud application from the company portal
-- Open NextCloud once installed, click login
+- Never add any data to the root folder, because it will not be synced
+- Install the Nextcloud application from the company portal
+- Open Nextcloud once installed and click Log in
   ![login](../_static/images/nextcloud_login_login.png)
 - Enter https://universiteitleiden.data.surf.nl, click Next
   ![Enter URL](../_static/images/nextcloud_login_URL.png)
-- Login with your ULCN account in the popup browser page
+- Log in with your ULCN account in the pop-up browser window
 - Grant access when asked, then close the browser page
   ![Login and grant access](../_static/images/nextcloud_login_grantaccess.png)
-- Choose a folder to store the data, it has to be new or empty folder
+- Choose a folder to store the data; it must be a new or empty folder
   ![Choose sync location](../_static/images/nextcloud_login_chooselocation.png)
-- Press connect, all should be syncing now, you can see ![icon](../_static/images/nextcloud_icon.png) in your system tray, which located on the bottom right (Windows) or top right (MacOS), expand the system tray if needed.
+- Click Connect. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) in your system tray, which is located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
 - Check your settings:
-  - Right click on the next cloud icon ![icon](../_static/images/nextcloud_icon.png) in system tray, left click on "Settings"
+  - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"
     ![NextCloud Settings](../_static/images/nextcloud_systemtray.png)
-  - Use virtual files needs to be **enabled**
+  - Virtual files must be **enabled**
     ![Virtual files enabled](../_static/images/nextcloud_login_checkvertualfileenabled.png)
 - You can access the data via the file browser
 
