@@ -22,7 +22,12 @@ Practical tips:
 ## Setup autosharing within group
 
 - Go to [Universeit Leiden RSpace](https://leiden.researchspace.com) and login with your ULCN account
+Share all labjournals of all users with everyone in the whole group:
 - Go to my RSpace and activate autosharing, like this all items you create will be shared with the whole group
-- If you only want to share a single notebook please create that notebook in the shared folder
-- If you want to share a single notebook with only a selection of users please select that notebook, and click the share icon. Select the user or group and save the changes
+Share a single notebook with all users in the group:
+- If you only want to share a single notebook that is shared with everyone in the group please create that notebook in the shared folder of the group
+Share a single notebook with users/groups within or outside the current group
+- If you want to share a single notebook select that notebook, and click the share icon. Select the user or group and save the changes. Here you can also share to all users
+
+  
 - For ELN tutorials look here [FWN-RSpace ELN Inventory Training Videos](https://video.leidenuniv.nl/channel/FWN-RSpace%2BELN%2BInventory%2BTraining%2BVideos/283092772)
