@@ -12,68 +12,82 @@ depth: 3
 
 ## Terminology
 
-- Nextcloud <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: A service on which Research Drive is based. It is used to manage your Research Drive files and includes a web interface and a local application.
-- Cloud/Local storage: Cloud is files on a server you reach over the internet; local is files stored on your local computer.
-- Virtual files: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
-- Hot storage: Fast, always-ready storage used for files you need right now.
-- Cold storage: Cheaper, slower storage for files you rarely use but want to keep.
-- ELN: Electronic lab notebook, or electronic lab journal
-- RSpace: also Research Space, <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>, a web application of our actual implementation of ELN.
+- **Nextcloud** <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: A service on which Research Drive is based. It is used to manage your Research Drive files and includes a web interface and a local application.
+- **Cloud/Local storage**: Cloud is files on a server you reach over the internet; local is files stored on your local computer.
+- **Virtual files**: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
+- **Hot storage**: Fast, always-ready storage used for files you need right now.
+- **Cold storage**: Cheaper, slower storage for files you rarely use but want to keep.
+- **ELN**: Electronic lab notebook, or electronic lab journal
+- **RSpace**: also Research Space, <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>, a web application of our actual implementation of ELN.
 
 ```{note}
-Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost after the retention period (30 days). For critical data, especially raw data, consider sharing folders with "read only" permissions to prevent accidental deletion.
+Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost after the retention period (60 days). For critical data, especially raw data, consider sharing folders with "read only" permissions to prevent accidental deletion.
 ```
+
+## Research Drive intended structure
+
+![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)
 
 ## Workflow Getting Research Drive
 
-Instruction made for research group in IBL
+Instructions for research groups in IBL
 
 ### Homework for PIs
 
-Fill out DMP for:
-1. All projects that generate research data
-2. For collaborative project, you can use the collective DMP
-3. An umbrela DMP for your group, consider all small topics that may not fit any project yet.
+For all your current projects, check the DMP and update the corresponding part to fit the new situation. Make sure the costs are covered by the project. For each project folder that you need, please assign a cost centre. IBL will fund the first 0.5 TB of the PI umbrella project folder. ISSC is not centrally funding the first TB with a valid DMP, so there is no need to attach that; just mention the cost centre when filling in the form from the ISSC helpdesk.
 
-Contact ibl.rdm@biology.leidenuniv.nl to get them approved.
+Optionally, fill out a DMP for:
+1. All projects that generate research data
+2. Collaborative projects (you can use a collective DMP)
+3. An umbrella DMP for your group (covering smaller topics that may not fit any project yet)
+
+Contact ibl.rdm@biology.leidenuniv.nl to have them approved.
 
 ### Preparation and Application
 
 - Request Research Drive per project/DMP
 - Request ELN group account if it does not exist
-- All employees request ELN account (PI/PhD/PostDoc/Labmanager)
-- Supervisors (PI/PhD/PostDoc) request ELN account per (master/bachelor) student
+- All employees request an ELN account (PI/PhD/PostDoc/Labmanager)
+- Supervisors (PI/PhD/PostDoc) request an ELN account per (master/bachelor) student
 - Users request Nextcloud software installation
+
+::: {admonition} First-time login
+Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
+:::
+
+::: {admonition} No permission to create a project folder
+On your "Dashboard" → "Project folders" page, you may see the message "You do not have sufficient permissions to create ...". This is normal: project folders can only be created by ISSC upon request.
+:::
 
 ### Setting Up and Invitation
 
-After researchdrive have been activated, follow these steps:
+After Research Drive has been activated, follow these steps:
 
-- PI logs into [Research Drive](https://universiteitleiden.data.surf.nl)
-- Go to dashboard (top left icon row, most right icon of this row)
-- User accounts and invite all users, both staff and students.  
+- PI logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
+- Go to the dashboard (top-left icon row, rightmost icon)
+- Go to User accounts and invite all users, both staff and students
 - Invite users using their official email address, for example the @biology mail for employees
 - Go to the files and go into your project folder by clicking it
 - Create a folder for each student/employee in this project
-- Once the account is activated click the shared button next to the student/employee folder 
-- Use the internal shares to add the correct users, set it to allow editing
+- Once the account is activated, click the "Shared" button next to the student/employee folder
+- Use internal shares to add the correct users, and set permissions to allow editing
 - Users can now access data within the subfolder of the project.
-- Never add any data to the root folder since this will not be synced
-- Install NextCloud application from the company portal
-- Open NextCloud once installed, click login
+- Never add any data to the root folder, because it will not be synced
+- Install the Nextcloud application from the company portal
+- Open Nextcloud once installed and click Log in
   ![login](../_static/images/nextcloud_login_login.png)
 - Enter https://universiteitleiden.data.surf.nl, click Next
   ![Enter URL](../_static/images/nextcloud_login_URL.png)
-- Login with your ULCN account in the popup browser page
+- Log in with your ULCN account in the pop-up browser window
 - Grant access when asked, then close the browser page
   ![Login and grant access](../_static/images/nextcloud_login_grantaccess.png)
-- Choose a folder to store the data, it has to be new or empty folder
+- Choose a folder to store the data; it must be a new or empty folder
   ![Choose sync location](../_static/images/nextcloud_login_chooselocation.png)
-- Press connect, all should be syncing now, you can see ![icon](../_static/images/nextcloud_icon.png) in your system tray, which located on the bottom right (Windows) or top right (MacOS), expand the system tray if needed.
+- Click Connect. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) in your system tray, which is located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
 - Check your settings:
-  - Right click on the next cloud icon ![icon](../_static/images/nextcloud_icon.png) in system tray, left click on "Settings"
+  - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"
     ![NextCloud Settings](../_static/images/nextcloud_systemtray.png)
-  - Use virtual files needs to be **enabled**
+  - Virtual files must be **enabled**
     ![Virtual files enabled](../_static/images/nextcloud_login_checkvertualfileenabled.png)
 - You can access the data via the file browser
 
@@ -96,3 +110,27 @@ Uploading files usually involves three steps:
 3. If the files are not used, or if local storage is full, Nextcloud removes the local copies and replaces them with “virtual files”.
 
 If you have large files located on your network drive, the first step can be difficult because you may not have enough local storage to hold them temporarily.
+
+### Windows long path compatibility issue
+
+On Windows, file paths can become too long for the operating system or for specific applications. Even on recent Windows versions, many tools still fail when the full path length approaches the legacy limit ([260 characters](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation)). When this happens, files may not sync correctly and may not be usable locally.
+
+```{warning}
+If Windows cannot create a folder/file locally due to path length, the Nextcloud/Research Drive client cannot store it either. You may see sync errors.
+```
+
+#### Common scenarios where files cannot be stored (or synced)
+
+- Deep folder nesting (many subfolders), especially when the local sync folder is already long (for example under `C:\Users\<name>\Documents\...`).
+- Very long filenames, or filenames generated by software exports (for example, long sample IDs + many parameters in the name).
+- Extracting archives (ZIP/TAR) into a synced folder: the extracted structure is often deeper than expected.
+- Cloning software repositories into Research Drive (for example, projects containing `node_modules`, `venv`, `conda` environments, or other dependency trees).
+- Workflows that auto-generate deeply nested output directories.
+
+#### How to reduce the risk
+
+- Use a short local sync root path (for example `C:\Users\<name>\RD` instead of a long path).
+- Avoid unnecessary nesting; keep project folder structures shallow.
+- Shorten filenames where possible; avoid encoding too much metadata in the name. Keep the metadata in a separate file when necessary.
+- **Do not store dependency folders or full software environments in Research Drive**; keep those local.
+- If you are on a managed university device and need Windows long path support enabled, contact ICT/ISSC. Enabling it typically requires admin rights, and note some applications still ignore the setting or report error while reading those files.
