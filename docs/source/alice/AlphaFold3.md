@@ -8,7 +8,6 @@ For more on structural bioinformatics tools visit our other pages or contact us 
 
 ---
 ## 1. input
----
 
 AF3 accepts input in JSON format. You can input single proteins, PPI-complexes, as well as ligands and ions. To make this more convenient I have prepared a script to automate FASTA to JSON conversion, prepare SBATCH subsmission script for SLURM, and a few more advanced, optional features. 
 
@@ -36,20 +35,17 @@ There are many more options to explore. For the full list of options run the scr
 
 ---
 ## 3. Understanding output
----
 
 If you ran your job using the defaults in my script, you will have run your prediction using 5 replicates. Each replicate run produces 5 models with confidence scores, and the best is automatically selected for you. The remaining models are in the subfolders with seed number in the folder name. 
 
 
 ---
 ## 4. Visualising output
----
 
 For this we use PyMOL to visualise the structure, and some of our self-made scripts for confidence assessment and contact analysis. I will add this at a later time. If you already want to do do this yourself, feel free to contact me for the scripts. 
 
 ---
 ## 5. Final remarks
----
 
 A single protein prediction is easy to do, but for larger jobs and complicated proteins (or if you just dont know how to use any of this) please reach out to belmin bajramovic on slack for more help.
 
