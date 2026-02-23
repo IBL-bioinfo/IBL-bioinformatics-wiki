@@ -175,7 +175,7 @@ If Windows cannot create a folder/file locally due to path length, the Nextcloud
 
 #### How to reduce the risk
 
-- Use a short local sync root path (for example `C:\Users\<name>\RD` instead of a long path).
+- Use a short local sync root path (for example `C:\Users\<name>\RD` or simply `C:\RD` (if you are not sharing this computer with others) instead of a long path).
 - Avoid unnecessary nesting; keep project folder structures shallow.
 - Shorten filenames where possible; avoid encoding too much metadata in the name. Keep the metadata in a separate file when necessary.
 - **Do not store dependency folders or full software environments in Research Drive**; keep those local.
