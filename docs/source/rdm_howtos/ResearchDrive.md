@@ -55,8 +55,10 @@ Contact ibl.rdm@biology.leidenuniv.nl to have them approved.
 Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
 :::
 
-::: {admonition} No permission to create a project folder
+::: {admonition} It is **normal** to have "No permission to create a project folder"
 On your "Dashboard" → "Project folders" page, you may see the message "You do not have sufficient permissions to create ...". This is normal: project folders can only be created by ISSC upon request.
+
+![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
 :::
 
 ### Setting Up and Invitation
