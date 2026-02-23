@@ -13,7 +13,7 @@ depth: 3
 ## Terminology
 
 - **Nextcloud** <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: A service on which Research Drive is based. It is used to manage your Research Drive files and includes a web interface and a local application.
-- **Cloud/Local storage**: Cloud is files on a server you reach over the internet; local is files stored on your local computer.
+- **Cloud/Local storage**: **Cloud** means the file lives on Research Drive (a server you reach over the internet); **local** means the file is stored on your computer’s disk. If you want background, see [Cloud computing](https://en.wikipedia.org/wiki/Cloud_computing).
 - **Virtual files**: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
 - **Hot storage**: Fast, always-ready storage used for files you need right now.
 - **Cold storage**: Cheaper, slower storage for files you rarely use but want to keep.
@@ -55,8 +55,10 @@ Contact ibl.rdm@biology.leidenuniv.nl to have them approved.
 Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
 :::
 
-::: {admonition} No permission to create a project folder
+::: {admonition} It is **normal** to have "No permission to create a project folder"
 On your "Dashboard" → "Project folders" page, you may see the message "You do not have sufficient permissions to create ...". This is normal: project folders can only be created by ISSC upon request.
+
+![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
 :::
 
 ### Setting Up and Invitation
@@ -91,17 +93,55 @@ After Research Drive has been activated, follow these steps:
     ![Virtual files enabled](../_static/images/nextcloud_login_checkvertualfileenabled.png)
 - You can access the data via the file browser
 
+### Space on your local machine
+
+Research Drive uses the Nextcloud desktop client to *sync* files between the **cloud** (Research Drive) and your **local** computer.
+
+If **Virtual files** are enabled (recommended), Windows Explorer can show files that exist in the cloud without storing the full data locally.
+
+- Local vs cloud (practical meaning)
+  - **Cloud**: The file exists on Research Drive and counts toward your project’s storage, even if it is not downloaded to your laptop/PC.
+  - **Local**: The file’s data is present on your computer and consumes disk space.
+
+You can think of “virtual files” as shortcuts/placeholders: they show up in Explorer so you can browse/search, but the content is only downloaded when you open it.
+
+#### Windows “Properties” can show two different sizes
+
+On Windows, right-click a file/folder → **Properties**. You may see:
+
+- **Size**: the *logical* size of the file(s) (how much data it is in total).
+  - Large, showing the real file size in the cloud.
+- **Size on disk**: the *physical* space currently used on your local drive.
+  - Zero or very small with virtual files, only metadata/placeholder data stored locally.
+
+![Property window when virtual files are enabled](../_static/images/nextcloud_virtual_files.png)
+
+After you open a file (or mark it to keep offline), Windows downloads it and **Size on disk** will increase accordingly.
+
+::: {admonition} Secure local space before opening
+If you do not have enough space for the file you are opening, Nextcloud will try to reclaim space by converting downloaded local files to cloud, if not successfule, it report corrspnding error.
+:::
+
+#### Free up space (Windows)
+
+If your local disk is getting full, you can remove local copies while keeping the files in Research Drive.
+
+Common options in Windows Explorer (wording may vary slightly by Nextcloud client version):
+
+1. In the synced Research Drive folder, right-click a file or folder.
+2. Choose **Free up space**.
+
+![Free up space](../_static/images/nextcloud_take_too_much_space.png)
+
+This converts downloaded files back to online-only (virtual) files:
+
+- The data stays in Research Drive (cloud).
+- The file remains visible in Explorer.
+- Disk space is freed on your computer.
+
 ### Transfer large files from network drive
 
 Transferring large files located on a network drive (for example, `J:`) to the cloud may require some extra steps.
-
-Choose **one** of the following:
-
-1. Recommended: [**Add** an additional sync folder, then **remove** the sync after uploading](./ResearchDrive_uploadFromNetworkDrive.md)
-2. [RcloneView](https://rcloneview.com/) software (not for university computers)
-3. [Rclone GUI](https://rclone.org/gui/)
-
-#### Reasoning
 
 Uploading files usually involves three steps:
 
@@ -110,6 +150,12 @@ Uploading files usually involves three steps:
 3. If the files are not used, or if local storage is full, Nextcloud removes the local copies and replaces them with “virtual files”.
 
 If you have large files located on your network drive, the first step can be difficult because you may not have enough local storage to hold them temporarily.
+
+**Choose one of the following**:
+
+1. Recommended: [**Add** an additional sync folder, then **remove** the sync after uploading](./ResearchDrive_uploadFromNetworkDrive.md)
+2. [RcloneView](https://rcloneview.com/) software (not for university computers)
+3. [Rclone GUI](https://rclone.org/gui/)
 
 ### Windows long path compatibility issue
 
@@ -121,7 +167,7 @@ If Windows cannot create a folder/file locally due to path length, the Nextcloud
 
 #### Common scenarios where files cannot be stored (or synced)
 
-- Deep folder nesting (many subfolders), especially when the local sync folder is already long (for example under `C:\Users\<name>\Documents\...`).
+- Deep folder nesting (many subfolders), especially when the local sync folder is already long (for example under `C:\RD`).
 - Very long filenames, or filenames generated by software exports (for example, long sample IDs + many parameters in the name).
 - Extracting archives (ZIP/TAR) into a synced folder: the extracted structure is often deeper than expected.
 - Cloning software repositories into Research Drive (for example, projects containing `node_modules`, `venv`, `conda` environments, or other dependency trees).
@@ -129,7 +175,7 @@ If Windows cannot create a folder/file locally due to path length, the Nextcloud
 
 #### How to reduce the risk
 
-- Use a short local sync root path (for example `C:\Users\<name>\RD` instead of a long path).
+- Use a short local sync root path (for example `C:\Users\<name>\RD` or simply `C:\RD` (if you are not sharing this computer with others) instead of a long path).
 - Avoid unnecessary nesting; keep project folder structures shallow.
 - Shorten filenames where possible; avoid encoding too much metadata in the name. Keep the metadata in a separate file when necessary.
 - **Do not store dependency folders or full software environments in Research Drive**; keep those local.
