@@ -177,7 +177,7 @@ Paste it into the command line.
 
 If it is the first time you try to paste something into the command line, please right click in the command line window. A pop up will show.
 
-<img src=../_static/images/mobaxterm_paste.png width=50%>
+<img src=../_static/images/mobaxterm_paste.png width=300px>
 
 
 Choose at your will. Please remember what you chose, it will become difficult if you forgot how to paste text into the command line. If you have the following window after click OK, it means you copied multiple lines:
