@@ -28,7 +28,7 @@ We hope to achieve FAIR principles for research data produced in IBL:
 
 IBL has a BioRender account that you can join only if you register with an `@biology.leidenuniv.nl` email address. The policy has been shared with PIs and will be included in the introduction material. The correct institute account (organisation) name is [**Leiden University - Institute of Biology**](https://app.biorender.com/portal/leiden-university-institute-biology).
 
-Please fill in [this form](https://forms.cloud.microsoft/e/3wJqS3TBdi) when you join our institute. QR code to the form:
+Please fill in [this form](https://forms.cloud.microsoft/e/3wJqS3TBdi) (login required) when you join our institute. QR code to the form:
 
 ![QRCode IBL BioRender registration](../_static/images/QRCode_IBL_BioRender_registration.resize.png)
 
