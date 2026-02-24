@@ -130,8 +130,7 @@ Common options in Windows Explorer (wording may vary slightly by Nextcloud clien
 
 1. In the synced Research Drive folder, right-click a file or folder.
 2. Choose **Free up space**.
-3. Sometimes the **Free up space** button is unavailable. In such cases click **Always keep on this device**.
-  - This will download all the data on your local disk, after which the **Free up space** button will become available
+3. Sometimes the **Free up space** option is unavailable. This usually means **the selected file or folder** is already online-only (stored only in the cloud), so there is no local copy to remove. You can check the properties to confirm.
 
 ![Free up space](../_static/images/nextcloud_take_too_much_space.png)
 
