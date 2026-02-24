@@ -77,20 +77,49 @@ After Research Drive has been activated, follow these steps:
 - Never add any data to the root folder, because it will not be synced
 - Install the Nextcloud application from the company portal
 - Open Nextcloud once installed and click Log in
-  ![login](../_static/images/nextcloud_login_login.png)
+
+  ```{image} ../_static/images/nextcloud_login_login.png
+  :alt: login
+  :width: 30em
+  ```
+
 - Enter https://universiteitleiden.data.surf.nl, click Next
-  ![Enter URL](../_static/images/nextcloud_login_URL.png)
+
+  ```{image} ../_static/images/nextcloud_login_URL.png
+  :alt: Enter URL
+  :width: 30em
+  ```
+
 - Log in with your ULCN account in the pop-up browser window
 - Grant access when asked, then close the browser page
-  ![Login and grant access](../_static/images/nextcloud_login_grantaccess.png)
+
+  ```{image} ../_static/images/nextcloud_login_grantaccess.png
+  :alt: Login and grant access
+  :width: 30em
+  ```
+
 - Choose a folder to store the data; it must be a new or empty folder
-  ![Choose sync location](../_static/images/nextcloud_login_chooselocation.png)
+
+  ```{image} ../_static/images/nextcloud_login_chooselocation.png
+  :alt: Choose sync location
+  :width: 30em
+  ```
+
 - Click Connect. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) in your system tray, which is located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
 - Check your settings:
   - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"
-    ![NextCloud Settings](../_static/images/nextcloud_systemtray.png)
+
+    ```{image} ../_static/images/nextcloud_systemtray.png
+    :alt: NextCloud Settings
+    ```
+
   - Virtual files must be **enabled**
-    ![Virtual files enabled](../_static/images/nextcloud_login_checkvertualfileenabled.png)
+
+    ```{image} ../_static/images/nextcloud_login_checkvertualfileenabled.png
+    :alt: Virtual files enabled
+    :width: 45em
+    ```
+
 - You can access the data via the file browser
 
 ### Space on your local machine
@@ -130,8 +159,7 @@ Common options in Windows Explorer (wording may vary slightly by Nextcloud clien
 
 1. In the synced Research Drive folder, right-click a file or folder.
 2. Choose **Free up space**.
-3. Sometimes the **Free up space** button is unavailable. In such cases click **Always keep on this device**.
-  - This will download all the data on your local disk, after which the **Free up space** button will become available
+3. Sometimes the **Free up space** option is unavailable. This usually means **the selected file or folder** is already online-only (stored only in the cloud), so there is no local copy to remove. You can check the properties to confirm.
 
 ![Free up space](../_static/images/nextcloud_take_too_much_space.png)
 
