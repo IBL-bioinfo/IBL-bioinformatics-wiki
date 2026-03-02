@@ -96,17 +96,11 @@ It is easy to find information and basic training online. If you do not know whi
 
 [Research Network](#what-is-research-network)
 
-To ask for access to all servers, please fill in this form https://forms.office.com/e/aTH5VSJdEL. Please let me know the following info:
+To ask for access to all servers, please fill in [this form](https://forms.office.com/e/aTH5VSJdEL).
 
-- The user name you want to use for login. Only lower case letters and numbers allowed, start with letters. It is OK that you use the same user name as your ULCN account.
-- Your first name
-- Your last name
-- The group you come from (your supervisor)
-- The analysis you want to do (generally)
+Once you have submitted the form, we will provide you information needed for accessing our servers.
 
-We will provide you information needed for accessing our servers.
-
-Currently we are using Slack group "IBL-Bioinformatic" for discussion and most importantly, send notifications about all servers. You will get invitation link with your username and password.
+Currently we are using Slack group "IBL-Bioinformatic" for discussion and most importantly, organizing and planning long jobs in `#jobs-on-servers` channel. You will get invitation link together with your IBL server username and password.
 
 ## Usage guidelines
 
@@ -120,7 +114,12 @@ However, please keep in mind that this is a shared resource. To ensure fair use,
    - CPU cores
    - Memory
    - Network bandwidth and connections
-   - Storage space
+   - **Storage space**
+     - Use your home directory for small files and programs
+     - Use shared local storage for large files and programs, but be mindful of others
+     - Remove files you no longer need to free up space
+     - Keep an eye on the environment you created with `micromamba`, especially if they download large files during installation.
+     - Check [Monitoring disk space](./Install%20programs.md#monitoring-disk-space) for tips on how to monitor and manage disk space.
 4. Inform others when a significant number of resources are needed
 5. Report any issues promptly
 
