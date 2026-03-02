@@ -119,6 +119,7 @@ However, please keep in mind that this is a shared resource. To ensure fair use,
      - Use shared local storage for large files and programs, but be mindful of others
      - Remove files you no longer need to free up space
      - Keep an eye on the environment you created with `micromamba`, especially if they download large files during installation.
+     - Check [Monitoring disk space](./Install%20programs.md#monitoring-disk-space) for tips on how to monitor and manage disk space.
 4. Inform others when a significant number of resources are needed
 5. Report any issues promptly
 
