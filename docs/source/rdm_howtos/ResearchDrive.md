@@ -10,72 +10,29 @@ depth: 3
 ---
 ```
 
-## Terminology
-
-- **Nextcloud** <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: A service on which Research Drive is based. It is used to manage your Research Drive files and includes a web interface and a local application.
-- **Cloud/Local storage**: **Cloud** means the file lives on Research Drive (a server you reach over the internet); **local** means the file is stored on your computer’s disk. If you want background, see [Cloud computing](https://en.wikipedia.org/wiki/Cloud_computing).
-- **Virtual files**: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
-- **Hot storage**: Fast, always-ready storage used for files you need right now.
-- **Cold storage**: Cheaper, slower storage for files you rarely use but want to keep.
-- **ELN**: Electronic lab notebook, or electronic lab journal
-- **RSpace**: also Research Space, <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>, a web application of our actual implementation of ELN.
-
-```{note}
-Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost after the retention period (60 days). For critical data, especially raw data, consider sharing folders with "read only" permissions to prevent accidental deletion.
-```
-
 ## Research Drive intended structure
 
 ![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)
 
-## Workflow Getting Research Drive
+## Nextcloud and Research Drive
 
-Instructions for research groups in IBL
+**Nextcloud is the software platform that powers Research Drive.** It provides a user-friendly interface for managing files and folders, as well as features for sharing and collaboration. The Nextcloud desktop client allows you to sync files between your local computer and Research Drive, enabling you to access your data from anywhere with an internet connection.
 
-### Homework for PIs
+### Download and install Nextcloud desktop client
 
-For all your current projects, check the DMP and update the corresponding part to fit the new situation. Make sure the costs are covered by the project. For each project folder that you need, please assign a cost centre. ISSC is **not** centrally funding the first TB with a valid DMP, so there is no need to attach that; just mention the cost centre when filling in the form from the ISSC helpdesk. IBL will fund the first 0.5 TB of the PI umbrella project folder.
+For University Computer, please find Nextcloud desktop client in the company portal (Windows 11) or Managed Software Centre (MacOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version if you are using Linux.
 
-Optionally, fill out a DMP:
-1. All projects that generate research data
-2. Collaborative projects (you can use a collective DMP)
-3. An umbrella DMP for your group (covering smaller topics that may not fit any project yet)
-4. Contact ibl.rdm@biology.leidenuniv.nl to have them approved.
+:::{admonition} MacOS users
+Please make sure to select **"macOS Virtual files 12+ (64 bit, universal)"** version of Nextcloud desktop client from the dropdown menu when downloading. The "Virtual files" version allows you to access your Research Drive files without taking up local storage space, which is standard practice.
 
-### Preparation and Application
-
-- Request Research Drive per project/DMP/contract
-  - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
-  - Go to "Research support" → "Research Drive" → "Request Research Drive"
-  - Choose "No" for DMP, always use a cost centre number in "SAP number:" field, ISSC stopped support for DMP-based funding.
-  - Mention the project folder name you want to create in "Comment:" field
-- Request ELN group account (equivalent to PI account) if it does not exist
-  - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) Go to "Research support" → "ELN" → "ELN PI account activation"
-- All employees request an ELN account (PhD/PostDoc/Labmanager)
-  - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) Go to "Research support" → "ELN" → "ELN account activation"
-  - Fill in the "PI team" field correctly, so that the account can be linked to the right ELN group
-- Supervisors (PI/PhD/PostDoc) request an ELN account per (master/bachelor) student
-  - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) Go to "Research support" → "ELN" → "ELN student access"
-  - Fill in the form correctly. For "Group" field, use the ELN group name of the supervisor (PI/PhD/PostDoc)
-- Users install the Nextcloud desktop client from the company portal (Windows 11) or Managed Software Center (MacOS), and log in to Research Drive with their ULCN account. See the next section for details.
-
-::: {admonition} ELN account deactivates after 6 months of inactivity
-ELN accounts that have not been used for 6 months will be deactivated. If you need to reactivate an account, go to "Research support" → "ELN" → "ELN account activation"
+!["macOS 12+" (standard) and "macOS Virtual files 12+ (64 bit, universal)". The later needs to be selected from the dropdown menu.](../_static/images/nextcloud_macos_virtualfiles_version.jpg)
 :::
 
-::: {admonition} First-time login
-Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
+:::{admonition} Managed Software Centre for MacOS users
+It is possible that the Nextcloud desktop client available in the Managed Software Centre does not have the "Virtual files" feature enabled. If that is the case, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support. This feature is important for efficient storage management and seamless access to Research Drive files on your local machine.
 :::
 
-::: {admonition} It is **normal** to have "No permission to create a project folder"
-On your "Dashboard" → "Project folders" page, you may see the message "You do not have sufficient permissions to create ...". This is normal: project folders can only be created by ISSC upon request.
-
-![You will always see 0B of 0B used](../_static/images/nextcloud_zero_of_zero_used.png)
-
-![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
-:::
-
-### Setting Up and Invitation
+## Workflow Setting Up Research Drive
 
 After Research Drive has been activated, follow these steps:
 
