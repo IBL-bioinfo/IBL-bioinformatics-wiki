@@ -60,15 +60,3 @@ Optionally, fill out a DMP:
 ::: {admonition} ELN account deactivates after 6 months of inactivity
 ELN accounts that have not been used for 6 months will be deactivated. If you need to reactivate an account, go to "Research support" → "ELN" → "ELN account activation"
 :::
-
-::: {admonition} First-time login
-Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
-:::
-
-::: {admonition} It is **normal** to have "No permission to create a project folder"
-On your "Dashboard" → "Project folders" page, you may see the message "You do not have sufficient permissions to create ...". This is normal: project folders can only be created by ISSC upon request.
-
-![You will always see 0B of 0B used](../_static/images/nextcloud_zero_of_zero_used.png)
-
-![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
-:::

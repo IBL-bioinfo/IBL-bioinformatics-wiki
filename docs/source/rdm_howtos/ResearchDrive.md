@@ -93,6 +93,18 @@ After Research Drive has been activated, follow these steps:
 
 - You can access the data via the file browser
 
+::: {admonition} First-time login
+Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
+:::
+
+::: {admonition} It is **normal** to have "No permission to create a project folder"
+On your "Dashboard" → "Project folders" page, you may see the message "You do not have sufficient permissions to create ...". This is normal: project folders can only be created by ISSC upon request.
+
+![You will always see 0B of 0B used](../_static/images/nextcloud_zero_of_zero_used.png)
+
+![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
+:::
+
 ### Space on your local machine
 
 Research Drive uses the Nextcloud desktop client to *sync* files between the **cloud** (Research Drive) and your **local** computer.
