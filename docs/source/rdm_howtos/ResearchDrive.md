@@ -20,7 +20,7 @@ depth: 3
 
 ### Download and install Nextcloud desktop client
 
-For University Computer, please find Nextcloud desktop client in the company portal (Windows 11) or Managed Software Centre (MacOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version if you are using Linux.
+For University Computer, please find Nextcloud desktop client in the **Company Portal** (Windows 11) or **Managed Software Centre** (MacOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version available.
 
 :::{admonition} MacOS users
 Please make sure to select **"macOS Virtual files 12+ (64 bit, universal)"** version of Nextcloud desktop client from the dropdown menu when downloading. The "Virtual files" version allows you to access your Research Drive files without taking up local storage space, which is standard practice.
@@ -34,64 +34,11 @@ It is possible that the Nextcloud desktop client available in the Managed Softwa
 
 ## Workflow Setting Up Research Drive
 
-After Research Drive has been activated, follow these steps:
+After Research Drive has been activated, follow these steps to set up your project folder, invite users, and sync files to your local computer.
 
+Login:
 - PI logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
 - Go to the dashboard (top-left icon row, rightmost icon)
-- Go to User accounts and invite all users, both staff and students
-- Invite users using their official email address, for example the @biology mail for employees
-- Go to the files and go into your project folder by clicking it
-- Create a folder for each student/employee in this project
-- Once the account is activated, click the "Shared" button next to the student/employee folder
-- Use internal shares to add the correct users, and set permissions to allow editing
-- Users can now access data within the subfolder of the project.
-- Never add any data to the root folder, because it will not be synced
-- Install the Nextcloud application from the company portal
-- Open Nextcloud once installed and click Log in
-
-  ```{image} ../_static/images/nextcloud_login_login.png
-  :alt: login
-  :width: 30em
-  ```
-
-- Enter https://universiteitleiden.data.surf.nl, click Next
-
-  ```{image} ../_static/images/nextcloud_login_URL.png
-  :alt: Enter URL
-  :width: 30em
-  ```
-
-- Log in with your ULCN account in the pop-up browser window
-- Grant access when asked, then close the browser page
-
-  ```{image} ../_static/images/nextcloud_login_grantaccess.png
-  :alt: Login and grant access
-  :width: 30em
-  ```
-
-- Choose a folder to store the data; it must be a new or empty folder
-
-  ```{image} ../_static/images/nextcloud_login_chooselocation.png
-  :alt: Choose sync location
-  :width: 30em
-  ```
-
-- Click Connect. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) in your system tray, which is located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
-- Check your settings:
-  - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"
-
-    ```{image} ../_static/images/nextcloud_systemtray.png
-    :alt: NextCloud Settings
-    ```
-
-  - Virtual files must be **enabled**
-
-    ```{image} ../_static/images/nextcloud_login_checkvertualfileenabled.png
-    :alt: Virtual files enabled
-    :width: 45em
-    ```
-
-- You can access the data via the file browser
 
 ::: {admonition} First-time login
 Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
@@ -103,6 +50,80 @@ On your "Dashboard" → "Project folders" page, you may see the message "You do 
 ![You will always see 0B of 0B used](../_static/images/nextcloud_zero_of_zero_used.png)
 
 ![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
+:::
+
+Invite users and set up the folder structure:
+- Go to "Dashboard" → "User accounts" and invite all users, both staff and students.
+  - Once the first stuffs finish setting up, they can invite the rest of the staff and students.
+- Invite users using their official email address, for example the @biology mail for employees
+  - External users can have access by inviting their external email address, they can sign up their own [eduID](https://eduid.nl/home) to login.
+- Go to the **Files** tab (top left), and go into your **project folder**
+- Create a folder for everyone in this project
+
+Once the staff and student accounts are activated:
+- Go to the **Files** tab, locate the target folder, and click the **"Shared"** button
+  - Make sure the pop-up shows the correct folder name, click "Sharing" tab if not already selected
+- In **Internal shares** section, add the correct users, and set permissions to allow editing (for their own folder only).
+  - Same procedure for other files you want to share with specific users, but be careful with the permissions.
+- Users can now access data within the subfolder of the project.
+
+::: {admonition} Only add data to the project folder
+The project folder is the only folder that will be synced to your local computer. If you add files outside the project folder, they will not be synced and you will not be able to access them locally.
+:::
+
+Setup local sync (optional):
+- [Install the Nextcloud application](#download-and-install-nextcloud-desktop-client)
+- Open Nextcloud once installed and click **Log in**  
+```{image} ../_static/images/nextcloud_login_login.png
+:alt: login
+:width: 30em
+```
+- Enter the following URL and click **Next**  
+```
+https://universiteitleiden.data.surf.nl
+```
+```{image} ../_static/images/nextcloud_login_URL.png
+:alt: Enter URL
+:width: 30em
+```
+- **Log in** with your ULCN account in the pop-up browser window
+- **Grant access** when asked, then close the browser page  
+```{image} ../_static/images/nextcloud_login_grantaccess.png
+:alt: Login and grant access
+:width: 30em
+```
+- Choose a folder to store the data; it must be a new or empty folder. **Please make sure to select a folder that is not synced by iCloud, OneDrive, or other services**. MacOS users should also avoid using the default "Documents" folder, which is often synced with iCloud and can cause issues. We recommend creating a new folder named "RD" (or similar) directly under your user directory (for example, `C:\Users\<name>\RD` on Windows or `/Users/<name>/RD` on MacOS) to ensure it is not affected by other sync services and to minimize path length issues.
+  - **MacOS users:**
+    - You do not need to choose any file or folder to sync, the virtual file system will create a virtual drive for you, and you can access the data via the file browser. You can also choose to sync to a local folder if you prefer, but it is not required.
+    - You will not see "User virtual files ..." option.  
+```{image} ../_static/images/nextcloud_login_chooselocation.png
+:alt: Choose sync location
+:width: 30em
+```
+- Click **Connect**. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width=1.5em></span> in your system tray, which is located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
+- Check your settings:
+  - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"  
+  - Virtual files must be **enabled**  
+```{image} ../_static/images/nextcloud_systemtray.png
+:alt: NextCloud Settings
+```
+```{image} ../_static/images/nextcloud_login_checkvertualfileenabled.png
+:alt: Virtual files enabled in Windows 11
+:width: 45em
+```
+- For MacOS users, you should see "Virtual files" is enabled by default.
+```{image} ../_static/images/nextcloud_enable_virtual_files_macos.jpg
+:alt: Virtual files enabled in MacOS
+:width: 30em
+```
+- You can access the data via the file browser (Explorer on Windows, Finder on MacOS). You should see the cloud icon on the project folder, that icon will change depending on whether the files are cloud-only or downloaded.
+```{image} ../_static/images/nextcloud_locations.png
+:alt: Data access via file browser
+:width: 45em
+```
+
+::: {admonition} Create **Teams** and share within team
+Sometimes you want to share a folder with all of your lab members or a specific subgroup. You can create **Teams** in the "Contacts" page (top bar), add the relevant users to that team, and then share the folder with the team instead of individual users. This way, when you add new members to the team, they will automatically have access to the shared folder.
 :::
 
 ### Space on your local machine
