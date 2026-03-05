@@ -23,7 +23,8 @@ depth: 3
 For University Computer, please find Nextcloud desktop client in the **Company Portal** (Windows 11) or **Managed Software Centre** (MacOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version available.
 
 :::{admonition} MacOS users
-Please make sure to select **"macOS Virtual files 12+ (64 bit, universal)"** version of Nextcloud desktop client from the dropdown menu when downloading. The "Virtual files" version allows you to access your Research Drive files without taking up local storage space, which is standard practice.
+(select-virtual-files-version)=
+Please make sure to select "Virtual files" desktop client, for example **"macOS Virtual files 12+ (64 bit, universal)"**, from the dropdown menu when downloading. The "Virtual files" version allows you to access your Research Drive files without taking up local storage space, which is inevitable for most research scenarios and is a standard practice.
 
 !["macOS 12+" (standard) and "macOS Virtual files 12+ (64 bit, universal)". The later needs to be selected from the dropdown menu.](../_static/images/nextcloud_macos_virtualfiles_version.jpg)
 :::
@@ -95,15 +96,16 @@ https://universiteitleiden.data.surf.nl
 - Choose a folder to store the data; it must be a new or empty folder. **Please make sure to select a folder that is not synced by iCloud, OneDrive, or other services**. MacOS users should also avoid using the default "Documents" folder, which is often synced with iCloud and can cause issues. We recommend creating a new folder named "RD" (or similar) directly under your user directory (for example, `C:\Users\<name>\RD` on Windows or `/Users/<name>/RD` on MacOS) to ensure it is not affected by other sync services and to minimize path length issues.
   - **MacOS users:**
     - You do not need to choose any file or folder to sync, the virtual file system will create a virtual drive for you, and you can access the data via the file browser. You can also choose to sync to a local folder if you prefer, but it is not required.
-    - You will not see "User virtual files ..." option.  
+    - You will not see "User virtual files ..." option.
+  - [Virtual files and "Choose what to sync" are mutually exclusive](#choose-what-to-sync-are-mutually-exclusive)
 ```{image} ../_static/images/nextcloud_login_chooselocation.png
 :alt: Choose sync location
 :width: 30em
 ```
-- Click **Connect**. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width=1.5em></span> in your system tray, which is located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
+- Click **Connect**. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width=1.5em></span> in your system tray located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
 - Check your settings:
   - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"  
-  - Virtual files must be **enabled**  
+  - Virtual files **enabled**  
 ```{image} ../_static/images/nextcloud_systemtray.png
 :alt: NextCloud Settings
 ```
@@ -111,7 +113,7 @@ https://universiteitleiden.data.surf.nl
 :alt: Virtual files enabled in Windows 11
 :width: 45em
 ```
-- For MacOS users, you should see "Virtual files" is enabled by default.
+- For MacOS users, you should see "Virtual files" is enabled by default. If not, you need to uninstall the current Nextcloud client and [download the version](#select-virtual-files-version) with "Virtual files" support. For University laptop users, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support.
 ```{image} ../_static/images/nextcloud_enable_virtual_files_macos.jpg
 :alt: Virtual files enabled in MacOS
 :width: 30em
@@ -130,13 +132,19 @@ Sometimes you want to share a folder with all of your lab members or a specific 
 
 Research Drive uses the Nextcloud desktop client to *sync* files between the **cloud** (Research Drive) and your **local** computer.
 
-If **Virtual files** are enabled (recommended), Windows Explorer can show files that exist in the cloud without storing the full data locally.
+When **Virtual files** are enabled (recommended), Windows Explorer or Finder on MacOS can show files that exist in the cloud without storing the full data locally.
 
 - Local vs cloud (practical meaning)
   - **Cloud**: The file exists on Research Drive and counts toward your project’s storage, even if it is not downloaded to your laptop/PC.
   - **Local**: The file’s data is present on your computer and consumes disk space.
 
-You can think of “virtual files” as shortcuts/placeholders: they show up in Explorer so you can browse/search, but the content is only downloaded when you open it.
+You can think of “virtual files” as shortcuts/placeholders: they show up in Explorer or Finder so you can browse/search, but the content is only downloaded when you open it.
+
+
+:::{admonition} Virtual files and "Choose what to sync" are mutually exclusive
+(choose-what-to-sync-are-mutually-exclusive)=
+The "Choose what to sync" option allows you to select specific folders to sync locally, but it is not compatible with virtual files. If you enable "Choose what to sync", you will lose the virtual file functionality, and all files in the synced folders will be downloaded to your local machine. Therefore, it is recommended to keep "Choose what to sync" disabled and use virtual files to manage your storage efficiently.
+:::
 
 #### Windows “Properties” can show two different sizes
 
@@ -152,7 +160,7 @@ On Windows, right-click a file/folder → **Properties**. You may see:
 After you open a file (or mark it to keep offline), Windows downloads it and **Size on disk** will increase accordingly.
 
 ::: {admonition} Secure local space before opening
-If you do not have enough space for the file you are opening, Nextcloud will try to reclaim space by converting downloaded local files to cloud, if not successfule, it report corrspnding error.
+If you do not have enough space for the file you are opening, Nextcloud will try to reclaim space by converting downloaded local files to cloud, if not successful, it will report a corresponding error.
 :::
 
 #### Free up space (Windows)
