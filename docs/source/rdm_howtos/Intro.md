@@ -34,4 +34,4 @@ Please fill in [this form](https://forms.cloud.microsoft/e/3wJqS3TBdi) (login re
 
 New accounts that cannot be found in this form will be removed.
 
-Currently, IBL does not centrally fund discipline-specific commercial research software (for example **SnapGene** or **Geneious Prime**). Group leaders decide whether to use these tools and from which budget to pay. For students (including **PhD students** and **PostDocs**), licenses are usually significantly cheaper.
+Currently, IBL does not centrally fund discipline-specific commercial research software (for example **SnapGene** or **Geneious Prime**). Group leaders decide whether to use these tools and from which budget to pay. For early-career researchers (such as **Master’s and PhD students** and **PostDocs**), licenses are usually significantly cheaper.
