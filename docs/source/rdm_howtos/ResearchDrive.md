@@ -57,7 +57,7 @@ Invite users and set up the folder structure:
 - Go to "Dashboard" → "User accounts" and invite all users, both staff and students.
   - Once the first several staffs finish setting up, they can invite the rest of the staff and students.
 - Invite users using their official email address, for example the @biology mail for employees
-  - **External users** can gain access by inviting their external email address, they can sign up their own [eduID](https://eduid.nl/home) to log in.
+  - **External users** can gain access when you invite their external email address. They must first create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
 - Go to the **Files** tab (top left), and go into your **project folder**
 - Create a folder for everyone in this project
 
@@ -160,7 +160,7 @@ On Windows, right-click a file/folder → **Properties**. You may see:
 After you open a file (or mark it to keep offline), Windows downloads it and **Size on disk** will increase accordingly.
 
 ::: {admonition} Secure local space before opening
-If you do not have enough space for the file you are opening, Nextcloud will try to reclaim space by converting downloaded local files to cloud, if not successful, it will report a corresponding error.
+If you do not have enough space for the file you are opening, Nextcloud will try to reclaim space by converting downloaded local files to cloud. If it is not successful, it will report a corresponding error.
 :::
 
 #### Free up space (Windows)
