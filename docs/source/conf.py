@@ -30,7 +30,7 @@ exclude_patterns = ["_excluded"]
 # https://www.sphinx-doc.org/en/master/#confval-html_sidebars
 html_theme = "alabaster"
 html_static_path = ["_static"]
-html_css_files = ["sidebar.css", "tocbackref.css"]
+html_css_files = ["custom.css", "sidebar.css", "tocbackref.css"]
 html_scaled_image_link = False
 html_sidebars = {
     "**": [

@@ -10,46 +10,36 @@ depth: 3
 ---
 ```
 
-## Terminology
-
-- **Nextcloud** <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: A service on which Research Drive is based. It is used to manage your Research Drive files and includes a web interface and a local application.
-- **Cloud/Local storage**: **Cloud** means the file lives on Research Drive (a server you reach over the internet); **local** means the file is stored on your computer’s disk. If you want background, see [Cloud computing](https://en.wikipedia.org/wiki/Cloud_computing).
-- **Virtual files**: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
-- **Hot storage**: Fast, always-ready storage used for files you need right now.
-- **Cold storage**: Cheaper, slower storage for files you rarely use but want to keep.
-- **ELN**: Electronic lab notebook, or electronic lab journal
-- **RSpace**: also Research Space, <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>, a web application of our actual implementation of ELN.
-
-```{note}
-Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost after the retention period (60 days). For critical data, especially raw data, consider sharing folders with "read only" permissions to prevent accidental deletion.
-```
-
 ## Research Drive intended structure
 
 ![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)
 
-## Workflow Getting Research Drive
+## Nextcloud and Research Drive
 
-Instructions for research groups in IBL
+**Nextcloud is the software platform that powers Research Drive.** It provides a user-friendly interface for managing files and folders, as well as features for sharing and collaboration. The Nextcloud desktop client allows you to sync files between your local computer and Research Drive, enabling you to access your data from anywhere with an internet connection.
 
-### Homework for PIs
+### Download and install Nextcloud desktop client
 
-For all your current projects, check the DMP and update the corresponding part to fit the new situation. Make sure the costs are covered by the project. For each project folder that you need, please assign a cost centre. IBL will fund the first 0.5 TB of the PI umbrella project folder. ISSC is not centrally funding the first TB with a valid DMP, so there is no need to attach that; just mention the cost centre when filling in the form from the ISSC helpdesk.
+For University Computer, please find Nextcloud desktop client in the **Company Portal** (Windows 11) or **Managed Software Centre** (macOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version available.
 
-Optionally, fill out a DMP for:
-1. All projects that generate research data
-2. Collaborative projects (you can use a collective DMP)
-3. An umbrella DMP for your group (covering smaller topics that may not fit any project yet)
+:::{admonition} MacOS users
+(select-virtual-files-version)=
+Please make sure to select "Virtual files" desktop client, for example **"macOS Virtual files 12+ (64 bit, universal)"**, from the dropdown menu when downloading. The "Virtual files" version allows you to access your Research Drive files without taking up local storage space, which is inevitable for most research scenarios and is a standard practice.
 
-Contact ibl.rdm@biology.leidenuniv.nl to have them approved.
+!["macOS 12+" (standard) and "macOS Virtual files 12+ (64 bit, universal)". The latter needs to be selected from the dropdown menu.](../_static/images/nextcloud_macos_virtualfiles_version.jpg)
+:::
 
-### Preparation and Application
+:::{admonition} Managed Software Centre for macOS users
+It is possible that the Nextcloud desktop client available in the Managed Software Centre does not have the "Virtual files" feature enabled. If that is the case, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support. This feature is important for efficient storage management and seamless access to Research Drive files on your local machine.
+:::
 
-- Request Research Drive per project/DMP
-- Request ELN group account if it does not exist
-- All employees request an ELN account (PI/PhD/PostDoc/Labmanager)
-- Supervisors (PI/PhD/PostDoc) request an ELN account per (master/bachelor) student
-- Users request Nextcloud software installation
+## Workflow Setting Up Research Drive
+
+After Research Drive has been activated, follow these steps to set up your project folder, invite users, and sync files to your local computer.
+
+Login:
+- PI logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
+- Go to the dashboard (top-left icon row, rightmost icon)
 
 ::: {admonition} First-time login
 Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
@@ -58,81 +48,103 @@ Expect multiple login prompts and a missing project folder the first time you lo
 ::: {admonition} It is **normal** to have "No permission to create a project folder"
 On your "Dashboard" → "Project folders" page, you may see the message "You do not have sufficient permissions to create ...". This is normal: project folders can only be created by ISSC upon request.
 
+![You will always see 0B of 0B used](../_static/images/nextcloud_zero_of_zero_used.png)
+
 ![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
 :::
 
-### Setting Up and Invitation
-
-After Research Drive has been activated, follow these steps:
-
-- PI logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
-- Go to the dashboard (top-left icon row, rightmost icon)
-- Go to User accounts and invite all users, both staff and students
+Invite users and set up the folder structure:
+- Go to "Dashboard" → "User accounts" and invite all users, both staff and students.
+  - Once the first several staffs finish setting up, they can invite the rest of the staff and students.
 - Invite users using their official email address, for example the @biology mail for employees
-- Go to the files and go into your project folder by clicking it
-- Create a folder for each student/employee in this project
-- Once the account is activated, click the "Shared" button next to the student/employee folder
-- Use internal shares to add the correct users, and set permissions to allow editing
-- Users can now access data within the subfolder of the project.
-- Never add any data to the root folder, because it will not be synced
-- Install the Nextcloud application from the company portal
-- Open Nextcloud once installed and click Log in
+  - **External users** can gain access when you invite their external email address. They must first create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
+- Go to the **Files** tab (top left), and go into your **project folder**
+- Create a folder for everyone in this project
 
+Once the staff and student accounts are activated:
+- Go to the **Files** tab, locate the target folder, and click the **"Shared"** button
+  - Make sure the pop-up shows the correct folder name, click "Sharing" tab if not already selected
+- In **Internal shares** section, add the correct users, and set permissions to allow editing (for their own folder only).
+  - Same procedure for other files you want to share with specific users, but be careful with the permissions.
+- Users can now access data within the subfolder of the project.
+
+::: {admonition} Only add data to the project folder
+The project folder is the only folder that will be synced to your local computer. If you add files outside the project folder, they will not be synced and you will not be able to access them locally.
+:::
+
+Setup local sync (optional):
+- [Install the Nextcloud application](#download-and-install-nextcloud-desktop-client)
+- Open Nextcloud once installed and click **Log in**  
   ```{image} ../_static/images/nextcloud_login_login.png
   :alt: login
   :width: 30em
   ```
-
-- Enter https://universiteitleiden.data.surf.nl, click Next
-
+- Enter the following URL and click **Next**  
+  ```
+  https://universiteitleiden.data.surf.nl
+  ```
   ```{image} ../_static/images/nextcloud_login_URL.png
   :alt: Enter URL
   :width: 30em
   ```
-
-- Log in with your ULCN account in the pop-up browser window
-- Grant access when asked, then close the browser page
-
+- **Log in** with your ULCN account in the pop-up browser window
+- **Grant access** when asked, then close the browser page  
   ```{image} ../_static/images/nextcloud_login_grantaccess.png
   :alt: Login and grant access
   :width: 30em
   ```
-
-- Choose a folder to store the data; it must be a new or empty folder
-
+- Choose a folder to store the data; it must be a new or empty folder. **Please make sure to select a folder that is not synced by iCloud, OneDrive, or other services**. MacOS users should also avoid using the default "Documents" folder, which is often synced with iCloud and can cause issues. We recommend creating a new folder named "RD" (or similar) directly under your user directory (for example, `C:\Users\<name>\RD` on Windows or `/Users/<name>/RD` on macOS) to ensure it is not affected by other sync services and to minimize path length issues.
+  - **MacOS users:**
+    - You do not need to choose any file or folder to sync, the virtual file system will create a virtual drive for you, and you can access the data via the file browser. You can also choose to sync to a local folder if you prefer, but it is not required.
+    - You will not see "User virtual files ..." option.
+  - [Virtual files and "Choose what to sync" are mutually exclusive](#choose-what-to-sync-are-mutually-exclusive)
   ```{image} ../_static/images/nextcloud_login_chooselocation.png
   :alt: Choose sync location
   :width: 30em
   ```
-
-- Click Connect. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) in your system tray, which is located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
+- Click **Connect**. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width="24"></span> in your system tray located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
 - Check your settings:
-  - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"
-
+  - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"  
     ```{image} ../_static/images/nextcloud_systemtray.png
     :alt: NextCloud Settings
     ```
-
-  - Virtual files must be **enabled**
-
+  - Virtual files **enabled**  
     ```{image} ../_static/images/nextcloud_login_checkvertualfileenabled.png
-    :alt: Virtual files enabled
+    :alt: Virtual files enabled in Windows 11
     :width: 45em
     ```
+- For macOS users, you should see "Virtual files" is enabled by default. If not, you need to uninstall the current Nextcloud client and [download the version](#select-virtual-files-version) with "Virtual files" support. For University laptop users, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support.
+  ```{image} ../_static/images/nextcloud_enable_virtual_files_macos.jpg
+  :alt: Virtual files enabled in macOS
+  :width: 30em
+  ```
+- You can access the data via the file browser (Explorer on Windows, Finder on macOS). You should see the cloud icon on the project folder, that icon will change depending on whether the files are cloud-only or downloaded.
+  ```{image} ../_static/images/nextcloud_locations.png
+  :alt: Data access via file browser
+  :width: 45em
+  ```
 
-- You can access the data via the file browser
+::: {admonition} Create **Teams** and share within team
+Sometimes you want to share a folder with all of your lab members or a specific subgroup. You can create **Teams** in the "Contacts" page (top bar), add the relevant users to that team, and then share the folder with the team instead of individual users. This way, when you add new members to the team, they will automatically have access to the shared folder.
+:::
 
 ### Space on your local machine
 
 Research Drive uses the Nextcloud desktop client to *sync* files between the **cloud** (Research Drive) and your **local** computer.
 
-If **Virtual files** are enabled (recommended), Windows Explorer can show files that exist in the cloud without storing the full data locally.
+When **Virtual files** are enabled (recommended), Windows Explorer or Finder on macOS can show files that exist in the cloud without storing the full data locally.
 
 - Local vs cloud (practical meaning)
   - **Cloud**: The file exists on Research Drive and counts toward your project’s storage, even if it is not downloaded to your laptop/PC.
   - **Local**: The file’s data is present on your computer and consumes disk space.
 
-You can think of “virtual files” as shortcuts/placeholders: they show up in Explorer so you can browse/search, but the content is only downloaded when you open it.
+You can think of “virtual files” as shortcuts/placeholders: they show up in Explorer or Finder so you can browse/search, but the content is only downloaded when you open it.
+
+
+:::{admonition} Virtual files and "Choose what to sync" are mutually exclusive
+(choose-what-to-sync-are-mutually-exclusive)=
+The "Choose what to sync" option allows you to select specific folders to sync locally, but it is not compatible with virtual files. If you enable "Choose what to sync", you will lose the virtual file functionality, and all files in the synced folders will be downloaded to your local machine. Therefore, it is recommended to keep "Choose what to sync" disabled and use virtual files to manage your storage efficiently.
+:::
 
 #### Windows “Properties” can show two different sizes
 
@@ -148,7 +160,7 @@ On Windows, right-click a file/folder → **Properties**. You may see:
 After you open a file (or mark it to keep offline), Windows downloads it and **Size on disk** will increase accordingly.
 
 ::: {admonition} Secure local space before opening
-If you do not have enough space for the file you are opening, Nextcloud will try to reclaim space by converting downloaded local files to cloud, if not successfule, it report corrspnding error.
+If you do not have enough space for the file you are opening, Nextcloud will try to reclaim space by converting downloaded local files to cloud. If it is not successful, it will report a corresponding error.
 :::
 
 #### Free up space (Windows)

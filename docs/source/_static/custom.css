@@ -1,0 +1,6 @@
+/* Reduce paragraph margins inside list items so that indented block directives
+   (images, code blocks, etc.) do not create huge vertical gaps. */
+li > p {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
