@@ -75,54 +75,54 @@ The project folder is the only folder that will be synced to your local computer
 Setup local sync (optional):
 - [Install the Nextcloud application](#download-and-install-nextcloud-desktop-client)
 - Open Nextcloud once installed and click **Log in**  
-```{image} ../_static/images/nextcloud_login_login.png
-:alt: login
-:width: 30em
-```
+  ```{image} ../_static/images/nextcloud_login_login.png
+  :alt: login
+  :width: 30em
+  ```
 - Enter the following URL and click **Next**  
-```
-https://universiteitleiden.data.surf.nl
-```
-```{image} ../_static/images/nextcloud_login_URL.png
-:alt: Enter URL
-:width: 30em
-```
+  ```
+  https://universiteitleiden.data.surf.nl
+  ```
+  ```{image} ../_static/images/nextcloud_login_URL.png
+  :alt: Enter URL
+  :width: 30em
+  ```
 - **Log in** with your ULCN account in the pop-up browser window
 - **Grant access** when asked, then close the browser page  
-```{image} ../_static/images/nextcloud_login_grantaccess.png
-:alt: Login and grant access
-:width: 30em
-```
+  ```{image} ../_static/images/nextcloud_login_grantaccess.png
+  :alt: Login and grant access
+  :width: 30em
+  ```
 - Choose a folder to store the data; it must be a new or empty folder. **Please make sure to select a folder that is not synced by iCloud, OneDrive, or other services**. MacOS users should also avoid using the default "Documents" folder, which is often synced with iCloud and can cause issues. We recommend creating a new folder named "RD" (or similar) directly under your user directory (for example, `C:\Users\<name>\RD` on Windows or `/Users/<name>/RD` on MacOS) to ensure it is not affected by other sync services and to minimize path length issues.
   - **MacOS users:**
     - You do not need to choose any file or folder to sync, the virtual file system will create a virtual drive for you, and you can access the data via the file browser. You can also choose to sync to a local folder if you prefer, but it is not required.
     - You will not see "User virtual files ..." option.
   - [Virtual files and "Choose what to sync" are mutually exclusive](#choose-what-to-sync-are-mutually-exclusive)
-```{image} ../_static/images/nextcloud_login_chooselocation.png
-:alt: Choose sync location
-:width: 30em
-```
+  ```{image} ../_static/images/nextcloud_login_chooselocation.png
+  :alt: Choose sync location
+  :width: 30em
+  ```
 - Click **Connect**. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width="24"></span> in your system tray located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
 - Check your settings:
   - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"  
+    ```{image} ../_static/images/nextcloud_systemtray.png
+    :alt: NextCloud Settings
+    ```
   - Virtual files **enabled**  
-```{image} ../_static/images/nextcloud_systemtray.png
-:alt: NextCloud Settings
-```
-```{image} ../_static/images/nextcloud_login_checkvertualfileenabled.png
-:alt: Virtual files enabled in Windows 11
-:width: 45em
-```
+    ```{image} ../_static/images/nextcloud_login_checkvertualfileenabled.png
+    :alt: Virtual files enabled in Windows 11
+    :width: 45em
+    ```
 - For MacOS users, you should see "Virtual files" is enabled by default. If not, you need to uninstall the current Nextcloud client and [download the version](#select-virtual-files-version) with "Virtual files" support. For University laptop users, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support.
-```{image} ../_static/images/nextcloud_enable_virtual_files_macos.jpg
-:alt: Virtual files enabled in MacOS
-:width: 30em
-```
+  ```{image} ../_static/images/nextcloud_enable_virtual_files_macos.jpg
+  :alt: Virtual files enabled in MacOS
+  :width: 30em
+  ```
 - You can access the data via the file browser (Explorer on Windows, Finder on MacOS). You should see the cloud icon on the project folder, that icon will change depending on whether the files are cloud-only or downloaded.
-```{image} ../_static/images/nextcloud_locations.png
-:alt: Data access via file browser
-:width: 45em
-```
+  ```{image} ../_static/images/nextcloud_locations.png
+  :alt: Data access via file browser
+  :width: 45em
+  ```
 
 ::: {admonition} Create **Teams** and share within team
 Sometimes you want to share a folder with all of your lab members or a specific subgroup. You can create **Teams** in the "Contacts" page (top bar), add the relevant users to that team, and then share the folder with the team instead of individual users. This way, when you add new members to the team, they will automatically have access to the shared folder.
