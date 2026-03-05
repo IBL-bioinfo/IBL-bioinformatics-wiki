@@ -20,7 +20,7 @@ depth: 3
 
 ### Download and install Nextcloud desktop client
 
-For University Computer, please find Nextcloud desktop client in the **Company Portal** (Windows 11) or **Managed Software Centre** (MacOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version available.
+For University Computer, please find Nextcloud desktop client in the **Company Portal** (Windows 11) or **Managed Software Centre** (macOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version available.
 
 :::{admonition} MacOS users
 (select-virtual-files-version)=
@@ -29,7 +29,7 @@ Please make sure to select "Virtual files" desktop client, for example **"macOS 
 !["macOS 12+" (standard) and "macOS Virtual files 12+ (64 bit, universal)". The latter needs to be selected from the dropdown menu.](../_static/images/nextcloud_macos_virtualfiles_version.jpg)
 :::
 
-:::{admonition} Managed Software Centre for MacOS users
+:::{admonition} Managed Software Centre for macOS users
 It is possible that the Nextcloud desktop client available in the Managed Software Centre does not have the "Virtual files" feature enabled. If that is the case, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support. This feature is important for efficient storage management and seamless access to Research Drive files on your local machine.
 :::
 
@@ -93,7 +93,7 @@ Setup local sync (optional):
   :alt: Login and grant access
   :width: 30em
   ```
-- Choose a folder to store the data; it must be a new or empty folder. **Please make sure to select a folder that is not synced by iCloud, OneDrive, or other services**. MacOS users should also avoid using the default "Documents" folder, which is often synced with iCloud and can cause issues. We recommend creating a new folder named "RD" (or similar) directly under your user directory (for example, `C:\Users\<name>\RD` on Windows or `/Users/<name>/RD` on MacOS) to ensure it is not affected by other sync services and to minimize path length issues.
+- Choose a folder to store the data; it must be a new or empty folder. **Please make sure to select a folder that is not synced by iCloud, OneDrive, or other services**. MacOS users should also avoid using the default "Documents" folder, which is often synced with iCloud and can cause issues. We recommend creating a new folder named "RD" (or similar) directly under your user directory (for example, `C:\Users\<name>\RD` on Windows or `/Users/<name>/RD` on macOS) to ensure it is not affected by other sync services and to minimize path length issues.
   - **MacOS users:**
     - You do not need to choose any file or folder to sync, the virtual file system will create a virtual drive for you, and you can access the data via the file browser. You can also choose to sync to a local folder if you prefer, but it is not required.
     - You will not see "User virtual files ..." option.
@@ -113,12 +113,12 @@ Setup local sync (optional):
     :alt: Virtual files enabled in Windows 11
     :width: 45em
     ```
-- For MacOS users, you should see "Virtual files" is enabled by default. If not, you need to uninstall the current Nextcloud client and [download the version](#select-virtual-files-version) with "Virtual files" support. For University laptop users, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support.
+- For macOS users, you should see "Virtual files" is enabled by default. If not, you need to uninstall the current Nextcloud client and [download the version](#select-virtual-files-version) with "Virtual files" support. For University laptop users, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support.
   ```{image} ../_static/images/nextcloud_enable_virtual_files_macos.jpg
-  :alt: Virtual files enabled in MacOS
+  :alt: Virtual files enabled in macOS
   :width: 30em
   ```
-- You can access the data via the file browser (Explorer on Windows, Finder on MacOS). You should see the cloud icon on the project folder, that icon will change depending on whether the files are cloud-only or downloaded.
+- You can access the data via the file browser (Explorer on Windows, Finder on macOS). You should see the cloud icon on the project folder, that icon will change depending on whether the files are cloud-only or downloaded.
   ```{image} ../_static/images/nextcloud_locations.png
   :alt: Data access via file browser
   :width: 45em
@@ -132,7 +132,7 @@ Sometimes you want to share a folder with all of your lab members or a specific 
 
 Research Drive uses the Nextcloud desktop client to *sync* files between the **cloud** (Research Drive) and your **local** computer.
 
-When **Virtual files** are enabled (recommended), Windows Explorer or Finder on MacOS can show files that exist in the cloud without storing the full data locally.
+When **Virtual files** are enabled (recommended), Windows Explorer or Finder on macOS can show files that exist in the cloud without storing the full data locally.
 
 - Local vs cloud (practical meaning)
   - **Cloud**: The file exists on Research Drive and counts toward your project’s storage, even if it is not downloaded to your laptop/PC.
