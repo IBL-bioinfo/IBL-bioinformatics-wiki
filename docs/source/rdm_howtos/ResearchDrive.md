@@ -26,7 +26,7 @@ For University Computer, please find Nextcloud desktop client in the **Company P
 (select-virtual-files-version)=
 Please make sure to select "Virtual files" desktop client, for example **"macOS Virtual files 12+ (64 bit, universal)"**, from the dropdown menu when downloading. The "Virtual files" version allows you to access your Research Drive files without taking up local storage space, which is inevitable for most research scenarios and is a standard practice.
 
-!["macOS 12+" (standard) and "macOS Virtual files 12+ (64 bit, universal)". The later needs to be selected from the dropdown menu.](../_static/images/nextcloud_macos_virtualfiles_version.jpg)
+!["macOS 12+" (standard) and "macOS Virtual files 12+ (64 bit, universal)". The latter needs to be selected from the dropdown menu.](../_static/images/nextcloud_macos_virtualfiles_version.jpg)
 :::
 
 :::{admonition} Managed Software Centre for MacOS users
@@ -55,9 +55,9 @@ On your "Dashboard" → "Project folders" page, you may see the message "You do 
 
 Invite users and set up the folder structure:
 - Go to "Dashboard" → "User accounts" and invite all users, both staff and students.
-  - Once the first stuffs finish setting up, they can invite the rest of the staff and students.
+  - Once the first several staffs finish setting up, they can invite the rest of the staff and students.
 - Invite users using their official email address, for example the @biology mail for employees
-  - External users can have access by inviting their external email address, they can sign up their own [eduID](https://eduid.nl/home) to login.
+  - **External users** can gain access by inviting their external email address, they can sign up their own [eduID](https://eduid.nl/home) to log in.
 - Go to the **Files** tab (top left), and go into your **project folder**
 - Create a folder for everyone in this project
 
@@ -102,7 +102,7 @@ https://universiteitleiden.data.surf.nl
 :alt: Choose sync location
 :width: 30em
 ```
-- Click **Connect**. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width=1.5em></span> in your system tray located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
+- Click **Connect**. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width="1.5em"></span> in your system tray located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
 - Check your settings:
   - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"  
   - Virtual files **enabled**  

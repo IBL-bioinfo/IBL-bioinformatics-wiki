@@ -45,7 +45,7 @@ Optionally, fill out a DMP:
 - Request Research Drive per project/DMP/contract
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
   - Go to "Research support" → "Research Drive" → "Request Research Drive"
-  - Choose "No" for DMP, always use a cost centre number in "SAP number:" field, ISSC stopped support for DMP-based funding.
+  - Choose "No" for DMP, always use a cost centre number in "SAP number:" field, ISSC has stopped support for DMP-based funding.
   - Mention the project folder name you want to create in "Comment:" field
 - Request ELN group account (equivalent to PI account) if it does not exist
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) Go to "Research support" → "ELN" → "ELN PI account activation"
