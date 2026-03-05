@@ -30,7 +30,7 @@ We hope to achieve FAIR principles for research data produced in IBL:
 Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost after the retention period (60 days). For critical data, especially raw data, consider sharing folders with "read only" permissions to prevent accidental deletion.
 ```
 
-## Before you start as a PI
+## PI preparation
 
 For all your current projects, check the DMP and update the corresponding part to fit the new situation. Make sure the costs are covered by the project. For each project folder that you need, please assign a cost centre. ISSC is **not** centrally funding the first TB with a valid DMP, so there is no need to attach that; just mention the cost centre when filling in the form from the ISSC helpdesk. IBL will fund the first 0.5 TB of the PI umbrella project folder.
 
@@ -38,9 +38,10 @@ Optionally, fill out a DMP:
 1. All projects that generate research data
 2. Collaborative projects (you can use a collective DMP)
 3. An umbrella DMP for your group (covering smaller topics that may not fit any project yet)
-4. Contact ibl.rdm@biology.leidenuniv.nl to have them approved.
 
-## Preparation and Application
+After drafting your DMP(s), contact ibl.rdm@biology.leidenuniv.nl to have them approved.  
+
+## Application
 
 - Request Research Drive per project/DMP/contract
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
@@ -60,3 +61,17 @@ Optionally, fill out a DMP:
 ::: {admonition} ELN account deactivates after 6 months of inactivity
 ELN accounts that have not been used for 6 months will be deactivated. If you need to reactivate an account, go to "Research support" → "ELN" → "ELN account activation"
 :::
+
+## IBL Research software support
+
+Currently, IBL only support non-discipline-specific commercial research software, for example Research Space for ELN, Research Drive for research data storage, and BioRender for creating illustrative figures. For discipline-specific software, we recommend you to use the tools that are widely used in your field (and supported by your collaborators, if any). For example, for molecular biology **SnapGene** or **Geneious Prime**. Group leaders decide whether to use these tools and from which budget to pay. For early-career researchers (such as **Master's and PhD students** and **PostDocs**), licenses are usually significantly cheaper.
+
+### IBL BioRender account
+
+IBL has a BioRender account that you can join only if you register with an `@biology.leidenuniv.nl` email address. The policy has been shared with PIs and will be included in the introduction material. The correct institute account (organisation) name is [**Leiden University - Institute of Biology**](https://app.biorender.com/portal/leiden-university-institute-biology).
+
+Please fill in [this form](https://forms.cloud.microsoft/e/3wJqS3TBdi) (login required) when you join the IBL BioRender institute account. QR code to the form:
+
+![QRCode IBL BioRender registration](../_static/images/QRCode_IBL_BioRender_registration.resize.png)
+
+New accounts that cannot be found in this form will be removed.
