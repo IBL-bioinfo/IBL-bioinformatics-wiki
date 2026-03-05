@@ -102,7 +102,7 @@ https://universiteitleiden.data.surf.nl
 :alt: Choose sync location
 :width: 30em
 ```
-- Click **Connect**. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width="1.5em"></span> in your system tray located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
+- Click **Connect**. Sync should start; you can see ![icon](../_static/images/nextcloud_icon.png) or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width="24"></span> in your system tray located on the bottom right (Windows) or top right (macOS). Expand the system tray if needed.
 - Check your settings:
   - Right-click the Nextcloud icon ![icon](../_static/images/nextcloud_icon.png) in the system tray, then left-click "Settings"  
   - Virtual files **enabled**  
