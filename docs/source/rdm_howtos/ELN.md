@@ -60,5 +60,6 @@ Share a single notebook with all users in the group:
 Share a single notebook with users/groups within or outside the current group
 - If you want to share a single notebook select that notebook, and click the share icon. Select the user or group and save the changes. Here you can also share to all users
 
+## Tutorial videos
   
-- For ELN tutorials look here [FWN-RSpace ELN Inventory Training Videos](https://video.leidenuniv.nl/channel/FWN-RSpace%2BELN%2BInventory%2BTraining%2BVideos/283092772)
+For ELN tutorials look here [FWN-RSpace ELN Inventory Training Videos](https://video.leidenuniv.nl/channel/FWN-RSpace%2BELN%2BInventory%2BTraining%2BVideos/283092772)
