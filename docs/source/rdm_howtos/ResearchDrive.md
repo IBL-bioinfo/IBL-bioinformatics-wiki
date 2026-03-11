@@ -24,7 +24,7 @@ Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara
 
 ## Application and invitation
 
-For PI, you need to apply for it:
+For **PI**, you need to apply for it:
 - Research Drive is now a paid service, please consult IBL RDM team for the cost and funding details.
 - Request Research Drive per project/DMP/contract
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
@@ -34,7 +34,7 @@ For PI, you need to apply for it:
 - Invite your lab manager if you do not want to manage the Research Drive yourself. Give your lab manager full access to all your project folders, then the lab manager can then invite the rest of the staff and students and manage the major folder shares.
 - See [Invite users and set up the folder structure:](#invite-users-and-set-up-the-folder-structure) section for details.
 
-For PhD/PostDoc/Researcher (stuff), once you received the invitation, please follow the link and confirm you can login. Only then your PI or lab manager can give you access to your folder.
+For **PhD/PostDoc/Researcher (stuff)**, once you received the invitation, please follow the link and confirm you can login. Only then your PI or lab manager can give you access to your folder.
 
 ### Download and install Nextcloud desktop client
 
