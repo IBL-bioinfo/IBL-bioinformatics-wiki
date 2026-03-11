@@ -4,7 +4,7 @@ orphan: true
 
 # Transfer to ResearchDrive from Mapped Network Drive
 
-*By C.Du [@snail123815](https://github.com/snail123815)
+*By C.Du [@snail123815](https://github.com/snail123815)*
 
 Uploading files usually involves three steps:
 
