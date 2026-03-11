@@ -19,6 +19,10 @@ Practical tips:
 - Keep regular exports or backups of important notebooks where possible.
 - Ask colleagues or ELN support for demonstrations and share experiences within your group.
 
+## ELN direct access URL
+
+ELN (RSpace interface) - [https://leiden.researchspace.com/](https://leiden.researchspace.com/)
+
 ## Setup autosharing within group
 
 - Go to [Universeit Leiden RSpace](https://leiden.researchspace.com) and login with your ULCN account

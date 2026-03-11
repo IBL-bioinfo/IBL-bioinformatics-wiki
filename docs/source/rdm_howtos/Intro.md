@@ -16,6 +16,11 @@ We hope to achieve FAIR principles for research data produced in IBL:
 - Interoperable — uses common formats so tools can work with it
 - Reusable — well described so others can use it again
 
+## Direct access URL
+
+Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara.nl/](https://universiteitleiden.data.surfsara.nl/)
+ELN (RSpace interface) - [https://leiden.researchspace.com/](https://leiden.researchspace.com/)
+
 ## Terminology
 
 - **Nextcloud** <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: A service on which Research Drive is based. It is used to manage your Research Drive files and includes a web interface and a local application.
