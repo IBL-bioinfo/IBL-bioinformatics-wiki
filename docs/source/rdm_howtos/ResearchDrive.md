@@ -93,7 +93,7 @@ To expand existing project folder, please:
 Before requesting more space, consider whether the additional storage will actually be used in line with your project's Data Management Plan (DMP). Raw data that can be regenerated, large intermediate files, or software environments generally should not be kept in Research Drive long-term. If you find your storage is filling up quickly, it may be a sign to review your data retention strategy: archive or delete files that are no longer needed, avoid storing intermediate, regeneratable data, and check whether files from completed projects can be moved to long-term archival storage (tape) instead.
 :::
 
-### Research Drive itself use different calculations
+### Different sizes in Dashboard and Files
 
 Confusion will arise when checking your storage usage.
 

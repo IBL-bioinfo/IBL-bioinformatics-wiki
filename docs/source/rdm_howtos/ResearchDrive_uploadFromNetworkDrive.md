@@ -18,11 +18,11 @@ If you have large files located on your network drive, the first step can be dif
 
 Make sure you have enough capacity. If needed, request more from the ISSC helpdesk using the correct cost centre.
 
-Note that [there are differences in file size calculation regarding with your quota](./ResearchDrive.md#research-drive-itself-use-different-calculations).
+Note that [there are differences in file size calculation regarding with your quota](./ResearchDrive.md#different-sizes-in-dashboard-and-files).
 
 If you have many small files, we recommend creating zip files before uploading. Large numbers of small files are expensive to store and transfer compared to fewer large files. For easier searching, you can keep a separate copy of human-readable results outside the zip archives.
 
-:::{admonition} Sizes are not accurate
+:::{admonition} Sizes are not accurate between local and remote
 Due to differences between file systems, the sizes on your own system may not match the sizes shown on ResearchDrive.
 :::
 
