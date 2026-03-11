@@ -29,12 +29,12 @@ For **PI**, you need to apply for it:
 - Request Research Drive per project/DMP/contract
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
   - Go to "Research support" → "Research Drive" → "Request Research Drive"
-  - Choose **"No"** for DMP, **always use a cost centre** number in "SAP number:" field, ISSC has stopped support for DMP-based funding.
+  - Choose **"No"** for DMP, **always use a cost centre** number in the field "SAP number:", ISSC has stopped DMP-based funding.
   - Mention the project folder name you want to create in "Comment:" field
 - Invite your lab manager if you do not want to manage the Research Drive yourself. Give your lab manager full access to all your project folders, then the lab manager can then invite the rest of the staff and students and manage the major folder shares.
 - See [Invite users and set up the folder structure:](#invite-users-and-set-up-the-folder-structure) section for details.
 
-For **PhD/PostDoc/Researcher (stuff)**, once you received the invitation, please follow the link and confirm you can login. Only then your PI or lab manager can give you access to your folder.
+For **PhD/PostDoc/Researcher (staff)/student**, once you received the invitation, please follow the link and confirm you can login. Only after that, your PI or lab manager can give you access to your folder.
 
 ### Expand storage space
 
@@ -67,10 +67,10 @@ It is possible that the Nextcloud desktop client available in the Managed Softwa
 
 ## Workflow Setting Up Research Drive
 
-After Research Drive has been activated, follow these steps to set up your project folder, invite users, and sync files to your local computer.
+After Research Drive has been activated, follow these steps to set up your project folder, invite users, and sync files to your local computer. This tutorial assumes you already have a project folder (if you are a PI) or have been invited to access at least one folder (if you are staff or student). If you do not have access to any project folder, please contact your PI or lab manager.
 
 Login:
-- PI logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
+- Logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
 - Go to the dashboard (top-left icon row, rightmost icon)
 
 ::: {admonition} First-time login
