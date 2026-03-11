@@ -43,7 +43,7 @@ Example:
 
 Note in this example, `NIOO_4` is actually showing information for`IBL_G_Van_Wezel` folder.
 
-You are allowed to change name of project folder name in the **Files** tab web interface, but the corresponding "Project folder" name in Dashboard will not change, as that is the name from the actual "owner". So I highly recommend to add an abbreviation of the initial project folder name in the new name when it is really necessary to change the name, for example "New_project_folder_name_0cnf_opn" (for "changed name from old project name"). This way you can still easily find the project folder in the Dashboard and avoid confusion. Also avoid [lengthy path problems](#windows-long-path-compatibility-issue). 
+You can rename a project folder in the **Files** tab, but the Dashboard name will not change (it reflects the owner's original name). If renaming is necessary, include an abbreviation of the original name, e.g. "New_name_0cnf_opn" (for "changed name from old project name"), so it remains identifiable. Also avoid [lengthy path problems](#windows-long-path-compatibility-issue).
 :::
 
 ### Invite users and set up the folder structure
