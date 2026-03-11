@@ -8,7 +8,9 @@ depth: 3
 ---
 ```
 
-RDM - Research data management, is an essential skill. Here we collect some protocols that you can directly follow to setup the most basic architectur. Including seting up **[Research Drive](./ResearchDrive.md)**, **[ELN](./ELN.md)** (electronic lab notebook), and (in the future) data archive.
+RDM - Research data management, is an essential skill. It is the practice of organizing, storing, and sharing research data in a way that ensures its quality, integrity, and accessibility. Good RDM practices help researchers to manage their data effectively, comply with institutional and funding agency requirements, and facilitate data sharing and reuse. In IBL, we have two main tools for RDM:
+- **[Research Drive](./ResearchDrive.md)**
+- **[ELN](./ELN.md)** (electronic lab notebook)
 
 We hope to achieve FAIR principles for research data produced in IBL:
 - Findable — easy to locate
@@ -18,7 +20,7 @@ We hope to achieve FAIR principles for research data produced in IBL:
 
 ## Direct access URL
 
-Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara.nl/](https://universiteitleiden.data.surfsara.nl/)
+Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara.nl/](https://universiteitleiden.data.surfsara.nl/)  
 ELN (RSpace interface) - [https://leiden.researchspace.com/](https://leiden.researchspace.com/)
 
 ## Terminology
@@ -51,10 +53,13 @@ After drafting your DMP(s), contact ibl.rdm@biology.leidenuniv.nl to have them a
 - Request Research Drive per project/DMP/contract
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
   - Go to "Research support" → "Research Drive" → "Request Research Drive"
-  - Choose "No" for DMP, always use a cost centre number in "SAP number:" field, ISSC has stopped support for DMP-based funding.
+  - Choose **"No"** for DMP, **always use a cost centre** number in "SAP number:" field, ISSC has stopped support for DMP-based funding.
   - Mention the project folder name you want to create in "Comment:" field
 - Request ELN group account (equivalent to PI account) if it does not exist
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) Go to "Research support" → "ELN" → "ELN PI account activation"
+  - Group name has to follow the following convention: `IBL-[CLUSTER NAME]-[FIRST LETTER PI][Last name PI]` for example:
+    - IBL-MBH-GvanWezel
+    - IBL-SCS-TAivelo
 - All employees request an ELN account (PhD/PostDoc/Labmanager)
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) Go to "Research support" → "ELN" → "ELN account activation"
   - Fill in the "PI team" field correctly, so that the account can be linked to the right ELN group
