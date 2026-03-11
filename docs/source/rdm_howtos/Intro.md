@@ -55,6 +55,9 @@ After drafting your DMP(s), contact ibl.rdm@biology.leidenuniv.nl to have them a
   - Mention the project folder name you want to create in "Comment:" field
 - Request ELN group account (equivalent to PI account) if it does not exist
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) Go to "Research support" → "ELN" → "ELN PI account activation"
+  - Group name has to follow the following convention: `IBL-[CLUSTER NAME]-[FIRST LETTER PI][Last name PI]` for example:
+    - IBL-MBH-GvanWezel
+    - IBL-SCS-TAivelo
 - All employees request an ELN account (PhD/PostDoc/Labmanager)
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) Go to "Research support" → "ELN" → "ELN account activation"
   - Fill in the "PI team" field correctly, so that the account can be linked to the right ELN group
