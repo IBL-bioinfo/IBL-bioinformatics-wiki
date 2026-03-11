@@ -36,6 +36,16 @@ For **PI**, you need to apply for it:
 
 For **PhD/PostDoc/Researcher (staff)/student**, once you received the invitation, please follow the link and confirm you can login. Only after that, your PI or lab manager can give you access to your folder.
 
+::: {admonition} Project folder name may not be consistant
+Example:
+
+![Example of project folder name](../_static/images/nextcloud_different_name_example.png)
+
+Note in this example, `NIOO_4` is actually showing information for`IBL_G_Van_Wezel` folder.
+
+You are allowed to change name of project folder name in the **Files** tab web interface, but the corresponding "Project folder" name in Dashboard will not change, as that is the name from the actual "owner". So I highly recommend to add an abbreviation of the initial project folder name in the new name when it is really necessary to change the name, for example "New_project_folder_name_0cnf_opn" (for "changed name from old project name"). This way you can still easily find the project folder in the Dashboard and avoid confusion. Also avoid [lengthy path problems](#windows-long-path-compatibility-issue). 
+:::
+
 ### Invite users and set up the folder structure
 
 After Research Drive has been activated, follow these steps to set up your project folder, invite users. This tutorial assumes you already have a project folder (if you are a PI) or have been invited to access at least one folder (if you are staff or student). If you do not have access to any project folder, please contact your PI or lab manager.

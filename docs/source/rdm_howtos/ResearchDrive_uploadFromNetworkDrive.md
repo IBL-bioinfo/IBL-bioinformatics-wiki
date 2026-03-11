@@ -22,7 +22,7 @@ Note that [there are differences in file size calculation regarding with your qu
 
 If you have many small files, we recommend creating zip files before uploading. Large numbers of small files are expensive to store and transfer compared to fewer large files. For easier searching, you can keep a separate copy of human-readable results outside the zip archives.
 
-:::{admonition} Sizes are not accurate between local and remote
+:::{admonition} Sizes are also not accurate between local and remote
 Due to differences between file systems, the sizes on your own system may not match the sizes shown on ResearchDrive.
 :::
 
