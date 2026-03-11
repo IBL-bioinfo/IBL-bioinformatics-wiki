@@ -36,6 +36,16 @@ For **PI**, you need to apply for it:
 
 For **PhD/PostDoc/Researcher (staff)/student**, once you received the invitation, please follow the link and confirm you can login. Only after that, your PI or lab manager can give you access to your folder.
 
+::: {admonition} Project folder name may not be consistant
+Example:
+
+![Example of project folder name](../_static/images/nextcloud_different_name_example.png)
+
+Note in this example, `NIOO_4` is actually showing information for`IBL_G_Van_Wezel` folder.
+
+You are allowed to change name of project folder name in the **Files** tab web interface, but the corresponding "Project folder" name in Dashboard will not change, as that is the name from the actual "owner". So I highly recommend to add an abbreviation of the initial project folder name in the new name when it is really necessary to change the name, for example "New_project_folder_name_0cnf_opn" (for "changed name from old project name"). This way you can still easily find the project folder in the Dashboard and avoid confusion. Also avoid [lengthy path problems](#windows-long-path-compatibility-issue). 
+:::
+
 ### Invite users and set up the folder structure
 
 After Research Drive has been activated, follow these steps to set up your project folder, invite users. This tutorial assumes you already have a project folder (if you are a PI) or have been invited to access at least one folder (if you are staff or student). If you do not have access to any project folder, please contact your PI or lab manager.
@@ -93,6 +103,24 @@ To expand existing project folder, please:
 Before requesting more space, consider whether the additional storage will actually be used in line with your project's Data Management Plan (DMP). Raw data that can be regenerated, large intermediate files, or software environments generally should not be kept in Research Drive long-term. If you find your storage is filling up quickly, it may be a sign to review your data retention strategy: archive or delete files that are no longer needed, avoid storing intermediate, regeneratable data, and check whether files from completed projects can be moved to long-term archival storage (tape) instead.
 :::
 
+### Different sizes in Dashboard and Files
+
+Confusion will arise when checking your storage usage.
+
+- In **"Files"** page, Research Drive uses binary prefixes, **although it is showing TB/GB, but it actually show numbers in TiB and GiB**.
+  - 1 TiB = 2<sup>40</sup> bytes = 1024 GiB; 1 GiB = 2<sup>30</sup> bytes = 1024 MiB.
+- In **"Dashboard"** page, it uses decimal prefixes
+  - 1 TB = 10<sup>12</sup> bytes = 1000 GB; 1 GB = 10<sup>9</sup> bytes = 1000 MB. 
+- 1 TB (decimal, "Dashboard") is approximately 0.91 TiB (binary, "Files"), 2 TB = approximately 1.82 TiB.
+- 1 GB (decimal, "Dashboard") is approximately 0.93 GiB (binary, "Files"), 500 GB = approximately 465.66 GiB.
+
+![size confusion Files and Dashboard page](../_static/images/nextcloud_space_calculation_example.png)
+
+In this example, 1.16 TB in the "Dashboard" table is actually 1.06 TiB, which rounds up to 1.1 TB in "Files" page. 588.53 GB in "Dashboard" is actually 548.1 GiB. The "Files" page is more accurate for checking the actual size of your files, while the "Dashboard" page is more accurate for checking your quota.
+
+**Quota is calculated using decimal prefixes.** So the "Dashboard" page is more accurate for checking your quota, while the "Files" page is more accurate for checking the actual size of your files. If you are close to your quota, consider archiving files to long-term storage or [requesting more storage](./ResearchDrive.md#expand-storage-space).
+
+There is some **delay in showing the actual usage** in your Dashboard after you upload or delete files.
 
 ## Setup local sync (optional)
 
