@@ -10,11 +10,11 @@ depth: 3
 ---
 ```
 
-## Research Drive direct access URL
+## Direct access URL
 
 Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara.nl/](https://universiteitleiden.data.surfsara.nl/)
 
-## Research Drive intended structure
+## Intended structure
 
 ![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)
 
@@ -29,14 +29,57 @@ For **PI**, you need to apply for it:
 - Request Research Drive per project/DMP/contract
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
   - Go to "Research support" → "Research Drive" → "Request Research Drive"
-  - Choose **"No"** for DMP, **always use a cost centre** number in "SAP number:" field, ISSC has stopped support for DMP-based funding.
+  - Choose **"No"** for DMP, **always use a cost centre** number in the field "SAP number:", ISSC has stopped DMP-based funding.
   - Mention the project folder name you want to create in "Comment:" field
 - Invite your lab manager if you do not want to manage the Research Drive yourself. Give your lab manager full access to all your project folders, then the lab manager can then invite the rest of the staff and students and manage the major folder shares.
 - See [Invite users and set up the folder structure:](#invite-users-and-set-up-the-folder-structure) section for details.
 
-For **PhD/PostDoc/Researcher (stuff)**, once you received the invitation, please follow the link and confirm you can login. Only then your PI or lab manager can give you access to your folder.
+For **PhD/PostDoc/Researcher (staff)/student**, once you received the invitation, please follow the link and confirm you can login. Only after that, your PI or lab manager can give you access to your folder.
 
-### Expand storage space
+### Invite users and set up the folder structure
+
+After Research Drive has been activated, follow these steps to set up your project folder, invite users. This tutorial assumes you already have a project folder (if you are a PI) or have been invited to access at least one folder (if you are staff or student). If you do not have access to any project folder, please contact your PI or lab manager.
+
+**Anyone** with a Research Drive account can invite other users include:
+- **Staff**: PhD students, PostDocs, Researcher (staff), Lab managers
+- **Students**: Master students, Bachelor students, Interns
+- **External collaborators**: collaborators from other institutions, they can be invited using their external email address, but they will be prompted to create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
+
+Steps:
+- Logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
+- Go to the dashboard (top-left icon row, second icon from right)
+
+::: {admonition} First-time login
+Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
+:::
+
+::: {admonition} It is **normal** to have zero space
+(you-do-not-own-space)=
+The University admin is the owner of all project folders, not yourself, even if you are a PI. So you do not "own" any space on Research Drive, this is **normal**. The project folder is *shared with you*, not counting as your own space.
+
+![You will always see 0B of 0B used](../_static/images/nextcloud_zero_of_zero_used.png)
+
+But you do see your `Usage` and `Quotum` on your "Dashboard" → "Project folders" page. You may see the message "You do not have sufficient permissions to create ...". This is normal as well: project folders can only be created by ISSC upon request. 
+
+![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
+:::
+
+- Go to "Dashboard" → "User accounts" and invite all users, both staff and students, using their university email address (for example the @biology mail for employees).
+  - For students without an university email address, you can use their personal email address, but make sure to inform them to check their inbox and confirm the invitation. For external collaborators, you can invite them using their external email address. They must first create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
+  - Once the first several staffs finish setting up, they can invite the rest of the staff and students.
+- Invite users using their university email address, for example the @biology mail for employees
+  - **External users** can gain access when you invite their external email address. They will be prompted to create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
+- Go to the **Files** tab (top left), and go into your **project folder**
+- Create a folder for everyone in this project
+
+Once the staff and student accounts are activated:
+- Go to the **Files** tab, locate the target folder, and click the **"Shared"** button
+  - Make sure the pop-up shows the correct folder name, click "Sharing" tab if not already selected
+- In **Internal shares** section, add the correct users, and set permissions to allow editing (for their own folder only).
+  - Same procedure for other files you want to share with specific users, but be careful with the permissions.
+- Users can now access data within the subfolder of the project.
+
+## Expand storage space
 
 By default, each application creates a project folder with 0.5 TB of storage space. If you need more space, please specify the required storage size and the reason in the "Comment:" field when applying for Research Drive.
 
@@ -50,63 +93,33 @@ To expand existing project folder, please:
 Before requesting more space, consider whether the additional storage will actually be used in line with your project's Data Management Plan (DMP). Raw data that can be regenerated, large intermediate files, or software environments generally should not be kept in Research Drive long-term. If you find your storage is filling up quickly, it may be a sign to review your data retention strategy: archive or delete files that are no longer needed, avoid storing intermediate, regeneratable data, and check whether files from completed projects can be moved to long-term archival storage (tape) instead.
 :::
 
-## Download and install Nextcloud desktop client
+
+## Setup local sync (optional)
+
+To access Research Drive files on your local computer, you can set up the Nextcloud desktop client to sync files between Research Drive and your local machine. This allows you to work with your data directly from your file explorer (Windows Explorer or macOS Finder).
+
+More importantly, to **upload large files** (for example, raw data) to Research Drive, using the Nextcloud desktop client is often more reliable and efficient than uploading through the web interface. The desktop client can handle large file transfers better and can automatically retry if there are network interruptions.
+
+With the Nextcloud desktop client, you can choose to sync specific folders or use the "virtual files" feature, which allows you to see all your files in Explorer/Finder without taking up local storage space until you open them. This is especially useful for managing large datasets without filling up your local disk.
+
+### Install Nextcloud desktop client
 
 For University Computer, please find Nextcloud desktop client in the **Company Portal** (Windows 11) or **Managed Software Centre** (macOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version available.
 
-:::{admonition} MacOS users
+#### University Mac users
+
+I have confirmed with ISSC that the Nextcloud from **Managed Software Centre** is already "Virtual files" version. However, it is still possible that the client may not be correct after update. If that is the case, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support. This feature is important for efficient storage management and seamless access to Research Drive files on your local machine.
+
 (select-virtual-files-version)=
-Please make sure to select "Virtual files" desktop client, for example **"macOS Virtual files 12+ (64 bit, universal)"**, from the dropdown menu when downloading. The "Virtual files" version allows you to access your Research Drive files without taking up local storage space, which is inevitable for most research scenarios and is a standard practice.
+#### Personal Mac users
+
+Please make sure to select "Virtual files" desktop client to download, for example **"macOS Virtual files 12+ (64 bit, universal)"**, from the dropdown menu. The "Virtual files" version allows you to access your Research Drive files without taking up local storage space, which is inevitable for most research scenarios and is a standard practice.
 
 !["macOS 12+" (standard) and "macOS Virtual files 12+ (64 bit, universal)". The latter needs to be selected from the dropdown menu.](../_static/images/nextcloud_macos_virtualfiles_version.jpg)
-:::
 
-:::{admonition} Managed Software Centre for macOS users
-It is possible that the Nextcloud desktop client available in the Managed Software Centre does not have the "Virtual files" feature enabled. If that is the case, please contact the ISSC helpdesk to request an update to the Nextcloud client with "Virtual files" support. This feature is important for efficient storage management and seamless access to Research Drive files on your local machine.
-:::
+### Set up Nextcloud desktop client and sync with Research Drive
 
-## Workflow Setting Up Research Drive
-
-After Research Drive has been activated, follow these steps to set up your project folder, invite users, and sync files to your local computer.
-
-Login:
-- PI logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
-- Go to the dashboard (top-left icon row, rightmost icon)
-
-::: {admonition} First-time login
-Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
-:::
-
-::: {admonition} It is **normal** to have "No permission to create a project folder"
-On your "Dashboard" → "Project folders" page, you may see the message "You do not have sufficient permissions to create ...". This is normal: project folders can only be created by ISSC upon request.
-
-![You will always see 0B of 0B used](../_static/images/nextcloud_zero_of_zero_used.png)
-
-![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
-:::
-
-### Invite users and set up the folder structure:
-
-- Go to "Dashboard" → "User accounts" and invite all users, both staff and students.
-  - Once the first several staffs finish setting up, they can invite the rest of the staff and students.
-- Invite users using their official email address, for example the @biology mail for employees
-  - **External users** can gain access when you invite their external email address. They must first create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
-- Go to the **Files** tab (top left), and go into your **project folder**
-- Create a folder for everyone in this project
-
-Once the staff and student accounts are activated:
-- Go to the **Files** tab, locate the target folder, and click the **"Shared"** button
-  - Make sure the pop-up shows the correct folder name, click "Sharing" tab if not already selected
-- In **Internal shares** section, add the correct users, and set permissions to allow editing (for their own folder only).
-  - Same procedure for other files you want to share with specific users, but be careful with the permissions.
-- Users can now access data within the subfolder of the project.
-
-::: {admonition} Only add data to the project folder
-The project folder is the only folder that will be synced to your local computer. If you add files outside the project folder, they will not be synced and you will not be able to access them locally.
-:::
-
-Setup local sync (optional):
-- [Install the Nextcloud application](#download-and-install-nextcloud-desktop-client)
+- [Install the Nextcloud application](#install-nextcloud-desktop-client)
 - Open Nextcloud once installed and click **Log in**  
   ```{image} ../_static/images/nextcloud_login_login.png
   :alt: login
@@ -159,6 +172,45 @@ Setup local sync (optional):
 
 ::: {admonition} Create **Teams** and share within team
 Sometimes you want to share a folder with all of your lab members or a specific subgroup. You can create **Teams** in the "Contacts" page (top bar), add the relevant users to that team, and then share the folder with the team instead of individual users. This way, when you add new members to the team, they will automatically have access to the shared folder.
+:::
+
+::: {admonition} Do not add data directly to the top-level Research Drive folder
+Unlike OneDrive, [you do not own any space in Research Drive](#you-do-not-own-space) — everything is shared with you. When you open Research Drive, the first screen you see (the **top-level folder**) only shows folders that have been shared with you:
+
+1. The project folder that belongs to a PI
+2. Any other folder shared with you
+
+Anything you create **directly in that top-level folder** is **not part of Research Drive** and will **not be synced** — it will be lost.
+
+```{mermaid}
+graph LR
+    RD["🗄️ Research Drive (top-level folder — what you see when you open Research Drive)"]
+    RD --> P1["📁 ProjectA  ← shared with you ✅"]
+    RD --> P2["📁 ProjectB  ← shared with you ✅"]
+    RD --> BAD1["❌ 📄 my_file.txt created by yourself  ← NOT synced, will be lost!"]
+    RD --> BAD2["❌ 📂 my_folder created by yourself  ← NOT synced, will be lost!"]
+    RD --> GOOD1["📄 data.txt shared by others  ← synced ✅"]
+    P1 --> GOOD2["📂 subfolder created by yourself inside ProjectA  ← synced ✅"]
+    style BAD1 fill:#ffcccc,stroke:#cc0000
+    style BAD2 fill:#ffcccc,stroke:#cc0000
+    style P1 fill:#ccffcc,stroke:#009900
+    style P2 fill:#ccffcc,stroke:#009900
+    style GOOD1 fill:#ccffcc,stroke:#009900
+    style GOOD2 fill:#ccffcc,stroke:#009900
+```
+:::
+
+### Removing a shared folder or file
+
+In Research Drive, you **cannot delete folders** shared with you from your computer. This can only be done by using the "Leave this share" option in the \[**&middot;&middot;&middot;**\] menu in the web interface.
+
+![leave this share button](../_static/images/nextcloud_leave_share.png)
+
+However, deleting a shared **file** is **possible**. It does **not** delete it from the cloud — it removes **your** share (i.e., you leave the share by deleting the file). To regain access, you need to contact the person who originally shared it with you.
+
+::: {admonition} Non-destructive, but non-reversible
+:class: warning
+When you delete a shared file or leave a shared folder, it is not deleted from the cloud, but it is also not recoverable from your side. You will lose access to that file or folder unless the original sharer (ISSC for project folders) shares it with you again. Therefore, be cautious when deleting shared files, as it can lead to loss of access to important data.
 :::
 
 ### Space on your local machine
