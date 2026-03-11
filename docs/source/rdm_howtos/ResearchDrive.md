@@ -22,6 +22,20 @@ Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara
 
 **Nextcloud is the software platform that powers Research Drive.** It provides a user-friendly interface for managing files and folders, as well as features for sharing and collaboration. The Nextcloud desktop client allows you to sync files between your local computer and Research Drive, enabling you to access your data from anywhere with an internet connection.
 
+## Application and invitation
+
+For PI, you need to apply for it:
+- Research Drive is now a paid service, please consult IBL RDM team for the cost and funding details.
+- Request Research Drive per project/DMP/contract
+  - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
+  - Go to "Research support" → "Research Drive" → "Request Research Drive"
+  - Choose **"No"** for DMP, **always use a cost centre** number in "SAP number:" field, ISSC has stopped support for DMP-based funding.
+  - Mention the project folder name you want to create in "Comment:" field
+- Invite your lab manager if you do not want to manage the Research Drive yourself. Give your lab manager full access to all your project folders, then the lab manager can then invite the rest of the staff and students and manage the major folder shares.
+- See [Invite users and set up the folder structure:](#invite-users-and-set-up-the-folder-structure) section for details.
+
+For PhD/PostDoc/Researcher (stuff), once you received the invitation, please follow the link and confirm you can login. Only then your PI or lab manager can give you access to your folder.
+
 ### Download and install Nextcloud desktop client
 
 For University Computer, please find Nextcloud desktop client in the **Company Portal** (Windows 11) or **Managed Software Centre** (macOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version available.
@@ -57,7 +71,8 @@ On your "Dashboard" → "Project folders" page, you may see the message "You do 
 ![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
 :::
 
-Invite users and set up the folder structure:
+### Invite users and set up the folder structure:
+
 - Go to "Dashboard" → "User accounts" and invite all users, both staff and students.
   - Once the first several staffs finish setting up, they can invite the rest of the staff and students.
 - Invite users using their official email address, for example the @biology mail for employees
