@@ -18,7 +18,7 @@ We hope to achieve FAIR principles for research data produced in IBL:
 
 ## Direct access URL
 
-Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara.nl/](https://universiteitleiden.data.surfsara.nl/)
+Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara.nl/](https://universiteitleiden.data.surfsara.nl/)  
 ELN (RSpace interface) - [https://leiden.researchspace.com/](https://leiden.researchspace.com/)
 
 ## Terminology
