@@ -36,7 +36,21 @@ For **PI**, you need to apply for it:
 
 For **PhD/PostDoc/Researcher (stuff)**, once you received the invitation, please follow the link and confirm you can login. Only then your PI or lab manager can give you access to your folder.
 
-### Download and install Nextcloud desktop client
+### Expand storage space
+
+By default, each application creates a project folder with 0.5 TB of storage space. If you need more space, please specify the required storage size and the reason in the "Comment:" field when applying for Research Drive.
+
+To expand existing project folder, please:
+- [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
+- Go to "Research support" → "Research Drive" → "Ask a question"
+- Fill the desired space you want to expand
+- Explain how would you like to pay for the extra space, for example by mentioning the cost centre of the project that will cover the cost.
+
+::: {admonition} Do not blindly expand storage of one project folder
+Before requesting more space, consider whether the additional storage will actually be used in line with your project's Data Management Plan (DMP). Raw data that can be regenerated, large intermediate files, or software environments generally should not be kept in Research Drive long-term. If you find your storage is filling up quickly, it may be a sign to review your data retention strategy: archive or delete files that are no longer needed, avoid storing intermediate, regeneratable data, and check whether files from completed projects can be moved to long-term archival storage (tape) instead.
+:::
+
+## Download and install Nextcloud desktop client
 
 For University Computer, please find Nextcloud desktop client in the **Company Portal** (Windows 11) or **Managed Software Centre** (macOS). For personal computer, you can download **"Nextcloud Files"** application from the [Nextcloud website](https://nextcloud.com/install/#install-clients). There is also Linux version available.
 
