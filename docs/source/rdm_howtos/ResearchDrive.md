@@ -133,5 +133,5 @@ There is some **delay in showing the actual usage** in your Dashboard after you 
 
 ## Related pages
 
-- [Setting Up Local Sync with Nextcloud](./ResearchDrive_setup.md) — Install and configure the Nextcloud desktop client to sync files with your local computer, including virtual files setup.
+- [Setting Up Local Sync](./ResearchDrive_setup.md) — Install and configure the Nextcloud desktop client to sync files with your local computer, including virtual files setup.
 - [Managing Local Files](./ResearchDrive_troubleshooting.md) — Remove shared folders, manage local storage space, transfer large files from network drives, and resolve Windows long path issues.
