@@ -2,32 +2,11 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse[@Karivtan](https://github.com/Karivtan)*
 
-```{toctree}
----
-hidden: true
-maxdepth: 1
----
-ResearchDrive_uploadFromNetworkDrive
-```
-
 ```{contents}
 ---
 depth: 3
 ---
 ```
-
-## Removing a shared folder or file
-
-In Research Drive, you **cannot delete folders** shared with you from your computer. This can only be done by using the "Leave this share" option in the \[**&middot;&middot;&middot;**\] menu in the web interface.
-
-![leave this share button](../_static/images/nextcloud_leave_share.png)
-
-However, deleting a shared **file** is **possible**. It does **not** delete it from the cloud — it removes **your** share (i.e., you leave the share by deleting the file). To regain access, you need to contact the person who originally shared it with you.
-
-::: {admonition} Non-destructive, but non-reversible
-:class: warning
-When you delete a shared file or leave a shared folder, it is not deleted from the cloud, but it is also not recoverable from your side. You will lose access to that file or folder unless the original sharer (ISSC for project folders) shares it with you again. Therefore, be cautious when deleting shared files, as it can lead to loss of access to important data.
-:::
 
 ## Space on your local machine
 
@@ -99,6 +78,19 @@ If you have large files located on your network drive, the first step can be dif
 1. Recommended: [**Add** an additional sync folder, then **remove** the sync after uploading](./ResearchDrive_uploadFromNetworkDrive.md)
 2. [RcloneView](https://rcloneview.com/) software (not for university computers)
 3. [Rclone GUI](https://rclone.org/gui/)
+
+## Removing a shared folder or file
+
+In Research Drive, you **cannot delete folders** shared with you from your computer. This can only be done by using the "Leave this share" option in the \[**&middot;&middot;&middot;**\] menu in the web interface.
+
+![leave this share button](../_static/images/nextcloud_leave_share.png)
+
+However, deleting a shared **file** is **possible**. It does **not** delete it from the cloud — it removes **your** share (i.e., you leave the share by deleting the file). To regain access, you need to contact the person who originally shared it with you.
+
+::: {admonition} Non-destructive, but non-reversible
+:class: warning
+When you delete a shared file or leave a shared folder, it is not deleted from the cloud, but it is also not recoverable from your side. You will lose access to that file or folder unless the original sharer (ISSC for project folders) shares it with you again. Therefore, be cautious when deleting shared files, as it can lead to loss of access to important data.
+:::
 
 ## Windows long path compatibility issue
 

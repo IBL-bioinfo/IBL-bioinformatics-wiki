@@ -2,6 +2,12 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
+```{contents}
+---
+depth: 3
+---
+```
+
 Uploading files usually involves three steps:
 
 1. Copy/move local files into the synced folder.
