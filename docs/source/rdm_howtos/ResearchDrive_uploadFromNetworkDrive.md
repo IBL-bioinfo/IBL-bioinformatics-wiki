@@ -1,10 +1,12 @@
----
-orphan: true
----
-
-# Transfer to ResearchDrive from Mapped Network Drive
+# Upload Data to ResearchDrive from Mapped Drives and USB Storage
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
+
+```{contents}
+---
+depth: 3
+---
+```
 
 Uploading files usually involves three steps:
 
@@ -12,7 +14,7 @@ Uploading files usually involves three steps:
 2. Nextcloud uploads these files to ResearchDrive (or other cloud storage).
 3. If the files are not used, or if local storage is full, Nextcloud removes the local copies and replaces them with “virtual files”.
 
-If you have large files located on your network drive, the first step can be difficult because you may not have enough local storage to hold them temporarily.
+If you have large files located on a mapped network drive or USB storage device, the first step can be difficult because you may not have enough local storage to hold them temporarily.
 
 ## Check capacity and reduce the number of small files
 
@@ -26,7 +28,7 @@ If you have many small files, we recommend creating zip files before uploading. 
 Due to differences between file systems, the sizes on your own system may not match the sizes shown on ResearchDrive.
 :::
 
-### On your network drive
+### On your mapped drive or USB storage
 
 Right-click your source folder to see its size in the “properties” window. If it takes too long, consider using [WinDirStat](https://windirstat.net/) (download “Zipped Executables” on your university computer).
 
@@ -40,16 +42,16 @@ Right-click your source folder to see its size in the “properties” window. I
    ![Create target location](../_static/images/nextcloud_create_target_folder.png)
 4. Uncheck “Use virtual files instead ...”, then click “Add Sync Connection”.
    ![Add sync connection](../_static/images/nextcloud_add_sync.png)
-5. The upload starts; wait for it to finish. Try not to change anything in the source folder while uploading.
+5. The upload starts; wait for it to finish. Try not to change anything in the source folder on the mapped drive or USB storage while uploading.
    ![wait for sync](../_static/images/nextcloud_syncing.png)
 6. Once the upload has finished, confirm everything is green, then check your files in the web interface or in your default sync folder.
 7. Remove the additional sync folder by clicking “Remove Folder Sync Connection”, and confirm the removal.
    ![Finished uploading](../_static/images/nextcloud_sync_complete.png)
    ![Confirm removal](../_static/images/nextcloud_sync_remove.png)
-8. You can now safely remove your data from your network drive.
+8. You can now safely remove your data from your mapped drive or USB storage.
 
 :::{admonition} Always sync to empty folder
-A sync folder is always synced bidirectionally, so using an empty folder helps ensure Nextcloud does not download data back to your network drive.
+A sync folder is always synced bidirectionally, so using an empty folder helps ensure Nextcloud does not download data back to your mapped drive or USB storage.
 :::
 
 ## In case of upload errors

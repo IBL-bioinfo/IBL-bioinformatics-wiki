@@ -66,7 +66,7 @@ After drafting your DMP(s), contact ibl.rdm@biology.leidenuniv.nl to have them a
 - Supervisors (PI/PhD/PostDoc) request an ELN account per (master/bachelor) student
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) Go to "Research support" → "ELN" → "ELN student access"
   - Fill in the form correctly. For "Group" field, use the ELN group name of the supervisor (PI/PhD/PostDoc)
-- Users install the Nextcloud desktop client from the company portal (Windows 11) or Managed Software Centre (macOS), and log in to Research Drive with their ULCN account. See [Research Drive documentation](./ResearchDrive.md#download-and-install-nextcloud-desktop-client) for details.
+- Users install the Nextcloud desktop client from the company portal (Windows 11) or Managed Software Centre (macOS), and log in to Research Drive with their ULCN account. See [Research Drive documentation](./ResearchDrive_setup.md#install-nextcloud-desktop-client) for details.
 
 ::: {admonition} ELN account deactivates after 6 months of inactivity
 ELN accounts that have not been used for 6 months will be deactivated. If you need to reactivate an account, go to "Research support" → "ELN" → "ELN account activation"
