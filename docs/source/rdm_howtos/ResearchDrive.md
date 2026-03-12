@@ -11,6 +11,7 @@ maxdepth: 1
 ---
 ResearchDrive_setup
 ResearchDrive_troubleshooting
+ResearchDrive_uploadFromNetworkDrive
 ```
 
 ```{contents}
@@ -23,8 +24,7 @@ depth: 3
 
 Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara.nl/](https://universiteitleiden.data.surfsara.nl/)
 
-## Topics not covered in this page
-
+**Topics not covered in this page**
 - [Setting Up Local Sync](./ResearchDrive_setup.md) — Install and configure the Nextcloud desktop client to sync files with your local computer, including virtual files setup.
 - [Managing Local Files](./ResearchDrive_troubleshooting.md) — Remove shared folders, manage local storage space, transfer large files from network drives, and resolve Windows long path issues.
 - [Upload Data to ResearchDrive from Mapped Drives and USB Storage](./ResearchDrive_uploadFromNetworkDrive.md) — Step-by-step guide to upload large files from a network drive or USB storage without needing to copy them to your computer first, and how to remove the sync connection afterward.
