@@ -23,6 +23,12 @@ depth: 3
 
 Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara.nl/](https://universiteitleiden.data.surfsara.nl/)
 
+## Related pages
+
+- [Setting Up Local Sync](./ResearchDrive_setup.md) — Install and configure the Nextcloud desktop client to sync files with your local computer, including virtual files setup.
+- [Managing Local Files](./ResearchDrive_troubleshooting.md) — Remove shared folders, manage local storage space, transfer large files from network drives, and resolve Windows long path issues.
+- [Upload from Mapped Network Drive](./ResearchDrive_uploadFromNetworkDrive.md) — Step-by-step guide to upload large files from a network drive without needing to copy them locally first, and how to remove the sync connection afterward.
+
 ## Intended structure
 
 ![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)
@@ -130,8 +136,3 @@ In this example, 1.16 TB in the "Dashboard" table is actually 1.06 TiB, which ro
 **Quota is calculated using decimal prefixes.** So the "Dashboard" page is more accurate for checking your quota, while the "Files" page is more accurate for checking the actual size of your files. If you are close to your quota, consider archiving files to long-term storage or [requesting more storage](#expand-storage-space).
 
 There is some **delay in showing the actual usage** in your Dashboard after you upload or delete files.
-
-## Related pages
-
-- [Setting Up Local Sync](./ResearchDrive_setup.md) — Install and configure the Nextcloud desktop client to sync files with your local computer, including virtual files setup.
-- [Managing Local Files](./ResearchDrive_troubleshooting.md) — Remove shared folders, manage local storage space, transfer large files from network drives, and resolve Windows long path issues.
