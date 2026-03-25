@@ -21,9 +21,13 @@ Create or find an issue first, discuss scope, then assign yourself so others kno
 
 ### Prerequisites
 
-Clone this repository (or your fork) to your local machine. Make sure you have a Python environment and install dependencies from `docs/requirements.txt`.
+Clone this repository (or your fork) to your local machine. Make sure you have a Python environment, then install dependencies from the canonical file:
 
-Sphinx is a documentation generator that translates plain text source files into output documents. In this project, it translates markdown files into HTML. Sphinx documentation is available [here](https://www.sphinx-doc.org/en/master/usage/quickstart.html).
+`pip install -r docs/requirements.txt`
+
+`docs/requirements.txt` is the single source of truth for documentation build dependencies. If dependencies need to change, update that file first.
+
+This project is built with Sphinx. Sphinx is a documentation generator that converts plain text source files into output documents. In this repository, it converts markdown files into HTML. See the Sphinx documentation [here](https://www.sphinx-doc.org/en/master/usage/quickstart.html).
 
 (You can write `.md` files without building locally, but local build is recommended before opening a PR.)
 
