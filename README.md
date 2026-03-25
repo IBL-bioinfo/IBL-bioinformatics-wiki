@@ -119,6 +119,16 @@ Push updates after merge/rebase:
 - Merge: `git push`
 - Rebase: `git push --force-with-lease`
 
+### Before opening a PR
+
+Quick checklist:
+
+- Review the related issue again, make sure your changes satisfy what the issue describes.
+- The page builds successfully with `make html`.
+- New pages are added to a relevant `{toctree}` (or marked as orphan intentionally).
+- At least one link points to each new page (either from another page or from the index).
+- Formatting and links were checked in local preview.
+
 When everything looks good, push your branch and create a pull request.
 
 After your pull request is approved and merged, the documentation rebuilds and publishes automatically.
