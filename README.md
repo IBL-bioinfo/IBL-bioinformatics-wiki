@@ -4,7 +4,9 @@ Address:
 
 https://ibl-bioinformatics-wiki.readthedocs.io/index.html
 
-Source code of the documents are the `*.md` files located in `source/` dir.
+Source files for the documentation are markdown (`*.md`) files in `docs/source/`.
+
+The `docs_archive/` folder contains pages that were removed from the active documentation. When removing a page, move it there and try to preserve the original folder hierarchy (not strictly required for old content).
 
 For markdown syntax and special syntax for MyST (our markdown parser), please check:
 
@@ -12,45 +14,75 @@ https://myst-parser.readthedocs.io/en/latest/intro.html
 
 ## How to make changes
 
+This project uses **pull requests (PRs)** for all contributions: a PR is a proposal to merge your branch changes into `main`, where it will be reviewed before merging. Before writing a single line, start from the Issues section.
+
+This project is built with [Sphinx](https://www.sphinx-doc.org/en/master/usage/quickstart.html), a documentation generator that converts plain text source files into output documents. Here it converts markdown files into HTML.
+
+### Before you start: find or create an issue
+
+1. Search the [Issues](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki/issues) page to see if a relevant issue already exists.
+2. If it does, join the discussion. If not, open a new issue describing what you want to add or change.
+3. If you plan to work on an existing page, describe what you intend to change and mention (`@username`) the previous author so they are aware.
+4. Assign yourself to the issue so others know it is in progress.
+5. As a guideline, try to open your first draft PR within 1–2 weeks of self-assignment.
+
+### Choose your contribution workflow
+
+- External contributors: use **fork + pull request**.
+- Internal contributors (with write access): use **branch in this repository + pull request**.
+
 ### Prerequisites
 
-Clone this repository to your local machine. Make sure you have a python environment which has the following prerequisites (use pip install):
+Clone this repository (or your fork) to your local machine. Make sure you have a Python environment, then install dependencies from the canonical file:
 
-- sphinx
-- myst-parser
-- sphinx-copybutton
-- sphinxcontrib-mermaid
+`pip install -r docs/requirements.txt`
 
-Sphinx is a documentation generator that translates a set of plain text source files into output document. For us, is to translate markdown files to HTML files. Sphnix document can be found [here](https://www.sphinx-doc.org/en/master/usage/quickstart.html).
+`docs/requirements.txt` is the single source of truth for documentation build dependencies. If dependencies need to change, update that file first.
 
-(Simply write `.md` file if you do not want to build and test.)
+(You can write `.md` files without building locally, but a local build is recommended before opening a PR.)
 
 ### General pipeline
 
-Check [this page](https://www.freecodecamp.org/news/a-simple-git-guide-and-cheat-sheet-for-open-source-contributors/) for how to contribute. Here is a brief summary.
+Check [this page](https://www.freecodecamp.org/news/a-simple-git-guide-and-cheat-sheet-for-open-source-contributors/) for Git basics. Following is our recommended workflow.
 
-Genearly:
+#### External contributors (fork + PR)
 
-1. Fork this repository
-2. Download your forked repository to your local machine. Or open a Codespace.
-3. Create a branch of your own `git checkout -b your-branch-name`, do not touch "main" branch.
-   1. Check your remote status
-      `git remote -v`
-      The result should contain two lines starts with `upstream https://github.com/snail123815/IBL-bioinformatics-wiki.git`
-   2. Pull from upstream again to keep updated. You need to do this from time to time during your development (writing).
-      `git pull upstream main`
-   3. Work on your contributions. From time to time, you can summarise part of your work with `git add path/to/your.md` and commit it to your branch `git commit -m "your commit message"`, then push to your branch `git push --set-upstream origin your-branch-name` (`--set-upstream origin your-branch-name` only needs to be done the first time you push).
-4. Once finished, pull from upstream main again to merge changes from upstream, then push all changes you made.
-5. Go to the webpage of your forked repository, a green button "Compare & pull request" appear, click it, follow the screen to write messages. When I saw it, and checked everything is correct, I will approve the merge.
+1. Fork this repository.
+2. Clone your fork locally (or open a Codespace).
+3. Create a feature branch. The recommended way is to use the **"Create a branch"** button on the GitHub issue page — this auto-generates a descriptive name with the issue number and links the branch to the issue. Alternatively, create it locally:
+   `git checkout -b your-branch-name`
+4. Ensure remotes are correct:
+   - `origin`: your fork
+   - `upstream`: `https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki.git`
+5. Keep your branch updated as needed:
+   `git pull upstream main`
+   - If this fails, see [When `git pull upstream main` fails](#when-git-pull-upstream-main-fails).
+6. Commit and push your changes:
+   - `git add path/to/your.md`
+   - `git commit -m "your commit message"`
+   - `git push --set-upstream origin your-branch-name` (first push only)
+7. Build and verify locally (see [Build and preview locally](#build-and-preview-locally)).
+8. Open a pull request from your fork branch to this repository's `main` branch.
+
+#### Internal contributors (branch in main repo + PR)
+
+1. Clone this repository locally (or open a Codespace).
+2. Create a feature branch. The recommended way is to use the **"Create a branch"** button on the GitHub issue page — this auto-generates a descriptive name with the issue number and links the branch to the issue. Alternatively, create it locally:
+   `git checkout -b your-branch-name`
+3. Work on your changes, then commit and push to this repository.
+4. Build and verify locally (see [Build and preview locally](#build-and-preview-locally)).
+5. Open a pull request from your branch to `main`.
 
 #### How to work on your contribution
 
-Create a markdown `.md` file for your topic, write your content in markdown. Here is the [syntax](https://myst-parser.readthedocs.io/en/latest/intro.html). If you are writing tutorial, please make sure that every people you are targeting can understand, and test your tutorial well in all environments you can think of.
+Whether you are **creating a new page** or **updating an existing one**, the process is the same: edit the relevant `.md` file in `docs/source/` and commit your changes.
 
-After a page is added, please do either:
+Write content using MyST markdown syntax ([syntax reference](https://myst-parser.readthedocs.io/en/latest/intro.html)). MyST is mostly standard markdown — if you know markdown, you already know most of it. It adds a few extra features such as directives (e.g. `{toctree}`, `{note}`, `{code-block}`) and cross-reference roles that are useful for structured documentation. If you are writing a tutorial, make sure it is understandable for your target audience and test it in relevant environments.
 
-1. If you are working on a topic belongs to one of the current major topics, put your file path (relative to `index.md`) in the `{toctree}` section as others.
-2. If you are working on a complete new topic, create an additional `{toctree}` section in `index.md` file. Also, please put this in anywhere of your page (better in front):
+If you created a new page, do one of the following to make it reachable:
+
+1. If your page belongs to an existing major topic, add its path (relative to `docs/source/index.md`) to the relevant `{toctree}` section.
+2. If your page introduces a new major topic, create a new `{toctree}` section in `docs/source/index.md`. Also add this block in your page (preferably near the top):
 
    ````
    ```{toctree}
@@ -60,11 +92,195 @@ After a page is added, please do either:
    ---
    ```
    ````
+3. If you intentionally keep the page as an orphan page (not in any toctree), add MyST metadata so Sphinx does not warn, and make sure at least one other page links to it.
 
-You can now build the html page locally to see if your content is correctly formatted. Make sure you have installed [prerequisites](#prerequisites). Under `docs/` dir, run `make html`, then open `docs/build/html/index.html` to see the result.
+### Build and preview locally
 
-Once you are satisfied, commit your changes to this branch. It is good to check now if the original repository has changed or not by `git pull upstream main`
+Build HTML locally to verify formatting and preview changes in a browser:
 
-Assume everything is alright now, you can push your branch, then create a pull request.
+1. Go to the docs directory: `cd docs`
+2. Build: `make html`
+3. Start a local web server from `docs/build/html`: `python -m http.server`
+4. Open `http://localhost:8000` in your browser
+5. Re-run `make html` after edits. You can keep the same local server running and just refresh the browser to see updates.
 
-After pull request has been approved, the document will then rebuild and publish automatically.
+Once you are satisfied, commit your changes on your branch. It is good practice to update your branch with the latest `main` before opening your PR (steps below).
+
+### Update your branch with latest `main`
+
+Use one of these approaches before opening your PR:
+
+1. Merge-based update (simpler):
+   - `git fetch upstream`
+   - `git checkout your-branch-name`
+   - `git merge upstream/main`
+2. Rebase-based update (linear history):
+   - `git fetch upstream`
+   - `git checkout your-branch-name`
+   - `git rebase upstream/main`
+
+If you get conflicts, resolve files, then continue:
+
+- For merge: `git add <resolved-files>` then `git commit`
+- For rebase: `git add <resolved-files>` then `git rebase --continue`
+
+Push updates after merge/rebase:
+
+- Merge: `git push`
+- Rebase: `git push --force-with-lease`
+
+### Before opening a PR
+
+Quick checklist:
+
+- Review the related issue again, make sure your changes satisfy what the issue describes.
+- The page builds successfully with `make html`.
+- New pages are added to a relevant `{toctree}` (or marked as orphan intentionally).
+- At least one link points to each new page (either from another page or from the index).
+- Formatting and links were checked in local preview.
+- **Your name is listed as an author at the top of every page you created or significantly edited.** Don't be shy — credit matters. It will be reviewed to preserve contributions from previous writers.
+
+When everything looks good, push your branch and create a pull request.
+
+After your pull request is approved and merged, the documentation rebuilds and publishes automatically.
+
+### When `git pull upstream main` fails
+
+Common causes are local uncommitted changes, conflicts, or divergent history.
+
+Recommended recovery:
+
+1. Check status: `git status`
+2. Commit or stash local changes:
+   - Commit: `git add -A && git commit -m "WIP: save local work"`
+   - Or stash: `git stash`
+3. Fetch and update explicitly:
+   - `git fetch upstream`
+   - `git merge upstream/main` (or `git rebase upstream/main`)
+4. If you used stash, restore changes: `git stash pop`
+
+If the error is unclear, copy the full terminal output into an issue or PR comment and ask for help.
+
+## Authoring quick reference
+
+Practical syntax snippets for common formatting needs. All examples come from existing pages in this repository.
+
+### Images
+
+**Simple inline image** (markdown standard):
+
+```markdown
+![Alt text describing the image](../_static/images/your-image.png)
+```
+
+**Image with controlled size** (MyST `{image}` directive):
+
+````markdown
+```{image} ../_static/images/your-image.png
+:alt: Description of the image
+:width: 30em
+```
+````
+
+**Tiny inline icon** (HTML, for small inline images where size matters):
+
+```html
+<span><img alt="icon description" src="../_static/images/icon.png" width="24"></span>
+```
+
+**Image with a solid background colour** (useful for PNG/SVG with transparent backgrounds that look broken in dark themes — apply a background matching the logo's intended colour):
+
+```html
+<span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px">
+  <img src="../_static/images/logo_white.svg" alt="Logo">
+</span>
+```
+
+Note: the Sphinx `{image}` directive does not support the `style` attribute, so HTML `<span>` wrapping is necessary for background colour control.
+
+### Call-outs (admonitions)
+
+**Built-in types** (`note`, `warning`, `tip`, `important`) — simplest form:
+
+````markdown
+```{note}
+This is a note.
+```
+````
+
+````markdown
+```{warning}
+This is a warning.
+```
+````
+
+**Custom title** (use `{admonition}` with any title you like):
+
+```markdown
+:::{admonition} Your custom title
+The body of the call-out goes here.
+:::
+```
+
+**Custom title with a styling class** (applies the visual style of a built-in type):
+
+````markdown
+```{admonition} Your custom title
+:class: warning
+Body text here.
+```
+````
+
+Available classes: `note`, `warning`, `tip`, `important`, `hint`, `caution`, `danger`, `info`.
+
+**Linking to a call-out** — place a named anchor inside the admonition, then link to it:
+
+```markdown
+:::{admonition} It is normal to have zero space
+(you-do-not-own-space)=
+Body text here.
+:::
+```
+
+Then link from anywhere on the same page:
+
+```markdown
+[see explanation](#you-do-not-own-space)
+```
+
+Note: anchor labels placed inside admonitions are intentional — the `(label)=` tag will not render as visible text or affect the admonition's style.
+
+### Custom link anchors
+
+By default, every heading is automatically linkable using its text in lowercase with spaces replaced by hyphens:
+
+```markdown
+[link text](#your-section-title)
+```
+
+For cross-page links:
+
+```markdown
+[link text](./other-page.md#your-section-title)
+```
+
+When you need a stable anchor independent of the heading text (e.g. the heading may change, or you want to target a non-heading element), place a named anchor explicitly with `(anchor-name)=` on the line immediately before it:
+
+```markdown
+(create-ssh-key-pair)=
+### 1. Create ssh key pair
+```
+
+Link to it from the same page:
+
+```markdown
+[Create SSH key pair](#create-ssh-key-pair)
+```
+
+Link to it from a different page:
+
+```markdown
+[Create SSH key pair](./ssh-access-command-line.md#create-ssh-key-pair)
+```
+
+Anchor names must be lowercase, use hyphens instead of spaces, and be unique within the entire documentation build.
