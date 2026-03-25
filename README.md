@@ -12,7 +12,15 @@ https://myst-parser.readthedocs.io/en/latest/intro.html
 
 ## How to make changes
 
-Create or find an issue first, discuss scope, then assign yourself so others know this page/topic is in progress. As a guideline, try to open your first draft PR within 1-2 weeks after assignment.
+This project uses **pull requests (PRs)** for all contributions: a PR is a proposal to merge your branch changes into `main`, where it will be reviewed before merging. Before writing a single line, start from the Issues section.
+
+### Before you start: find or create an issue
+
+1. Search the [Issues](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki/issues) page to see if a relevant issue already exists.
+2. If it does, join the discussion. If not, open a new issue describing what you want to add or change.
+3. If you plan to work on an existing page, describe what you intend to change and mention (`@username`) the previous author so they are aware.
+4. Assign yourself to the issue so others know it is in progress.
+5. As a guideline, try to open your first draft PR within 1–2 weeks of self-assignment.
 
 ### Choose your contribution workflow
 
@@ -33,15 +41,13 @@ This project is built with Sphinx. Sphinx is a documentation generator that conv
 
 ### General pipeline
 
-Check [this page](https://www.freecodecamp.org/news/a-simple-git-guide-and-cheat-sheet-for-open-source-contributors/) for Git basics. A project-specific summary is below.
-
-PR means **pull request**: a proposal to merge your branch changes into `main` after review.
+Check [this page](https://www.freecodecamp.org/news/a-simple-git-guide-and-cheat-sheet-for-open-source-contributors/) for Git basics. Following is our recommended workflow.
 
 #### External contributors (fork + PR)
 
-1. Fork this repository
+1. Fork this repository.
 2. Clone your fork locally (or open a Codespace).
-3. Create a feature branch (do not work directly on `main`):
+3. Create a feature branch. The recommended way is to use the **"Create a branch"** button on the GitHub issue page — this auto-generates a descriptive name with the issue number and links the branch to the issue. Alternatively, create it locally:
    `git checkout -b your-branch-name`
 4. Ensure remotes are correct:
    - `origin`: your fork
@@ -59,7 +65,7 @@ PR means **pull request**: a proposal to merge your branch changes into `main` a
 #### Internal contributors (branch in main repo + PR)
 
 1. Clone this repository locally (or open a Codespace).
-2. Create a feature branch:
+2. Create a feature branch. The recommended way is to use the **"Create a branch"** button on the GitHub issue page — this auto-generates a descriptive name with the issue number and links the branch to the issue. Alternatively, create it locally:
    `git checkout -b your-branch-name`
 3. Work on your changes, then commit and push to this repository.
 4. Build and verify locally (see [Build and preview locally](#build-and-preview-locally)).
