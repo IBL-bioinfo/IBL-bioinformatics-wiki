@@ -138,6 +138,7 @@ Quick checklist:
 - New pages are added to a relevant `{toctree}` (or marked as orphan intentionally).
 - At least one link points to each new page (either from another page or from the index).
 - Formatting and links were checked in local preview.
+- **Your name is listed as an author at the top of every page you created or significantly edited.** Don't be shy — credit matters. It will be reviewed to preserve contributions from previous writers.
 
 When everything looks good, push your branch and create a pull request.
 
@@ -159,3 +160,127 @@ Recommended recovery:
 4. If you used stash, restore changes: `git stash pop`
 
 If the error is unclear, copy the full terminal output into an issue or PR comment and ask for help.
+
+## Authoring quick reference
+
+Practical syntax snippets for common formatting needs. All examples come from existing pages in this repository.
+
+### Images
+
+**Simple inline image** (markdown standard):
+
+```markdown
+![Alt text describing the image](../_static/images/your-image.png)
+```
+
+**Image with controlled size** (MyST `{image}` directive):
+
+````markdown
+```{image} ../_static/images/your-image.png
+:alt: Description of the image
+:width: 30em
+```
+````
+
+**Tiny inline icon** (HTML, for small inline images where size matters):
+
+```html
+<span><img alt="icon description" src="../_static/images/icon.png" width="24"></span>
+```
+
+**Image with a solid background colour** (useful for PNG/SVG with transparent backgrounds that look broken in dark themes — apply a background matching the logo's intended colour):
+
+```html
+<span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px">
+  <img src="../_static/images/logo_white.svg" alt="Logo">
+</span>
+```
+
+Note: the Sphinx `{image}` directive does not support the `style` attribute, so HTML `<span>` wrapping is necessary for background colour control.
+
+### Call-outs (admonitions)
+
+**Built-in types** (`note`, `warning`, `tip`, `important`) — simplest form:
+
+````markdown
+```{note}
+This is a note.
+```
+````
+
+````markdown
+```{warning}
+This is a warning.
+```
+````
+
+**Custom title** (use `{admonition}` with any title you like):
+
+```markdown
+:::{admonition} Your custom title
+The body of the call-out goes here.
+:::
+```
+
+**Custom title with a styling class** (applies the visual style of a built-in type):
+
+````markdown
+```{admonition} Your custom title
+:class: warning
+Body text here.
+```
+````
+
+Available classes: `note`, `warning`, `tip`, `important`, `hint`, `caution`, `danger`, `info`.
+
+**Linking to a call-out** — place a named anchor inside the admonition, then link to it:
+
+```markdown
+:::{admonition} It is normal to have zero space
+(you-do-not-own-space)=
+Body text here.
+:::
+```
+
+Then link from anywhere on the same page:
+
+```markdown
+[see explanation](#you-do-not-own-space)
+```
+
+Note: anchor labels placed inside admonitions are intentional — the `(label)=` tag will not render as visible text or affect the admonition's style.
+
+### Custom link anchors
+
+By default, every heading is automatically linkable using its text in lowercase with spaces replaced by hyphens:
+
+```markdown
+[link text](#your-section-title)
+```
+
+For cross-page links:
+
+```markdown
+[link text](./other-page.md#your-section-title)
+```
+
+When you need a stable anchor independent of the heading text (e.g. the heading may change, or you want to target a non-heading element), place a named anchor explicitly with `(anchor-name)=` on the line immediately before it:
+
+```markdown
+(create-ssh-key-pair)=
+### 1. Create ssh key pair
+```
+
+Link to it from the same page:
+
+```markdown
+[Create SSH key pair](#create-ssh-key-pair)
+```
+
+Link to it from a different page:
+
+```markdown
+[Create SSH key pair](./ssh-access-command-line.md#create-ssh-key-pair)
+```
+
+Anchor names must be lowercase, use hyphens instead of spaces, and be unique within the entire documentation build.
