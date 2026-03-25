@@ -6,6 +6,8 @@ https://ibl-bioinformatics-wiki.readthedocs.io/index.html
 
 Source files for the documentation are markdown (`*.md`) files in `docs/source/`.
 
+The `docs_archive/` folder contains pages that were removed from the active documentation. When removing a page, move it there and try to preserve the original folder hierarchy (not strictly required for old content).
+
 For markdown syntax and special syntax for MyST (our markdown parser), please check:
 
 https://myst-parser.readthedocs.io/en/latest/intro.html
@@ -13,6 +15,8 @@ https://myst-parser.readthedocs.io/en/latest/intro.html
 ## How to make changes
 
 This project uses **pull requests (PRs)** for all contributions: a PR is a proposal to merge your branch changes into `main`, where it will be reviewed before merging. Before writing a single line, start from the Issues section.
+
+This project is built with [Sphinx](https://www.sphinx-doc.org/en/master/usage/quickstart.html), a documentation generator that converts plain text source files into output documents. Here it converts markdown files into HTML.
 
 ### Before you start: find or create an issue
 
@@ -35,9 +39,7 @@ Clone this repository (or your fork) to your local machine. Make sure you have a
 
 `docs/requirements.txt` is the single source of truth for documentation build dependencies. If dependencies need to change, update that file first.
 
-This project is built with Sphinx. Sphinx is a documentation generator that converts plain text source files into output documents. In this repository, it converts markdown files into HTML. See the Sphinx documentation [here](https://www.sphinx-doc.org/en/master/usage/quickstart.html).
-
-(You can write `.md` files without building locally, but local build is recommended before opening a PR.)
+(You can write `.md` files without building locally, but a local build is recommended before opening a PR.)
 
 ### General pipeline
 
