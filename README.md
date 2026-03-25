@@ -75,9 +75,11 @@ Check [this page](https://www.freecodecamp.org/news/a-simple-git-guide-and-cheat
 
 #### How to work on your contribution
 
-Create a markdown `.md` file for your topic and write content using MyST markdown syntax: [syntax reference](https://myst-parser.readthedocs.io/en/latest/intro.html). If you are writing a tutorial, make sure it is understandable for your target audience and test it in relevant environments.
+Whether you are **creating a new page** or **updating an existing one**, the process is the same: edit the relevant `.md` file in `docs/source/` and commit your changes.
 
-After you add a page, do one of the following:
+Write content using MyST markdown syntax ([syntax reference](https://myst-parser.readthedocs.io/en/latest/intro.html)). MyST is mostly standard markdown — if you know markdown, you already know most of it. It adds a few extra features such as directives (e.g. `{toctree}`, `{note}`, `{code-block}`) and cross-reference roles that are useful for structured documentation. If you are writing a tutorial, make sure it is understandable for your target audience and test it in relevant environments.
+
+If you created a new page, do one of the following to make it reachable:
 
 1. If your page belongs to an existing major topic, add its path (relative to `docs/source/index.md`) to the relevant `{toctree}` section.
 2. If your page introduces a new major topic, create a new `{toctree}` section in `docs/source/index.md`. Also add this block in your page (preferably near the top):
