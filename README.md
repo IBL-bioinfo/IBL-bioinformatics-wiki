@@ -12,7 +12,7 @@ For markdown syntax and special syntax for MyST (our markdown parser), please ch
 
 https://myst-parser.readthedocs.io/en/latest/intro.html
 
-## How to make changes
+## How to contribute
 
 This project uses **pull requests (PRs)** for all contributions: a PR is a proposal to merge your branch changes into `main`, where it will be reviewed before merging. Before writing a single line, start from the Issues section.
 
@@ -26,26 +26,30 @@ This project is built with [Sphinx](https://www.sphinx-doc.org/en/master/usage/q
 4. Assign yourself to the issue so others know it is in progress.
 5. As a guideline, try to open your first draft PR within 1–2 weeks of self-assignment.
 
-### Choose your contribution workflow
+### Set up your local environment
 
-- External contributors: use **fork + pull request**.
-- Internal contributors (with write access): use **branch in this repository + pull request**.
-
-### Prerequisites
-
-Clone this repository (or your fork) to your local machine. Make sure you have a Python environment, then install dependencies from the canonical file:
+Make sure you have a Python environment, then install dependencies from the canonical file:
 
 `pip install -r docs/requirements.txt`
 
-`docs/requirements.txt` is the single source of truth for documentation build dependencies. If dependencies need to change, update that file first.
+If dependencies need to change, update that file first.
 
-(You can write `.md` files without building locally, but a local build is recommended before opening a PR.)
+You can write `.md` files without building locally, but a local build is recommended before opening a PR.
 
-### General pipeline
+Clone this repository (or your fork) to your local machine. Alternatively, you can open a GitHub Codespace directly from the repository page, which provides a ready-to-use cloud environment with all dependencies pre-installed.
+
+### Contribution pipeline
 
 Check [this page](https://www.freecodecamp.org/news/a-simple-git-guide-and-cheat-sheet-for-open-source-contributors/) for Git basics. Following is our recommended workflow.
 
-#### External contributors (fork + PR)
+#### 1. Choose your contribution workflow
+
+- External contributors: use [**fork + pull request**](#external-contributors-fork--pr).
+- Internal contributors (with write access to this repository): use [**branch in this repository + pull request**](#internal-contributors-branch-in-main-repo--pr).
+
+Both workflows lead to the same result: a pull request that can be reviewed and merged. Work on branches within the main repository allows other internal contributors to work on the same branch if needed, while the fork workflow is more isolated. Choosing the forked workflow means you are the only one with write access to your branch, you are responsible for taking care of any possible review feedback until approval. But that is the standard way for external contributions and is perfectly fine.
+
+##### External contributors (fork + PR)
 
 1. Fork this repository.
 2. Clone your fork locally (or open a Codespace).
@@ -62,9 +66,9 @@ Check [this page](https://www.freecodecamp.org/news/a-simple-git-guide-and-cheat
    - `git commit -m "your commit message"`
    - `git push --set-upstream origin your-branch-name` (first push only)
 7. Build and verify locally (see [Build and preview locally](#build-and-preview-locally)).
-8. Open a pull request from your fork branch to this repository's `main` branch.
+8. Open a pull request from your fork branch to **this repository's** `main` branch.
 
-#### Internal contributors (branch in main repo + PR)
+##### Internal contributors (branch in main repo + PR)
 
 1. Clone this repository locally (or open a Codespace).
 2. Create a feature branch. The recommended way is to use the **"Create a branch"** button on the GitHub issue page — this auto-generates a descriptive name with the issue number and links the branch to the issue. Alternatively, create it locally:
@@ -73,11 +77,20 @@ Check [this page](https://www.freecodecamp.org/news/a-simple-git-guide-and-cheat
 4. Build and verify locally (see [Build and preview locally](#build-and-preview-locally)).
 5. Open a pull request from your branch to `main`.
 
-#### How to work on your contribution
+#### 2. Work on your contribution
 
 Whether you are **creating a new page** or **updating an existing one**, the process is the same: edit the relevant `.md` file in `docs/source/` and commit your changes.
 
-Write content using MyST markdown syntax ([syntax reference](https://myst-parser.readthedocs.io/en/latest/intro.html)). MyST is mostly standard markdown — if you know markdown, you already know most of it. It adds a few extra features such as directives (e.g. `{toctree}`, `{note}`, `{code-block}`) and cross-reference roles that are useful for structured documentation. If you are writing a tutorial, make sure it is understandable for your target audience and test it in relevant environments.
+Write content using MyST markdown syntax ([syntax reference](https://myst-parser.readthedocs.io/en/latest/intro.html)). MyST is mostly standard markdown — if you know markdown, you already know most of it. It adds a few extra features such as directives (e.g. `{toctree}`, `{note}`, `{code-block}`) and cross-reference roles that are useful for structured documentation. If you are writing a tutorial, make sure it is understandable for your target audience and test it in relevant environments. The [Quick special markdown reference](#quick-special-markdown-reference) below may help with this.
+
+**Commit message conventions:**
+
+Keep commit messages clear and descriptive:
+- Use the imperative mood: "Add documentation" instead of "Added documentation"
+- Start with a verb: Add, Update, Fix, Remove, Refactor, Reorganize
+- First line should be under 50 characters when possible
+- Include the issue number if applicable: `Add feedback section (fixes #42)`
+- Example: `git commit -m "Add <tool> installation troubleshooting guide (fixes #18)"`
 
 If you created a new page, do one of the following to make it reachable:
 
@@ -92,9 +105,10 @@ If you created a new page, do one of the following to make it reachable:
    ---
    ```
    ````
+
 3. If you intentionally keep the page as an orphan page (not in any toctree), add MyST metadata so Sphinx does not warn, and make sure at least one other page links to it.
 
-### Build and preview locally
+#### 3. Build and preview locally
 
 Build HTML locally to verify formatting and preview changes in a browser:
 
@@ -106,7 +120,7 @@ Build HTML locally to verify formatting and preview changes in a browser:
 
 Once you are satisfied, commit your changes on your branch. It is good practice to update your branch with the latest `main` before opening your PR (steps below).
 
-### Update your branch with latest `main`
+#### 4. Update your branch with latest `main`
 
 Use one of these approaches before opening your PR:
 
@@ -129,9 +143,9 @@ Push updates after merge/rebase:
 - Merge: `git push`
 - Rebase: `git push --force-with-lease`
 
-### Before opening a PR
+#### 5. Open a pull request (PR)
 
-Quick checklist:
+Quick checklist **before opening your PR**:
 
 - Review the related issue again, make sure your changes satisfy what the issue describes.
 - The page builds successfully with `make html`.
@@ -140,9 +154,13 @@ Quick checklist:
 - Formatting and links were checked in local preview.
 - **Your name is listed as an author at the top of every page you created or significantly edited.** Don't be shy — credit matters. It will be reviewed to preserve contributions from previous writers.
 
-When everything looks good, push your branch and create a pull request.
+When everything looks good, push your branch, go to your branch on GitHub, and create a pull request. Please request a review from at least one other contributor (e.g. the issue author or a previous page author) to ensure your changes are reviewed by someone familiar with the content.
 
-After your pull request is approved and merged, the documentation rebuilds and publishes automatically.
+#### 6. Review and merge
+
+Your PR will be reviewed by maintainers and possibly other contributors. You may receive feedback or requests for changes — this is normal and part of the collaborative process. Address any feedback by making more commits to your branch, which will automatically update the PR.
+
+After your pull request is approved and merged (by yourself or a maintainer), the documentation rebuilds and publishes automatically.
 
 ### When `git pull upstream main` fails
 
@@ -161,9 +179,9 @@ Recommended recovery:
 
 If the error is unclear, copy the full terminal output into an issue or PR comment and ask for help.
 
-## Authoring quick reference
+## Quick special markdown reference
 
-Practical syntax snippets for common formatting needs. All examples come from existing pages in this repository.
+Practical syntax snippets for (un)common formatting needs. All examples come from existing pages in this repository.
 
 ### Images
 
