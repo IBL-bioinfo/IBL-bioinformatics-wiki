@@ -31,6 +31,8 @@ Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara
 
 ## Intended structure
 
+Quick reference for the intended Research Drive folder structure.
+
 ![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)
 
 ## Nextcloud and Research Drive
@@ -39,7 +41,9 @@ Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara
 
 ## Application and invitation
 
-For **PI**, you need to apply for it:
+To gain access to Research Drive, you **always need to be invited**. ISSC will create project folders upon request of PIs or lab managers, and then the PI or lab manager can invite the rest of the staff and students. If you do not have access to any project folder, please contact your PI or lab manager.
+
+Requesting a project folder by PI or lab manager:
 - Research Drive is now a paid service, please consult IBL RDM team for the cost and funding details.
 - Request Research Drive per project/DMP/contract
   - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
@@ -51,7 +55,7 @@ For **PI**, you need to apply for it:
 
 For **PhD/PostDoc/Researcher (staff)/student**, once you received the invitation, please follow the link and confirm you can login. Only after that, your PI or lab manager can give you access to your folder.
 
-::: {admonition} Project folder name may not be consistant
+::: {admonition} Project folder name may not be consistent
 Example:
 
 ![Example of project folder name](../_static/images/nextcloud_different_name_example.png)
@@ -64,6 +68,10 @@ You can rename a project folder in the **Files** tab, but the Dashboard name wil
 ### Invite users and set up the folder structure
 
 After Research Drive has been activated, follow these steps to set up your project folder, invite users. This tutorial assumes you already have a project folder (if you are a PI) or have been invited to access at least one folder (if you are staff or student). If you do not have access to any project folder, please contact your PI or lab manager.
+
+PI or authorized lab manager have full control over the project folder, you can decide how to organize the folder structure and who can access which folders. We recommend the following basic structure, but you can adjust it according to your needs:
+
+![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)
 
 **Anyone** with a Research Drive account can invite other users include:
 - **Staff**: PhD students, PostDocs, Researcher (staff), Lab managers

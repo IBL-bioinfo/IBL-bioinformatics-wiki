@@ -2,6 +2,8 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse[@Karivtan](https://github.com/Karivtan)*
 
+In this section, we cover common issues related to managing local files when using Research Drive with the Nextcloud desktop client. This includes understanding how virtual files work, how to free up local disk space, and how to handle large file transfers from network drives.
+
 ```{contents}
 ---
 depth: 3

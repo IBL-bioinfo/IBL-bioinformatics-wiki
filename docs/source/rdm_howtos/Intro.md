@@ -2,6 +2,8 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815) & J.Willemse [@Karivtan](https://github.com/Karivtan)*
 
+IBL has two main tools for research data management (RDM): **Research Drive** for data storage and **ELN** (electronic lab notebook) for recording experiments. This section provides practical guides on how to use these tools effectively, including setup instructions, best practices, and troubleshooting tips.
+
 ```{contents}
 ---
 depth: 3
