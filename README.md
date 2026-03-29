@@ -113,10 +113,10 @@ If you created a new page, do one of the following to make it reachable:
 Build HTML locally to verify formatting and preview changes in a browser:
 
 1. Go to the docs directory: `cd docs`
-2. Build: `make html`
+2. Build: `make html` (or `.\make.bat html` on Windows)
 3. Start a local web server from `docs/build/html`: `python -m http.server`
 4. Open `http://localhost:8000` in your browser
-5. Re-run `make html` after edits. You can keep the same local server running and just refresh the browser to see updates.
+5. Re-run `make html` (or `.\make.bat html` on Windows) after edits. You can keep the same local server running and just refresh the browser to see updates.
 
 Once you are satisfied, commit your changes on your branch. It is good practice to update your branch with the latest `main` before opening your PR (steps below).
 
@@ -148,7 +148,7 @@ Push updates after merge/rebase:
 Quick checklist **before opening your PR**:
 
 - Review the related issue again, make sure your changes satisfy what the issue describes.
-- The page builds successfully with `make html`.
+- The page builds successfully with `make html` (or `.\make.bat html` on Windows) and looks good in the local preview.
 - New pages are added to a relevant `{toctree}` (or marked as orphan intentionally).
 - At least one link points to each new page (either from another page or from the index).
 - Formatting and links were checked in local preview.
