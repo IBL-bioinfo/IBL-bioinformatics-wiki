@@ -10,6 +10,28 @@ depth: 3
 ---
 ```
 
+## Sync taking forever
+
+The reason of sync taking forever can be due to various factors, such as a large number of small files, limited local storage space, or issues with the Nextcloud client. If you are experiencing slow sync times, consider the following troubleshooting steps:
+
+### Check the log
+
+Left-click the Nextcloud icon in the system tray, the log is shown as a list of recent events, ordered by time from newest on top. Look for any error messages or warnings that may indicate the cause of the slow sync.
+
+### Too many small files
+
+When you have a folder with a very large number of small files (for example, thousands or more), syncing can take a very long time. This is due to high per-file overhead: each file requires metadata operations and separate network requests. This increases CPU and disk I/O, bloats the Nextcloud client and server databases, prolongs directory scans and backups, and can cause much slower syncs, timeouts, or sync errors. Antivirus or indexing scans can further degrade performance, and some platforms may hit filesystem limits when directories contain very many entries.
+
+Practical mitigations:
+
+- Archive many small files into ZIP/TAR before uploading to reduce per-file overhead.
+- Keep frequently changing tiny files (caches, temp files) in local-only folders rather than in Research Drive.
+- Avoid storing dependency/cache directories (for example `node_modules` or virtual environments) in Research Drive.
+
+::: {admonition} This applies to other cloud storage as well
+This issue is not specific to Research Drive or Nextcloud; it is a common problem with any cloud storage solution that does not handle large numbers of small files efficiently. The same advice applies to other platforms like OneDrive, Dropbox, Google Drive, etc.
+:::
+
 ## Space on your local machine
 
 Research Drive uses the Nextcloud desktop client to *sync* files between the **cloud** (Research Drive) and your **local** computer.

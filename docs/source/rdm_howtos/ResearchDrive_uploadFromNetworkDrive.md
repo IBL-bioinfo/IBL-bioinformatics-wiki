@@ -4,6 +4,8 @@
 
 If you have large files located on a **mapped network drive (e.g., `J:`)** or **USB storage device**, you may encounter difficulties when trying to upload them to Research Drive using the web interface or the Nextcloud desktop client. This guide provides step-by-step instructions on how to upload large files from mapped drives or USB storage to Research Drive using the Nextcloud desktop client, as well as troubleshooting tips for common issues that may arise during the upload process.
 
+For **command line users** (for example, if you are using a Linux terminal on IBL servers or ALICE), you can use `rclone` to sync with Research Drive. Please refer to the [command line guide](./ResearchDrive_commandLine.md) for detailed instructions.
+
 :::{admonition} Problems using web interface or Nextcloud desktop client directly
 Web interface uploads usually have a file size limit and can time out for large files. It also depends on the stability of your internet connection and the stability of your other opened tabs, which can be problematic for large transfers. Once stopped, you may have to start over from the beginning.
 
