@@ -24,3 +24,14 @@ div.footer {
     padding-right: 1rem;
     text-align: right;
 }
+
+/* In sidebar nav, show same-page section links before child page links */
+li.toctree-l1.current > ul {
+    display: flex;
+    flex-direction: column;
+}
+
+li.toctree-l1.current > ul > li:has(> a[href$=".html"]),
+li.toctree-l1.current > ul > li.current {
+    order: 100;
+}

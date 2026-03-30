@@ -2,23 +2,25 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
+If you have large files located on a **mapped network drive (e.g., `J:`)** or **USB storage device**, you may encounter difficulties when trying to upload them to Research Drive using the web interface or the Nextcloud desktop client. This guide provides step-by-step instructions on how to upload large files from mapped drives or USB storage to Research Drive using the Nextcloud desktop client, as well as troubleshooting tips for common issues that may arise during the upload process.
+
+For **command line users** (for example, if you are using a Linux terminal on IBL servers or ALICE), you can use `rclone` to sync with Research Drive. Please refer to the [command line guide](./ResearchDrive_commandLine.md) for detailed instructions.
+
+:::{admonition} Problems using web interface or Nextcloud desktop client directly
+Web interface uploads usually have a file size limit and can time out for large files. It also depends on the stability of your internet connection and the stability of your other opened tabs, which can be problematic for large transfers. Once stopped, you may have to start over from the beginning.
+
+The Nextcloud desktop client typically requires you to copy files into a synced folder on your local machine before uploading, which can be an issue if you do not have enough local storage space to hold the files temporarily.
+:::
+
 ```{contents}
 ---
 depth: 3
 ---
 ```
 
-Uploading files usually involves three steps:
-
-1. Copy/move local files into the synced folder.
-2. Nextcloud uploads these files to ResearchDrive (or other cloud storage).
-3. If the files are not used, or if local storage is full, Nextcloud removes the local copies and replaces them with “virtual files”.
-
-If you have large files located on a mapped network drive or USB storage device, the first step can be difficult because you may not have enough local storage to hold them temporarily.
-
 ## Check capacity and reduce the number of small files
 
-Make sure you have enough capacity. If needed, request more from the ISSC helpdesk using the correct cost centre.
+Make sure you have enough capacity. [Request more if needed](./ResearchDrive.md#expand-storage-space).
 
 Note that [there are differences in file size calculation regarding with your quota](./ResearchDrive.md#different-sizes-in-dashboard-and-files).
 

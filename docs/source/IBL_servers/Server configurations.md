@@ -17,7 +17,7 @@ As a small server cluster intended for testing and teaching, we **do not** plan 
 
 ```` {admonition} Remove your data after use
 :class: warning
-We kindly request all users to be mindful of the limited storage available. To ensure fair usage and accommodate everyone's needs, please remove your data once it is no longer required. Your cooperation is greatly appreciated. **Research Drive** is one option of backing up your data. For that `rclone` tool is avilable, notify adminstrator if not. In Research Drive webpage, you click top right on your name, then "settings", go to the left, click "Security", scroll to the bottom, create a new "App password". The weblink is shown below in the bottom, you need to **remove** the last two parts `/remote.php/webdav/` when asked. Now you have all necessary information. Detailed instructions will follow soon.
+We kindly request all users to be mindful of the limited storage available. To ensure fair usage and accommodate everyone's needs, please remove your data once it is no longer required. Your cooperation is greatly appreciated.
 ````
 
 Most of the IBL servers have a small but fast SSD for `/home` directory storage, plus one or more slower but much larger HDD for storage of data. The HDDs are mounted on directory `/vol/local`, if there is extra disks, we mount them on `/vol/local1`, `/vol/local2` etc. You can use command `df -h` to check:
@@ -30,6 +30,12 @@ Filesystem      Size  Used Avail Use% Mounted on
 ```
 
 Note the `/dev/nvme1n1` is an `nvme` device, meaning it is also an SSD, for IO rich commands, you can try to run on that location.
+
+## Transfer data with Research Drive
+
+IBL RDM protocol require you to use [**Research Drive**](../rdm_howtos/ResearchDrive.md) for backing up your research data. For that `rclone` tool is available, please [follow the instructions](../rdm_howtos/ResearchDrive_commandLine.md). Notify administrator if you cannot find `rclone` in system path.
+
+I highly recommend using a [simplified rclone wrapper](../rdm_howtos/ResearchDrive_commandLine.md#simplified-rclone-wrapper) for pulling/pushing data from/to  Research Drive.
 
 ## Sharing data and software environment
 
@@ -107,7 +113,7 @@ For program environment management and setup, we use **Micromamba** instead of C
      3. All environments created using `micromamba create -f <environment_description>.yaml` (or `*.yml`). Most `*.yaml` file starts with `name: env-name` line, it is equivalent to `-n <env-name>`. Also, `-n` is not compatible with `-p`.  
           To use this file, please remove the `name: env-name` line, then create an environment for it using `-p` as stated. Then you can install it in an **existing** environment using `micromamba install -f <environment_description>.yaml` 
 
-## Jump within servers
+## Jump between servers
 
 You can jump from any server to any other server using `ssh [servername (lowercases)]`.
 
