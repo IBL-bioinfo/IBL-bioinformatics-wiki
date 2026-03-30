@@ -2,7 +2,13 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
-IBL now have 3 workstation level PCs setup to server bioinformatics requirements within IBL. Every one is welcome to use and share their expertise within our community!
+To serve bioinformatics requirements within IBL, we have three tiers of computing infrastructure:
+
+1. IBL servers. Now contains 3 workstation level PCs setup.
+2. One private GPU node in the Leiden University super computer cluster ALICE, not restricted to GPU work.
+3. ALICE cluster, which is a shared resource for all Leiden University researchers, with a large number of CPU cores and GPU nodes. Additional charge will apply.
+
+For more demanding works, we can also apply for national super computer resources, such as [Snellius](https://userinfo.surfsara.nl/systems/snellius). However, these resources are not dedicated to IBL and the application process is more complicated, so we will not cover them in this documentation.
 
 ```{contents}
 ---
@@ -10,9 +16,9 @@ depth: 3
 ---
 ```
 
-## Servers and specs
+## IBL Servers and specs
 
-Most servers runs on [Rocky linux 9](https://rockylinux.org/news/rocky-linux-9-3-ga-release/), a production-ready downstream version of Red Hat Enterprise Linux.
+All IBL servers runs on [Rocky linux 9](https://rockylinux.org/news/rocky-linux-9-3-ga-release/), a production-ready downstream version of Red Hat Enterprise Linux.
 
 Most servers has local storage mounted on `/vol/local/`, for both data and programs. All home directories are located on a dedicated SSD partition, and has a quota for each user. Additional storage are mounted on `/vol/local1/` and `/vol/local2/` etc.
 
@@ -85,6 +91,25 @@ This machine is, in principle, dedicated to Paco group Managed by [Paco lab](htt
   - 20 GB memory
 - `/home` 1.8 TB SSD; Quota for each user: 100 GB
 - `/vol/local` 10 TB HDD
+
+## Private GPU node in ALICE cluster
+
+The `node888` is a GPU node under partition `gpu_ibl` in ALICE cluster that is dedicated to the whole of IBL. Only IBL members have access to this node. This server is setup for educational purposes, but it can also be used for production work. Educational work will be notified to all users in advance in the Slack channel `#jobs-on-servers` and will have higher priority than production work.
+
+- AMD Zen 4 architecture EPYC 9534 CPU &times; 2
+  - @ 2.45GHz, boost up to 3.7GHz
+  - 64 cores each (128 threads each)
+- Nvidia A5000 Ada GPU &times; 2
+  - 32 GB memory each
+- 640 GB memory (ECC)
+- 14 TB scratch space:
+  - 7 TB PCIe Gen4 &times;4 NVMe SSD &times; 2
+  - RAID 0 for maximum performance, reaching ~ 12.4 GiB/s read and 7.7 GiB/s write
+  - No redundancy, but it is scratch data space anyway
+
+Check [ALICE WIKI](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519378/About+ALICE) for detailed documentation about ALICE cluster.
+
+Check [IBL on ALICE](../alice/alice_ibl.md) for IBL specific information.
 
 ## Basic knowledge of using linux shell
 

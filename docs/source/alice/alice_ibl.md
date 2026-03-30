@@ -2,6 +2,8 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
+[ALICE (Academic Leiden Interdisciplinary Cluster Environment)](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519378/About+ALICE) is the high-performance computing (HPC) facility of Leiden university and LUMC. It is a shared resource for all Leiden University researchers, with a large number of CPU cores and GPU nodes. Additional charge will apply.
+
 ## How to get an account
 
 Please read and follow the instructions:
@@ -10,10 +12,32 @@ Please read and follow the instructions:
 
 [Connecting to ALICE](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519483/Connecting+to+ALICE)
 
-If you are from IBL Leiden university, please also ask for shared folder access. Our shared folder is under PI name: [Bastienne Vriesendorp](https://www.universiteitleiden.nl/en/staffmembers/bastienne-vriesendorp), and please CC your request to her. 
+If you are from IBL Leiden university, please also ask for shared folder access. Our shared folder is under PI name: [Bastienne Vriesendorp](https://www.universiteitleiden.nl/en/staffmembers/bastienne-vriesendorp), and please CC your request to her.
 
 ## IBL on ALICE
- 
+
+We have strong connection with ALICE management and support team, please contact via Slack team or any open office day if you have any questions regarding ALICE cluster.
+
+### Private GPU node in `gpu_ibl` partition
+
+We have one GPU node `node888` in ALICE cluster that is dedicated to the whole IBL. Users with group `bio` can access this node. This server is setup for educational purposes, but it can also be used for production work. Educational work will be notified to all users in advance in the Slack channel `#jobs-on-servers` and will have higher priority than production work.
+
+Use this in your slurm script to specify the partition and use only one GPU on this node:
+
+```bash
+#SBATCH --partition=gpu_ibl
+#SBATCH --gres=gpu:1
+```
+
+Check who is using the node:
+
+```bash
+sinfo -p gpu_ibl
+squeue -p gpu_ibl
+```
+
+If you find the GPU is not available, please contact the user who is using it or contact the admin to check if it is a problem of the node.
+
 ### Group shared dir
 
 Please use a folder of your user name in our group shared folder for your data.
