@@ -29,14 +29,14 @@ Use this in your slurm script to specify the partition and use only one GPU on t
 #SBATCH --gres=gpu:1
 ```
 
-Check who is using the node:
+Check node status and who is using the node:
 
 ```bash
 sinfo -p gpu_ibl
 squeue -p gpu_ibl
 ```
 
-If you find the GPU is not available, please contact the user who is using it or contact the admin to check if it is a problem of the node.
+If you find the GPU is not available, please contact the user who is using it or contact the admin to check if it is a problem of the node. This is the **major difference** between this node and IBL servers. **A job will have complete possession of the GPU it requested on ALICE, including our private node, but not on IBL servers.** Advantage is that jobs on ALICE will not be affected by other users, but the disadvantage is that you may have to wait for a long time if the node is occupied by others. So please be patient and communicate with other users if necessary.
 
 ### Group shared dir
 
