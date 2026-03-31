@@ -40,25 +40,22 @@ If you find the GPU is not available, please contact the user who is using it or
 
 ### Group shared dir
 
-Please use a folder of your user name in our group shared folder for your data.
+Currently ALICE is [providing enough storage](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519552/Storage+on+ALICE#Summary-of-available-file-systems) for your temporary data in your `/home/<username>` dir, but it can not be shared with others. To share data with other IBL colleagues, we have created a shared directory located in `/data1/projects/pi-vriesendorpb/`. Please use this directory for any data that can be shared with others.
+
+Please create a folder with your username in our group shared folder for your data.
 
 `/data1/projects/pi-vriesendorpb/<ULCN_USERNAME>`
 
 This is Project directories on ALICE, [rules apply](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519552/Storage+on+ALICE#Project-directories).
 
-The directory is backed up. Please only store data that you think very important to keep. Otherwise, use
+The directory is **not** backed up. Please only store data that you think very important to keep.
 
-`/data1/<ULCN_USERNAME>`
+### Shared Conda environments
 
-or simply use the soft link
-
-`~/data`
-
-As the quota is much higher according to [ALICE WIKI](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37519552/Storage+on+ALICE#The-scratch-shared-file-system-on-%2Fdata1).
- 
-We cannot overwrite data that others created.
- 
-### Group shared Conda environments
+For software that is:
+1. Not available as a module on ALICE, and
+2. Can be installed via Conda, and
+3. May be useful for other IBL colleagues
 
 Load Conda module:
 
@@ -66,20 +63,14 @@ Load Conda module:
 module load Miniconda3
 ```
 
-Your `HOME` dir is limited to a quota of 15 GB, as a result, we created a shared dir for our group and we can use and create shared Conda environments, just like [on BLIS](../IBL_servers/Execute%20programs.md)
-`/data1/projects/pi-vriesendorpb/condaEnvs`
+Conda usually creates environments and stores packages in your home directory, which is not shared with others. Add this to your `.condarc` file to add location of Conda environments:
 
-TEMP/CACHE dir for pkgs:
+```yaml
+envs_dirs:
+  - /data1/projects/pi-vriesendorpb/condaEnvs
+```
 
-`/data1/projects/pi-vriesendorpb/.condaTemp/<username>`
-
-Want others to change your environment? Do
-
-`chmod g+w -R [ENVDIR]`
-
-Generate a `*.yaml` file when you think your environment is working.
- 
-Example `.condarc` file
+Example `.condarc` file is shown below. You can also add other channels to the file.
 
 ```YAML
 channels:
@@ -90,10 +81,19 @@ auto_activate_base: true
 show_channel_urls: true
 envs_dirs:
   - /data1/projects/pi-vriesendorpb/condaEnvs
-pkgs_dirs:
-  - /data1/projects/pi-vriesendorpb/.condaTemp/<username>
 ```
- 
+
+If the software in your target environment is designed properly, others should be able tocan use the environment. Any software which <u>on its run time</u>, write data to the environment directory will fail for other people, as they don't have write permissions to the directory.  If that is the case, or **if you want others to update your environment**, you need to give proper permissions to the environment directory:
+
+`chmod g+w -R [ENVDIR]`
+
+Keep in mind that if program write data to the environment directory, you may be sharing your intermediate data or result completely with others whenever you use this environment. You may:
+
+1. Consider to not share this environment, by creating the environment in your home directory (simply run `conda create -n [ENVNAME] [PACKAGES]`)
+2. Report the issue to the developers.
+
+Generate a `*.yaml` file with all dependencies next to the environment when you think it is working.
+
 Be cautious if your environment involves R and R packages. Do some extra tests.
 
 ### Storage Quota
@@ -105,8 +105,6 @@ To get your quota on SCRATCH, use
 To get status of group quota, use
 
 `beegfs-ctl --getquota --gid pi-vriesendorpb`
-
-Yes, we only have 600GB, and it is almost full. Please do not store data on our shared space unless you want to share it.
 
 ## Transfer data
 
