@@ -55,7 +55,7 @@ If you want to stick to password login, please **ignore** settings about "SSH ke
 
 ```
 
-::: {admonition} ALICE setup can skip the gateway server
+::: {admonition} Skip the gateway server setup for ALICE if you have eduVPN access
 :class: info
 If you have access to eduVPN, you can skip the gateway server setup and directly connect to ALICE login nodes after you connect to eduVPN. Please refer to [this page](../alice/alice_ibl.md#how-to-get-an-account) for more details.
 :::
