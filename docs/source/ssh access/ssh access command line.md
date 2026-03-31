@@ -62,6 +62,11 @@ In CLI, you cannnot use your mouse. To edit the command easily, you can use a si
 
 ## SSH through SSH gateway
 
+::: {admonition} ALICE setup can skip the gateway server
+:class: info
+If you have access to eduVPN, you can skip the gateway server setup and directly connect to ALICE login nodes after you connect to eduVPN. Please refer to [this page](../alice/alice_ibl.md#how-to-get-an-account) for more details.
+:::
+
 As explained before, all connections except those made on university desktops need to pass through a gateway server to protect our intranet. We recommend you use [Leiden University general purpose gateway](../IBL_servers/Intro.md#leiden-university-general-purpose-gateway). Using ALICE gateway is **not** recommended. If you use, you need to use ALICE gateway URL and your ALICE account for the gateway. !!Use ALICE gateway at your own risk!!
 
 URL of general purpose gateway is `sshgw.leidenuniv.nl`. Once you are able to log in to the gateway following [this tutorial (login needed)](https://helpdesk.universiteitleiden.nl/tas/public/ssp/content/detail/knowledgeitem?unid=4b176453-ad3f-418f-9c15-40a11471de5f), you can proceed with the following setups. It's perfectly safe to access the servers through the gateway, even if you're already within Research Network.

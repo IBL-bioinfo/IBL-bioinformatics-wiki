@@ -197,7 +197,9 @@ You can set it up follow [Manual Setting up SSH gateway PDF tutorial (login need
 
 ### ALICE gateway
 
-Leiden University super computer cluster has its own gateway server, can be used also to connect Research Network. Please refer to [this page](../alice/alice_ibl.md#how-to-get-an-account) for more details.
+For people who have [eduVPN](https://eduvpn.org/) access, you do not need to use the gateway server to connect to ALICE cluster. After connecting to eduVPN, you can directly connect to ALICE login nodes.
+
+If you cannot access eduVPN, Leiden University super computer cluster has its own gateway server, can be used also to connect Research Network. Please refer to [this page](../alice/alice_ibl.md#how-to-get-an-account) for more details.
 
 ```{note}
 The access to Research Network is not officially supported and you need to use it with your own risk!
