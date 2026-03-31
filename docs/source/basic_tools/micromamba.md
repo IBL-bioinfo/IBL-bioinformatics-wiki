@@ -8,17 +8,17 @@ depth: 3
 ---
 ```
 
-`micromamba` is a standalone environment manager, inheriting many features from `conda`. About what is micromamba and how to use, [follow this link](https://mamba.readthedocs.io).
+`micromamba` is a standalone environment manager, inheriting many features from `conda`. For what `micromamba` is and how to use it, [follow this link](https://mamba.readthedocs.io).
 
 ## IBL server users
 
 The program is available, but please follow [execute programs tutorial](../IBL_servers/Execute%20programs.md) for how to use.
 
-## Why choose micromamba instead of conda on BLIS?
+## Why choose Micromamba instead of Conda on BLIS?
 
-[Instructions on how micromamba works](../IBL_servers/Install%20programs.md) on BLIS.
+[Instructions on how `micromamba` works](../IBL_servers/Install%20programs.md) on BLIS.
 
-`micromamba` is a standalone reimplementation of conda package manager in C++. It provides same command line interface as conda. In addition to conda:
+`micromamba` is a standalone reimplementation of `conda` package manager in C++. It provides the same command line interface as `conda`. In addition to `conda`:
 
 1. Parallel downloading of repository data and package files using multi-threading
 2. `libsolv` for much faster dependency solving, a state of the art library used in the RPM package manager of Red Hat (base of our Rocky linux 8), Fedora and OpenSUSE. This is extremely apparent when encountering some large repositories such as conda-forge.
@@ -26,7 +26,7 @@ The program is available, but please follow [execute programs tutorial](../IBL_s
 4. Not python dependent. So 1, an environment without python is by default; 2, upgrade python version inside environment is easier.
 5. `micromamba` executable relies only on the one executable file itself, very easy to maintain.
 
-## Install micromamba from scratch
+## Install `micromamba` from scratch
 
 **Do NOT do this on any of our servers!** This tutorial is for you to install this in your own computer.
 
@@ -50,7 +50,7 @@ After installation, you should be able to run `micromamba` command in your termi
 micromamba info
 ```
 
-Output should show micromamba version and some other information, for example:
+Output should show `micromamba` version and some other information, for example:
 
 ```
   libmamba version : 2.5.0

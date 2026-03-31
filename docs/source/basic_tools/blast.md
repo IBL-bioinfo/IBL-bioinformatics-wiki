@@ -91,9 +91,9 @@ You do NOT have a program called `blast`! Only `blastn`, `blastp` etc.
 
 Like other programs, you have to install BLAST tool set in your local computer to do BLAST locally.
 
-### Setup BLAST using conda/micromamba
+### Setup BLAST using Conda or Micromamba
 
-Check how to install conda (micromamba) [here](micromamba.md).
+Check [how to install `conda` (`micromamba`)](micromamba.md).
 
 ```shell
 conda activate

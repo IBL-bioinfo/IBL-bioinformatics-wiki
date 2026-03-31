@@ -28,9 +28,9 @@ Most servers has local storage mounted on `/vol/local/`, for both data and progr
 
 ### BLIS
 
-Has a shared local storage and use [conda environments (managed by `micromamba`)](./Install%20programs.md) to manage softwares. Home directory has a quota of 50 GB for each user, no quota on shared local storage.
+Has a shared local storage and use [software environments managed by `micromamba`](./Install%20programs.md) to manage software. Home directory has a quota of 50 GB for each user, no quota on shared local storage.
 
-Conda environments (created by `micromamba`), located and should be created in `/vol/local/conda_envs/`; conda cache should be stored in `/vol/local/.conda_cache/[USER]`.
+Conda environments (created by `micromamba`), located and should be created in `/vol/local/conda_envs/`; `conda` cache should be stored in `/vol/local/.conda_cache/[USER]`.
 
 - Intel(R) Core(TM) i9-10980XE
   - @ 3.00GHz

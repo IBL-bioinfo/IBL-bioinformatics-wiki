@@ -13,7 +13,7 @@ AF3 accepts input in JSON format. You can input single proteins, PPI-complexes, 
 
 Requirements for the script are
 - Python3.10+
-- Bio (python package, can be installed in conda using: conda install Bio -c bioconda)
+- Bio (python package, can be installed in `conda` using: `conda install Bio -c bioconda`)
 
 ```
 git clone https://github.com/B-Bajramovic/alphafold3-for-IBL

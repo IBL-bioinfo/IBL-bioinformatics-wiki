@@ -2,7 +2,7 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
-We manage our software using conda-compatible **environments**, which have become a standard in small scale server configurations. By using environments, we can easily manage software dependencies and avoid conflicts between different software versions. [More info](../basic_tools/package_management_concept.md#software-environment).
+We manage our software using Conda-compatible **environments**, which have become a standard in small scale server configurations. By using environments, we can easily manage software dependencies and avoid conflicts between different software versions. [More info](../basic_tools/package_management_concept.md#software-environment).
 
 ```{contents}
 ---
@@ -10,7 +10,7 @@ depth: 3
 ---
 ```
 
-On BLIS, we use a tool called **[micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)**, a lightweight and efficient alternative to conda, to manage these environments. A shared directory `/vol/local/conda_envs` dedicated to storing, sharing, and modifying environments is created on BLIS. By default, all users on BLIS should be in a group called `condablis`. This group grant users access to our shared environments.
+On BLIS, we use a tool called **[`micromamba`](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)**, a lightweight and efficient alternative to `conda`, to manage these environments. A shared directory `/vol/local/conda_envs` dedicated to storing, sharing, and modifying environments is created on BLIS. By default, all users on BLIS should be in a group called `condablis`. This group grant users access to our shared environments.
 
 All users should be in `condablis` group, you can use `groups` command to check:
 
@@ -19,9 +19,9 @@ All users should be in `condablis` group, you can use `groups` command to check:
 sgr condablis
 ```
 
-## Prepare micromamba
+## Prepare `micromamba`
 
-For new users, micromamba will be automatically setup at your first login to a server, if you see `(base)` in front of your prompt login and run `micromamba info` successfully, then you are good to go:
+For new users, `micromamba` will be automatically setup at your first login to a server, if you see `(base)` in front of your prompt login and run `micromamba info` successfully, then you are good to go:
 
 (micromamba-info-output)=
 
@@ -55,7 +55,7 @@ For new users, micromamba will be automatically setup at your first login to a s
                platform : linux-64
 ```
 
-It means you have micromamba setup ready for use, you can [execute an already installed program](#execute-an-already-installed-program). Otherwise, you need to do some configuration before you can activate and create environments.
+It means you have `micromamba` setup ready for use, you can [execute an already installed program](#execute-an-already-installed-program). Otherwise, you need to do some configuration before you can activate and create environments.
 
 Note, you only need to do this **once** on **one** server.
 

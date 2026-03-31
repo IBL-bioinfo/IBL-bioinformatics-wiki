@@ -28,7 +28,7 @@ Every user have a disk space quota of 20 GB for their home directory. [Home dire
 
 ## Micromamba or Conda
 
-We use [micromamba instead of conda](./Server%20configurations.md#micromamba-instead-of-conda) to manage software environments. [Explanation of why](../basic_tools/micromamba.md#why-choose-micromamba-instead-of-conda-on-blis)
+We use [`micromamba` instead of `conda`](./Server%20configurations.md#micromamba-instead-of-conda) to manage software environments. [Explanation of why](../basic_tools/micromamba.md#why-choose-micromamba-instead-of-conda-on-blis)
 
 ## Shared storage
 
