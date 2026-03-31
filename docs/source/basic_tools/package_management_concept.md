@@ -18,7 +18,7 @@ With the increasing complexity of programs, it may develop into a status that on
 
 Well, this is very annoying. But it is a very essential price we have to pay. Windows or MacOS have less of this issue because you have paid for the system provider to solve these issues for you. But on Linux, we rely on the community contributors, which are mostly volunteers. Thus, we are, by ourselves, responsible for managing all the dependencies to run a software. This is where `conda`, `mamba` and `micromamba` comes in handy.
 
-[Conda](https://docs.conda.io/en/latest) is a software (sometimes also referred as "package"), dependency and environment management tool. [Mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) is a program helps conda to do the management faster, it requires conda to run. Well [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) is a tiny and ***standalone*** version of mamba. If you want to start, here is some basics. For more details, go to [mamba user guide](https://mamba.readthedocs.io/en/latest/user_guide/concepts.html).
+[Conda](https://docs.conda.io/en/latest) is a software (sometimes also referred as "package"), dependency and environment management tool. [Mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) is a program helps `conda` to do the management faster, it requires `conda` to run. Well [`micromamba`](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) is a tiny and ***standalone*** version of mamba. If you want to start, here is some basics. For more details, go to [mamba user guide](https://mamba.readthedocs.io/en/latest/user_guide/concepts.html).
 
 To install a software using one of the tools, you first need to create an environment for your software. During installation, the following things will be executed automatically.
 
@@ -37,7 +37,7 @@ Systems like [ALICE](../alice/alice_ibl.md) and our [IBL servers](../IBL_servers
 
 Here I will only mention basic commands to manage Conda environments, for how to use Environment Modules on ALICE or other HPC systems, please check [this guide](https://pubappslu.atlassian.net/wiki/spaces/HPCWIKI/pages/37749316/Using+available+software+-+Environment+Modules).
 
-New users on BLIS should have micromamba ready to use, for other servers or on your own computer, check [this tutorial](./micromamba.md). For conda (miniconda for minimal install of conda) and mamba install, please refer to [this link](https://docs.conda.io/en/latest/miniconda.html#) or [this link](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html). Note, unless instructed (like [here](./micromamba.md)), please do not install any of this in a multi-user system.
+New users on BLIS should have `micromamba` ready to use, for other servers or on your own computer, check [this tutorial](./micromamba.md). For `conda` (miniconda for minimal install of `conda`) and mamba install, please refer to [this link](https://docs.conda.io/en/latest/miniconda.html#) or [this link](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html). Note, unless instructed (like [here](./micromamba.md)), please do not install any of this in a multi-user system.
 
 ## Basic commands
 

@@ -12,7 +12,7 @@ depth: 3
 
 ## Sync taking forever
 
-The reason of sync taking forever can be due to various factors, such as a large number of small files, limited local storage space, or issues with the Nextcloud client. If you are experiencing slow sync times, consider the following troubleshooting steps:
+The reason for sync taking forever can be due to various factors, such as a large number of small files, limited local storage space, or issues with the Nextcloud client. If you are experiencing slow sync times, consider the following troubleshooting steps:
 
 ### Check the log
 

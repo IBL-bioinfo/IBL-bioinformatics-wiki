@@ -2,7 +2,9 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
-This tutorial provides guidance of creating environments and install programs in the created environments using `micromamba`. To install programs that are not available in any conda repositories, please ask administrators for help.
+For most high-performance computing (HPC) servers, users do not have root access to install software globally. Instead, they can create their own **environments** and install software within those **environments**. This approach allows users to manage their software dependencies without affecting other users on the same server.
+
+This tutorial provides guidance of creating environments and install programs in the created environments using `micromamba`. To install programs that are not available in any `conda` repositories, please ask administrators for help.
 
 ```{contents}
 ---
@@ -12,19 +14,21 @@ depth: 3
 
 ## What is an environment
 
-An environment created by conda, micromamba, or pyvenv is essentially just a folder/directory on the disk. This directory contains configuration files and dependency programs. It has a special structure to allow environment manager programs (conda/micromamba/pyvenv) to read. [Read this](../basic_tools/package_management_concept.md#create-an-environment-for-a-set-of-programs) for more detail.
+An environment created by `conda`, `micromamba`, or pyvenv is essentially just a folder/directory on the disk. This directory contains configuration files and dependency programs. It has a special structure to allow environment manager programs (`conda`/`micromamba`/`pyvenv`) to read.
 
-Do not change any content in an environment directory manually, except you understand how environment manager works.
+[Read package management concepts](../basic_tools/package_management_concept.md) for more detail.
+
+Do not change any content in an environment directory manually, unless you understand how environment manager works.
 
 ## Install a program
 
-New users on BLIS should have micromamba ready to use directly. You should see your prompt as:
+New users on BLIS should have `micromamba` ready to use directly. You should see your prompt as:
 
 ```sh
 (base) [user@blis ~]$ 
 ```
 
-The `(base)` in front means you have the **base** environment activated, which located in `~/.micromamba`. Note this is BLIS only. If this is not seen, please make sure you have [micromamba ready to use](./Execute%20programs.md#prepare-micromamba). Before setting up virtual environments, it is highly recommended to setup a `~/.mambarc` file with the following content (new users on BLIS should have it already, check by yourself). It is explained in the later [section](#setting-up-config-file).
+The `(base)` in front means you have the **base** environment activated, which located in `~/.micromamba`. Note this is BLIS only. If this is not seen, please make sure you have [`micromamba` ready to use](./Execute%20programs.md#prepare-micromamba). Before setting up virtual environments, it is highly recommended to setup a `~/.mambarc` file with the following content (new users on BLIS should have it already, check by yourself). It is explained in the later [section](#setting-up-config-file).
 
 ```YAML
 envs_dirs:
@@ -70,7 +74,7 @@ ln -s /vol/local/conda_envs/ ~/genvs
 
 Then I can replace all `/vol/local/conda_envs/` with `~/genvs`, much simpler.
 
-Advanced method (**do not do** if you don't know what `ln -s` means and its restrictions) is to soft link the shared environment directory to micromamba base directory:
+Advanced method (**do not do** if you don't know what `ln -s` means and its restrictions) is to soft link the shared environment directory to `micromamba` base directory:
 
 ```sh
 ln -s /vol/local/conda_envs/ ~/micromamba-base/envs
@@ -83,7 +87,7 @@ This needs to be done when the target directory does not exist (before creating 
 
 `.yml` or `.yaml` file format is usually configuration files written with a variant of markup language, describing the required programs and usually their versions, i.e. *dependencies*.
 
-Many times you will find a tutorial to setup a conda environment by `conda env create -f minimotif.yml minimotif`. Please **DO NOT** follow this by simply replacing `conda env` with `micromamba`.
+Many times you will find a tutorial to setup a `conda` environment by `conda env create -f minimotif.yml minimotif`. Please **DO NOT** follow this by simply replacing `conda env` with `micromamba`.
 
 In these cases, the `.yml` file usually looks like:
 
@@ -102,7 +106,7 @@ dependencies:
   - ...
 ```
 
-You need to open this file using a text editor, remove the `name:` line and save the file. The `name:` line is telling conda or micromamba to install the environment with `-n` switch, or install the dependencies it is not compatible with `-p` switch.
+You need to open this file using a text editor, remove the `name:` line and save the file. The `name:` line is telling `conda` or `micromamba` to install the environment with `-n` switch, or install the dependencies it is not compatible with `-p` switch.
 
 Then create the environment:
 
@@ -150,7 +154,7 @@ caption: This block includes prompt, select command to copy
 
 ## Setting up config file
 
-The program micromamba uses a config file located in your home folder: `~/.mambarc` to store your specific configurations. Well `micromamba` *not only* check `~/.mambarc` file, but also uses `~/.condarc`, one of them is enough. (The later is used by conda)
+The program `micromamba` uses a config file located in your home folder: `~/.mambarc` to store your specific configurations. Well `micromamba` *not only* check `~/.mambarc` file, but also uses `~/.condarc`, one of them is enough. (The later is used by `conda`)
 
 The config file has few convenient options. On BLIS, please put these contents in the config file:
 
@@ -161,7 +165,7 @@ pkgs_dirs:
   - /vol/local/.conda_cache/USERNAME
 ```
 
-- `env_dirs` will allow `micromamba env list` command to list all environments inclduing our shared environments. (ignore this line if you have soft linked it to `~/micromamba_base/envs`)
+- `env_dirs` will allow `micromamba env list` command to list all environments including our shared environments. (ignore this line if you have soft linked it to `~/micromamba_base/envs`)
 - `pkgs_dirs` set the cache dir, it is a easy-to-clean location.
 
 You can also add after the above contents:
@@ -177,17 +181,17 @@ auto_activate_base: true
 - `channels` will allow you to skip -c option when installing packages
 - `auto_activate_base` will activate your base environment, by this, you will be using eg. python from your base environment rather than a system one.
 
-If you need more information on how to use micromamba on your own machine, please refer to our [micromamba instruction](../basic_tools/micromamba.md).
+If you need more information on how to use `micromamba` on your own machine, please refer to our [`micromamba` instruction](../basic_tools/micromamba.md).
 
 ## Premissions of shared environments on BLIS
 
-All files generated by `micromamba`, including all environments created are by default belongs to the group `condablis`, all group members can activate these environments. **Only** the owner who created the environment can add or remove package. If you want to let others change your environment, you need to specifically change the premission:
+All files generated by `micromamba`, including all environments created, by default belong to the group `condablis`. All group members can activate these environments. **Only** the owner who created the environment can add or remove package. If you want to let others change your environment, you need to specifically change the permission:
 
 ```sh
 chmod -R g+w /vol/local/conda_envs/yourEnvironment
 ```
 
-**Anyone who changed this environment should do this *again*** for others to change it. Or, the owner can remove this premission after changing:
+**Anyone who changed this environment should do this *again*** for others to change it. Or, the owner can remove this permission after changing:
 
 ```sh
 chmod -R g-w /vol/local/conda_envs/yourEnvironment
@@ -202,7 +206,7 @@ Disk space is a shared resource on our servers, and it is crucial to monitor it 
 1. Use `df -h` to check the overall disk usage.
     - `/home` is the home directory, which has a quota for each user.
     - `/vol/local` and `/vol/local1` etc. are the shared local storage, which has no quota but shared by all users. Be mindful of others when using it.
-2. Use `du -sh /path/to/your/environment` to check the size of your conda environment.
+2. Use `du -sh /path/to/your/environment` to check the size of your `conda` environment.
 3. Regularly clean up unused environments and packages to free up space.
     - `micromamba clean -a` to clean up all unused packages and caches.
     - You can simply remove the environment directory to remove an environment.
