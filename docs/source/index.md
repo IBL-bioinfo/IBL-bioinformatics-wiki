@@ -47,6 +47,7 @@ maxdepth: 2
 rdm_howtos/Intro.md
 rdm_howtos/ResearchDrive.md
 rdm_howtos/ELN.md
+rdm_howtos/GitHub_in_research.md
 ```
 
 ```{toctree}
