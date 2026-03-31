@@ -50,6 +50,7 @@ This is Project directories on ALICE, [rules apply](https://pubappslu.atlassian.
 
 The directory is **not** backed up. Please only store data that you think very important to keep.
 
+(shared-conda-env-alice)=
 ### Shared Conda environments
 
 For software that is:
