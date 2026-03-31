@@ -2,6 +2,8 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
+For most high-performance computing (HPC) servers, users do not have root access to install software globally. Instead, they can create their own **environments** and install software within those **environments**. This approach allows users to manage their software dependencies without affecting other users on the same server.
+
 This tutorial provides guidance of creating environments and install programs in the created environments using `micromamba`. To install programs that are not available in any conda repositories, please ask administrators for help.
 
 ```{contents}
@@ -12,7 +14,9 @@ depth: 3
 
 ## What is an environment
 
-An environment created by conda, micromamba, or pyvenv is essentially just a folder/directory on the disk. This directory contains configuration files and dependency programs. It has a special structure to allow environment manager programs (conda/micromamba/pyvenv) to read. [Read this](../basic_tools/package_management_concept.md#create-an-environment-for-a-set-of-programs) for more detail.
+An environment created by conda, micromamba, or pyvenv is essentially just a folder/directory on the disk. This directory contains configuration files and dependency programs. It has a special structure to allow environment manager programs (conda/micromamba/pyvenv) to read.
+
+[Read package management concepts](../basic_tools/package_management_concept.md) for more detail.
 
 Do not change any content in an environment directory manually, except you understand how environment manager works.
 

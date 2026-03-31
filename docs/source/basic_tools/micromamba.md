@@ -8,7 +8,7 @@ depth: 3
 ---
 ```
 
-`micromamba` is a standalone `conda` replacement. About what is micromamba and how to use, [follow this link](https://mamba.readthedocs.io).
+`micromamba` is a standalone environment manager, inheriting many features from `conda`. About what is micromamba and how to use, [follow this link](https://mamba.readthedocs.io).
 
 ## IBL server users
 

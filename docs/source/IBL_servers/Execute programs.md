@@ -12,7 +12,7 @@ depth: 3
 
 On BLIS, we use a tool called **[micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)**, a lightweight and efficient alternative to conda, to manage these environments. A shared directory `/vol/local/conda_envs` dedicated to storing, sharing, and modifying environments is created on BLIS. By default, all users on BLIS should be in a group called `condablis`. This group grant users access to our shared environments.
 
-To make sure you are in "condablis" group, you can use `groups` command. You should see "condablis" in the output of this command. If not, please contact server admin.
+All users should be in `condablis` group, you can use `groups` command to check:
 
 ```sh
 [user@blis ~]$ groups
@@ -21,25 +21,51 @@ sgr condablis
 
 ## Prepare micromamba
 
-For new users, if you see `(base)` in front of your prompt after login:
+For new users, micromamba will be automatically setup at your first login to a server, if you see `(base)` in front of your prompt login and run `micromamba info` successfully, then you are good to go:
+
+(micromamba-info-output)=
 
 ```sh
-(base) [user@blis ~]$
+(base) [user@blis ~]$ micromamba info
+
+       libmamba version : 2.5.0
+     micromamba version : 2.5.0
+           curl version : libcurl/8.18.0 OpenSSL/3.5.4 zlib/1.3.1 zstd/1.5.7 libssh2/1.11.1 nghttp2/1.67.0 mit-krb5/1.21.3
+     libarchive version : libarchive 3.8.5 zlib/1.3.1 bz2lib/1.0.8 libzstd/1.5.7 libb2/bundled
+       envs directories : /vol/local/conda_envs
+                          /home/<username>/.micromamba/envs
+          package cache : /vol/local/.conda_cache/<username>
+            environment : base (active)
+           env location : /home/<username>/.micromamba
+      user config files : /home/<username>/.mambarc
+ populated config files : /home/<username>/.mambarc
+       virtual packages : __unix=0=0
+                          __linux=5.14.0=0
+                          __glibc=2.34=0
+                          __archspec=1=x86_64_v3
+               channels : https://conda.anaconda.org/bioconda/linux-64
+                          https://conda.anaconda.org/bioconda/noarch
+                          https://conda.anaconda.org/conda-forge/linux-64
+                          https://conda.anaconda.org/conda-forge/noarch
+                          https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+       base environment : /home/<username>/.micromamba
+               platform : linux-64
 ```
 
-It means you have micromamba setup ready for use, please skip and go to [next section](#execute-an-already-installed-program). Otherwise, please continue.
-
-The program `micromamba` is already installed on the server, but you need to do some configuration before you can activate and create environments.
+It means you have micromamba setup ready for use, you can [execute an already installed program](#execute-an-already-installed-program). Otherwise, you need to do some configuration before you can activate and create environments.
 
 Note, you only need to do this **once** on **one** server.
 
 Here is how (assuming you are using default shell `bash`):
 
 ```sh
-[user@blis ~]$ micromamba shell init -s bash -r ~/micromamba-base
+[user@blis ~]$ micromamba shell init -s bash -r ~/.micromamba
 ```
 
-Above command will create a "base" environment at your home directory. Then a script will be put into your `~/.bashrc` file. Now you need to run the script by:
+Above command will create a "base" environment at your home directory. Then a script will be put into your `~/.bashrc` file. Now you need to apply the setup by "sourcing" the `~/.bashrc` file:
 
 ```sh
 [user@blis ~]$ source ~/.bashrc
@@ -47,25 +73,13 @@ Above command will create a "base" environment at your home directory. Then a sc
 
 Next time when you start your `bash` shell (at login), the script will be automatically executed.
 
-Now you should be able to run this command:
+Now you should be able to run this command without error:
 
 ```sh
 [user@blis ~]$ micromamba info
 ```
 
-Output should be:
-
-```sh
-                                          __
-         __  ______ ___  ____ _____ ___  / /_  ____ _
-        / / / / __ `__ \/ __ `/ __ `__ \/ __ \/ __ `/
-       / /_/ / / / / / / /_/ / / / / / / /_/ / /_/ /
-      / .___/_/ /_/ /_/\__,_/_/ /_/ /_/_.___/\__,_/
-     /_/
-...
-```
-
-If you see something else, please try to restart your shell and repeat the above steps. Contact for help if still no success.
+You should see the output similar to the [one shown above](#micromamba-info-output). You may see less if the `~/.mambarc` file is not fully populated as shown below. If you see errors, please try to restart your shell (restart ssh connection). Ask for help with screen shots if still no success.
 
 {#mambarc-setup}
 New users should have `~/.mambarc` file with the following content:
@@ -74,7 +88,7 @@ New users should have `~/.mambarc` file with the following content:
 envs_dirs:
   - /vol/local/conda_envs
 pkgs_dirs:
-  - /vol/local/.conda_cache/[USERNAME]
+  - /vol/local/.conda_cache/<username>
 channels:
   - bioconda
   - conda-forge
@@ -82,7 +96,7 @@ channels:
 auto_activate_base: true
 ```
 
-It is explained in [ALICE - conda config section](./Install%20programs.md#setting-up-config-file).
+The `~/.mambarc` file is further explained in [setting up config file section](./Install%20programs.md#setting-up-config-file).
 
 ## Execute an already installed program
 
