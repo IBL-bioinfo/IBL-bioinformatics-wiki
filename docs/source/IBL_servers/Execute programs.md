@@ -196,16 +196,28 @@ Once you have done [program installation](./Install%20programs.md), it is time t
 - For any job, leave at least 2 cores free.
 - For short jobs, use as many cores as possible.
 - For long jobs, use maximum half of the avaliable cores. If more cores are needed, notify everyone at least half hour in advance.
-  For example, "PLANNING phylophlan on BLIS, is using 18 cores, 160 GB ram, from 19 Nov 20:00 till ~20 Nov 9:00."  
+  For example, "PLANNING phylophlan on BLIS, is using 18 cores, 160 GB ram, from 19 Nov 20:00 till ~20 Nov 9:00."
 ```
 
 ## File transfer
+
+Most basic skill for file transfer is to identify the location of your data and the destination. Terminology may differ, here we use:
+
+- **Local**: the computer you are using to connect to the server, which can be your laptop or a desktop computer in the lab.
+- **Server**: the computer you are connecting to, which is IBL servers or ALICE in our case.
+- **Cloud**: the storage or computing resources provided by a third-party company, such as AWS, Google Cloud, Azure etc. Here it often refers to Research Drive.
+
+### To and from cloud
+
+Since Research Drive is the recommended location for storing research data, it will be easy to keep research data just in the cloud and do analysis on the server. To transfer data between them, check [how to upload data to Research Drive using Rclone](../rdm_howtos/ResearchDrive_commandLine.md).
+
+### Between local and server
 
 To transfer your files from or to the server, you need to have already set up an SSH connection BLIS (`blis`). For MobaXterm users, you can drag and drop in the app's file explorer. For MobaXterm, it is on the left.
 
 SCP and `rsync` are recommended.
 
-### SCP
+#### SCP
 
 SCP for <u>s</u>ecure <u>c</u>o<u>p</u>y, or ssh cp, or safe cp...
 
@@ -228,7 +240,7 @@ scp path/to/fileA path/to/fileB blis:/vol/local/username/
 scp -r path/to/dir blis:/vol/data/username
 ```
 
-### rsync
+#### rsync
 
 `rsync` is a more reliable tool for copying large datasets. It can continue the transfer from where it left off in case of interruption. (PowerShell does not have this program, use `scp` instead.)
 
@@ -248,43 +260,62 @@ rsync -aP path/to/dir blis:/vol/data/username/
 
 ## How to run long jobs
 
-### Using `screen`
+Your terminal connection to the server may be interrupted for various reasons, such as network issues, power failure, or simply closing the terminal by mistake. If you are running a long job in the terminal, it will be killed once the connection is lost. To avoid this, you can use tools like `screen` or `tmux` to run your job in a session that can be detached and re-attached later. This way, even if your connection is interrupted, your job will continue running in the background, and you can reconnect to it later to check its status or view the output.
 
-If you need to run a long job that exceeds the duration of your SSH connection, you can use `screen`. This program creates a new Bash shell that runs within the `screen` program, allowing you to run commands even if your SSH connection is interrupted. To use `screen`, simply execute the command, and a new shell will open. From here, you can execute commands as usual. To detach from the shell and leave the program running, press **Ctrl + a**, release the buttons, then press **d**. You can check the status of the program using `htop` or `top`. Once detached, you can safely exit the SSH connection. To come back to your running job, check its output, etc., you can execute `screen -r` to attach to the shell that have your running program.
-
-When multiple `screen` is needed and you find it hard to track which is doing which job, you can use `screen -S [session name]` command to give each screen a name. Then use `screen -r [session name]` to resume to that session.
-
-`screen` might also works on ALICE, but please do not use `screen` for super long jobs on ALICE. Long jobs should only run in a slurm queue.
+Please try not use `tmux` or `screen` for long jobs on ALICE. All work should only run in a slurm queue.
 
 ### Using `tmux`
 
 Tmux is a similar program, allows you to run a shell in the background, it should be available on all servers, let administrators know if not.
 
-1. `tmux new -s <session_name>` will create a session with the name you specify
-2. `Ctrl + b` is the magic key stroke in tmux, `Ctrl + b` and then press `d` will "detach" from the terminal and put it in the background.
-3. `tmux a -t <session_name>` will "re-attach" the session.
+- `tmux new -s <session_name>` will create a session with the name you specify
+- `Ctrl + b` is the magic key stroke in tmux, `Ctrl + b`, release the keys, and then press `d` will "detach" from the terminal and put it in the background.
+- `tmux a -t <session_name>` will "re-attach" the session.
 
 [A beginner's guide to tmux](https://www.redhat.com/en/blog/introduction-tmux-linux)
 
+### Using `screen`
+
+To use `screen`, simply execute the command, and a new shell will open. From here, you can execute commands as usual.
+
+- `screen -S <session_name>` will create a session with the name you specify. You can have multiple sessions running at the same time, and this will help you to keep track of them.
+- `Ctrl + a` is the majic key stroke in screen. `Ctrl + a`, release the keys, and then press `d`. This will "detach" from the terminal and leave the program running in the background.
+- To re-attach to the session, use `screen -r <session_name>`.
+
 ## Run a command in an environment without activation
 
-Sometimes you may need to run a program in a script, which may require multiple different software environments. You can activate them in a script, but when this is not possible, for example running the command in a sub-shell, then you need to know how to run a program in one command without activating the environment in your script (when it does not work).
+Sometimes you may need to run a program in a script, which may require multiple different software environments. You can activate them in a script, but this is not possible in Slurm system, for example running the command in a sub-shell, then you need to know how to run a program in one command without activating the environment in your script (when it does not work).
 
 There are two ways, given as examples:
 
 1. Recommended:
 
-     ```sh
-     cmd="eval \"\$(micromamba shell hook --shell=posix)\" && micromamba activate /vol/local/conda_envs/bakta && echo \$BAKTA_DB"
-     echo $cmd
-     eval $cmd
-     ```
+    For `micromamba`:
+
+    ```sh
+    cmd="eval \"\$(micromamba shell hook --shell=posix)\" && micromamba activate /vol/local/conda_envs/bakta && echo \$BAKTA_DB"
+    echo $cmd
+    eval $cmd
+    ```
+
+    For `conda`:
+
+    ```sh
+    cmd="eval \"\$(conda shell.posix hook)\" && conda activate /vol/local/conda_envs/bakta && echo \$BAKTA_DB"
+    echo $cmd
+    eval $cmd
+    ```
 
 2. Not recommended:
-     It does not respect activation hooks (`activate.d`)
 
-     ```sh
-     cmd="micromamba run -p ~/genvs/bakta echo \$BAKTA_DB"
-     echo $cmd
-     eval $cmd
-     ```
+    It does not respect activation hooks (`activate.d`).
+
+    For `micromamba`:
+
+    ```sh
+    cmd="micromamba run -p ~/genvs/bakta echo \$BAKTA_DB"
+    echo $cmd
+    eval $cmd
+    ```
+
+    Same for `conda`, just replace `micromamba run -p` with `conda run -p`.

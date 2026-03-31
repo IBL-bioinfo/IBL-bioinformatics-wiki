@@ -55,6 +55,11 @@ If you want to stick to password login, please **ignore** settings about "SSH ke
 
 ```
 
+::: {admonition} Skip the gateway server setup for ALICE if you have eduVPN access
+:class: info
+You can skip the gateway server setup and directly connect to ALICE login nodes after you connect to eduVPN. Please refer to [this page](../alice/alice_ibl.md#how-to-get-an-account) for more details.
+:::
+
 ## Generate SSH key pairs
 
 Start MobaXterm, look to the left, find the “Swiss Army Knife” icon (Tools) on the left, click on it, scroll to the bottom, find a tool called "MobaKeyGen (SSH key generator)", click on it to open.
