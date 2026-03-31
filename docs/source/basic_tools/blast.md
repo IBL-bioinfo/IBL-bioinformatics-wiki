@@ -12,7 +12,7 @@ BLAST: Compare & identify sequences
 
 ## Basic sequence format - FASTA
 
-A fasta file is **Text file** begins with a single-line description, followed by lines of sequence data.
+A fasta file is a **text file** that begins with a single-line description, followed by lines of sequence data.
 
 Introducing `.fasta`/`.fa`
 
@@ -33,7 +33,7 @@ RGGATRGKKATSA*
 ```
 
 :::{NOTE}
-1. Sequence data is always connected, nither 'space' nor 'line break' creates gap.
+1. Sequence data is always connected, neither 'space' nor 'line break' creates a gap.
 2. One or more sequence can be in one file
 3. ID can contain 'space', but not 'line break'
 4. Protein may contain '*' representing stop codon, but not necessarily
@@ -162,7 +162,7 @@ Download the program and put it in your environment variables.
    # Note: double check the spell! The special charaters are
    # important in this export command.
    # If you did not put ncbi-blast-2.13.0+ folder as the example
-   # above, pleaase change the full path!
+   # above, please change the full path!
    $ BLAST_BIN_FULL_PATH=~/ncbi-blast-2.13.0+/bin/
    ```
 
@@ -182,7 +182,7 @@ Download the program and put it in your environment variables.
    ```
    
    :::{NOTE}
-   You have to run the export command `export PATH="~/ncbi-blast-2.13.0+/bin/:$PATH"` after every restart of your termial. If you want it to be permenent, you can put this command in a file that will be run everytime when your shell starts:
+   You have to run the export command `export PATH="~/ncbi-blast-2.13.0+/bin/:$PATH"` after every restart of your terminal. If you want it to be permanent, you can put this command in a file that will be run every time when your shell starts:
    
    ```shell
    # FOR

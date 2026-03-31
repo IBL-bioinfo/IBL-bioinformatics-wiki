@@ -51,13 +51,13 @@ When you copy and paste commands, it ensures accuracy, especially for long comma
 :class: warning
 **DOUBLE CHECK COMMANDS BEFORE EXECUTING THEM**
 
-Please note this tutorial do not know the IP address you are connecting to, your `USERNAME`, nor your `ULCN`. Please carefully check the commands you copy and adjust them accordingly.r
+Please note this tutorial does not know the IP address you are connecting to, your `USERNAME`, nor your `ULCN`. Please carefully check the commands you copy and adjust them accordingly.
 
-Be careful about **cases** and **spaces**. Especially, do not miss a **space**! They have special meanings for comands and are very important!
+Be careful about **cases** and **spaces**. Especially, do not miss a **space**! They have special meanings for commands and are very important!
 
 Some commands are quite long, please use the scroll bar underneath.
 
-In CLI, you cannnot use your mouse. To edit the command easily, you can use a simple text editor, for example Notepad (windows), Nano (Linux), and TextEdit (MacOS), copy and edit your command there.
+In CLI, you cannot use your mouse. To edit the command easily, you can use a simple text editor, for example Notepad (windows), Nano (Linux), and TextEdit (MacOS), copy and edit your command there.
 ```
 
 ## SSH through SSH gateway
@@ -87,12 +87,12 @@ Note:
 1. A standing pipe "`|`" that will fall forward (right side) "`/`" is a "forwardslash"
 2. Only Windows system do not care letter cases. Thus, it is good practice to always use correct cases for commands and paths.
 
-**Home directory** is where your user files located. In Linux, it is usually "`/home/[username]`". It can be safely represented by a telda mark "`~`" in Linux. So, in Linux, "`~`" = "`/home/[username]`". In Windows, the home directory is "`C:\Users\[UserName]`", it sometimes can also be replaced by a telda mark in some latest version of PowerShell. However, telda mark "`~`" cannot be reliablly parsed in PowerShell, in most cases, replacing it with a more complex "`$HOME`" or even "`$env:HOME`" is needed.
+**Home directory** is where your user files located. In Linux, it is usually "`/home/[username]`". It can be safely represented by a tilde mark "`~`" in Linux. So, in Linux, "`~`" = "`/home/[username]`". In Windows, the home directory is "`C:\Users\[UserName]`", it sometimes can also be replaced by a tilde mark in some latest version of PowerShell. However, tilde mark "`~`" cannot be reliably parsed in PowerShell, in most cases, replacing it with a more complex "`$HOME`" or even "`$env:HOME`" is needed.
 ```
 
 There are four steps:
 
-1. [Creeate ssh key pair](#1-create-ssh-key-pair)
+1. [Create ssh key pair](#1-create-ssh-key-pair)
 2. [Let server recognise your key](#2-let-server-recognise-your-key)
 3. [Configure local machine to use a correct key](#3-configure-local-machine-to-use-a-correct-key)
 4. [Connect](#4-connect)
@@ -253,7 +253,7 @@ You can try it by following the instructions, but now you should be able to conn
 (configure-local-machine-to-use-a-correct-key)=
 ### 3. Configure local machine to use a correct key
 
-After above steps, you still cannot access the gateway and our servers with the ssh keys, ie, you still need to use your password every time you connect. To make our efforts yield valuable results, ou need to add the correct configuration to your `~/.ssh/config` file on your local machine. This is the configuration file for `ssh` program to know which key to use when connecting to a specific server.
+After above steps, you still cannot access the gateway and our servers with the ssh keys, ie, you still need to use your password every time you connect. To make our efforts yield valuable results, you need to add the correct configuration to your `~/.ssh/config` file on your local machine. This is the configuration file for `ssh` program to know which key to use when connecting to a specific server.
 
 You must noticed that in previous steps, we generated two key pairs for "gateway" and "IBL servers" (BLIS, FRODO, BILBO). This is explained in [SSH gateway](./ssh%20access.md#ssh-gateway)
 
@@ -344,7 +344,7 @@ If you have a university desktop computer that is located inside an university b
 
 **PowerShell** comes by default with Windows. The default version comes with the software called "openSSH", providing command line program `ssh`.
 
-We do not recommend setting up connection using PowerShell. Although you do not need to download any 3<sup>rd</sup> party application, it may cause unforeseen problems and you may need to spend more time on it. With that said, if you know what you understand provided commands, it is pretty simple.
+We do not recommend setting up connection using PowerShell. Although you do not need to download any 3<sup>rd</sup> party application, it may cause unforeseen problems and you may need to spend more time on it. With that said, if you understand the provided commands, it is pretty simple.
 
 You only need to create `iblservers`, `iblservers.pub` key pair as indicated in and copy `iblservers.pub` directly to our server. The `config` file in `C:\Users\[UserName]\.ssh\` directory can also be simplified.
 

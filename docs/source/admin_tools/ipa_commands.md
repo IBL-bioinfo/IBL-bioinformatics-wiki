@@ -27,7 +27,7 @@ ipa user-add [USERNAME] \
     --first [FIRST-NAME] \
     --last [LAST-NAME] \
     --random \
-    --gid [GID] \ # This will set users primary group
+    --gid [GID] \ # This will set user's primary group
     --shell /usr/bin/bash
 
 # Then add this user to group, there is no way of adding to multiple groups

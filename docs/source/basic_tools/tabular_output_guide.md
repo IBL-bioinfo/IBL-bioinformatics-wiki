@@ -110,7 +110,7 @@ Example:
     -outfmt "6 qseqid sacc pident length qcovs evalue bitscore ssciname staxids"
 
 ---
-## 7. Sequence-including fields (can infalte output)
+## 7. Sequence-including fields (can inflate output)
 
 
 These fields massively increase output size.

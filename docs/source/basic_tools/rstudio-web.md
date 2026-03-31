@@ -18,7 +18,7 @@ depth: 3
 
 If you are using your own computer, just install RStudio by yourself and use that. This page is only about how to run it on our server.
 
-You should consider do it on our servers if you have a project that requires any of the following:
+You should consider doing it on our servers if you have a project that requires any of the following:
 
 1. Many CPU cores
 2. Large amount of memory (below the maximal of the server of course)

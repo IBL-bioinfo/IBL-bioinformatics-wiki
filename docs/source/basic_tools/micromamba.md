@@ -24,7 +24,7 @@ The program is available, but please follow [execute programs tutorial](../IBL_s
 2. `libsolv` for much faster dependency solving, a state of the art library used in the RPM package manager of Red Hat (base of our Rocky linux 8), Fedora and OpenSUSE. This is extremely apparent when encountering some large repositories such as conda-forge.
 3. Maintained actively by community, **NOT** Anaconda Inc.
 4. Not python dependent. So 1, an environment without python is by default; 2, upgrade python version inside environment is easier.
-5. `micormamba` executable relays only the one executable file itself, very easy to maintain.
+5. `micromamba` executable relies only on the one executable file itself, very easy to maintain.
 
 ## Install micromamba from scratch
 
