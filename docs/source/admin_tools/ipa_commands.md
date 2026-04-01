@@ -6,71 +6,106 @@ depth: 3
 ---
 ```
 
-## User management
+## Before you start
 
-Everything can be done only after you do a
+Run `kinit` with your own account before using any IPA administrative command:
 
 ```sh
 kinit [USERNAME]
 ```
 
-with your login username. Assuming you have the right to manage users.
+These commands assume your account already has the required IPA permissions.
 
-### Add user
+## User management
 
-To add a user, you have to have a group for this user, else IPA will create a user with GID\==UID. This may cause umask to be set to 002, which may lead to security issue.
+### Check target user groups
 
-```shell
+Prepare the user's primary group first. If you create a user without assigning an existing group, IPA may create the user with `GID == UID`. That can result in `umask 002`, which is not appropriate for normal user accounts.
+
+```{caution}
+Create or confirm the lab group before adding the user, then use that group's GID as the user's primary group.
+```
+
+```sh
+# Check the lab group and note its GID
 ipa group-show [GROUP-NAME]
-# Copy GID of this group
+# If the group does not exist, try to find it by searching with a keyword
+ipa group-find [KEYWORD]
+# If the group does not exist, create it first
+ipa group-add --desc="Group of [LAB-NAME or PI-NAME], abbreviated to ... because ..., work mainly with ..." [GROUP-NAME]
+```
+
+The lab group should be a member of `condablis` to ensure the members have access to the necessary software environments.
+
+```sh
+ipa group-add-member condablis --groups [LAB-GROUP-NAME]
+```
+
+### Find users by primary group
+
+```sh
+ipa user-find --gid [GID]
+```
+
+### Create a user
+
+Then create the user with the lab group as the primary group:
+
+```sh
+
+# Create the user with that group as the primary group
 ipa user-add [USERNAME] \
     --first [FIRST-NAME] \
     --last [LAST-NAME] \
-    --random \
-    --gid [GID] \ # This will set user's primary group
+    --random \ # this creates a random password
+    --gid [GID] \
     --shell /usr/bin/bash
-
-# Then add this user to group, there is no way of adding to multiple groups
-# Even when gid is set, you still need to add user to that group
-ipa group-add-member [GROUP-NAME-1] --users [USERNAME-1] --users [USERNAME-2]
-ipa group-add-member [GROUP-NAME-2] --users [USERNAME-1] --users [USERNAME-2]
+# !!! Must do: !!! Add the user to all required groups
+# Although when --gid is set, you still need to add the user to the group explicitly
+ipa group-add-member [GROUP-NAME-1] --users [USERNAME]
 ```
 
-Each new user should belong to:
+Each new user should belong to their lab group, and thus belong to the `condablis` group. Do not add users directly to `condablis` group.
 
-1. Their lab group
+### Change a user's default shell
 
-Make sure the lab group is in condablis group.
+Only do this when asked by the user. The default shell is `bash`, but some users may prefer `zsh` or other shells. To change the default shell, use:
 
-Change default shell
-
-```shell
+```sh
 ipa user-mod [USERNAME] --shell=/usr/bin/zsh
 ```
 
-### Find user
+## Group management
 
-```sh
-ipa user-find --gid [GID] # find users with this primary group
-```
-
-## Group
-
-### Add group
+### Create a group
 
 ```sh
 ipa group-add --desc="Explain why this group exists" [GROUP-NAME]
+```
+
+### Add members to a group
+
+Add users:
+
+```sh
 ipa group-add-member [GROUP-NAME] --users [USERNAME-1] --users [USERNAME-2]
+```
+
+Add another group as a member (for `condablis`, we add lab groups as members of it):
+
+```sh
 ipa group-add-member [GROUP-NAME] --groups [GROUP-NAME-1]
 ```
 
-Information of groups
+### Check group information
+
+Show information about a group:
 
 ```sh
 ipa group-find [GROUP-NAME]
 ```
 
-Information of groups that a user belongs to
+Show all groups a user belongs to:
 
 ```sh
 ipa group-find --user=[USERNAME]
@@ -78,13 +113,15 @@ ipa group-find --user=[USERNAME]
 
 ## Password policy
 
-Show current policy
+### Show the current policy
 
 ```sh
 ipa pwpolicy-show
 ```
 
-change password expiration to 730 days
+### Set password expiration
+
+Set the password lifetime to 730 days:
 
 ```sh
 ipa pwpolicy-mod --maxlife=730
