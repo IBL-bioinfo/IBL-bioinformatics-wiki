@@ -69,7 +69,9 @@ For ELN tutorials, see [FWN-RSpace ELN Inventory Training Videos](https://video.
 
 [Benchling](https://www.benchling.com/) is widely used for molecular biology workflows such as sequence design and analysis. You can continue using Benchling or similar tools for those tasks if they fit your workflow. However, Benchling should not be used as the primary place for lab journal content. The institutional record should be kept in RSpace.
 
-If you already have lab journal content in Benchling, you should move the required research record into RSpace. If a full migration is not immediately practical, record all new content in RSpace from now on. The goal is not to reproduce every Benchling feature there. What matters is that the information needed to understand, verify, and repeat the work is stored in the institutional ELN. For export instructions, see the "Export projects, folders, and data" section on the [help page of Benchling](https://help.benchling.com/hc/en-us/articles/39943855017229-Share-data-in-Benchling).
+### Moving content from Benchling to RSpace
+
+If you already have lab journal content in Benchling, you should move the required research record into RSpace. If a full migration is not immediately practical, record all new content in RSpace from now on. The goal is not to reproduce every Benchling feature there. What matters is that the information needed to understand, verify, and repeat the work is stored in the institutional ELN. For export instructions, see the "Export projects, folders, and data" section on the [help page of Benchling](https://help.benchling.com/hc/en-us/articles/39943855017229-Share-data-in-Benchling). When moving content from Benchling to RSpace, pay attention to the following:
 
 1. The sequence of the construct can be exported in GenBank format and attached to RSpace.
 2. The cloning strategy can be copied as text and recorded in RSpace. You can set up a template for this purpose.
@@ -77,7 +79,9 @@ If you already have lab journal content in Benchling, you should move the requir
 4. Sequencing results, for example in `ab1` format, can be attached directly to RSpace or, if they are large, stored in Research Drive and linked from RSpace.
 5. Alignments can be exported, for example as PDF files, and attached to RSpace. The same principle applies if you use other cloning tools such as SnapGene or Geneious.
 
-This requirement is based on data management and continuity, not on a claim that Benchling is a poor scientific tool. **The main concerns are**:
+### Why Benchling is not recommended as a general ELN
+
+Benchling is a strong scientific tool for sequence-centric workflows. However, we do not recommend it as the primary ELN. This recommendation is based on data management and continuity. **The major concerns are**:
 
 1. Benchling is **vendor-controlled with no on-premises option**, which means that the University does not control the hosting environment.
 2. Benchling exports are limited, which makes future migration and long-term portability more difficult.
