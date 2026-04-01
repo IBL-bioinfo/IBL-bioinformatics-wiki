@@ -15,7 +15,7 @@ depth: 3
 ## What Git tracks and what it does not
 
 | Tracked well by Git | **Not** suited for Git |
-|---|---|
+| --- | --- |
 | Source code and scripts | Large data files and databases |
 | Plain-text configuration files | Binary result files (images, PDFs, compressed archives) |
 | Documentation in Markdown/text | Temporary or intermediate results |
@@ -34,6 +34,7 @@ When you create a new GitHub repository for your project:
   - The **purpose** of the repository (what the code is for).
   - The **link** to the GitHub repository.
   - Who has access and their roles.
+- Do not just start coding with a local Git repository without linking it to GitHub. The connection to GitHub is important for collaboration and long-term tracking.
 
 ### 2. Recording major repository operations in ELN
 
@@ -54,6 +55,10 @@ Every time you do a test run or generate results:
 - Note which **commit or version** of the code was used (copy the commit hash or tag).
 
 This is crucial because intermediate results, figures, and output files are not recorded by Git versions.
+
+If you sync project folders to Research Drive from the command line, the [sync-with-rclone wrapper](./ResearchDrive_commandLine.md#simplified-rclone-wrapper) is especially useful for GitHub-based workflows. Its git repository tracking feature writes a small summary file with the current commit, configured remotes, and git status while excluding the `.git` directory itself, so the copy stored on Research Drive still keeps a clear reference to the GitHub repository state that produced the uploaded results.
+
+This repository summary is a useful reference in Research Drive, but it does not replace your ELN entry or the GitHub remote repository.
 
 ### 4. Making a release and submitting to Zenodo
 
@@ -85,7 +90,7 @@ This ensures long-term preservation of the code alongside your data, independent
 * - Major repo operations
   - Name changes, transfers, permission changes, with reasoning
 * - Each test run
-  - Description, code version (commit hash), link to results on Research Drive
+  - Description, code version (commit hash), link to results on Research Drive; if using `sync-with-rclone`, keep the generated git repository summary file
 * - Project completed
   - Release version, Zenodo DOI
 * - Release archived
