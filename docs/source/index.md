@@ -76,7 +76,7 @@ If you find anything in this site that can be better, please create an "Issue" a
 
 How to do that:
 
-1. You will need a github account to let us know who you are, nickname is also fine 😊
+1. You will need a GitHub account because this documentation repository uses GitHub Issues; a nickname is also fine 😊
 2. Identify the page you find wrong, check the "Address bar" of your browser.
 3. After you logged in GitHub, head to [Issues page](https://github.com/snail123815/IBL-bioinformatics-wiki/issues), click the green "New issue" button.
 4. Write a "Title" and "description". Include the webpage "Address" if you are referring to it. Please check "Preview" when you finished.
