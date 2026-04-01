@@ -1,5 +1,7 @@
 # Useful IPA commands
 
+*By C.Du [@snail123815](https://github.com/snail123815)*
+
 ```{contents}
 ---
 depth: 3

@@ -67,7 +67,9 @@ basic_tools/tabular_output_guide.md
 caption: Admin tools
 maxdepth: 2
 ---
+admin_tools/admin_tools.md
 admin_tools/ipa_commands.md
+admin_tools/default_home_folder.md
 ```
 
 ## Report issue
