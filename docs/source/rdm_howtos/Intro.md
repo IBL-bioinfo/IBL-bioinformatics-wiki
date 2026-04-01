@@ -14,7 +14,7 @@ RDM - Research data management, is an essential skill. It is the practice of org
 - **[Research Drive](./ResearchDrive.md)**
 - **[ELN](./ELN.md)** (electronic lab notebook)
 
-We also covers how to use **GitHub** in research, which is a powerful platform for version control and collaboration on code, but has limitations for tracking research data and results. See [GitHub in research](./GitHub_in_research.md) for details.
+We also cover how to use **GitHub or GitLab** in research. GitHub is useful for public or external collaboration, while the university-hosted GitLab is preferred for projects related to personal data but cannot be shared externally. See [GitHub or GitLab in research](./GitHub_in_research.md) for details.
 
 We hope to achieve FAIR principles for research data produced in IBL:
 - Findable — easy to locate

@@ -106,7 +106,7 @@ rclone sync --links --use-cookies --transfers 4 --timeout "60m" /path/to/local/d
 
 ## Simplified `rclone` wrapper
 
-I am maintaining a [`sync-with-rclone`](https://github.com/IBL-bioinfo/sync-with-rclone) wrapper script that simplifies the `rclone` commands above. Instead of remembering all the flags and paths, you configure once per folder and then just run `push` or `pull`. It also has a built-in ignore list that automatically excludes common files that don't need to be backed up (e.g. `*.tmp`, `.git` directories), and can record git commit information for git repositories.
+I am maintaining a [`sync-with-rclone`](https://github.com/IBL-bioinfo/sync-with-rclone) wrapper script that simplifies the `rclone` commands above. Instead of remembering all the flags and paths, you configure once per folder and then just run `push` or `pull`. It also has a built-in ignore list that automatically excludes common files that don't need to be backed up (e.g. `*.tmp`, `.git` directories), and can record git commit information for git repositories. This is useful whether your remote repository is on GitHub or on the university GitLab.
 
 (Linux and MacOS only)
 

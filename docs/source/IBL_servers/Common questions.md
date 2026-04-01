@@ -14,7 +14,7 @@ For long-running analyses, please notify the **#jobs-on-servers** channel so oth
 
 Keep in mind that the Slack workspace is public, so refrain from sharing any sensitive data.
 
-On GitHub, we have established an organization called **[IBL-bioinfo](https://github.com/IBL-bioinfo)**. If you have any suggestions regarding this documentation, please create a new issue on the [issues](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki/issues) page of [this repository](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki).
+On GitHub, we have established an organization called **[IBL-bioinfo](https://github.com/IBL-bioinfo)**. If you have any suggestions regarding this documentation, please create a new issue on the [issues](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki/issues) page of [this repository](https://github.com/IBL-bioinfo/IBL-bioinformatics-wiki). For research code repositories, the university GitLab at [gitlab.services.universiteitleiden.nl](https://gitlab.services.universiteitleiden.nl/) is also available and is preferred for projects related to personal data, but it does not support sharing repositories externally.
 
 Remember, there are no dedicated administrators for the IBL bioinformatics atelier, so leaving a message in the mentioned places is more effective than trying to find someone in person.
 
