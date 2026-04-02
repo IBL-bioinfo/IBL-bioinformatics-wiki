@@ -1,9 +1,9 @@
 # IBL bioinformatics wiki document co-authoring
 
-Address:
+Addresses lead to the same site:
 
-https://docs.ibl.bio
-https://bioinfo.ibl.bio
+https://docs.ibl.bio  
+https://bioinfo.ibl.bio  
 https://ibl-bioinformatics-wiki.readthedocs.io
 
 Source files for the documentation are markdown (`*.md`) files in `docs/source/`.

@@ -70,7 +70,6 @@ gmx mdrun -deffnm minimization -v
 #The name after deffnm corresponds to the prefix used for outputs from that run. The v flag provides verbose feedback that can help identify errors.
 ```
 
-
 ## 9. Equilibration run, temperature
 This equilibration run is an NVT ensemble (canonical ensemble). In this ensemble, the number of particles (N), volume (V), and temperature (T) are conserved. This step is crucial to bring the system to the intended simulation temperature, often 300 K (sometimes 298 K).
 
@@ -79,7 +78,6 @@ gmx grompp -f nvt.mdp -c minimization.gro -r minimization.gro -p topol.top -o nv
 
 gmx mdrun -deffnm nvt -v
 ```
-
 
 ## 10. Equilibration run, pressure
 Once temperature is stabilized, move on to stabilizing pressure and density. This step is conducted under an NPT ensemble, meaning the number of particles (N), pressure (P), and temperature (T) are conserved. This ensemble is also called the isothermal isobaric ensemble and resembles experimental conditions more closely.

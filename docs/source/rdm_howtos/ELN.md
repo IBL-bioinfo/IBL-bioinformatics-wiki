@@ -1,8 +1,8 @@
 # Electronic Lab Notebook
 
-*By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse[@Karivtan](https://github.com/Karivtan)*
+*By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse [@Karivtan](https://github.com/Karivtan)*
 
-Leiden University is **hosting** a ELN server providing a web application called Research Space (RSpace) <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>. Using RSpace ensures **compliance with data management policies** and provides a sustainable solution for our research documentation needs. This page serves as a guide to help you get started with RSpace, including how to apply for an account, set up autosharing within your group, and find tutorial videos.
+Leiden University is **hosting** an ELN server that provides a web application called Research Space (RSpace) <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>. Using RSpace ensures **compliance with data management policies** and provides a sustainable solution for our research documentation needs. This page serves as a guide to help you get started with RSpace, including how to apply for an account, set up autosharing within your group, and find tutorial videos.
 
 Adopting an ELN can feel awkward if you’re used to paper notebooks. Take it slowly and try things out with your group. Start by using the ELN simply as a cloud notebook: create entries, add text, and attach images.
 

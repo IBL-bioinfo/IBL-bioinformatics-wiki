@@ -54,7 +54,6 @@ ipa user-find --gid [GID]
 Then create the user with the lab group as the primary group:
 
 ```sh
-
 # Create the user with that group as the primary group
 ipa user-add [USERNAME] \
     --first [FIRST-NAME] \
@@ -65,6 +64,8 @@ ipa user-add [USERNAME] \
 # !!! Must do: !!! Add the user to all required groups
 # Although when --gid is set, you still need to add the user to the group explicitly
 ipa group-add-member [GROUP-NAME-1] --users [USERNAME]
+# Do not forget to set quota for the user on **every server** that enabled quotas:
+sudo xfs_quota -x -c 'limit bsoft=20g bhard=25g [USERNAME]' /home
 ```
 
 Each new user should belong to their lab group, and thus belong to the `condablis` group. Do not add users directly to `condablis` group.

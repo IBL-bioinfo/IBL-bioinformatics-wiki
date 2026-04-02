@@ -143,7 +143,7 @@ If the target environment or program or specific version of a program is not fou
 
 ## Do not analyse large dataset in your home directory
 
-One IBL server maybe powerful, but not when used by many colleagues, especially on data storage. Applying quota system on home directory `~/` is then necessary for the sustainable use. It means that you cannot use your `~/` freely. As a general rule in using Linux servers, you will find the quota system on almost all shared servers, including [ALICE](https://pubappslu.atlassian.net/wiki/x/wIA8Ag).
+One IBL server may be powerful, but not when used by many colleagues, especially for data storage. Applying a quota system on the home directory `~/` is necessary for sustainable use. It means that you cannot use your `~/` freely. As a general rule when using Linux servers, you will find a quota system on almost all shared servers, including [ALICE](https://pubappslu.atlassian.net/wiki/x/wIA8Ag).
 
 To check how much quota has left for you:
 
