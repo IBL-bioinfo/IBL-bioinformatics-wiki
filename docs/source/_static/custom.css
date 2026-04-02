@@ -32,7 +32,7 @@ div.document {
    subsections span all columns, while each toctree-wrapper becomes a tile. */
 section#ibl-bioinformatics-wiki {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
     align-items: start;
 }
@@ -74,4 +74,10 @@ section#ibl-bioinformatics-wiki > .toctree-wrapper li.toctree-l1 {
 section#ibl-bioinformatics-wiki > .toctree-wrapper li.toctree-l1 a {
     line-height: 1.2;
     display: inline-block;
+}
+
+/* Hide l2 sub-items inside index page cards (maxdepth:2 is needed for
+   sidebar depth, but we don't want them cluttering the card grid). */
+section#ibl-bioinformatics-wiki > .toctree-wrapper li.toctree-l2 {
+    display: none;
 }

@@ -9,7 +9,7 @@ If you wish to contribute further, such as by writing a new section, kindly init
 ```{toctree}
 ---
 caption: IBL Servers
-maxdepth: 1
+maxdepth: 2
 ---
 IBL_servers/Intro.md
 IBL_servers/Server configurations.md
@@ -21,7 +21,7 @@ IBL_servers/Common questions.md
 ```{toctree}
 ---
 caption: SSH access
-maxdepth: 1
+maxdepth: 2
 ---
 ssh access/ssh access.md
 ssh access/ssh access mobaxterm.md
@@ -31,7 +31,7 @@ ssh access/ssh access command line.md
 ```{toctree}
 ---
 caption: ALICE
-maxdepth: 1
+maxdepth: 2
 ---
 alice/alice_ibl.md
 alice/gromacs-ALICE.md
@@ -42,7 +42,7 @@ alice/AlphaFold3
 ```{toctree}
 ---
 caption: IBL RDM Howtos
-maxdepth: 1
+maxdepth: 2
 ---
 rdm_howtos/Intro.md
 rdm_howtos/ResearchDrive.md
@@ -53,7 +53,7 @@ rdm_howtos/GitHub_in_research.md
 ```{toctree}
 ---
 caption: Tools
-maxdepth: 1
+maxdepth: 2
 ---
 basic_tools/package_management_concept.md
 basic_tools/micromamba.md
@@ -65,7 +65,7 @@ basic_tools/tabular_output_guide.md
 ```{toctree}
 ---
 caption: Admin tools
-maxdepth: 1
+maxdepth: 2
 ---
 admin_tools/admin_tools.md
 admin_tools/ipa_commands.md

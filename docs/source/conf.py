@@ -31,7 +31,7 @@ exclude_patterns = ["_excluded"]
 html_theme = "alabaster"
 html_static_path = ["_static"]
 html_css_files = ["custom.css", "sidebar.css", "tocbackref.css"]
-html_js_files = ["external_links.js", "anchor_scroll.js"]
+html_js_files = ["external_links.js", "anchor_scroll.js", "sidebar_scroll.js"]
 html_scaled_image_link = False
 html_sidebars = {
     "**": [
