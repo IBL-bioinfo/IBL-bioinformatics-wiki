@@ -51,7 +51,7 @@ html_theme_options = {
     "fixed_sidebar": True,
     "sidebar_collapse": True,
     "sidebar_width": "18rem",  # has to be fixed
-    "page_width": "min(70rem, 95%)",
+    "page_width": "48rem",  # controls mobile breakpoint; actual max-width is overridden to min(70rem,95%) in custom.css
 }
 # https://alabaster.readthedocs.io/en/latest/customization.html
 html_favicon = "_static/images/ibl.png"

@@ -4,3 +4,13 @@ li > p {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
+
+/* Alabaster uses page_width as the @media max-width breakpoint. Using
+   'min(70rem, 95%)' there breaks mobile because % in media queries is
+   viewport-relative, making the breakpoint shrink below the viewport width.
+   Instead, page_width is kept as '70rem' (a fixed breakpoint) and the 95%
+   width constraint is applied here as a plain CSS property where % works
+   correctly (relative to the containing block). */
+div.document {
+    width: min(70rem, 95%);
+}
