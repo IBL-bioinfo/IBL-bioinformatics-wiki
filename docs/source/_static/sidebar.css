@@ -1,7 +1,7 @@
 div.sphinxsidebar p.caption {
-    background-color: azure;
+    background-color: #f0f7fb;
     border-bottom: 0.1rem;
-    border-bottom-color: aqua;
+    border-bottom-color: #a8cfe0;
     border-bottom-style: dashed;
 }
 
@@ -34,4 +34,12 @@ li.toctree-l1.current > ul {
 li.toctree-l1.current > ul > li:has(> a[href$=".html"]),
 li.toctree-l1.current > ul > li.current {
     order: 100;
+}
+
+/* On mobile, the sidebar background becomes dark (#333) with white text.
+   Remove the light-blue caption background so white text stays readable. */
+@media screen and (max-width: 48rem) {
+    div.sphinxsidebar p.caption {
+        background-color: transparent;
+    }
 }
