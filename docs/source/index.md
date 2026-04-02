@@ -99,9 +99,12 @@ Check the [front page ("Code" tab if you in the "Issues" tab)](https://github.co
 
 *Chao Du [@snail123815](https://github.com/snail123815)*
 
+Contributors:
+- You!
+- *Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
+- *Joost Willemse[@Karivtan](https://github.com/Karivtan)*
+- *Nicole Schmidt-Hebbel [@nicoleyshebbel](https://github.com/nicoleyshebbel)*
+
 Previously involved:
 - *Edder Bustos Diaz [@EdderDaniel](https://github.com/EdderDaniel)*
-
-Contributors:
 - *Caspar Schmeits [@Capspar](https://github.com/Capspar)*
-- You!
