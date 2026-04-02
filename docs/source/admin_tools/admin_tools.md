@@ -19,6 +19,16 @@ source ipa_functions.sh
 ibl_addgroup <GROUP-NAME> <DESCRIPTION>
 ibl_adduser <USERNAME> <FIRST-NAME> <LAST-NAME> <PRIMARY-GROUP>
 # Then on every server that enabled quotas, run:
+sudo xfs_quota -x -c 'limit bsoft=20g bhard=25g <USERNAME>' /home
+# Increase the quota only when needed.
+```
+
+For courses, you might need to add users like `workshop` participants, so you can use the following commands to add many users at once:
+
+```sh
+source ipa_functions.sh
+ibl_addusers_with_defined_password <username_base> <first_name_base> <last_name_base> <groupname> <total_users> <common_password>
+# Then on every server that enabled quotas, run:
 ibl_addusers_quota <username_base> <total_users>
 ```
 
