@@ -18,9 +18,9 @@ depth: 3
 
 ## IBL Servers and specs
 
-All IBL servers runs on [Rocky linux 9](https://rockylinux.org/news/rocky-linux-9-3-ga-release/), a production-ready downstream version of Red Hat Enterprise Linux.
+All IBL servers run on [Rocky Linux 9](https://rockylinux.org/news/rocky-linux-9-3-ga-release/), a production-ready downstream version of Red Hat Enterprise Linux.
 
-Most servers has local storage mounted on `/vol/local/`, for both data and programs. All home directories are located on a dedicated SSD partition, and has a quota for each user. Additional storage are mounted on `/vol/local1/` and `/vol/local2/` etc.
+Most servers have local storage mounted on `/vol/local/`, for both data and programs. All home directories are located on a dedicated SSD partition and have a quota for each user. Additional storage is mounted on `/vol/local1/` and `/vol/local2/`, etc.
 
 :::{NOTE}
 **NOT** all servers have [ECC memory](https://serverfault.com/questions/5887/what-is-ecc-ram-and-why-is-it-better), if you plan to run long analysis (>10 hours) on no-ECC-memory servers, be prepared for some random error even if your program is perfect.
@@ -81,7 +81,7 @@ Home directory quota, shared local storage, and `micromamba` are setup the same 
 
 ### FRODO for private use
 
-This machine is, in principle, dedicated to Paco group Managed by [Paco lab](https://www.universiteitleiden.nl/en/staffmembers/paco-barona-gomez), you do not have access by default. Ask admin for more info if necessary.
+This machine is, in principle, dedicated to the Paco group and managed by [Paco lab](https://www.universiteitleiden.nl/en/staffmembers/paco-barona-gomez). You do not have access by default. Ask an admin for more info if necessary.
 
 - AMD Ryzen Threadripper PRO 5975WX
   - @ 3.6GHz

@@ -84,7 +84,7 @@ envs_dirs:
   - /data1/projects/pi-vriesendorpb/condaEnvs
 ```
 
-If the software in your target environment is designed properly, others should be able tocan use the environment. Any software which <u>on its run time</u>, write data to the environment directory will fail for other people, as they don't have write permissions to the directory.  If that is the case, or **if you want others to update your environment**, you need to give proper permissions to the environment directory:
+If the software in your target environment is designed properly, others should be able to use the environment. Any software that writes data to the environment directory at runtime will fail for other people, as they don't have write permissions to the directory. If that is the case, or **if you want others to update your environment**, you need to give proper permissions to the environment directory:
 
 `chmod g+w -R [ENVDIR]`
 

@@ -102,7 +102,7 @@ Check the [front page ("Code" tab if you in the "Issues" tab)](https://github.co
 Contributors:
 - You!
 - *Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
-- *Joost Willemse[@Karivtan](https://github.com/Karivtan)*
+- *Joost Willemse [@Karivtan](https://github.com/Karivtan)*
 - *Nicole Schmidt-Hebbel [@nicoleyshebbel](https://github.com/nicoleyshebbel)*
 
 Previously involved:
