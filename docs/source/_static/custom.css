@@ -5,6 +5,18 @@ li > p {
     margin-bottom: 0.2em;
 }
 
+/* Underlines for h2 and h3, with visual distinction between levels. */
+div.body h2 {
+    border-bottom: 2px solid #888888;
+    padding-bottom: 0.2rem;
+}
+
+div.body h3 {
+    border-bottom: 1.5px solid #b6b6b6;
+    padding-bottom: 0.15rem;
+    width: fit-content;
+}
+
 /* Alabaster uses page_width as the @media max-width breakpoint. Using
    'min(70rem, 95%)' there breaks mobile because % in media queries is
    viewport-relative, making the breakpoint shrink below the viewport width.
