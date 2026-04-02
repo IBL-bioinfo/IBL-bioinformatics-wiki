@@ -8,9 +8,58 @@ li > p {
 /* Alabaster uses page_width as the @media max-width breakpoint. Using
    'min(70rem, 95%)' there breaks mobile because % in media queries is
    viewport-relative, making the breakpoint shrink below the viewport width.
-   Instead, page_width is kept as '70rem' (a fixed breakpoint) and the 95%
+   Instead, page_width is kept as '48rem' (a fixed breakpoint) and the 95%
    width constraint is applied here as a plain CSS property where % works
    correctly (relative to the containing block). */
 div.document {
     width: min(70rem, 95%);
+}
+
+/* Index page: display the toctree sections as a card grid.
+   The section is turned into a grid container; h1, paragraphs, and
+   subsections span all columns, while each toctree-wrapper becomes a tile. */
+section#ibl-bioinformatics-wiki {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
+
+section#ibl-bioinformatics-wiki > h1,
+section#ibl-bioinformatics-wiki > p,
+section#ibl-bioinformatics-wiki > section {
+    grid-column: 1 / -1;
+}
+
+section#ibl-bioinformatics-wiki > .toctree-wrapper {
+    border: 1px solid #c8dce8;
+    border-radius: 6px;
+    padding: 0.7rem 1rem 0.8rem;
+    background: #f0f7fb;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.07);
+}
+
+section#ibl-bioinformatics-wiki > .toctree-wrapper p.caption {
+    background-color: transparent;
+    border-bottom: 2px solid #a8cfe0;
+    border-bottom-style: solid;
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.3rem;
+}
+
+section#ibl-bioinformatics-wiki > .toctree-wrapper ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+section#ibl-bioinformatics-wiki > .toctree-wrapper li.toctree-l1 {
+    padding: 0.25rem 0;
+    font-size: 0.85rem;
+    font-family: sans-serif;
+}
+
+section#ibl-bioinformatics-wiki > .toctree-wrapper li.toctree-l1 a {
+    line-height: 1.2;
+    display: inline-block;
 }
