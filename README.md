@@ -2,7 +2,9 @@
 
 Address:
 
-https://ibl-bioinformatics-wiki.readthedocs.io/index.html
+https://docs.ibl.bio
+https://bioinfo.ibl.bio
+https://ibl-bioinformatics-wiki.readthedocs.io
 
 Source files for the documentation are markdown (`*.md`) files in `docs/source/`.
 

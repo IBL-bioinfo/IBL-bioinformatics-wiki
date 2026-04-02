@@ -41,7 +41,7 @@ alice/AlphaFold3
 
 ```{toctree}
 ---
-caption: RDM IBL Howtos
+caption: IBL RDM Howtos
 maxdepth: 2
 ---
 rdm_howtos/Intro.md
