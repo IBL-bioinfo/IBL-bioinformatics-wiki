@@ -1,9 +1,8 @@
 # BLAST Tabular Output Guide
+
 *By Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
 
----
 ## 1. What is BLAST tabular output
-
 
 BLAST supports **tabular output** via the `-outfmt` option.
 
@@ -17,9 +16,7 @@ Tabular output is designed for:
 - filtering and QC
 - large-scale homology searches
 
----
 ## 2. The classic 12-column BLAST table
-
 
 These are the historical default columns returned by `-outfmt 6`
 when no custom field list is provided.
@@ -41,16 +38,15 @@ when no custom field list is provided.
 
 This set is **not exhaustive** and is rarely optimal on its own.
 
----
 ## 3. Custom tabular output (recommended)
 
 You can explicitly choose which columns BLAST writes:
 
-    -outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
+```sh
+-outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
+```
 
----
 ## 4. Core blastp-specific fields
-
 
 ### Identifiers and annotation
 
@@ -79,9 +75,7 @@ You can explicitly choose which columns BLAST writes:
 - `evalue`
 - `bitscore`
 
----
 ## 5. Coverage and length fields (important)
-
 
 Coverage fields are essential for filtering weak or spurious hits.
 
@@ -92,11 +86,11 @@ Coverage fields are essential for filtering weak or spurious hits.
 
 Example:
 
-    -outfmt "6 qseqid sacc pident length qlen qcovs evalue bitscore"
+```sh
+-outfmt "6 qseqid sacc pident length qlen qcovs evalue bitscore"
+```
 
----
 ## 6. Taxonomy-aware fields (nr database)
-
 
 These fields are especially useful when searching the NCBI nr database.
 
@@ -107,11 +101,11 @@ These fields are especially useful when searching the NCBI nr database.
 
 Example:
 
-    -outfmt "6 qseqid sacc pident length qcovs evalue bitscore ssciname staxids"
+```sh
+-outfmt "6 qseqid sacc pident length qcovs evalue bitscore ssciname staxids"
+```
 
----
 ## 7. Sequence-including fields (can inflate output)
-
 
 These fields massively increase output size.
 
@@ -120,9 +114,7 @@ These fields massively increase output size.
 
 Only use when manual alignment inspection is required.
 
----
 ## 8. Fields mainly for nucleotide-based BLAST
-
 
 Relevant for blastn, tblastn, blastx, tblastx:
 
@@ -132,29 +124,33 @@ Relevant for blastn, tblastn, blastx, tblastx:
 
 Irrelevant for blastp.
 
----
 ## 9. Recommended column sets
-
 
 ### General blastp annotation
 
-    -outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
+```sh
+-outfmt "6 qseqid sacc pident length qcovs evalue bitscore stitle"
+```
 
 ### Strict homology filtering
 
-    -outfmt "6 qseqid sacc pident length nident qlen qcovs evalue bitscore"
+```sh
+-outfmt "6 qseqid sacc pident length nident qlen qcovs evalue bitscore"
+```
 
 ### Taxonomy-aware screening
 
-    -outfmt "6 qseqid sacc pident length qcovs evalue bitscore ssciname staxids"
+```sh
+-outfmt "6 qseqid sacc pident length qcovs evalue bitscore ssciname staxids"
+```
 
 ### Alignment inspection / debugging
 
-    -outfmt "6 qseqid sacc qstart qend sstart send pident length qseq sseq"
+```sh
+-outfmt "6 qseqid sacc qstart qend sstart send pident length qseq sseq"
+```
 
----
 ## 10. Other BLAST programs (summary)
-
 
 | Program  | Query type | Subject type | Notes |
 |---------|------------|--------------|-------|
@@ -167,23 +163,20 @@ Irrelevant for blastp.
 Most fields are shared, but frame/strand fields only apply to nucleotide
 or translated searches.
 
----
 ## 11. How to list all available fields locally
-
 
 Run:
 
-    blastp -help
+```sh
+blastp -help
+```
 
 Search for the section titled **Custom output formats**.
 The exact field list may vary slightly between BLAST+ versions.
 
----
 ## 12. Final advice
-
 
 - Always specify your `-outfmt` fields explicitly
 - Always include at least one coverage metric
 - Avoid sequence fields unless necessary
 - Keep column order stable for downstream scripts
-

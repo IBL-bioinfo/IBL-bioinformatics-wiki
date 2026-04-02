@@ -1,6 +1,8 @@
 # HPC ALICE BLASTP
+
 *By Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
-This guide shows common BLASTP use cases using built-in BLAST options.  
+
+This guide shows common BLASTP use cases using built-in BLAST options.
 
 ## Preparation before running BLAST
 
@@ -120,17 +122,19 @@ blastp \
 
 ## Summary of key options
 
-Broad annotation        default blastp vs nr  
-Taxonomy-restricted     -taxids  
-Region-specific         -query_loc  
-Divergent homologs      -word_size, -matrix, -evalue, -qcov_hsp_perc  
-Throughput              job arrays + -num_threads
+| Use case | Key options |
+| --- | --- |
+| Broad annotation | default `blastp` vs **nr** |
+| Taxonomy-restricted | `-taxids` |
+| Region-specific | `-query_loc` |
+| Divergent homologs | `-word_size`, `-matrix`, `-evalue`, `-qcov_hsp_perc` |
+| Throughput | job arrays + `-num_threads` |
 
 ## Large query searches
 
-To run blast for many query inputs, you should not use a single job. Instead, submit one job per query using my sbatch python script. You can download it from github and run with -h to see how to run. 
+To run blast for many query inputs, you should not use a single job. Instead, submit one job per query using my sbatch python script. You can download it from github and run with `-h` to see how to run.
 
-```
+```sh
 git clone https://github.com/B-Bajramovic/BLAST_ALICE.git
 cd BLAST_ALICE
 python blast_sbatch.py -h
