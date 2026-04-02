@@ -1,5 +1,5 @@
-
 # AlphaFold3 on ALICE
+
 *By Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
 
 This page prepares your AlphaFold3 job for submission to SLURM on HPC ALICE.
