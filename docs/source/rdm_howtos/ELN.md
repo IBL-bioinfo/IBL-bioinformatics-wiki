@@ -12,7 +12,11 @@ Adopting an ELN can feel awkward if you’re used to paper notebooks. Take it sl
 - Use templates, tags and clear titles to make notes easy to find later.
 - Ask colleagues or ELN support for demonstrations and share experiences within your group.
 
-Faculty level support can be found in [FWN-IM-Electronic Laboratory Notebook (ELN) (login required)](https://leidenuniv1.sharepoint.com/sites/FWN-Intranet/SitePages/FWN-IM-ELN-Home.aspx?xsdata=MDV8MDJ8Yy5kdUBiaW9sb2d5LmxlaWRlbnVuaXYubmx8MTgyNzgxM2QwMmRiNGY3NmJmODUwOGRlNjQ5M2I2OGZ8Y2EyYTdmNzZkYmQ3NGVjMDkxMDg2YjNkNTI0ZmI3Yzh8MHwwfDYzOTA1ODc4Mjc0OTcxMTgzNXxVbmt).
+:::{warning}
+Do NOT contact RSpace support. Please **always contact our faculty level support** for assistance.
+
+Faculty level support (login required) can be found in [FWN-IM-Electronic Laboratory Notebook (ELN) documents](https://leidenuniv1.sharepoint.com/sites/FWN-Intranet/SitePages/FWN-IM-ELN-Home.aspx?xsdata=MDV8MDJ8Yy5kdUBiaW9sb2d5LmxlaWRlbnVuaXYubmx8MTgyNzgxM2QwMmRiNGY3NmJmODUwOGRlNjQ5M2I2OGZ8Y2EyYTdmNzZkYmQ3NGVjMDkxMDg2YjNkNTI0ZmI3Yzh8MHwwfDYzOTA1ODc4Mjc0OTcxMTgzNXxVbmt) and [RSpace ELN&Inventory QRCards](https://leidenuniv1.sharepoint.com/sites/FWN-Intranet/SitePages/FWN-IM-ELN-QRCards.aspx?startedResponseCatch=true&CT=1776075760243&OR=OWA-NTB-Mail&CID=101ae42f-1176-982f-f011-bdbeb0ceff79). Or you can approach help via  [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) → "Research support" → "ELN" → "Report an issue/Ask a question". This way we can track issues and questions, and provide better support to everyone. If you contact RSpace support directly, they will refer you back to us, which will cause unnecessary delays.
+:::
 
 **For [Benchling](https://www.benchling.com/) users**, you can still use it for molecular cloning. But **please migrate to RSpace** for all other journaling. Please keep a complete, repeatable record of your cloning work on RSpace as well. Check below for [how to do that and reasons why we do not recommend Benchling as a general ELN](#benchling-is-not-recommended-as-a-general-eln).
 
