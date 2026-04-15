@@ -107,12 +107,57 @@ But you do see your `Usage` and `Quotum` on your "Dashboard" → "Project folder
 - Go to the **Files** tab (top left), and go into your **project folder**
 - Create a folder for everyone in this project
 
-Once the staff and student accounts are activated:
-- Go to the **Files** tab, locate the target folder, and click the **"Shared"** button
+### Setup share with users
+
+The user needs to already accepted the invitation and can log in to Research Drive web interface before you can share the folder with them. It is recommended to follow the [intended folder structure](#intended-structure) and share the folders accordingly.
+
+Here is how to share a folder with specific users:
+- Go to the **Files** tab, locate the target folder, and click the **"Shared"** button, or click the "..."(three dots) button and select **"Details"** from the dropdown menu.
+
+  ```{image} ../_static/images/nextcloud_share_1.png
+  :alt: share button
+  :width: 30em
+  ```
+
   - Make sure the pop-up shows the correct folder name, click "Sharing" tab if not already selected
-- In **Internal shares** section, add the correct users, and set permissions to allow editing (for their own folder only).
-  - Same procedure for other files you want to share with specific users, but be careful with the permissions.
-- Users can now access data within the subfolder of the project.
+- In **Internal shares** section, search and add the correct users (*or team name if you already created one*), and set permissions to allow editing (for their own folder only).
+
+  ```{image} ../_static/images/nextcloud_share_2.png
+  :alt: sharing tab
+  :width: 23em
+  ```
+
+  - Remember to click **Save Share** after adding each user.
+
+    ```{image} ../_static/images/nextcloud_share_3.png
+    :alt: save share button
+    :width: 15em
+    ```
+
+  - After saving, it should show the user added.
+
+    ```{image} ../_static/images/nextcloud_share_4.png
+    :alt: saved share
+    :width: 15em
+    ```
+
+#### Upload only folder
+
+For folders that are meant for users to upload files but not edit or delete files, you can set the permission to "Create" only. This way, users can only upload files to this folder, but cannot edit or delete any files in it.
+
+```{image} ../_static/images/nextcloud_share_5.png
+:alt: advanced sharing options
+:width: 15em
+```
+
+### Share with a group of users
+
+If you want to share a folder with a group of users, you can create a team in "Contacts" card, then share the folder with that team. This way you only need to manage the team membership, and the sharing will be automatically updated.
+
+```{image} ../_static/images/nextcloud_share_6.png
+:alt: Create a team in contacts
+:width: 40em
+```
 
 ## Expand storage space
 
