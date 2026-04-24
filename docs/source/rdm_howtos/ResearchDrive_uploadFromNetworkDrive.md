@@ -36,7 +36,7 @@ Right-click your source folder to see its size in the “properties” window. I
 
 ## Upload and remove sync after
 
-1. Open settings: right-click ![NextCloud](../_static/images/nextcloud_icon.png) and click “Settings”.
+1. Open settings: right-click <span><img alt="new windows systemtray icon" src="../_static/images/nextcloud_icon_new.png" width="24"></span> or <span><img alt="windows systemtray icon" src="../_static/images/nextcloud_icon.png" width="24"></span> or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width="24"></span> and click “Settings”.
 2. Click “Add Folder Sync Connection”, then pick the source directory you want to upload.
    ![Add Folder Sync Connection](../_static/images/nextcloud_settings.png)
    ![Pick a source dir](../_static/images/nextcloud_pick_source.png)
@@ -58,4 +58,4 @@ A sync folder is always synced bidirectionally, so using an empty folder helps e
 
 ## In case of upload errors
 
-If you see red crosses or yellow warnings, left-click the ![NextCloud](../_static/images/nextcloud_icon.png) icon and scroll to the top to see what is happening. If you are not sure, please contact the IBL RDM team with a screenshot and any related information.
+If you see red crosses or yellow warnings, left-click the <span><img alt="new windows systemtray icon" src="../_static/images/nextcloud_icon_new.png" width="24"></span> or <span><img alt="windows systemtray icon" src="../_static/images/nextcloud_icon.png" width="24"></span> or <span><img alt="macos icon" src="../_static/images/nextcloud_icon_macos.jpg" width="24"></span> icon and scroll to the top to see what is happening. If you are not sure, please contact the IBL RDM team with a screenshot and any related information.

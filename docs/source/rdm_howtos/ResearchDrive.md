@@ -78,7 +78,7 @@ PI or authorized lab manager have full control over the project folder, you can 
 **Anyone** with a Research Drive account can invite other users include:
 - **Staff**: PhD students, PostDocs, Researcher (staff), Lab managers
 - **Students**: Master students, Bachelor students, Interns
-- **External collaborators**: collaborators from other institutions, they can be invited using their external email address, but they will be prompted to create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
+- **External collaborators**: collaborators from other institutions, they can be invited using their external email address, but they will be prompted to create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in. If you share with "Allow download and sync" enabled (not equal to allowing "Edit"), they can access the files just like internal users, including via [command line `rclone`](./ResearchDrive_commandLine.md) and [Nextcloud desktop client](./ResearchDrive_setup.md).
 
 Steps:
 - Logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
