@@ -2,7 +2,7 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
-For **command line users** (for example, if you are using a Linux terminal on IBL servers or ALICE, or even on your Windows using PowerShell), you can use `rclone` to sync with Research Drive. This can be especially useful for uploading large files or syncing entire directories without needing to copy them to your local machine first (alternative to [using the Nextcloud desktop client](./ResearchDrive_uploadFromNetworkDrive.md)).
+`rclone` can be used on a Linux server using any shell, or on Windows using PowerShell. This can be especially useful for uploading large files or syncing entire directories without needing to change or set up local sync folders (alternative to [using the Nextcloud desktop client](./ResearchDrive_uploadFromNetworkDrive.md)).
 
 You need to finish configuration steps to use `rclone` with Research Drive.
 
@@ -28,20 +28,34 @@ For IBL servers and ALICE, `rclone` is already installed and available in the sy
 rclone --version
 ```
 
+::: {note} Don't forget to run rclone in tmux/screen or as a slurm job
+When running `rclone` on a remote server, it's important to use `tmux` or `screen` to ensure that the process continues running even if your connection to the server is interrupted. This is especially important for long-running transfers, as you don't want them to be stopped if your SSH session disconnects.
+:::
+
+`rclone` is a stand-alone executable, so you can also download the binary from the [rclone downloads page](https://rclone.org/downloads/) and execute it directly without installation.
+
 ### Windows
 
-Install `rclone` using Winget or Scoop:
-
-(If you don't have Scoop, you can install it by running the magic command at [https://scoop.sh/](https://scoop.sh/))
+Install `rclone` using Winget:
 
 ```powershell
 winget install Rclone.Rclone
 ```
 
-or
+or using Scoop (If you don't have Scoop, you can install it by running the magic command at [https://scoop.sh/](https://scoop.sh/))
 
 ```powershell
 scoop install rclone
+```
+
+Other package managers like Chocolatey are also fine, feel free to use your preferred package manager.
+
+`rclone` is a stand-alone executable, so you can also download the binary from the [rclone downloads page](https://rclone.org/downloads/) and execute it directly without installation. The command will be something like:
+
+```powershell
+.\rclone-v1.XX.X-windows-amd64\rclone.exe --version
+# To configure rclone, run:
+.\rclone-v1.XX.X-windows-amd64\rclone.exe config
 ```
 
 ## Configure `rclone` for Research Drive
@@ -54,16 +68,16 @@ Command line program `rclone` needs to be configured to connect to Research Driv
 2. In your terminal, run `rclone config` to start the configuration process. Follow the prompts to create a new remote connection:
     - Choose "n" for a new remote.
     - Name it "rd" for research drive.
-    - For the storage type, choose "webdav".
-    - For the webdav type, choose "nextcloud".
+    - For the storage type, choose "webdav" by entering the number corresponding to "webdav" and hit Enter.
+    - For the webdav type, choose "nextcloud" by entering the number corresponding to "nextcloud" and hit Enter.
     - For the URL, enter the WebDAV URL you got from step 1.
     - For the user name and password, enter the credentials you got from step 1.
     - You can leave other settings as default.
-3. Once you finish the configuration, you can test the connection by running `rclone lsd rd:`. This should list the project folders or folders shared with you in your Research Drive. `lsd` stands for "list directories". Note files will not be listed by this command, only directories. You can use `rclone ls rd:` to list all files and directories, but it may take a long time if you have many files. There should not be any error message.
+3. Once you finish the configuration, you can test the connection by running `rclone lsd rd:`. This should list the project folders or folders shared with you in your Research Drive. `lsd` stands for "list directories", so files will not be listed by this command, only directories. You can use `rclone ls rd:` to list all files and directories, but it may take a long time if you have many files. There should not be any error message.
 
 ## Basic `rclone` commands
 
-Check the [`rclone` documentation](https://rclone.org/docs/#subcommands) for more details and options. Here are some common commands:
+Please note that there is [**specific preferred parameters for Research Drive**](#specific-requirements-for-research-drive). Here are some basic commands without the additional parameters, which may work for few of small files but **can be problematic for large/many files** or directories when syncing:
 
 ```sh
 # List files and directories
@@ -85,7 +99,9 @@ rclone copy rd:/path/in/researchdrive/file /path/to/local/dir
 rclone sync /path/to/local/dir rd:/path/in/researchdrive --dry-run
 ```
 
-**Differences between `sync` and `copy`:** `sync` will make the destination exactly match the source, which means it will delete any files in the destination that are not in the source. `copy` will only copy files from source to destination without deleting anything.
+**Differences between `sync` and `copy`:** **`sync` will make the destination exactly match the source**, which means it will delete any files in the destination that are not in the source. `copy` will only copy files from source to destination without deleting anything.
+
+Check the [`rclone` documentation](https://rclone.org/docs/#subcommands) for more details and options.
 
 ## Determine the path in Research Drive
 
