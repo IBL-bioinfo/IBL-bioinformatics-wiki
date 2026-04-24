@@ -28,8 +28,8 @@ Leiden University Research Drive (Nextcloud interface) - [https://universiteitle
 **Topics not covered in this page**
 - [Setting Up Local Sync](./ResearchDrive_setup.md) — Install and configure the Nextcloud desktop client to sync files with your local computer, including virtual files setup.
 - [Managing Local Files](./ResearchDrive_troubleshooting.md) — Remove shared folders, manage local storage space, transfer large files from network drives, and resolve Windows long path issues.
-- [Upload Data to ResearchDrive from Mapped Drives and USB Storage](./ResearchDrive_uploadFromNetworkDrive.md) — Step-by-step guide to upload large files from a network drive or USB storage without needing to copy them to your computer first, and how to remove the sync connection afterward.
-- [Command Line Upload with rclone](./ResearchDrive_commandLine.md) — Use `rclone` to sync files from/to Research Drive using command line, which can be especially useful for Linux users on IBL servers or ALICE.
+- [Upload Large Files](./ResearchDrive_uploadFromNetworkDrive.md) — Step-by-step guide to upload large files from a network drive or USB storage without needing to copy them to your computer first, and how to remove the sync connection afterward.
+- [Command Line Upload with `rclone`](./ResearchDrive_commandLine.md) — Use `rclone` to sync files from/to Research Drive using command line, which can be especially useful for Linux users on IBL servers or ALICE.
 
 ## Intended structure
 
@@ -78,7 +78,7 @@ PI or authorized lab manager have full control over the project folder, you can 
 **Anyone** with a Research Drive account can invite other users include:
 - **Staff**: PhD students, PostDocs, Researcher (staff), Lab managers
 - **Students**: Master students, Bachelor students, Interns
-- **External collaborators**: collaborators from other institutions, they can be invited using their external email address, but they will be prompted to create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
+- **External collaborators**: collaborators from other institutions, they can be invited using their external email address, but they will be prompted to create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in. If you share with "Allow download and sync" enabled (not equal to allowing "Edit"), they can access the files just like internal users, including via [command line `rclone`](./ResearchDrive_commandLine.md) and [Nextcloud desktop client](./ResearchDrive_setup.md).
 
 Steps:
 - Logs in to [Research Drive](https://universiteitleiden.data.surf.nl)

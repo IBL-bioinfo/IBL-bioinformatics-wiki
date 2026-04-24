@@ -1,4 +1,4 @@
-# Managing Local Files
+# Common issues and troubleshooting
 
 *By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse [@Karivtan](https://github.com/Karivtan)*
 
@@ -10,13 +10,19 @@ depth: 3
 ---
 ```
 
+## Web interface upload and download issues
+
+Web interface uploads usually have a **file size limit** and can **time out** for large files or a large number of small files. The transfer also depends on the stability of your internet connection and the stability of your browser. Once stopped, you have to start over from the beginning, same for downloads. Therefore, we recommend [using the Nextcloud desktop client](./ResearchDrive_setup.md) to access Research Drive files on your local computer or [using the command line `rclone`](./ResearchDrive_commandLine.md) on a remote server. This allows you to work with your data directly from your file explorer (Windows Explorer or macOS Finder).
+
+For external users, you can still [invite them](./ResearchDrive.md#invite-users-and-set-up-the-folder-structure) and then share a folder with "Allow download and sync" enabled (not equal to allowing "Edit"). They can then access the files just like internal users, including via [command line `rclone`](./ResearchDrive_commandLine.md) and [Nextcloud desktop client](./ResearchDrive_setup.md).
+
 ## Sync taking forever
 
 The reason for sync taking forever can be due to various factors, such as a large number of small files, limited local storage space, or issues with the Nextcloud client. If you are experiencing slow sync times, consider the following troubleshooting steps:
 
 ### Check the log
 
-Left-click the Nextcloud icon in the system tray, the log is shown as a list of recent events, ordered by time from newest on top. Look for any error messages or warnings that may indicate the cause of the slow sync.
+Left-click the Nextcloud icon in the system tray (the icon may change to a red cross or exclamation mark or be overlayed by them, different between versions and system), the log is shown as a list of recent events, ordered by time from newest on top. Look for any error messages or warnings that may indicate the cause of the slow sync.
 
 ### Too many small files
 
