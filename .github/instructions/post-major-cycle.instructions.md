@@ -1,0 +1,11 @@
+---
+applyTo: docs/source/**/*.md,docs/source/*.md
+---
+
+The project is in a stabilization phase after a major development cycle.
+
+- Prefer minimal-risk edits over broad rewrites.
+- Do not perform structural refactors (renaming sections/files, moving pages, changing anchors) unless explicitly requested.
+- Preserve existing labels/anchors/admonition markers because cross-page links and popup behavior depend on them.
+- Keep terminology and style consistent with nearby docs; avoid introducing new naming variants unless requested.
+- For branding/icon updates, use local assets under `docs/source/_static/images/` and apply the same change consistently to all matching occurrences.
