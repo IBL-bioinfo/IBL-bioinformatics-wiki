@@ -2,7 +2,7 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse [@Karivtan](https://github.com/Karivtan)*
 
-Leiden University is **hosting** an ELN server that provides a web application called Research Space (RSpace) <span><img src="../_static/images/rspace-banner.png" alt="RSpace" width="120"></span>. Using RSpace ensures **compliance with data management policies** and provides a sustainable solution for our research documentation needs. This page serves as a guide to help you get started with RSpace, including how to apply for an account, set up autosharing within your group, and find tutorial videos.
+Leiden University is **hosting** an ELN server that provides a web application called Research Space (RSpace) <span><img src="../_static/images/rspace-banner.png" alt="RSpace" width="88"></span>. Using RSpace ensures **compliance with data management policies** and provides a sustainable solution for our research documentation needs. This page serves as a guide to help you get started with RSpace, including how to apply for an account, set up autosharing within your group, and find tutorial videos.
 
 Adopting an ELN can feel awkward if you’re used to paper notebooks. Take it slowly and try things out with your group. Start by using the ELN simply as a cloud notebook: create entries, add text, and attach images.
 
