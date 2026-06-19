@@ -35,7 +35,7 @@ ELN (RSpace interface) - [https://leiden.researchspace.com/](https://leiden.rese
 - **Hot storage**: Fast, always-ready storage used for files you need right now.
 - **Cold storage**: Cheaper, slower storage for files you rarely use but want to keep.
 - **ELN**: Electronic lab notebook, or electronic lab journal
-- **RSpace**: also Research Space, <span style="background-color:#2558A4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:58px"> <img src="https://cdn.prod.website-files.com/5ffc384cb3a51a7b1c2d57ad/6239f62a33bc35909f6f9a87_rspace_logo_white.svg" alt="RSpace"></span>, a web application of our actual implementation of ELN.
+- **RSpace**: also Research Space, <span><img src="../_static/images/rspace-banner.png" alt="RSpace" width="120"></span>, a web application of our actual implementation of ELN.
 
 ```{note}
 Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost after the retention period (60 days). For critical data, especially raw data, consider sharing folders with "read only" permissions to prevent accidental deletion.
