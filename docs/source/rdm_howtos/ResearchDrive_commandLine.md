@@ -2,9 +2,15 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815)*
 
-`rclone` can be used on a Linux server using any shell, or on Windows using PowerShell. This can be especially useful for uploading large files or syncing entire directories without needing to change or set up local sync folders (alternative to [using the Nextcloud desktop client](./ResearchDrive_uploadFromNetworkDrive.md)).
+`rclone` runs anywhere you have a shell: an IBL server or ALICE, and equally your own Linux or macOS laptop or Windows via PowerShell. It is especially useful for uploading large files or syncing entire directories without needing to change or set up local sync folders. On IBL servers and ALICE it is the only option, since the Nextcloud desktop client is not available there; on your own machine it is a matter of preference — use it if you would rather work in a terminal. If you are weighing this against the other options, see [Choose how to move your data](./ResearchDrive_transfer.md).
 
 You need to finish configuration steps to use `rclone` with Research Drive.
+
+```{contents}
+---
+depth: 3
+---
+```
 
 ## Install `rclone`
 
@@ -62,7 +68,7 @@ Other package managers like Chocolatey are also fine, feel free to use your pref
 
 Command line program `rclone` needs to be configured to connect to Research Drive. You only need to do this once on each machine you want to use `rclone` on.
 
-1. Get your Research Drive credentials: In [Research Drive web interface](https://universiteitleiden.data.surfsara.nl/), click on your name at the top right, then go to "Settings", click "Security" on the left, scroll to the bottom. You will need:
+1. Get your Research Drive credentials: In [Research Drive web interface](https://universiteitleiden.data.surf.nl/), click on your name at the top right, then go to "Settings", click "Security" on the left, scroll to the bottom. You will need:
     - The URL at the bottom "Access your Files via WebDAV", should be something like `https://universiteitleiden.data.surf.nl/remote.php/dav/files/<your email address>`
     - Create a new "App password". Fill in the "App name" field with something like "university computer rclone", then click "Create new app password". You will get a **"Login"** as *user name* and a **"Password"**. The password is only shown once, so make sure to copy it and keep it safe.
 2. In your terminal, run `rclone config` to start the configuration process. Follow the prompts to create a new remote connection:

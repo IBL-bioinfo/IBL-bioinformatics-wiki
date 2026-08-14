@@ -2,7 +2,9 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse [@Karivtan](https://github.com/Karivtan)*
 
-In this section, we cover common issues related to managing local files when using Research Drive with the Nextcloud desktop client. This includes understanding how virtual files work, how to free up local disk space, and how to handle large file transfers from network drives.
+Things that commonly go wrong when using Research Drive with the Nextcloud desktop client, and how
+to fix them: slow or stuck syncs, local disk space, shares you cannot delete, and Windows path
+length errors.
 
 ```{contents}
 ---
@@ -10,11 +12,17 @@ depth: 3
 ---
 ```
 
-## Web interface upload and download issues
+## Uploads through the web interface fail or time out
 
-Web interface uploads usually have a **file size limit** and can **time out** for large files or a large number of small files. The transfer also depends on the stability of your internet connection and the stability of your browser. Once stopped, you have to start over from the beginning, same for downloads. Therefore, we recommend [using the Nextcloud desktop client](./ResearchDrive_setup.md) to access Research Drive files on your local computer or [using the command line `rclone`](./ResearchDrive_commandLine.md) on a remote server. This allows you to work with your data directly from your file explorer (Windows Explorer or macOS Finder).
+Web interface uploads have a **file size limit** and can **time out** for large files or a large
+number of small files — and once stopped, you have to start over. Use the
+[Nextcloud desktop client](./ResearchDrive_setup.md) or
+[`rclone`](./ResearchDrive_commandLine.md) instead;
+[Choose how to move your data](./ResearchDrive_transfer.md) explains which to pick.
 
-For external users, you can still [invite them](./ResearchDrive.md#invite-users-and-set-up-the-folder-structure) and then share a folder with "Allow download and sync" enabled (not equal to allowing "Edit"). They can then access the files just like internal users, including via [command line `rclone`](./ResearchDrive_commandLine.md) and [Nextcloud desktop client](./ResearchDrive_setup.md).
+External users can use both of those too: invite them, then share the folder with "Allow download
+and sync" enabled (which is *not* the same as allowing "Edit"). See
+[Invite users and set up the folder structure](./ResearchDrive_admin.md#invite-users-and-set-up-the-folder-structure).
 
 ## Sync taking forever
 
@@ -30,7 +38,8 @@ When you have a folder with a very large number of small files (for example, tho
 
 Practical mitigations:
 
-- Archive many small files into ZIP/TAR before uploading to reduce per-file overhead.
+- Archive many small files into ZIP/TAR before uploading to reduce per-file overhead — see
+  [Before you start a large transfer](./ResearchDrive_transfer.md#before-you-start-a-large-transfer).
 - Keep frequently changing tiny files (caches, temp files) in local-only folders rather than in Research Drive.
 - Avoid storing dependency/cache directories (for example `node_modules` or virtual environments) in Research Drive.
 
@@ -38,21 +47,17 @@ Practical mitigations:
 This issue is not specific to Research Drive or Nextcloud; it is a common problem with any cloud storage solution that does not handle large numbers of small files efficiently. The same advice applies to other platforms like OneDrive, Dropbox, Google Drive, etc.
 :::
 
-## Space on your local machine
+## Local disk space
 
-Research Drive uses the Nextcloud desktop client to *sync* files between the **cloud** (Research Drive) and your **local** computer.
+Research Drive uses the Nextcloud desktop client to *sync* files between the **cloud** (Research
+Drive) and your **local** computer. When **Virtual files** are enabled (recommended), Explorer or
+Finder can show files that exist in the cloud without storing the full data locally — think of
+them as placeholders that download the content only when you open it. A file can therefore count
+against your Research Drive quota while taking up no space on your laptop. See
+[Key concepts](./ResearchDrive.md#key-concepts) for the full explanation.
 
-When **Virtual files** are enabled (recommended), Windows Explorer or Finder on macOS can show files that exist in the cloud without storing the full data locally.
-
-- Local vs cloud (practical meaning)
-  - **Cloud**: The file exists on Research Drive and counts toward your project's storage, even if it is not downloaded to your laptop/PC.
-  - **Local**: The file's data is present on your computer and consumes disk space.
-
-You can think of "virtual files" as shortcuts/placeholders: they show up in Explorer or Finder so you can browse/search, but the content is only downloaded when you open it.
-
-
-:::{admonition} Virtual files and "Choose what to sync" are mutually exclusive
 (choose-what-to-sync-are-mutually-exclusive)=
+:::{admonition} Virtual files and "Choose what to sync" are mutually exclusive
 The "Choose what to sync" option allows you to select specific folders to sync locally, but it is not compatible with virtual files. If you enable "Choose what to sync", you will lose the virtual file functionality, and all files in the synced folders will be downloaded to your local machine. Therefore, it is recommended to keep "Choose what to sync" disabled and use virtual files to manage your storage efficiently.
 :::
 
@@ -91,23 +96,15 @@ This converts downloaded files back to online-only (virtual) files:
 - The file remains visible in Explorer.
 - Disk space is freed on your computer.
 
-## Transfer large files from network drive
+## Not enough local space to upload from a network drive
 
-Transferring large files located on a network drive (for example, `J:`) to the cloud may require some extra steps.
+Uploading normally means copying files into the synced folder first, letting Nextcloud upload
+them, and then letting it replace the local copies with virtual files. If the source is a network
+drive (for example `J:`) or USB storage holding more data than fits on your own disk, that first
+step is the problem.
 
-Uploading files usually involves three steps:
-
-1. Copy/move local files into the synced folder.
-2. Nextcloud uploads these files to ResearchDrive (or other cloud storage).
-3. If the files are not used, or if local storage is full, Nextcloud removes the local copies and replaces them with "virtual files".
-
-If you have large files located on your network drive, the first step can be difficult because you may not have enough local storage to hold them temporarily.
-
-**Choose one of the following**:
-
-1. Recommended: [**Add** an additional sync folder, then **remove** the sync after uploading](./ResearchDrive_uploadFromNetworkDrive.md)
-2. [RcloneView](https://rcloneview.com/) software (not for university computers)
-3. [Rclone GUI](https://rclone.org/gui/)
+[Choose how to move your data](./ResearchDrive_transfer.md) covers the options; the usual answer is
+a [temporary sync connection](./ResearchDrive_uploadFromNetworkDrive.md).
 
 ## Removing a shared folder or file
 
@@ -148,5 +145,26 @@ If Windows cannot create a folder/file locally due to path length, the Nextcloud
 - Use a short local sync root path (for example `C:\Users\<name>\RD` or simply `C:\RD` (if you are not sharing this computer with others) instead of a long path).
 - Avoid unnecessary nesting; keep project folder structures shallow.
 - Shorten filenames where possible; avoid encoding too much metadata in the name. Keep the metadata in a separate file when necessary.
-- **Do not store dependency folders or full software environments in Research Drive**; keep those local.
+- **Do not store dependency folders or full software environments in Research Drive** — `node_modules`, virtual environments, conda environments. They are deeply nested, contain very many small files, and can be regenerated; keep them local.
 - If you are on a managed university device and need Windows long path support enabled, contact ICT/ISSC. Enabling it typically requires admin rights, and note some applications still ignore the setting or report error while reading those files.
+
+## File names Windows cannot store
+
+Research Drive does not restrict file names, but Windows does. A name containing any of these
+characters cannot exist on a Windows machine:
+
+```text
+\  /  :  *  ?  "  <  >  |
+```
+
+The same applies to names ending in a dot or a space, and to the reserved names `CON`, `PRN`,
+`AUX`, `NUL`, `COM1`–`COM9` and `LPT1`–`LPT9` — including with an extension, so `AUX.txt` fails
+too.
+
+Because the server accepts them, such files are created routinely: on the IBL servers or any other
+Linux machine, on macOS, or through the web interface. A colon is the usual offender — it is
+perfectly ordinary on Linux and frequently ends up in timestamps and sample names. Nothing goes
+wrong until a Windows user syncs that folder, at which point Windows cannot write the file.
+
+Rename the file, either in the web interface or on the machine where it was created, and the sync
+completes.
