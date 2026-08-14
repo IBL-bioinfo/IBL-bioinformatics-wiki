@@ -104,7 +104,5 @@ Contributors:
 - *Belmin Bajramovic [@B-Bajramovic](https://github.com/B-Bajramovic)*
 - *Joost Willemse [@Karivtan](https://github.com/Karivtan)*
 - *Nicole Schmidt-Hebbel [@nicoleyshebbel](https://github.com/nicoleyshebbel)*
-
-Previously involved:
 - *Edder Bustos Diaz [@EdderDaniel](https://github.com/EdderDaniel)*
 - *Caspar Schmeits [@Capspar](https://github.com/Capspar)*
