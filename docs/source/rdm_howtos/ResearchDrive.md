@@ -1,12 +1,25 @@
-# Research Data Storage
+# Research Drive
 
 *By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse [@Karivtan](https://github.com/Karivtan)*
 
-[Research Drive](https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/117178843/Research+Drive) is a cloud-based platform that enables researchers to securely store, share, and collaborate on data, and serves as an essential RDM tool for complying with the IBL RDM policy.
+[Research Drive](https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/117178843/Research+Drive) is a
+cloud-based platform that enables researchers to securely store, share, and collaborate on data,
+and serves as an essential RDM tool for complying with the IBL RDM policy.
+
+**Nextcloud is the software platform that powers Research Drive.** It provides the web interface
+for managing files and folders and the sharing features, and the Nextcloud desktop client syncs
+files between your computer and Research Drive.
 
 ## Direct access URL
 
-Leiden University Research Drive (Nextcloud interface) - [https://universiteitleiden.data.surfsara.nl/](https://universiteitleiden.data.surfsara.nl/)
+Leiden University Research Drive (Nextcloud interface) -
+[https://universiteitleiden.data.surf.nl/](https://universiteitleiden.data.surf.nl/)
+
+```{note}
+Storing files on Research Drive is **not a backup method**. Deleted files will be completely lost
+after the retention period (60 days). For critical data, especially raw data, consider sharing
+folders with "read only" permissions to prevent accidental deletion.
+```
 
 ```{toctree}
 ---
@@ -14,9 +27,11 @@ hidden: true
 maxdepth: 1
 ---
 ResearchDrive_setup
-ResearchDrive_troubleshooting
+ResearchDrive_transfer
 ResearchDrive_uploadFromNetworkDrive
 ResearchDrive_commandLine
+ResearchDrive_troubleshooting
+ResearchDrive_admin
 ```
 
 ```{contents}
@@ -25,153 +40,69 @@ depth: 3
 ---
 ```
 
-## Topics in other pages
+## Where to go next
 
-- [Setting Up Local Sync](./ResearchDrive_setup.md) — Install and configure the Nextcloud desktop client to sync files with your local computer, including virtual files setup.
-- [Managing Local Files](./ResearchDrive_troubleshooting.md) — Remove shared folders, manage local storage space, transfer large files from network drives, and resolve Windows long path issues.
-- [Upload Large Files](./ResearchDrive_uploadFromNetworkDrive.md) — Step-by-step guide to upload large files from a network drive or USB storage without needing to copy them to your computer first, and how to remove the sync connection afterward.
-- [Command Line Upload with `rclone`](./ResearchDrive_commandLine.md) — Use `rclone` to sync files from/to Research Drive using command line, which can be especially useful for Linux users on IBL servers or ALICE.
+Pick the one that matches what you are trying to do:
 
-## Intended structure
+- [Set up sync on your computer](./ResearchDrive_setup.md) — install and configure the Nextcloud
+  desktop client so Research Drive appears in Explorer or Finder, including virtual files.
+- [Choose how to move your data](./ResearchDrive_transfer.md) — start here if you have a lot of
+  data to move and are not sure which method to use.
+- [Upload from a network drive or USB](./ResearchDrive_uploadFromNetworkDrive.md) — move large data
+  off a mapped drive (for example `J:`) or USB storage without copying it to your computer first.
+- [Command line upload with `rclone`](./ResearchDrive_commandLine.md) — sync from a shell, which is
+  usually what you want on an IBL server or ALICE.
+- [Common issues and troubleshooting](./ResearchDrive_troubleshooting.md) — sync stuck, disk
+  filling up, long path errors, removing a share.
+- [Set up and run a project folder](./ResearchDrive_admin.md) — apply for a project folder, invite
+  users, set share permissions, request more space.
 
-Quick reference for the intended Research Drive folder structure.
+## Key concepts
 
-![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)
+- **Nextcloud** <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="../_static/images/nextcloud-logo.webp" alt="NextCloud"></span>: The service Research Drive is built on. It provides the web interface and the desktop client used to manage your Research Drive files.
+- **Cloud/Local storage**: **Cloud** means the file lives on Research Drive (a server you reach over the internet); **local** means the file is stored on your computer's disk. If you want background, see [Cloud computing](https://en.wikipedia.org/wiki/Cloud_computing).
+- **Virtual files**: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
+- **Hot storage**: Fast, always-ready storage used for files you need right now.
+- **Cold storage**: Cheaper, slower storage for files you rarely use but want to keep.
 
-## Nextcloud and Research Drive
+## Getting access
 
-**Nextcloud is the software platform that powers Research Drive.** It provides a user-friendly interface for managing files and folders, as well as features for sharing and collaboration. The Nextcloud desktop client allows you to sync files between your local computer and Research Drive, enabling you to access your data from anywhere with an internet connection.
+You **always need to be invited**. ISSC creates project folders on request from PIs or lab
+managers, and the PI or lab manager then invites the rest of the staff and students. **If you do
+not have access to any project folder, contact your PI or lab manager** — you cannot request one
+for yourself.
 
-## Application and invitation
-
-To gain access to Research Drive, you **always need to be invited**. ISSC will create project folders upon request of PIs or lab managers, and then the PI or lab manager can invite the rest of the staff and students. If you do not have access to any project folder, please contact your PI or lab manager.
-
-Requesting a project folder by PI or lab manager:
-- Research Drive is now a paid service, please consult IBL RDM team for the cost and funding details.
-- Request Research Drive per project/DMP/contract
-  - [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
-  - Go to "Research support" → "Research Drive" → "Request Research Drive"
-  - Choose **"No"** for DMP, **always use a cost centre** number in the field "SAP number:", ISSC has stopped DMP-based funding.
-  - Mention the project folder name you want to create in "Comment:" field
-- Invite your lab manager if you do not want to manage the Research Drive yourself. Give your lab manager full access to all your project folders, then the lab manager can then invite the rest of the staff and students and manage the major folder shares.
-- See [Invite users and set up the folder structure:](#invite-users-and-set-up-the-folder-structure) section for details.
-
-For **PhD/PostDoc/Researcher (staff)/student**, once you received the invitation, please follow the link and confirm you can login. Only after that, your PI or lab manager can give you access to your folder.
-
-::: {admonition} Project folder name may not be consistent
-Example:
-
-![Example of project folder name](../_static/images/nextcloud_different_name_example.png)
-
-Note in this example, `NIOO_4` is actually showing information for`IBL_G_Van_Wezel` folder.
-
-You can rename a project folder in the **Files** tab, but the Dashboard name will not change (it reflects the owner's original name). If renaming is necessary, include an abbreviation of the original name, e.g. "New_name_0cnf_opn" (for "changed name from old project name"), so it remains identifiable. Also avoid [lengthy path problems](./ResearchDrive_troubleshooting.md#windows-long-path-compatibility-issue).
-:::
-
-### Invite users and set up the folder structure
-
-After Research Drive has been activated, follow these steps to set up your project folder, invite users. This tutorial assumes you already have a project folder (if you are a PI) or have been invited to access at least one folder (if you are staff or student). If you do not have access to any project folder, please contact your PI or lab manager.
-
-PI or authorized lab manager have full control over the project folder, you can decide how to organize the folder structure and who can access which folders. We recommend the following basic structure, but you can adjust it according to your needs:
-
-![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)
-
-**Anyone** with a Research Drive account can invite other users include:
-- **Staff**: PhD students, PostDocs, Researcher (staff), Lab managers
-- **Students**: Master students, Bachelor students, Interns
-- **External collaborators**: collaborators from other institutions, they can be invited using their external email address, but they will be prompted to create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in. If you share with "Allow download and sync" enabled (not equal to allowing "Edit"), they can access the files just like internal users, including via [command line `rclone`](./ResearchDrive_commandLine.md) and [Nextcloud desktop client](./ResearchDrive_setup.md).
-
-Steps:
-- Logs in to [Research Drive](https://universiteitleiden.data.surf.nl)
-- Go to the dashboard (top-left icon row, second icon from right)
+Once you receive the invitation, follow the link and confirm that you can log in. Only after that
+can your PI or lab manager give you access to your folder.
 
 ::: {admonition} First-time login
-Expect multiple login prompts and a missing project folder the first time you log in. This is because some things are only set up when you start using Research Drive. The project folder should appear a few minutes later.
+The first time you log in, you may be asked to log in more than once, and your project folder may
+not be there yet. This is normal. Wait a few minutes and reload the page — your account is still
+being set up.
 :::
 
-::: {admonition} It is **normal** to have zero space
+If you are the person who needs to *create* a project folder and invite others, see
+[Set up and run a project folder](./ResearchDrive_admin.md).
+
+## Storage space and quota
+
+By default, each project folder is created with 0.5 TB of storage space. Research Drive is a paid
+service; IBL funds the first 0.5 TB of the PI umbrella project folder. To request more, see
+[Expand storage space](./ResearchDrive_admin.md#expand-storage-space).
+
 (you-do-not-own-space)=
-The University admin is the owner of all project folders, not yourself, even if you are a PI. So you do not "own" any space on Research Drive, this is **normal**. The project folder is *shared with you*, not counting as your own space.
+::: {admonition} It is **normal** to have zero space
+The University admin is the owner of all project folders, not yourself, even if you are a PI. So
+you do not "own" any space on Research Drive, this is **normal**. The project folder is *shared
+with you*, not counting as your own space.
 
 ![You will always see 0B of 0B used](../_static/images/nextcloud_zero_of_zero_used.png)
 
-But you do see your `Usage` and `Quotum` on your "Dashboard" → "Project folders" page. You may see the message "You do not have sufficient permissions to create ...". This is normal as well: project folders can only be created by ISSC upon request. 
+But you do see your `Usage` and `Quotum` on your "Dashboard" → "Project folders" page. You may see
+the message "You do not have sufficient permissions to create ...". This is normal as well: project
+folders can only be created by ISSC upon request.
 
 ![You do not have sufficient permissions to create ...](../_static/images/nextcloud_you_have_no_permission.png)
-:::
-
-- Go to "Dashboard" → "User accounts" and invite all users, both staff and students, using their university email address (for example the @biology mail for employees).
-  - For students without an university email address, you can use their personal email address, but make sure to inform them to check their inbox and confirm the invitation. For external collaborators, you can invite them using their external email address. They must first create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
-  - Once the first several staffs finish setting up, they can invite the rest of the staff and students.
-- Invite users using their university email address, for example the @biology mail for employees
-  - **External users** can gain access when you invite their external email address. They will be prompted to create their own [eduID](https://eduid.nl/home) account or use the account from their institute (if present in the system) before they can log in.
-- Go to the **Files** tab (top left), and go into your **project folder**
-- Create a folder for everyone in this project
-
-### Setup share with users
-
-The user needs to already accepted the invitation and can log in to Research Drive web interface before you can share the folder with them. It is recommended to follow the [intended folder structure](#intended-structure) and share the folders accordingly.
-
-Here is how to share a folder with specific users:
-- Go to the **Files** tab, locate the target folder, and click the **"Shared"** button, or click the "..."(three dots) button and select **"Details"** from the dropdown menu.
-
-  ```{image} ../_static/images/nextcloud_share_1.png
-  :alt: share button
-  :width: 30em
-  ```
-
-  - Make sure the pop-up shows the correct folder name, click "Sharing" tab if not already selected
-- In **Internal shares** section, search and add the correct users (*or team name if you already created one*), and set permissions to allow editing (for their own folder only).
-
-  ```{image} ../_static/images/nextcloud_share_2.png
-  :alt: sharing tab
-  :width: 23em
-  ```
-
-  - Remember to click **Save Share** after adding each user.
-
-    ```{image} ../_static/images/nextcloud_share_3.png
-    :alt: save share button
-    :width: 15em
-    ```
-
-  - After saving, it should show the user added.
-
-    ```{image} ../_static/images/nextcloud_share_4.png
-    :alt: saved share
-    :width: 15em
-    ```
-
-#### Upload only folder
-
-For folders that are meant for users to upload files but not edit or delete files, you can set the permission to "Create" only. This way, users can only upload files to this folder, but cannot edit or delete any files in it.
-
-```{image} ../_static/images/nextcloud_share_5.png
-:alt: advanced sharing options
-:width: 15em
-```
-
-### Share with a group of users
-
-If you want to share a folder with a group of users, you can create a team in "Contacts" card, then share the folder with that team. This way you only need to manage the team membership, and the sharing will be automatically updated.
-
-```{image} ../_static/images/nextcloud_share_6.png
-:alt: Create a team in contacts
-:width: 40em
-```
-
-## Expand storage space
-
-By default, each application creates a project folder with 0.5 TB of storage space. If you need more space, please specify the required storage size and the reason in the "Comment:" field when applying for Research Drive.
-
-To expand existing project folder, please:
-- [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/)
-- Go to "Research support" → "Research Drive" → "Ask a question"
-- Fill the desired space you want to expand
-- Explain how would you like to pay for the extra space, for example by mentioning the cost centre of the project that will cover the cost.
-
-::: {admonition} Do not blindly expand storage of one project folder
-Before requesting more space, consider whether the additional storage will actually be used in line with your project's Data Management Plan (DMP). Raw data that can be regenerated, large intermediate files, or software environments generally should not be kept in Research Drive long-term. If you find your storage is filling up quickly, it may be a sign to review your data retention strategy: archive or delete files that are no longer needed, avoid storing intermediate, regeneratable data, and check whether files from completed projects can be moved to long-term archival storage (tape) instead.
 :::
 
 ### Different sizes in Dashboard and Files
@@ -181,14 +112,27 @@ Confusion will arise when checking your storage usage.
 - In **"Files"** page, Research Drive uses binary prefixes, **although it is showing TB/GB, but it actually show numbers in TiB and GiB**.
   - 1 TiB = 2<sup>40</sup> bytes = 1024 GiB; 1 GiB = 2<sup>30</sup> bytes = 1024 MiB.
 - In **"Dashboard"** page, it uses decimal prefixes
-  - 1 TB = 10<sup>12</sup> bytes = 1000 GB; 1 GB = 10<sup>9</sup> bytes = 1000 MB. 
+  - 1 TB = 10<sup>12</sup> bytes = 1000 GB; 1 GB = 10<sup>9</sup> bytes = 1000 MB.
 - 1 TB (decimal, "Dashboard") is approximately 0.91 TiB (binary, "Files"), 2 TB = approximately 1.82 TiB.
 - 1 GB (decimal, "Dashboard") is approximately 0.93 GiB (binary, "Files"), 500 GB = approximately 465.66 GiB.
 
 ![size confusion Files and Dashboard page](../_static/images/nextcloud_space_calculation_example.png)
 
-In this example, 1.16 TB in the "Dashboard" table is actually 1.06 TiB, which rounds up to 1.1 TB in "Files" page. 588.53 GB in "Dashboard" is actually 548.1 GiB. The "Files" page is more accurate for checking the actual size of your files, while the "Dashboard" page is more accurate for checking your quota.
+In this example, 1.16 TB in the "Dashboard" table is actually 1.06 TiB, which rounds up to 1.1 TB
+in "Files" page. 588.53 GB in "Dashboard" is actually 548.1 GiB.
 
-**Quota is calculated using decimal prefixes.** So the "Dashboard" page is more accurate for checking your quota, while the "Files" page is more accurate for checking the actual size of your files. If you are close to your quota, consider archiving files to long-term storage or [requesting more storage](#expand-storage-space).
+**Quota is calculated using decimal prefixes.** So the "Dashboard" page is more accurate for
+checking your quota, while the "Files" page is more accurate for checking the actual size of your
+files. If you are close to your quota, consider archiving files to long-term storage or
+[requesting more storage](./ResearchDrive_admin.md#expand-storage-space).
 
-There is some **delay in showing the actual usage** in your Dashboard after you upload or delete files.
+There is some **delay in showing the actual usage** in your Dashboard after you upload or delete
+files.
+
+## Intended structure
+
+Quick reference for the intended Research Drive folder structure. PIs and lab managers can adjust
+it to their needs — see
+[Invite users and set up the folder structure](./ResearchDrive_admin.md#invite-users-and-set-up-the-folder-structure).
+
+![Intended Research Drive folder structure showing a hierarchical hierarchy with root project folders containing year-based subfolders, which contain role-based folders (PI, Students, PostDoc, LabManager) for organizing research data by project, time period, and user responsibility](../_static/images/IBL_Research_Drive_Hierarchy.svg)

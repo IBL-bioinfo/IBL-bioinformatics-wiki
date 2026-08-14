@@ -25,7 +25,7 @@ depth: 3
 
 ## Application entries
 
-Check [Intro-application](./Intro.md#application) for the application process. After your ELN account is activated, you can log in to the RSpace web interface and start using it.
+All ELN accounts are requested through the ISSC helpdesk. After your ELN account is activated, you can log in to the RSpace web interface and start using it.
 
 There are three application entries and one deactivation entry in [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) → "Research support" → "ELN"
 
@@ -45,7 +45,9 @@ More details about how to fill in these forms can be found in the [FWN-IM-Electr
 [FWN-IM-Electronic Laboratory Notebook (ELN) Usage Policy (login required)](https://leidenuniv1.sharepoint.com/sites/FWN-Intranet/SitePages/FWN-IM-ELN-Usage%20Policy.aspx?xsdata=MDV8MDJ8Yy5kdUBiaW9sb2d5LmxlaWRlbnVuaXYubmx8MTgyNzgxM2QwMmRiNGY3NmJmODUwOGRlNjQ5M2I2OGZ8Y2EyYTdmNzZkYmQ3NGVjMDkxMDg2YjNkNTI0ZmI3Yzh8MHwwfDYzOTA1ODc4Mjc0OTczM)
 
 Please read the usage policy carefully before using the ELN. Most important points are:
-- Every account will be disabled after 6 months of inactivity
+- Every account will be disabled after 6 months of inactivity. To reactivate one, go to
+  [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) → "Research support" → "ELN" →
+  "ELN account activation".
 - ELN is not meant to be used as a bulk storage
 
 ## Practical tips
@@ -96,7 +98,7 @@ If you already have lab journal content in Benchling, you should move the requir
 1. The sequence of the construct can be exported in GenBank format and attached to RSpace.
 2. The cloning strategy can be copied as text and recorded in RSpace. You can set up a template for this purpose.
 3. The primers used can be exported in CSV format and attached to RSpace. You can also create them as "Inventory" items in RSpace.
-4. Sequencing results, for example in `ab1` format, can be attached directly to RSpace or, if they are large, stored in Research Drive and linked from RSpace.
+4. Sequencing results, for example in `ab1` format, can be attached directly to RSpace or, if they are large, stored in [Research Drive](./ResearchDrive.md) and linked from RSpace.
 5. Alignments can be exported, for example as PDF files, and attached to RSpace. The same principle applies if you use other cloning tools such as SnapGene or Geneious.
 
 ### Why Benchling is not recommended as a general ELN
