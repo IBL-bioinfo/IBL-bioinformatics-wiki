@@ -59,7 +59,7 @@ Pick the one that matches what you are trying to do:
 
 ## Key concepts
 
-- **Nextcloud** <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="https://nextcloud.com/c/uploads/2023/02/logo_nextcloud_white.svg" alt="NextCloud"></span>: The service Research Drive is built on. It provides the web interface and the desktop client used to manage your Research Drive files.
+- **Nextcloud** <span style="background-color:#3568b4;padding:0.2rem;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;width:32px"> <img src="../_static/images/nextcloud-logo.webp" alt="NextCloud"></span>: The service Research Drive is built on. It provides the web interface and the desktop client used to manage your Research Drive files.
 - **Cloud/Local storage**: **Cloud** means the file lives on Research Drive (a server you reach over the internet); **local** means the file is stored on your computer's disk. If you want background, see [Cloud computing](https://en.wikipedia.org/wiki/Cloud_computing).
 - **Virtual files**: File placeholders that look real but download the data only when you open them, saving space. In Windows, virtual files often have a "Status" indicator, such as a cloud icon (online-only), a green check (locally available), or a solid green circle (always keep on this device).
 - **Hot storage**: Fast, always-ready storage used for files you need right now.
