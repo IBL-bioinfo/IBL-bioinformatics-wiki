@@ -67,7 +67,7 @@ Both workflows lead to the same result: a pull request that can be reviewed and 
    - `git add path/to/your.md`
    - `git commit -m "your commit message"`
    - `git push --set-upstream origin your-branch-name` (first push only)
-7. Build and verify locally (see [Build and preview locally](#build-and-preview-locally)).
+7. Build and verify locally (see [Build and preview locally](#3-build-and-preview-locally)).
 8. Open a pull request from your fork branch to **this repository's** `main` branch.
 
 ##### Internal contributors (branch in main repo + PR)
@@ -76,7 +76,7 @@ Both workflows lead to the same result: a pull request that can be reviewed and 
 2. Create a feature branch. The recommended way is to use the **"Create a branch"** button on the GitHub issue page — this auto-generates a descriptive name with the issue number and links the branch to the issue. Alternatively, create it locally:
    `git checkout -b your-branch-name`
 3. Work on your changes, then commit and push to this repository.
-4. Build and verify locally (see [Build and preview locally](#build-and-preview-locally)).
+4. Build and verify locally (see [Build and preview locally](#3-build-and-preview-locally)).
 5. Open a pull request from your branch to `main`.
 
 #### 2. Work on your contribution
@@ -253,22 +253,26 @@ Body text here.
 
 Available classes: `note`, `warning`, `tip`, `important`, `hint`, `caution`, `danger`, `info`.
 
-**Linking to a call-out** — place a named anchor inside the admonition, then link to it:
+**Linking to a call-out** — place the named anchor on the line **above** the admonition, not inside it:
 
 ```markdown
-:::{admonition} It is normal to have zero space
 (you-do-not-own-space)=
+:::{admonition} It is normal to have zero space
 Body text here.
 :::
 ```
 
-Then link from anywhere on the same page:
+Then link from elsewhere on the same page:
 
 ```markdown
 [see explanation](#you-do-not-own-space)
 ```
 
-Note: anchor labels placed inside admonitions are intentional — the `(label)=` tag will not render as visible text or affect the admonition's style.
+Position matters. An anchor placed *inside* the body attaches to the first paragraph, so the reader lands below the title and cannot see which call-out they were sent to. Placed above the `:::`, it attaches to the whole call-out box and the title is the first thing they see.
+
+The `(label)=` tag does not render as visible text or affect the admonition's style in either position.
+
+To link to a call-out **from another page**, you must use the `{ref}` role — see [Linking to a custom anchor from another page](#linking-to-a-custom-anchor-from-another-page) below.
 
 ### Custom link anchors
 
@@ -297,10 +301,35 @@ Link to it from the same page:
 [Create SSH key pair](#create-ssh-key-pair)
 ```
 
-Link to it from a different page:
+Anchor names must be lowercase, use hyphens instead of spaces, and be unique within the entire documentation build.
+
+### Linking to a custom anchor from another page
+
+**Rule: `./other-page.md#anchor` only works for headings. To reach a custom `(anchor-name)=` from another page, use the `{ref}` role.**
+
+The `./page.md#anchor` form resolves against automatic *heading* anchors only. Custom `(anchor-name)=` labels are never in that lookup, no matter where you put them — before a heading, before an admonition, or inside one. Getting this wrong produces a `myst.xref_missing` build warning and a link that silently lands at the top of the page:
 
 ```markdown
+<!-- BROKEN: custom anchor, cross-page, markdown-link form -->
 [Create SSH key pair](./ssh-access-command-line.md#create-ssh-key-pair)
 ```
 
-Anchor names must be lowercase, use hyphens instead of spaces, and be unique within the entire documentation build.
+Use `{ref}` instead. It resolves labels across the whole build, so it needs no file path:
+
+```markdown
+<!-- CORRECT -->
+{ref}`Create SSH key pair <create-ssh-key-pair>`
+```
+
+The text before `<` is what the reader sees; the name inside `<...>` is the anchor. Always give the text explicitly — a bare ``{ref}`create-ssh-key-pair` `` only works when the target is a heading.
+
+Which form to use:
+
+| Linking to | Same page | Another page |
+|---|---|---|
+| A heading, by its text | `[text](#heading-text)` | `[text](./other-page.md#heading-text)` |
+| A custom `(anchor-name)=` | `[text](#anchor-name)` | `` {ref}`text <anchor-name>` `` |
+
+Live examples of the cross-page case: `ResearchDrive_setup.md` and `ResearchDrive_admin.md` both use `{ref}` to reach call-outs defined in `ResearchDrive.md` and `ResearchDrive_troubleshooting.md`.
+
+A clean build reports no `myst.xref_missing` warnings, so check the build output after adding cross-page links.
