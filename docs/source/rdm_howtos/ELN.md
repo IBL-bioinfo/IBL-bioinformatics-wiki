@@ -2,23 +2,16 @@
 
 *By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse [@Karivtan](https://github.com/Karivtan)*
 
-Leiden University is **hosting** an ELN server that provides a web application called Research Space (RSpace) <span><img src="../_static/images/rspace-banner.png" alt="RSpace" width="88"></span>. Using RSpace ensures **compliance with data management policies** and provides a sustainable solution for our research documentation needs. This page serves as a guide to help you get started with RSpace, including how to apply for an account, set up autosharing within your group, and find tutorial videos.
+Leiden University is **hosting** an ELN server that provides a web application called Research Space (RSpace) <span><img src="../_static/images/rspace-banner.png" alt="RSpace" width="88"></span>. Using RSpace ensures **compliance with data management policies** and provides a sustainable solution for our research documentation needs. This page includes:
 
-Adopting an ELN can feel awkward if you’re used to paper notebooks. Take it slowly and try things out with your group. Start by using the ELN simply as a cloud notebook: create entries, add text, and attach images.
+1. How to apply for an account
+2. Practical tips for using the ELN
+3. Set up autosharing within your group
+4. Find tutorial videos
 
-**Practical tips:**
-- Begin with basic, frequent entries to build the habit; don’t try to move everything at once.
-- Use the mobile app to upload photos of plates, gels or notes, but do not record or process sensitive or confidential data on personal devices — prefer institutional devices for that.
-- Use templates, tags and clear titles to make notes easy to find later.
-- Ask colleagues or ELN support for demonstrations and share experiences within your group.
+## ELN direct access URL
 
-:::{warning}
-Do NOT contact RSpace support. Please **always contact our faculty level support** for assistance.
-
-Faculty level support (login required) can be found in [FWN-IM-Electronic Laboratory Notebook (ELN) documents](https://leidenuniv1.sharepoint.com/sites/FWN-Intranet/SitePages/FWN-IM-ELN-Home.aspx?xsdata=MDV8MDJ8Yy5kdUBiaW9sb2d5LmxlaWRlbnVuaXYubmx8MTgyNzgxM2QwMmRiNGY3NmJmODUwOGRlNjQ5M2I2OGZ8Y2EyYTdmNzZkYmQ3NGVjMDkxMDg2YjNkNTI0ZmI3Yzh8MHwwfDYzOTA1ODc4Mjc0OTcxMTgzNXxVbmt) and [RSpace ELN&Inventory QRCards](https://leidenuniv1.sharepoint.com/sites/FWN-Intranet/SitePages/FWN-IM-ELN-QRCards.aspx?startedResponseCatch=true&CT=1776075760243&OR=OWA-NTB-Mail&CID=101ae42f-1176-982f-f011-bdbeb0ceff79). Or you can approach help via  [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) → "Research support" → "ELN" → "Report an issue/Ask a question". This way we can track issues and questions, and provide better support to everyone. If you contact RSpace support directly, they will refer you back to us, which will cause unnecessary delays.
-:::
-
-**For [Benchling](https://www.benchling.com/) users**, you can still use it for molecular cloning. But **please migrate to RSpace** for all other journaling. Please keep a complete, repeatable record of your cloning work on RSpace as well. Check below for [how to do that and reasons why we do not recommend Benchling as a general ELN](#benchling-is-not-recommended-as-a-general-eln).
+ELN (RSpace interface) - [https://leiden.researchspace.com/](https://leiden.researchspace.com/)
 
 ```{contents}
 ---
@@ -26,9 +19,9 @@ depth: 3
 ---
 ```
 
-## ELN direct access URL
-
-ELN (RSpace interface) - [https://leiden.researchspace.com/](https://leiden.researchspace.com/)
+::: {admonition} Note
+**For [Benchling](https://www.benchling.com/) users**, you can still use it for molecular cloning. But **please migrate to RSpace** for all other journaling. Please keep a complete, repeatable record of your cloning work on RSpace as well. Check below for [how to do that and reasons why we do not recommend Benchling as a general ELN](#benchling-is-not-recommended-as-a-general-eln).
+:::
 
 ## Application entries
 
@@ -54,6 +47,29 @@ More details about how to fill in these forms can be found in the [FWN-IM-Electr
 Please read the usage policy carefully before using the ELN. Most important points are:
 - Every account will be disabled after 6 months of inactivity
 - ELN is not meant to be used as a bulk storage
+
+## Practical tips
+
+Adopting an ELN can feel awkward if you’re used to paper notebooks. Take it slowly and try things out with your group. Start by using the ELN simply as a cloud notebook: create entries, add text, and attach images.
+
+- Begin with basic, frequent entries to build the habit; don’t try to move everything at once.
+- Use the mobile app to upload photos of plates, gels or notes, but do not record or process sensitive or confidential data on personal devices — prefer institutional devices for that.
+- Use templates, tags and clear titles to make notes easy to find later.
+- Ask colleagues or ELN support for demonstrations and share experiences within your group.
+
+:::{admonition} Notifications are on by default
+RSpace enables several email notifications by default (for example when a shared document is edited, a request status changes, or a background process finishes), which can quickly clutter your inbox. Review and adjust these under:
+
+Top bar **"My RSpace"** → **"My Profile"** → scroll down to **"Messaging and Notification Preferences"**.
+
+![Messaging and Notification Preferences page in RSpace](../_static/images/ELN_notification_preferences.png)
+:::
+
+:::{warning}
+Do NOT contact RSpace support. Please **always contact our faculty level support** for assistance.
+
+Faculty level support (login required) can be found in [FWN-IM-Electronic Laboratory Notebook (ELN) documents](https://leidenuniv1.sharepoint.com/sites/FWN-Intranet/SitePages/FWN-IM-ELN-Home.aspx?xsdata=MDV8MDJ8Yy5kdUBiaW9sb2d5LmxlaWRlbnVuaXYubmx8MTgyNzgxM2QwMmRiNGY3NmJmODUwOGRlNjQ5M2I2OGZ8Y2EyYTdmNzZkYmQ3NGVjMDkxMDg2YjNkNTI0ZmI3Yzh8MHwwfDYzOTA1ODc4Mjc0OTcxMTgzNXxVbmt) and [RSpace ELN&Inventory QRCards](https://leidenuniv1.sharepoint.com/sites/FWN-Intranet/SitePages/FWN-IM-ELN-QRCards.aspx?startedResponseCatch=true&CT=1776075760243&OR=OWA-NTB-Mail&CID=101ae42f-1176-982f-f011-bdbeb0ceff79). Or you can approach help via  [ISSC helpdesk](https://helpdesk.universiteitleiden.nl/) → "Research support" → "ELN" → "Report an issue/Ask a question". This way we can track issues and questions, and provide better support to everyone. If you contact RSpace support directly, they will refer you back to us, which will cause unnecessary delays.
+:::
 
 ## Setup autosharing within group
 
