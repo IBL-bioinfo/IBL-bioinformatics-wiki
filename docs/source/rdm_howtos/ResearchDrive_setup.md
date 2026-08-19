@@ -153,7 +153,7 @@ Older guides (including earlier versions of this page) told you to pick a separa
 If you want to share a folder with all of your lab members or a specific subgroup, create a
 **Team** in the "Contacts" page (top bar) and share with the team instead of with individual
 users — new team members then get access automatically. See
-[Share with a group of users](./ResearchDrive_admin.md#share-with-a-group-of-users).
+[Share with a group of users](./ResearchDrive_sharing.md#share-with-a-group-of-users).
 :::
 
 ## Next steps

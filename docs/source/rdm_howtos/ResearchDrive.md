@@ -32,6 +32,7 @@ ResearchDrive_uploadFromNetworkDrive
 ResearchDrive_commandLine
 ResearchDrive_troubleshooting
 ResearchDrive_admin
+ResearchDrive_sharing
 ```
 
 ```{contents}
@@ -55,7 +56,9 @@ Pick the one that matches what you are trying to do:
 - [Common issues and troubleshooting](./ResearchDrive_troubleshooting.md) — sync stuck, disk
   filling up, long path errors, removing a share.
 - [Set up and run a project folder](./ResearchDrive_admin.md) — apply for a project folder, invite
-  users, set share permissions, request more space.
+  users, request more space.
+- [Share folders with others](./ResearchDrive_sharing.md) — share with individual users or a team,
+  and name shared folders so recipients understand what they are looking at.
 
 ## Key concepts
 

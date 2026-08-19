@@ -3,8 +3,8 @@
 *By C.Du [@snail123815](https://github.com/snail123815) & Joost Willemse [@Karivtan](https://github.com/Karivtan)*
 
 This page covers **owning** a Research Drive project folder: preparing for it, requesting it from
-ISSC, inviting your people, organising the folder structure, setting share permissions, and asking
-for more space.
+ISSC, inviting your people, organising the folder structure, and asking for more space. Sharing the
+folders you create is the last step — see [Share folders with others](./ResearchDrive_sharing.md).
 
 You need this page if you are a PI or a lab manager setting up storage for a project. If you are
 instead trying to get *your own* data in and out of a folder that has already been shared with
@@ -121,68 +121,12 @@ Users will see "0B of 0B used" and may report it as a problem. That is expected 
 {ref}`It is normal to have zero space <you-do-not-own-space>`.
 ```
 
-## Set up share with users
+## Share folders with others
 
-The user needs to have already accepted the invitation and be able to log in to the Research Drive
-web interface before you can share a folder with them. It is recommended to follow the
-[intended folder structure](./ResearchDrive.md#intended-structure) and share the folders
-accordingly.
-
-Here is how to share a folder with specific users:
-
-- Go to the **Files** tab, locate the target folder, and click the **"Shared"** button, or click
-  the "..." (three dots) button and select **"Details"** from the dropdown menu.
-
-  ```{image} ../_static/images/nextcloud_share_1.png
-  :alt: share button
-  :width: 30em
-  ```
-
-  - Make sure the pop-up shows the correct folder name, click "Sharing" tab if not already selected
-- In **Internal shares** section, search and add the correct users (*or team name if you already
-  created one*), and set permissions to allow editing (for their own folder only).
-
-  ```{image} ../_static/images/nextcloud_share_2.png
-  :alt: sharing tab
-  :width: 23em
-  ```
-
-  - Remember to click **Save Share** after adding each user.
-
-    ```{image} ../_static/images/nextcloud_share_3.png
-    :alt: save share button
-    :width: 15em
-    ```
-
-  - After saving, it should show the user added.
-
-    ```{image} ../_static/images/nextcloud_share_4.png
-    :alt: saved share
-    :width: 15em
-    ```
-
-### Upload only folder
-
-For folders that are meant for users to upload files but not edit or delete files, you can set the
-permission to "Create" only. This way, users can only upload files to this folder, but cannot edit
-or delete any files in it.
-
-```{image} ../_static/images/nextcloud_share_5.png
-:alt: advanced sharing options
-:width: 15em
-```
-
-## Share with a group of users
-
-If you want to share a folder with a group of users — all of your lab members, or a specific
-subgroup — create a **Team** in the "Contacts" card, then share the folder with that team. You
-then only manage the team membership, and sharing updates automatically: when you add a new member
-to the team, they immediately have access to everything shared with it.
-
-```{image} ../_static/images/nextcloud_share_6.png
-:alt: Create a team in contacts
-:width: 40em
-```
+The last step in setting up a project folder is sharing specific folders with the people who need
+them. That has its own page — see [Share folders with others](./ResearchDrive_sharing.md) for
+sharing with individual users, sharing with a team, and how to name shared folders so recipients
+understand what they are looking at.
 
 ## Expand storage space
 
