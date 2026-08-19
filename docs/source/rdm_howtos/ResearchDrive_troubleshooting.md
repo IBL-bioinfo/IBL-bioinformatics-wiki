@@ -108,16 +108,13 @@ a [temporary sync connection](./ResearchDrive_uploadFromNetworkDrive.md).
 
 ## Removing a shared folder or file
 
-In Research Drive, you **cannot delete folders** shared with you from your computer. This can only be done by using the "Leave this share" option in the \[**&middot;&middot;&middot;**\] menu in the web interface.
+In Research Drive, you **cannot delete folders** shared with you from your computer. This can only
+be done using the "Leave this share" option in the \[**&middot;&middot;&middot;**\] menu in the web
+interface — see [Leave a share](./ResearchDrive_sharing.md#leave-a-share) for what that does and the
+only way to get access back.
 
-![leave this share button](../_static/images/nextcloud_leave_share.png)
-
-However, deleting a shared **file** is **possible**. It does **not** delete it from the cloud — it removes **your** share (i.e., you leave the share by deleting the file). To regain access, you need to contact the person who originally shared it with you.
-
-::: {admonition} Non-destructive, but non-reversible
-:class: warning
-When you delete a shared file or leave a shared folder, it is not deleted from the cloud, but it is also not recoverable from your side. You will lose access to that file or folder unless the original sharer (ISSC for project folders) shares it with you again. Therefore, be cautious when deleting shared files, as it can lead to loss of access to important data.
-:::
+Deleting a shared **file**, on the other hand, works directly and has the same effect: it does not
+delete the file from the cloud, only your share of it.
 
 ## Windows long path compatibility issue
 
