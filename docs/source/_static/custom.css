@@ -5,16 +5,84 @@ li > p {
     margin-bottom: 0.2em;
 }
 
-/* Underlines for h2 and h3, with visual distinction between levels. */
+/* Reading rhythm: Alabaster's default line-height reads cramped at body_font_size
+   17px on non-retina 1080p screens. color-scheme: light opts out of
+   browser/OS auto-dark-mode heuristics (e.g. Edge's "Auto dark mode for web
+   content"), which otherwise inconsistently grey-tint pages that don't
+   declare one; this site is light-only by design. */
+body {
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    color-scheme: light;
+}
+
+div.body p,
+div.body li {
+    line-height: 1.65;
+}
+
+/* Headings: underlines for h2 and h3 (visual distinction between levels), plus
+   tighter line-height and heavier weight now that headings use a sans-serif font. */
+div.body h1,
+div.body h2,
+div.body h3,
+div.body h4,
+div.body h5,
+div.body h6 {
+    line-height: 1.25;
+    font-weight: 600;
+}
+
 div.body h2 {
     border-bottom: 2px solid #888888;
     padding-bottom: 0.2rem;
+    margin-top: 1.8em;
 }
 
 div.body h3 {
     border-bottom: 1.5px solid #b6b6b6;
     padding-bottom: 0.15rem;
     width: fit-content;
+    margin-top: 1.5em;
+}
+
+/* Code blocks and inline code, sized down to match code_font_family/code_font_size
+   in conf.py. */
+div.highlight pre,
+pre {
+    line-height: 1.5;
+    padding: 0.7em 0.9em;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+code.literal {
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+}
+
+/* Wide tables (e.g. BLAST outfmt pages) scroll horizontally instead of
+   overflowing or squeezing columns unreadably. */
+div.body table.docutils {
+    display: block;
+    overflow-x: auto;
+}
+
+div.body table.docutils th,
+div.body table.docutils td {
+    padding: 0.4em 0.8em;
+}
+
+div.admonition {
+    border-radius: 6px;
+}
+
+div.body a {
+    text-underline-offset: 2px;
+}
+
+::selection {
+    background: #cde3f5;
 }
 
 /* Alabaster uses page_width as the @media max-width breakpoint. Using
@@ -47,7 +115,9 @@ section#ibl-bioinformatics-wiki > .toctree-wrapper {
     border: 1px solid #c8dce8;
     border-radius: 6px;
     padding: 0.7rem 1rem 0.8rem;
-    background: #f0f7fb;
+    /* #e6f0f7, not the original #f0f7fb: that tint was calibrated against a
+       pure white page and washes out against base_bg's #F8F9FA (conf.py). */
+    background: #e6f0f7;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.07);
 }
 
