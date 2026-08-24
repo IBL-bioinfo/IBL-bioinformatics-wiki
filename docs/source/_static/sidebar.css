@@ -1,5 +1,7 @@
+/* #E6F0F7 (not the original #f0f7fb): that tint was calibrated against a pure
+   white page and washes out against base_bg's #F8F9FA (conf.py). */
 div.sphinxsidebar p.caption {
-    background-color: #f0f7fb;
+    background-color: #e6f0f7;
     border-bottom: 0.1rem;
     border-bottom-color: #a8cfe0;
     border-bottom-style: dashed;
@@ -13,6 +15,10 @@ div.sphinxsidebar p.caption .caption-text {
 div.sphinxsidebar li.toctree-l1 {
     font-family: sans-serif;
     font-size: 0.8rem;
+}
+
+div.sphinxsidebar ul li {
+    margin: 0.2em 0;
 }
 
 h1.logo {
@@ -36,10 +42,22 @@ li.toctree-l1.current > ul > li.current {
     order: 100;
 }
 
-/* On mobile, the sidebar background becomes dark (#333) with white text.
-   Remove the light-blue caption background so white text stays readable. */
+/* On mobile, the sidebar becomes a light blue block above the body text
+   (narrow_sidebar_bg in conf.py). Alabaster's own narrow-width CSS hardcodes
+   h3/h4/p text (including p.caption) to the theme's base_bg color (white) on the
+   assumption that the narrow sidebar is dark, which would make that text
+   invisible here, so it needs re-darkening. A border + shadow at the bottom
+   marks a clear boundary against the body content that follows. */
 @media screen and (max-width: 48rem) {
-    div.sphinxsidebar p.caption {
-        background-color: transparent;
+    div.sphinxsidebar h3,
+    div.sphinxsidebar h4,
+    div.sphinxsidebar p,
+    div.sphinxsidebar h3 a {
+        color: #3e4349;
+    }
+
+    div.sphinxsidebar {
+        border-bottom: 3px solid #a8cfe0;
+        box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.2);
     }
 }
