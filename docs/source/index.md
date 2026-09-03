@@ -48,6 +48,7 @@ rdm_howtos/Intro.md
 rdm_howtos/ResearchDrive.md
 rdm_howtos/ELN.md
 rdm_howtos/GitHub_in_research.md
+rdm_howtos/BioRender.md
 ```
 
 ```{toctree}
